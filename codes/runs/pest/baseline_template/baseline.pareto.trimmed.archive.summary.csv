@@ -1,0 +1,2 @@
+generation,member,well_1,well_2,nsga2_front,nsga2_crowding_distance,spea2_unconstrained_fitness,spea2_constrained_fitness,is_feasible,feasible_distance
+0,gen=0_member=99,0,0,1,-999,0.5,0.5,1,-999
