@@ -12,7 +12,7 @@ in directory: "C:\Python\Personal\proj6\codes\runs\pest\baseline_template"
 on host: "TTL-HBJ6674"
 on a(n) windows operating system
 with release configuration
-started at 03/13/26 13:26:54
+started at 03/13/26 15:39:01
 
 Note: 3 unused lines in pest control file:
   -->  line number 6: '2.000000E+01  -3.000000E+00   3.000000E-01   1.000000E-02        -7' 
@@ -45,7 +45,7 @@ PEST Control Information
     facparmax = 10
     facorig = 0.001
     phiredswh = 0.1
-    noptmax = -1
+    noptmax = 2
     phiredstp = 0.01
     nphistp = 3
     nphinored = 3
@@ -296,7 +296,7 @@ da_noptmax_schedule:
 
 
 Model command line(s):- 
-    c:\Users\kaden.mcculloch\AppData\Local\anaconda3\envs\kfmcculloch98\python.exe run_theis_forward.py
+    run_model.bat
 
 Model interface files:-
     template files:
@@ -318,8 +318,8 @@ pargp               RELATIVE                     0.01                        0  
 
 Parameter information
 NAME         TRANSFORMATION        CHANGE LIMIT  INITIAL VALUE    LOWER BOUND    UPPER BOUND        GROUP          SCALE         OFFSET  DERIVATIVE COMMAND
-well_1__q    none                    FACTOR              1            0.1        1.1e+10        pargp              1              0                   1
-well_2__q    none                    FACTOR              1            0.1        1.1e+10        pargp              1              0                   1
+well_1__r    log                     FACTOR        2236.07            0.1         100000        pargp              1              0                   1
+well_2__r    log                     FACTOR        6324.56            0.1         100000        pargp              1              0                   1
 
 
 
@@ -347,6 +347,8 @@ PEST SVD Information
 
   ---  initializing MOEA process  ---  
 ...population schedule: generation,population size:
+...   0, 100
+...   1, 100
 ...using 'nsga2' env selector
 ...using binary tournament mating pool selector
 ...'mou_save_population_every' less than/equal to zero, not saving generation-specific populations (and archives)
@@ -369,60 +371,3 @@ checking for denormal values in dv population
 ... saved initial dv population to  baseline.0.dv_pop.csv
 ...running initial population of size 100
 ...running population of size  100
-... saved observation population to  baseline.0.obs_pop.csv
-
-  ---  initial population decision variable summary:  ---  
-decision variable       ubnd      lbnd        mean       stdev         min         max 
-WELL_1__Q              1.1e+10        0.1  4.84739e+09  3.16911e+09  1.54514e+07  1.09689e+10
-WELL_2__Q              1.1e+10        0.1  5.87163e+09  3.12961e+09  2.12639e+08  1.08912e+10
-
-
-  ---  initial population objective function summary:  ---  
-using member GEN=0_MEMBER=15 as nearest-to-mean single point
-    with distance of 5.00253e+08 from mean of decision variable population
-objective function   direction         mean      std dev          min          max         knee
-
-WELL_1                minimize            0            0            0            0            0
-WELL_2                minimize            0            0            0            0            0
-
-... saved initial dv population to  baseline.0.dv_pop.csv
-...performing initial pareto dominance sort
-WARNING: 99 duplicate solutions found:
-GEN=0_MEMBER=0 GEN=0_MEMBER=1 GEN=0_MEMBER=10 GEN=0_MEMBER=11 GEN=0_MEMBER=12 GEN=0_MEMBER=13 
-GEN=0_MEMBER=14 GEN=0_MEMBER=15 GEN=0_MEMBER=16 GEN=0_MEMBER=17 GEN=0_MEMBER=18 GEN=0_MEMBER=19 
-GEN=0_MEMBER=2 GEN=0_MEMBER=20 GEN=0_MEMBER=21 GEN=0_MEMBER=22 GEN=0_MEMBER=23 GEN=0_MEMBER=24 
-GEN=0_MEMBER=25 GEN=0_MEMBER=26 GEN=0_MEMBER=27 GEN=0_MEMBER=28 GEN=0_MEMBER=29 GEN=0_MEMBER=3 
-GEN=0_MEMBER=30 GEN=0_MEMBER=31 GEN=0_MEMBER=32 GEN=0_MEMBER=33 GEN=0_MEMBER=34 GEN=0_MEMBER=35 
-GEN=0_MEMBER=36 GEN=0_MEMBER=37 GEN=0_MEMBER=38 GEN=0_MEMBER=39 GEN=0_MEMBER=4 GEN=0_MEMBER=40 
-GEN=0_MEMBER=41 GEN=0_MEMBER=42 GEN=0_MEMBER=43 GEN=0_MEMBER=44 GEN=0_MEMBER=45 GEN=0_MEMBER=46 
-GEN=0_MEMBER=47 GEN=0_MEMBER=48 GEN=0_MEMBER=49 GEN=0_MEMBER=5 GEN=0_MEMBER=50 GEN=0_MEMBER=51 
-GEN=0_MEMBER=52 GEN=0_MEMBER=53 GEN=0_MEMBER=54 GEN=0_MEMBER=55 GEN=0_MEMBER=56 GEN=0_MEMBER=57 
-GEN=0_MEMBER=58 GEN=0_MEMBER=59 GEN=0_MEMBER=6 GEN=0_MEMBER=60 GEN=0_MEMBER=61 GEN=0_MEMBER=62 
-GEN=0_MEMBER=63 GEN=0_MEMBER=64 GEN=0_MEMBER=65 GEN=0_MEMBER=66 GEN=0_MEMBER=67 GEN=0_MEMBER=68 
-GEN=0_MEMBER=69 GEN=0_MEMBER=7 GEN=0_MEMBER=70 GEN=0_MEMBER=71 GEN=0_MEMBER=72 GEN=0_MEMBER=73 
-GEN=0_MEMBER=74 GEN=0_MEMBER=75 GEN=0_MEMBER=76 GEN=0_MEMBER=77 GEN=0_MEMBER=78 GEN=0_MEMBER=79 
-GEN=0_MEMBER=8 GEN=0_MEMBER=80 GEN=0_MEMBER=81 GEN=0_MEMBER=82 GEN=0_MEMBER=83 GEN=0_MEMBER=84 
-GEN=0_MEMBER=85 GEN=0_MEMBER=86 GEN=0_MEMBER=87 GEN=0_MEMBER=88 GEN=0_MEMBER=89 GEN=0_MEMBER=9 
-GEN=0_MEMBER=90 GEN=0_MEMBER=91 GEN=0_MEMBER=92 GEN=0_MEMBER=93 GEN=0_MEMBER=94 GEN=0_MEMBER=95 
-GEN=0_MEMBER=96 GEN=0_MEMBER=97 GEN=0_MEMBER=98 
-...pareto dominance sort yielded 1 domination fronts
-1 in the front 1
-...wrote pareto summary to baseline.pareto.summary.csv
-initialized archives with 1 nondominated members
-...pareto dominance sort yielded 1 domination fronts
-1 in the front 1
-...wrote pareto summary to baseline.pareto.archive.summary.csv
-...pareto dominance sort yielded 1 domination fronts
-1 in the front 1
-...wrote pareto summary to baseline.pareto.trimmed.archive.summary.csv
-...saved decision variable population of size 1 X 2 to 'baseline.archive.dv_pop.csv'
-...saved observation population of size 1 X 2 to 'baseline.archive.obs_pop.csv'
-...number of initial feasible solutions: 1
-
-  ---  initialization complete  ---  
-
-
-pestpp-mou analysis complete...
-started at 03/13/26 13:26:54
-finished at 03/13/26 13:28:20
-took 1.43333 minutes

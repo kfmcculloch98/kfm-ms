@@ -29,12 +29,12 @@ t_end: 365.0
 t_eval: 365.0
 obs_points_file: obs_points.csv
 well_1:
-  Q: 6.5174797861931121e+08
+  Q: 0.5
   r_coord: 10
   c_coord: 20
-  radial_dist: 2236.07
+  radial_dist: 11.6323791150081685686
 well_2:
-  Q: 6.2563599788549395e+09
+  Q: 0.5
   r_coord: 20
   c_coord: 60
-  radial_dist: 6324.56
+  radial_dist: 1.14585157599985154597

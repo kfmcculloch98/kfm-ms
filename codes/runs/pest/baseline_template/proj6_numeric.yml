@@ -1,4 +1,3 @@
-ptf ~
 param_sets:
 - name: Low T, Low S
   t_eval: 365.0
@@ -33,9 +32,9 @@ well_1:
   Q: 0.5
   r_coord: 10
   c_coord: 20
-  radial_dist: ~     well_1__r      ~
+  radial_dist: 2236.07
 well_2:
   Q: 0.5
   r_coord: 20
   c_coord: 60
-  radial_dist: ~     well_2__r      ~
+  radial_dist: 6324.56
