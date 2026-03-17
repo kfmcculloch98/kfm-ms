@@ -1,0 +1,5 @@
+parnme,partrans,parchglim,parval1,parlbnd,parubnd,pargp,scale,offset,dercom
+well_1_x,none,factor,19.009053607325942,0.1,100.0,well_pos,1.0,0.0,1
+well_1_y,none,factor,81.41034127273232,0.1,100.0,well_pos,1.0,0.0,1
+well_2_x,none,factor,94.31635862014868,0.1,100.0,well_pos,1.0,0.0,1
+well_2_y,none,factor,83.84024808256376,0.1,100.0,well_pos,1.0,0.0,1
