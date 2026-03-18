@@ -1,0 +1,24 @@
+              pestpp-mou: multi-objective optimization under uncertainty
+                         by the PEST++ development team
+
+
+
+
+
+version: 5.2.25
+binary compiled on Jan  6 2026 at 12:34:59
+using control file: "mou_model.pst"
+in directory: "C:\Python\Personal\proj6\codes\runs\mar"
+on host: "TTL-HBJ6674"
+on a(n) windows operating system
+with release configuration
+started at 03/18/26 16:51:58
+
+control file parsing error:  the following '++' args are duplicates (possibly thru an alias):
+mou_objectives,mou_obj_grp_sense,mou_population_size,mou_generator,mou_max_generations,base_ensemble,
+Error processing control file: mou_model.pst
+
+control file parsing error:  the following '++' args are duplicates (possibly thru an alias):
+mou_objectives,mou_obj_grp_sense,mou_population_size,mou_generator,mou_max_generations,base_ensemble,
+
+

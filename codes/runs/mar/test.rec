@@ -5,34 +5,22 @@
 
 
 
-version: 5.2.24
-binary compiled on Nov 12 2025 at 12:05:03
-using control file: "fwd_model.pst"
-in directory: "c:\Python\Personal\proj6\codes\sandbox"
+version: 5.2.25
+binary compiled on Jan  6 2026 at 12:34:59
+using control file: "test.pst"
+in directory: "C:\Python\Personal\proj6\codes\runs\mar"
 on host: "TTL-HBJ6674"
 on a(n) windows operating system
 with release configuration
-started at 03/17/26 21:34:36
+started at 03/18/26 16:54:36
 
-...reading external file 'fwd_model.pargp_data.csv'
-...header line: PARGPNME,INCTYP,DERINC,DERINCLB,FORCEN,DERINCMUL,DERMTHD,SPLITTHRESH,SPLITRELDIFF,SPLITACTION
-...read 4 lines from external file
-...reading external file 'fwd_model.par_data.csv'
-...header line: PARNME,PARTRANS,PARCHGLIM,PARVAL1,PARLBND,PARUBND,PARGP,SCALE,OFFSET,DERCOM
-...read 8 lines from external file
-...reading external file 'fwd_model.obs_data.csv'
-...header line: OBSNME,OBSVAL,WEIGHT,OBGNME
-...read 4 lines from external file
-...reading external file 'fwd_model.tplfile_data.csv'
-...header line: PEST_FILE,MODEL_FILE
-...read 1 lines from external file
-...reading external file 'fwd_model.insfile_data.csv'
-...header line: PEST_FILE,MODEL_FILE
-...read 1 lines from external file
-
-Note 'NOPTMAX' == 0, switching to forgiveness mode when checking inputs
-
-noptmax = 0, resetting max_run_fail = 1
+Note: 3 unused lines in pest control file:
+  -->  line number 6: '2.000000E+01  -3.000000E+00   3.000000E-01   1.000000E-02        -7' 
+  -->  line number 10: '0         0         0' 
+  -->  line number 12: '1' 
+parameter warning: 1 parameters are at lower bound
+parameter warning: 1 parameters are at upper bound
+parameter warning: YC: bounds are busted:-50 >= -50
 
     This software has been approved for release by the
     U.S.Geological Survey(USGS).Although the software has 
@@ -49,18 +37,18 @@ noptmax = 0, resetting max_run_fail = 1
 
 
 Case dimensions:- 
-    Number of parameters = 7
+    Number of parameters = 8
     Number of adjustable parameters = 7
-    Number of observations = 3
-    Number of non-zero weighted observations = 3
+    Number of observations = 2
+    Number of non-zero weighted observations = 2
     Number of prior estimates = 0
 
 PEST Control Information
-    relparmax = 1
-    facparmax = 1.1
+    relparmax = 10
+    facparmax = 10
     facorig = 0.001
     phiredswh = 0.1
-    noptmax = 0
+    noptmax = 10
     phiredstp = 0.01
     nphistp = 3
     nphinored = 3
@@ -74,7 +62,7 @@ PEST Control Information
 svd_pack: redsvd
 lambda_scale_fac: 0.75,1,1.1,
 forgive_unknown_args: 0
-max_run_fail: 1
+max_run_fail: 3
 panther_poll_interval: 1
 parameter_covariance: 
 observation_covariance: 
@@ -163,25 +151,40 @@ opt_chance_schedule:
 ...pestpp-sqp options:
 sqp_dv_en: 
 sqp_obs_restart_en: 
+sqp_search_method: LINE
 sqp_num_reals: -1
-sqp_update_hessian: 0
-sqp_scale_facs:
-  1e-05
-  0.0001
-  0.0005
+sqp_subset_size: -10
+sqp_update_hessian: 1
+sqp_hessian_update_method: BFGS
+sqp_solve_partial_step: 1
+sqp_alpha_mults:
   0.001
-  0.0025
   0.005
   0.01
-  0.05
-  0.075
   0.1
-  0.25
   0.5
   1
-  2
-  5
-  10
+sqp_filter_tol: 0.001
+sqp_working_set_tol: 0.1
+sqp_cma_c1: -1
+sqp_cma_cmu: -1
+sqp_cma_cc: -1
+sqp_cma_parent_num: -1
+sqp_cma_stepsize_control: 0
+sqp_cma_reinflation_factor: -1
+sqp_max_consec_infeas_ies: 3
+sqp_max_reinflation_cond_num: 500
+sqp_scale_up_factor: 1
+sqp_scale_down_factor: 1
+sqp_hess_max_cond_num: 100000
+sqp_save_cov_every: -1
+sqp_enforce_bounds: 0
+sqp_viol_pad: 0.0001
+sqp_reset_hessian_every: -1
+sqp_wset_level: 1
+sqp_rescale_search_dir: 1
+sqp_seek_feas_max_iter: 3
+sqp_risk: 0.5
 
 ...pestpp-mou options:
 mou_generator: PSO
@@ -276,7 +279,7 @@ ies_mda_dec_fac: 0.5
 ies_localization_type: LOCAL
 ies_upgrades_in_memory: 1
 ies_ordered_binary: 1
-ies_multimodal_alpha: 1
+ies_multimodal_alpha: 0
 ies_localizer_forgive_extra: 0
 ies_phi_factors_file: 
 ies_phi_factors_by_real: 0
@@ -315,10 +318,14 @@ Model command line(s):-
 
 Model interface files:-
     template files:
+      mou_model.tpl
     model input files:
+      config.yml
 
     instruction files:
+      mou_model.ins
     model output files:
+      allobs.out
 
 
 Parameter group information
@@ -331,19 +338,19 @@ compliance          RELATIVE                     0.01                        0  
 
 Parameter information
 NAME         TRANSFORMATION        CHANGE LIMIT  INITIAL VALUE    LOWER BOUND    UPPER BOUND        GROUP          SCALE         OFFSET  DERIVATIVE COMMAND
-xc           none                  RELATIVE       -41.2756            -50             50   compliance              1              0                   1
-well_1_q     none                    FACTOR        25.3204            6.5             65 pumping_rate              1              0                   1
-well_1_x     none                  RELATIVE        40.9213            -50             50     well_pos              1              0                   1
-well_1_y     none                  RELATIVE       -12.8225            -50             50     well_pos              1              0                   1
-well_2_q     none                    FACTOR        50.7972            6.5             65 pumping_rate              1              0                   1
-well_2_x     none                  RELATIVE       -47.1674            -50             50     well_pos              1              0                   1
-well_2_y     none                  RELATIVE        15.8326            -50             50     well_pos              1              0                   1
+well_1_q     none                    FACTOR        15.1782            6.5             65 pumping_rate              1              0                   1
+well_1_x     none                  RELATIVE       -30.7003            -50             50     well_pos              1              0                   1
+well_1_y     none                  RELATIVE        43.3526            -50             50     well_pos              1              0                   1
+well_2_q     none                    FACTOR        55.2094            6.5             65 pumping_rate              1              0                   1
+well_2_x     none                  RELATIVE       -5.50302            -50             50     well_pos              1              0                   1
+well_2_y     none                  RELATIVE        27.9549            -50             50     well_pos              1              0                   1
+xc           none                  RELATIVE       -23.0354            -50             50   compliance              1              0                   1
+yc           fixed                   FACTOR            -50            -50            -50   compliance              1              0                   1
 
 
 
 Observation information
 NAME                                VALUE                GROUP              WEIGHT
-obs1                                1e+10               obgnme                   1
 obj_min_xc                              0            min_xc_gp                   1
 obj_min_q                               0             min_q_gp                 0.1
 

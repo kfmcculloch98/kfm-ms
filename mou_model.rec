@@ -9,15 +9,13 @@ version: 5.2.23
 binary compiled on Aug 26 2025 at 11:50:00
 
 using control file: "mou_model.pst"
-in directory: "c:\Python\Personal\proj6\codes\sandbox"
+in directory: "C:\Python\Personal\proj6"
 on host: "TTL-HBJ6674"
-started at 03/17/26 22:23:05
+started at 03/18/26 16:05:07
 
 on host: "TTL-HBJ6674"
 
-control file parsing error: '* control data keyword' can't be used with '++' args
 Error processing control file: mou_model.pst
 
-control file parsing error: '* control data keyword' can't be used with '++' args
-
+control file stream is not good
 
