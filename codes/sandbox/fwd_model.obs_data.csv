@@ -1,2 +1,4 @@
 obsnme,obsval,weight,obgnme
 obs1,10000000000.0,1.0,obgnme
+obj_min_xc,0.0,1.0,min_xc_gp
+obj_min_q,0.0,0.1,min_q_gp
