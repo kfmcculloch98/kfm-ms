@@ -1,2 +1,2 @@
-tplfile,infile
+pest_file,model_file
 config.yml.tpl,config.yml

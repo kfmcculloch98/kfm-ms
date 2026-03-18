@@ -2,8 +2,8 @@ ptf ~
 T: 100.0
 S: 0.001
 t_eval: 365.0
-Yc: 50
-Xc: ~Xc~
+xc: ~xc~
+yc: -50
 well_1:
   x: ~well_1_x~
   y: ~well_1_y~

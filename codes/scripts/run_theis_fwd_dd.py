@@ -10,11 +10,11 @@ def theis_drawdown(Q, T, S, r, t):
 
 def run_model():
     # 1. load config (written by PEST using the .tpl file)
-    with open("proj6.yml", 'r') as f:
+    with open("config.yml", 'r') as f:
         cfg = yaml.safe_load(f)
 
     T, S, t = float(cfg['T']), float(cfg['S']), float(cfg['t_eval'])
-    Xc, Yc = float(cfg['Xc']), float(cfg['Yc'])
+    xc, yc = float(cfg['xc']), float(cfg['yc'])
     
     # 2. extract wells and calculate Center of Mass (CoM)
     wells = [k for k in cfg if k.startswith('well_')]
@@ -31,7 +31,7 @@ def run_model():
     com_y = weighted_y / total_q
     
     # 3. calculate distances from CoM to targets
-    r_compliance = math.sqrt((com_x - Xc)**2 + (com_y - Yc)**2)
+    r_compliance = math.sqrt((com_x - xc)**2 + (com_y - yc)**2)
     r_pit = math.sqrt(com_x**2 + com_y**2)
     
     # 4. calculate drawdown at targets based on CoM pumping
