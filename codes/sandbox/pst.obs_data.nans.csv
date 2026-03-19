@@ -1,0 +1,7 @@
+,obsnme,obsval,weight,obgnme
+s_compliance,,0.0,1.0,obs_gp
+s_pit,,0.0,1.0,obs_gp
+total_q,,0.0,1.0,obs_gp
+s_compliance,s_compliance,10000000000.0,1.0,obgnme
+s_pit,s_pit,10000000000.0,1.0,obgnme
+total_q,total_q,10000000000.0,1.0,obgnme
