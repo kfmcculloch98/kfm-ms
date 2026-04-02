@@ -1,8 +1,0 @@
-parnme,partrans,parchglim,parval1,parlbnd,parubnd,pargp,scale,offset,dercom
-Xc,none,relative,-41.27558489323812,-50.0,50.0,compliance,1.0,0.0,1
-well_1_q,none,factor,25.32039830145211,6.5,65.0,pumping_rate,1.0,0.0,1
-well_1_x,none,relative,40.921328494455906,-50.0,50.0,well_pos,1.0,0.0,1
-well_1_y,none,relative,-12.822481621354974,-50.0,50.0,well_pos,1.0,0.0,1
-well_2_q,none,factor,50.79719082966651,6.5,65.0,pumping_rate,1.0,0.0,1
-well_2_x,none,relative,-47.1673900443323,-50.0,50.0,well_pos,1.0,0.0,1
-well_2_y,none,relative,15.832625629254949,-50.0,50.0,well_pos,1.0,0.0,1
