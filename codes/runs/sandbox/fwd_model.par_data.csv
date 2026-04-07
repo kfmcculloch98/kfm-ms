@@ -1,8 +1,8 @@
 parnme,partrans,parchglim,parval1,parlbnd,parubnd,pargp,scale,offset,dercom
-well_1_q,none,factor,9.761987565004528,6.5,65.0,pumping_rate,1.0,0.0,1
-well_1_x,none,relative,-39.93292873318618,-50.0,50.0,well_pos,1.0,0.0,1
-well_1_y,none,relative,-24.28495739657649,-50.0,50.0,well_pos,1.0,0.0,1
-well_2_q,none,factor,18.178089990201983,6.5,65.0,pumping_rate,1.0,0.0,1
-well_2_x,none,relative,-44.093451544717325,-50.0,50.0,well_pos,1.0,0.0,1
-well_2_y,none,relative,-32.4040329120633,-50.0,50.0,well_pos,1.0,0.0,1
-xc,none,relative,-27.690980379666097,-50.0,50.0,compliance,1.0,0.0,1
+well_1_q,none,factor,13.961237945066262,6.5,65.0,pumping_rate,1.0,0.0,1
+well_1_x,none,relative,-37.205541598147875,-50.0,50.0,well_pos,1.0,0.0,1
+well_1_y,none,relative,-36.520872582392194,-50.0,50.0,well_pos,1.0,0.0,1
+well_2_q,none,factor,12.96496936094757,6.5,65.0,pumping_rate,1.0,0.0,1
+well_2_x,none,relative,5.831139816186301,-50.0,50.0,well_pos,1.0,0.0,1
+well_2_y,none,relative,11.996158406185245,-50.0,50.0,well_pos,1.0,0.0,1
+xc,none,relative,35.39185824356697,-50.0,50.0,compliance,1.0,0.0,1
