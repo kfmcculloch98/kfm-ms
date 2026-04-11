@@ -1,5 +1,5 @@
 BEGIN ZONEBUDGET
   ZON   zonebud.zon
-  BUD   validation_run.cbc
-  GRB   validation_run.dis.grb
+  BUD   val_avg.cbc
+  GRB   val_avg.dis.grb
 END ZONEBUDGET

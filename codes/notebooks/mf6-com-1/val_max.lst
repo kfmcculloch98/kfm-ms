@@ -1,0 +1,2589 @@
+                                   MODFLOW 6
+                U.S. GEOLOGICAL SURVEY MODULAR HYDROLOGIC MODEL
+                          GROUNDWATER FLOW MODEL (GWF)
+                            VERSION 6.7.0 02/05/2026
+
+   MODFLOW 6 compiled Feb 05 2026 22:36:44 with Intel(R) Fortran Intel(R) 64
+   Compiler Classic for applications running on Intel(R) 64, Version 2021.6.0
+                             Build 20220226_000000
+
+This software has been approved for release by the U.S. Geological 
+Survey (USGS). Although the software has been subjected to rigorous 
+review, the USGS reserves the right to update the software as needed 
+pursuant to further analysis and review. No warranty, expressed or 
+implied, is made by the USGS or the U.S. Government as to the 
+functionality of the software and related material nor shall the 
+fact of release constitute any such warranty. Furthermore, the 
+software is released on condition that neither the USGS nor the U.S. 
+Government shall be held liable for any damages resulting from its 
+authorized or unauthorized use. Also refer to the USGS Water 
+Resources Software User Rights Notice for complete use, copyright, 
+and distribution information.
+
+
+As a work of the United States Government, this USGS product is 
+in the public domain within the United States. You can copy, 
+modify, distribute, and perform the work, even for commercial 
+purposes, all without asking permission. Additionally, USGS 
+waives copyright and related rights in the work worldwide 
+through CC0 1.0 Universal Public Domain Dedication 
+(https://creativecommons.org/publicdomain/zero/1.0/).
+
+The following GNU Lesser General Public License (LGPL) libraries
+are used in this USGS product:
+
+    SPARSKIT version 2.0
+      ilut, luson, and qsplit 
+      (https://www-users.cse.umn.edu/~saad/software/SPARSKIT/)
+
+    RCM - Reverse Cuthill McKee Ordering
+      (https://people.math.sc.edu/Burkardt/f_src/rcm/rcm.html)
+
+    BLAS - Basic Linear Algebra Subprograms Level 1
+      (https://people.math.sc.edu/Burkardt/f_src/blas1_d/blas1_d.html)
+
+    SPARSEKIT - Sparse Matrix Utility Package
+      amux, dperm, dvperm, rperm, and cperm
+      (https://people.sc.fsu.edu/~jburkardt/f77_src/sparsekit/sparsekit.html)
+
+The following BSD-3 License libraries are used in this USGS product:
+
+    Modern Fortran DAG Library
+      Copyright (c) 2018, Jacob Williams
+      All rights reserved.
+      (https://github.com/jacobwilliams/daglib)
+
+MODFLOW 6 compiler options: /Isrc\libmf6_external.a.p /Isrc\libmf6core.a.p
+/Isrc /I..\src /MT /nologo /warn:general /warn:truncated_source /stand:f18
+/O2 /fpe:0 /heap-arrays:0 /traceback /fpp /Qdiag-disable:7416
+/Qdiag-disable:7025 /Qdiag-disable:5268 /Qdiag-disable:10448
+/Fdsrc\libmf6core.a.p\Utilities_compilerversion.F90.pdb
+/module:src\libmf6core.a.p
+/Fosrc/libmf6core.a.p/Utilities_compilerversion.F90.obj /c
+
+System command used to initiate simulation:
+C:\Python\Personal\kfm-ms\codes\binaries\MODFLOW6\windows\mf6.exe
+
+MODFLOW was compiled using uniform precision.
+
+Real Variables
+  KIND: 8
+  TINY (smallest non-zero value):    2.225074-308
+  HUGE (largest value):    1.797693+308
+  PRECISION: 15
+  SIZE IN BITS: 64
+
+Integer Variables
+  KIND: 4
+  HUGE (largest value): 2147483647
+  SIZE IN BITS: 32
+
+Long Integer Variables
+  KIND: 8
+  HUGE (largest value): 9223372036854775807
+  SIZE IN BITS: 64
+
+Logical Variables
+  KIND: 4
+  SIZE IN BITS: 32
+ 
+ NAMEFILE OPTIONS:
+    FLOWS WILL BE SAVED TO BUDGET FILE SPECIFIED IN OUTPUT CONTROL
+ END NAMEFILE OPTIONS:
+
+ DIS -- STRUCTURED GRID DISCRETIZATION PACKAGE, VERSION 2 : 3/27/2014 - INPUT READ FROM MEMPATH: __INPUT__/VAL_MAX/DIS                             
+
+
+ NPF -- NODE PROPERTY FLOW PACKAGE, VERSION 1, 3/30/2015 INPUT READ FROM MEMPATH: __INPUT__/VAL_MAX/NPF                             
+
+
+ IC -- Initial Conditions Package, Version 8, 3/28/2015 input read from mempath: __INPUT__/VAL_MAX/IC                              
+
+
+ Setting Discretization Options
+    XORIGIN = -33.00000000000000
+    YORIGIN = -68.00000000000000
+ End Setting Discretization Options
+
+ Setting Discretization Dimensions
+    NLAY = 1
+    NROW = 68
+    NCOL = 33
+ End Setting Discretization Dimensions
+
+ Setting Discretization Griddata
+    DELR set from input file
+    DELC set from input file
+    TOP set from input file
+    BOTM set from input file
+ End Setting Discretization Griddata
+
+ Setting NPF Options
+    Cell-by-cell flow information will be saved to binary file whenever ICBCFL is not zero.
+ End Setting NPF Options
+
+ Setting NPF Griddata
+    ICELLTYPE set from input file
+    K set from input file
+    K33 not provided.  Setting K33 = K.
+    K22 not provided.  Setting K22 = K.
+ End Setting NPF Griddata
+
+
+ WEL -- WEL PACKAGE, VERSION 8, 2/22/2014 INPUT READ FROM MEMPATH: __INPUT__/VAL_MAX/WEL_0                           
+
+ PROCESSING WEL BASE OPTIONS
+    FLOWS WILL BE SAVED TO BUDGET FILE SPECIFIED IN OUTPUT CONTROL
+ END OF WEL BASE OPTIONS
+
+ PROCESSING WEL OPTIONS
+ END OF WEL OPTIONS
+
+ PROCESSING WEL BASE DIMENSIONS
+    MAXBOUND =       1
+ END OF WEL BASE DIMENSIONS
+    STRT set from input file
+
+ STO -- STORAGE PACKAGE, VERSION 1, 5/19/2014 INPUT READ FROM MEMPATH: __INPUT__/VAL_MAX/STO                             
+
+
+ PROCESSING STORAGE OPTIONS
+    CELL-BY-CELL FLOW INFORMATION WILL BE SAVED TO BINARY FILE WHENEVER ICBCFL IS NOT ZERO.
+ END OF STORAGE OPTIONS
+    BINARY GRID INFORMATION WILL BE WRITTEN TO:
+      UNIT NUMBER: 1013
+      FILE NAME: val_max.dis.grb
+
+ OPENED val_max.dis.grb
+ FILE TYPE:DATA(BINARY)   UNIT 1013   STATUS:REPLACE             
+ FORMAT:UNFORMATTED            ACCESS:STREAM              
+ ACTION:READWRITE           
+
+      THE LAST TIME STEP WILL BE PRINTED
+      THE LAST TIME STEP WILL BE PRINTED
+
+ PROCESSING OC OPTIONS
+
+    BUDGET INFORMATION WILL BE WRITTEN TO:
+      UNIT NUMBER: 1014
+      FILE NAME: val_max.cbc
+
+ OPENED val_max.cbc
+ FILE TYPE:DATA(BINARY)   UNIT 1014   STATUS:REPLACE             
+ FORMAT:UNFORMATTED            ACCESS:STREAM              
+ ACTION:READWRITE           
+
+    HEAD INFORMATION WILL BE WRITTEN TO:
+      UNIT NUMBER: 1015
+      FILE NAME: val_max.hds
+
+ OPENED val_max.hds
+ FILE TYPE:DATA(BINARY)   UNIT 1015   STATUS:REPLACE             
+ FORMAT:UNFORMATTED            ACCESS:STREAM              
+ ACTION:READWRITE           
+
+ END OF OC OPTIONS
+
+start timestep kper="1" kstp="1" mode="normal"
+
+
+ BEGIN READING OUTPUT CONTROL FOR STRESS PERIOD 1
+      ALL TIME STEPS WILL BE SAVED
+      ALL TIME STEPS WILL BE SAVED
+
+ END READING OUTPUT CONTROL FOR STRESS PERIOD 1
+
+
+ PROCESSING STORAGE PERIOD DATA
+ END PROCESSING STORAGE PERIOD DATA
+
+
+ STRESS PERIOD 1 IS TRANSIENT
+
+ UBDSV1 SAVING           STO-SS ON UNIT   1014 AT TIME STEP      1, STRESS PERIOD      1
+ UBDSV1 SAVING     FLOW-JA-FACE ON UNIT   1014 AT TIME STEP      1, STRESS PERIOD      1
+ UBDSV06 SAVING              WEL IN MODEL VAL_MAX          PACKAGE VAL_MAX         CONNECTED TO MODEL VAL_MAX          PACKAGE WEL_0            ON UNIT   1014 AT TIME STEP      1, STRESS PERIOD      1
+
+ HEAD WILL BE SAVED ON UNIT 1015 AT END OF TIME STEP    1, STRESS PERIOD    1
+
+
+  VOLUME BUDGET FOR ENTIRE MODEL AT END OF TIME STEP    1, STRESS PERIOD   1
+  ---------------------------------------------------------------------------------------------------
+
+     CUMULATIVE VOLUME      L**3       RATES FOR THIS TIME STEP      L**3/T          PACKAGE NAME    
+     ------------------                 ------------------------                     ----------------
+
+           IN:                                      IN:
+           ---                                      ---
+              STO-SS =         140.0000                STO-SS =          20.0000     STORAGE                          
+                 WEL =           0.0000                   WEL =           0.0000     WEL_0                            
+
+            TOTAL IN =         140.0000              TOTAL IN =          20.0000
+
+          OUT:                                     OUT:
+          ----                                     ----
+              STO-SS =           0.0000                STO-SS =           0.0000     STORAGE                          
+                 WEL =         140.0000                   WEL =          20.0000     WEL_0                            
+
+           TOTAL OUT =         140.0000             TOTAL OUT =          20.0000
+
+            IN - OUT =       2.6828E-05              IN - OUT =       3.8325E-06
+
+ PERCENT DISCREPANCY =           0.00     PERCENT DISCREPANCY =           0.00
+
+
+
+
+         TIME SUMMARY AT END OF TIME STEP    1 IN STRESS PERIOD    1
+                          TIME STEP LENGTH =    7.00000    
+                        STRESS PERIOD TIME =    7.00000    
+                     TOTAL SIMULATION TIME =    7.00000    
+
+end timestep
+
+
+start timestep kper="2" kstp="1" mode="normal"
+
+
+ OUTPUT CONTROL FOR STRESS PERIOD 2 IS REPEATED USING SETTINGS FROM A PREVIOUS STRESS PERIOD.
+ UBDSV1 SAVING           STO-SS ON UNIT   1014 AT TIME STEP      1, STRESS PERIOD      2
+ UBDSV1 SAVING     FLOW-JA-FACE ON UNIT   1014 AT TIME STEP      1, STRESS PERIOD      2
+ UBDSV06 SAVING              WEL IN MODEL VAL_MAX          PACKAGE VAL_MAX         CONNECTED TO MODEL VAL_MAX          PACKAGE WEL_0            ON UNIT   1014 AT TIME STEP      1, STRESS PERIOD      2
+
+ HEAD WILL BE SAVED ON UNIT 1015 AT END OF TIME STEP    1, STRESS PERIOD    2
+
+
+  VOLUME BUDGET FOR ENTIRE MODEL AT END OF TIME STEP    1, STRESS PERIOD   2
+  ---------------------------------------------------------------------------------------------------
+
+     CUMULATIVE VOLUME      L**3       RATES FOR THIS TIME STEP      L**3/T          PACKAGE NAME    
+     ------------------                 ------------------------                     ----------------
+
+           IN:                                      IN:
+           ---                                      ---
+              STO-SS =         280.0000                STO-SS =          20.0000     STORAGE                          
+                 WEL =           0.0000                   WEL =           0.0000     WEL_0                            
+
+            TOTAL IN =         280.0000              TOTAL IN =          20.0000
+
+          OUT:                                     OUT:
+          ----                                     ----
+              STO-SS =           0.0000                STO-SS =           0.0000     STORAGE                          
+                 WEL =         280.0000                   WEL =          20.0000     WEL_0                            
+
+           TOTAL OUT =         280.0000             TOTAL OUT =          20.0000
+
+            IN - OUT =      -3.2475E-05              IN - OUT =      -8.4718E-06
+
+ PERCENT DISCREPANCY =          -0.00     PERCENT DISCREPANCY =          -0.00
+
+
+
+
+         TIME SUMMARY AT END OF TIME STEP    1 IN STRESS PERIOD    2
+                          TIME STEP LENGTH =    7.00000    
+                        STRESS PERIOD TIME =    7.00000    
+                     TOTAL SIMULATION TIME =    14.0000    
+
+end timestep
+
+
+start timestep kper="3" kstp="1" mode="normal"
+
+
+ OUTPUT CONTROL FOR STRESS PERIOD 3 IS REPEATED USING SETTINGS FROM A PREVIOUS STRESS PERIOD.
+ UBDSV1 SAVING           STO-SS ON UNIT   1014 AT TIME STEP      1, STRESS PERIOD      3
+ UBDSV1 SAVING     FLOW-JA-FACE ON UNIT   1014 AT TIME STEP      1, STRESS PERIOD      3
+ UBDSV06 SAVING              WEL IN MODEL VAL_MAX          PACKAGE VAL_MAX         CONNECTED TO MODEL VAL_MAX          PACKAGE WEL_0            ON UNIT   1014 AT TIME STEP      1, STRESS PERIOD      3
+
+ HEAD WILL BE SAVED ON UNIT 1015 AT END OF TIME STEP    1, STRESS PERIOD    3
+
+
+  VOLUME BUDGET FOR ENTIRE MODEL AT END OF TIME STEP    1, STRESS PERIOD   3
+  ---------------------------------------------------------------------------------------------------
+
+     CUMULATIVE VOLUME      L**3       RATES FOR THIS TIME STEP      L**3/T          PACKAGE NAME    
+     ------------------                 ------------------------                     ----------------
+
+           IN:                                      IN:
+           ---                                      ---
+              STO-SS =         420.0000                STO-SS =          20.0000     STORAGE                          
+                 WEL =           0.0000                   WEL =           0.0000     WEL_0                            
+
+            TOTAL IN =         420.0000              TOTAL IN =          20.0000
+
+          OUT:                                     OUT:
+          ----                                     ----
+              STO-SS =           0.0000                STO-SS =           0.0000     STORAGE                          
+                 WEL =         420.0000                   WEL =          20.0000     WEL_0                            
+
+           TOTAL OUT =         420.0000             TOTAL OUT =          20.0000
+
+            IN - OUT =       4.6438E-05              IN - OUT =       1.1273E-05
+
+ PERCENT DISCREPANCY =           0.00     PERCENT DISCREPANCY =           0.00
+
+
+
+
+         TIME SUMMARY AT END OF TIME STEP    1 IN STRESS PERIOD    3
+                          TIME STEP LENGTH =    7.00000    
+                        STRESS PERIOD TIME =    7.00000    
+                     TOTAL SIMULATION TIME =    21.0000    
+
+end timestep
+
+
+start timestep kper="4" kstp="1" mode="normal"
+
+
+ OUTPUT CONTROL FOR STRESS PERIOD 4 IS REPEATED USING SETTINGS FROM A PREVIOUS STRESS PERIOD.
+ UBDSV1 SAVING           STO-SS ON UNIT   1014 AT TIME STEP      1, STRESS PERIOD      4
+ UBDSV1 SAVING     FLOW-JA-FACE ON UNIT   1014 AT TIME STEP      1, STRESS PERIOD      4
+ UBDSV06 SAVING              WEL IN MODEL VAL_MAX          PACKAGE VAL_MAX         CONNECTED TO MODEL VAL_MAX          PACKAGE WEL_0            ON UNIT   1014 AT TIME STEP      1, STRESS PERIOD      4
+
+ HEAD WILL BE SAVED ON UNIT 1015 AT END OF TIME STEP    1, STRESS PERIOD    4
+
+
+  VOLUME BUDGET FOR ENTIRE MODEL AT END OF TIME STEP    1, STRESS PERIOD   4
+  ---------------------------------------------------------------------------------------------------
+
+     CUMULATIVE VOLUME      L**3       RATES FOR THIS TIME STEP      L**3/T          PACKAGE NAME    
+     ------------------                 ------------------------                     ----------------
+
+           IN:                                      IN:
+           ---                                      ---
+              STO-SS =         522.2208                STO-SS =          14.6030     STORAGE                          
+                 WEL =           0.0000                   WEL =           0.0000     WEL_0                            
+
+            TOTAL IN =         522.2208              TOTAL IN =          14.6030
+
+          OUT:                                     OUT:
+          ----                                     ----
+              STO-SS =           0.3955                STO-SS =       5.6503E-02     STORAGE                          
+                 WEL =         521.8252                   WEL =          14.5465     WEL_0                            
+
+           TOTAL OUT =         522.2207             TOTAL OUT =          14.6030
+
+            IN - OUT =       1.4860E-04              IN - OUT =       1.4595E-05
+
+ PERCENT DISCREPANCY =           0.00     PERCENT DISCREPANCY =           0.00
+
+
+
+
+         TIME SUMMARY AT END OF TIME STEP    1 IN STRESS PERIOD    4
+                          TIME STEP LENGTH =    7.00000    
+                        STRESS PERIOD TIME =    7.00000    
+                     TOTAL SIMULATION TIME =    28.0000    
+
+end timestep
+
+
+start timestep kper="5" kstp="1" mode="normal"
+
+
+ OUTPUT CONTROL FOR STRESS PERIOD 5 IS REPEATED USING SETTINGS FROM A PREVIOUS STRESS PERIOD.
+ UBDSV1 SAVING           STO-SS ON UNIT   1014 AT TIME STEP      1, STRESS PERIOD      5
+ UBDSV1 SAVING     FLOW-JA-FACE ON UNIT   1014 AT TIME STEP      1, STRESS PERIOD      5
+ UBDSV06 SAVING              WEL IN MODEL VAL_MAX          PACKAGE VAL_MAX         CONNECTED TO MODEL VAL_MAX          PACKAGE WEL_0            ON UNIT   1014 AT TIME STEP      1, STRESS PERIOD      5
+
+ HEAD WILL BE SAVED ON UNIT 1015 AT END OF TIME STEP    1, STRESS PERIOD    5
+
+
+  VOLUME BUDGET FOR ENTIRE MODEL AT END OF TIME STEP    1, STRESS PERIOD   5
+  ---------------------------------------------------------------------------------------------------
+
+     CUMULATIVE VOLUME      L**3       RATES FOR THIS TIME STEP      L**3/T          PACKAGE NAME    
+     ------------------                 ------------------------                     ----------------
+
+           IN:                                      IN:
+           ---                                      ---
+              STO-SS =         583.0548                STO-SS =           8.6906     STORAGE                          
+                 WEL =           0.0000                   WEL =           0.0000     WEL_0                            
+
+            TOTAL IN =         583.0548              TOTAL IN =           8.6906
+
+          OUT:                                     OUT:
+          ----                                     ----
+              STO-SS =           3.4981                STO-SS =           0.4432     STORAGE                          
+                 WEL =         579.5570                   WEL =           8.2474     WEL_0                            
+
+           TOTAL OUT =         583.0551             TOTAL OUT =           8.6906
+
+            IN - OUT =      -3.2930E-04              IN - OUT =      -6.8272E-05
+
+ PERCENT DISCREPANCY =          -0.00     PERCENT DISCREPANCY =          -0.00
+
+
+
+
+         TIME SUMMARY AT END OF TIME STEP    1 IN STRESS PERIOD    5
+                          TIME STEP LENGTH =    7.00000    
+                        STRESS PERIOD TIME =    7.00000    
+                     TOTAL SIMULATION TIME =    35.0000    
+
+end timestep
+
+
+start timestep kper="6" kstp="1" mode="normal"
+
+
+ OUTPUT CONTROL FOR STRESS PERIOD 6 IS REPEATED USING SETTINGS FROM A PREVIOUS STRESS PERIOD.
+ UBDSV1 SAVING           STO-SS ON UNIT   1014 AT TIME STEP      1, STRESS PERIOD      6
+ UBDSV1 SAVING     FLOW-JA-FACE ON UNIT   1014 AT TIME STEP      1, STRESS PERIOD      6
+ UBDSV06 SAVING              WEL IN MODEL VAL_MAX          PACKAGE VAL_MAX         CONNECTED TO MODEL VAL_MAX          PACKAGE WEL_0            ON UNIT   1014 AT TIME STEP      1, STRESS PERIOD      6
+
+ HEAD WILL BE SAVED ON UNIT 1015 AT END OF TIME STEP    1, STRESS PERIOD    6
+
+
+  VOLUME BUDGET FOR ENTIRE MODEL AT END OF TIME STEP    1, STRESS PERIOD   6
+  ---------------------------------------------------------------------------------------------------
+
+     CUMULATIVE VOLUME      L**3       RATES FOR THIS TIME STEP      L**3/T          PACKAGE NAME    
+     ------------------                 ------------------------                     ----------------
+
+           IN:                                      IN:
+           ---                                      ---
+              STO-SS =         669.0897                STO-SS =          12.2907     STORAGE                          
+                 WEL =           0.0000                   WEL =           0.0000     WEL_0                            
+
+            TOTAL IN =         669.0897              TOTAL IN =          12.2907
+
+          OUT:                                     OUT:
+          ----                                     ----
+              STO-SS =           3.4981                STO-SS =           0.0000     STORAGE                          
+                 WEL =         665.5918                   WEL =          12.2907     WEL_0                            
+
+           TOTAL OUT =         669.0900             TOTAL OUT =          12.2907
+
+            IN - OUT =      -3.1612E-04              IN - OUT =       1.8834E-06
+
+ PERCENT DISCREPANCY =          -0.00     PERCENT DISCREPANCY =           0.00
+
+
+
+
+         TIME SUMMARY AT END OF TIME STEP    1 IN STRESS PERIOD    6
+                          TIME STEP LENGTH =    7.00000    
+                        STRESS PERIOD TIME =    7.00000    
+                     TOTAL SIMULATION TIME =    42.0000    
+
+end timestep
+
+
+start timestep kper="7" kstp="1" mode="normal"
+
+
+ OUTPUT CONTROL FOR STRESS PERIOD 7 IS REPEATED USING SETTINGS FROM A PREVIOUS STRESS PERIOD.
+ UBDSV1 SAVING           STO-SS ON UNIT   1014 AT TIME STEP      1, STRESS PERIOD      7
+ UBDSV1 SAVING     FLOW-JA-FACE ON UNIT   1014 AT TIME STEP      1, STRESS PERIOD      7
+ UBDSV06 SAVING              WEL IN MODEL VAL_MAX          PACKAGE VAL_MAX         CONNECTED TO MODEL VAL_MAX          PACKAGE WEL_0            ON UNIT   1014 AT TIME STEP      1, STRESS PERIOD      7
+
+ HEAD WILL BE SAVED ON UNIT 1015 AT END OF TIME STEP    1, STRESS PERIOD    7
+
+
+  VOLUME BUDGET FOR ENTIRE MODEL AT END OF TIME STEP    1, STRESS PERIOD   7
+  ---------------------------------------------------------------------------------------------------
+
+     CUMULATIVE VOLUME      L**3       RATES FOR THIS TIME STEP      L**3/T          PACKAGE NAME    
+     ------------------                 ------------------------                     ----------------
+
+           IN:                                      IN:
+           ---                                      ---
+              STO-SS =         692.2322                STO-SS =           3.3061     STORAGE                          
+                 WEL =           0.0000                   WEL =           0.0000     WEL_0                            
+
+            TOTAL IN =         692.2322              TOTAL IN =           3.3061
+
+          OUT:                                     OUT:
+          ----                                     ----
+              STO-SS =          22.5930                STO-SS =           2.7278     STORAGE                          
+                 WEL =         669.6403                   WEL =           0.5783     WEL_0                            
+
+           TOTAL OUT =         692.2332             TOTAL OUT =           3.3062
+
+            IN - OUT =      -9.9008E-04              IN - OUT =      -9.6280E-05
+
+ PERCENT DISCREPANCY =          -0.00     PERCENT DISCREPANCY =          -0.00
+
+
+
+
+         TIME SUMMARY AT END OF TIME STEP    1 IN STRESS PERIOD    7
+                          TIME STEP LENGTH =    7.00000    
+                        STRESS PERIOD TIME =    7.00000    
+                     TOTAL SIMULATION TIME =    49.0000    
+
+end timestep
+
+
+start timestep kper="8" kstp="1" mode="normal"
+
+
+ OUTPUT CONTROL FOR STRESS PERIOD 8 IS REPEATED USING SETTINGS FROM A PREVIOUS STRESS PERIOD.
+ UBDSV1 SAVING           STO-SS ON UNIT   1014 AT TIME STEP      1, STRESS PERIOD      8
+ UBDSV1 SAVING     FLOW-JA-FACE ON UNIT   1014 AT TIME STEP      1, STRESS PERIOD      8
+ UBDSV06 SAVING              WEL IN MODEL VAL_MAX          PACKAGE VAL_MAX         CONNECTED TO MODEL VAL_MAX          PACKAGE WEL_0            ON UNIT   1014 AT TIME STEP      1, STRESS PERIOD      8
+
+ HEAD WILL BE SAVED ON UNIT 1015 AT END OF TIME STEP    1, STRESS PERIOD    8
+
+
+  VOLUME BUDGET FOR ENTIRE MODEL AT END OF TIME STEP    1, STRESS PERIOD   8
+  ---------------------------------------------------------------------------------------------------
+
+     CUMULATIVE VOLUME      L**3       RATES FOR THIS TIME STEP      L**3/T          PACKAGE NAME    
+     ------------------                 ------------------------                     ----------------
+
+           IN:                                      IN:
+           ---                                      ---
+              STO-SS =         832.2323                STO-SS =          20.0000     STORAGE                          
+                 WEL =           0.0000                   WEL =           0.0000     WEL_0                            
+
+            TOTAL IN =         832.2323              TOTAL IN =          20.0000
+
+          OUT:                                     OUT:
+          ----                                     ----
+              STO-SS =          22.5930                STO-SS =           0.0000     STORAGE                          
+                 WEL =         809.6403                   WEL =          20.0000     WEL_0                            
+
+           TOTAL OUT =         832.2332             TOTAL OUT =          20.0000
+
+            IN - OUT =      -9.6642E-04              IN - OUT =       3.3797E-06
+
+ PERCENT DISCREPANCY =          -0.00     PERCENT DISCREPANCY =           0.00
+
+
+
+
+         TIME SUMMARY AT END OF TIME STEP    1 IN STRESS PERIOD    8
+                          TIME STEP LENGTH =    7.00000    
+                        STRESS PERIOD TIME =    7.00000    
+                     TOTAL SIMULATION TIME =    56.0000    
+
+end timestep
+
+
+start timestep kper="9" kstp="1" mode="normal"
+
+
+ OUTPUT CONTROL FOR STRESS PERIOD 9 IS REPEATED USING SETTINGS FROM A PREVIOUS STRESS PERIOD.
+ UBDSV1 SAVING           STO-SS ON UNIT   1014 AT TIME STEP      1, STRESS PERIOD      9
+ UBDSV1 SAVING     FLOW-JA-FACE ON UNIT   1014 AT TIME STEP      1, STRESS PERIOD      9
+ UBDSV06 SAVING              WEL IN MODEL VAL_MAX          PACKAGE VAL_MAX         CONNECTED TO MODEL VAL_MAX          PACKAGE WEL_0            ON UNIT   1014 AT TIME STEP      1, STRESS PERIOD      9
+
+ HEAD WILL BE SAVED ON UNIT 1015 AT END OF TIME STEP    1, STRESS PERIOD    9
+
+
+  VOLUME BUDGET FOR ENTIRE MODEL AT END OF TIME STEP    1, STRESS PERIOD   9
+  ---------------------------------------------------------------------------------------------------
+
+     CUMULATIVE VOLUME      L**3       RATES FOR THIS TIME STEP      L**3/T          PACKAGE NAME    
+     ------------------                 ------------------------                     ----------------
+
+           IN:                                      IN:
+           ---                                      ---
+              STO-SS =         967.1712                STO-SS =          19.2770     STORAGE                          
+                 WEL =           0.0000                   WEL =           0.0000     WEL_0                            
+
+            TOTAL IN =         967.1712              TOTAL IN =          19.2770
+
+          OUT:                                     OUT:
+          ----                                     ----
+              STO-SS =          22.5930                STO-SS =           0.0000     STORAGE                          
+                 WEL =         944.5792                   WEL =          19.2770     WEL_0                            
+
+           TOTAL OUT =         967.1722             TOTAL OUT =          19.2770
+
+            IN - OUT =      -9.8247E-04              IN - OUT =      -2.2926E-06
+
+ PERCENT DISCREPANCY =          -0.00     PERCENT DISCREPANCY =          -0.00
+
+
+
+
+         TIME SUMMARY AT END OF TIME STEP    1 IN STRESS PERIOD    9
+                          TIME STEP LENGTH =    7.00000    
+                        STRESS PERIOD TIME =    7.00000    
+                     TOTAL SIMULATION TIME =    63.0000    
+
+end timestep
+
+
+start timestep kper="10" kstp="1" mode="normal"
+
+
+ OUTPUT CONTROL FOR STRESS PERIOD 10 IS REPEATED USING SETTINGS FROM A PREVIOUS STRESS PERIOD.
+ UBDSV1 SAVING           STO-SS ON UNIT   1014 AT TIME STEP      1, STRESS PERIOD     10
+ UBDSV1 SAVING     FLOW-JA-FACE ON UNIT   1014 AT TIME STEP      1, STRESS PERIOD     10
+ UBDSV06 SAVING              WEL IN MODEL VAL_MAX          PACKAGE VAL_MAX         CONNECTED TO MODEL VAL_MAX          PACKAGE WEL_0            ON UNIT   1014 AT TIME STEP      1, STRESS PERIOD     10
+
+ HEAD WILL BE SAVED ON UNIT 1015 AT END OF TIME STEP    1, STRESS PERIOD   10
+
+
+  VOLUME BUDGET FOR ENTIRE MODEL AT END OF TIME STEP    1, STRESS PERIOD  10
+  ---------------------------------------------------------------------------------------------------
+
+     CUMULATIVE VOLUME      L**3       RATES FOR THIS TIME STEP      L**3/T          PACKAGE NAME    
+     ------------------                 ------------------------                     ----------------
+
+           IN:                                      IN:
+           ---                                      ---
+              STO-SS =        1000.7216                STO-SS =           4.7929     STORAGE                          
+                 WEL =           0.0000                   WEL =           0.0000     WEL_0                            
+
+            TOTAL IN =        1000.7216              TOTAL IN =           4.7929
+
+          OUT:                                     OUT:
+          ----                                     ----
+              STO-SS =          50.8425                STO-SS =           4.0356     STORAGE                          
+                 WEL =         949.8807                   WEL =           0.7574     WEL_0                            
+
+           TOTAL OUT =        1000.7232             TOTAL OUT =           4.7930
+
+            IN - OUT =      -1.6257E-03              IN - OUT =      -9.1893E-05
+
+ PERCENT DISCREPANCY =          -0.00     PERCENT DISCREPANCY =          -0.00
+
+
+
+
+         TIME SUMMARY AT END OF TIME STEP    1 IN STRESS PERIOD   10
+                          TIME STEP LENGTH =    7.00000    
+                        STRESS PERIOD TIME =    7.00000    
+                     TOTAL SIMULATION TIME =    70.0000    
+
+end timestep
+
+
+start timestep kper="11" kstp="1" mode="normal"
+
+
+ OUTPUT CONTROL FOR STRESS PERIOD 11 IS REPEATED USING SETTINGS FROM A PREVIOUS STRESS PERIOD.
+ UBDSV1 SAVING           STO-SS ON UNIT   1014 AT TIME STEP      1, STRESS PERIOD     11
+ UBDSV1 SAVING     FLOW-JA-FACE ON UNIT   1014 AT TIME STEP      1, STRESS PERIOD     11
+ UBDSV06 SAVING              WEL IN MODEL VAL_MAX          PACKAGE VAL_MAX         CONNECTED TO MODEL VAL_MAX          PACKAGE WEL_0            ON UNIT   1014 AT TIME STEP      1, STRESS PERIOD     11
+
+ HEAD WILL BE SAVED ON UNIT 1015 AT END OF TIME STEP    1, STRESS PERIOD   11
+
+
+  VOLUME BUDGET FOR ENTIRE MODEL AT END OF TIME STEP    1, STRESS PERIOD  11
+  ---------------------------------------------------------------------------------------------------
+
+     CUMULATIVE VOLUME      L**3       RATES FOR THIS TIME STEP      L**3/T          PACKAGE NAME    
+     ------------------                 ------------------------                     ----------------
+
+           IN:                                      IN:
+           ---                                      ---
+              STO-SS =        1047.8455                STO-SS =           6.7320     STORAGE                          
+                 WEL =           0.0000                   WEL =           0.0000     WEL_0                            
+
+            TOTAL IN =        1047.8455              TOTAL IN =           6.7320
+
+          OUT:                                     OUT:
+          ----                                     ----
+              STO-SS =          50.8425                STO-SS =           0.0000     STORAGE                          
+                 WEL =         997.0046                   WEL =           6.7320     WEL_0                            
+
+           TOTAL OUT =        1047.8470             TOTAL OUT =           6.7320
+
+            IN - OUT =      -1.4910E-03              IN - OUT =       1.9244E-05
+
+ PERCENT DISCREPANCY =          -0.00     PERCENT DISCREPANCY =           0.00
+
+
+
+
+         TIME SUMMARY AT END OF TIME STEP    1 IN STRESS PERIOD   11
+                          TIME STEP LENGTH =    7.00000    
+                        STRESS PERIOD TIME =    7.00000    
+                     TOTAL SIMULATION TIME =    77.0000    
+
+end timestep
+
+
+start timestep kper="12" kstp="1" mode="normal"
+
+
+ OUTPUT CONTROL FOR STRESS PERIOD 12 IS REPEATED USING SETTINGS FROM A PREVIOUS STRESS PERIOD.
+ UBDSV1 SAVING           STO-SS ON UNIT   1014 AT TIME STEP      1, STRESS PERIOD     12
+ UBDSV1 SAVING     FLOW-JA-FACE ON UNIT   1014 AT TIME STEP      1, STRESS PERIOD     12
+ UBDSV06 SAVING              WEL IN MODEL VAL_MAX          PACKAGE VAL_MAX         CONNECTED TO MODEL VAL_MAX          PACKAGE WEL_0            ON UNIT   1014 AT TIME STEP      1, STRESS PERIOD     12
+
+ HEAD WILL BE SAVED ON UNIT 1015 AT END OF TIME STEP    1, STRESS PERIOD   12
+
+
+  VOLUME BUDGET FOR ENTIRE MODEL AT END OF TIME STEP    1, STRESS PERIOD  12
+  ---------------------------------------------------------------------------------------------------
+
+     CUMULATIVE VOLUME      L**3       RATES FOR THIS TIME STEP      L**3/T          PACKAGE NAME    
+     ------------------                 ------------------------                     ----------------
+
+           IN:                                      IN:
+           ---                                      ---
+              STO-SS =        1176.4053                STO-SS =          18.3657     STORAGE                          
+                 WEL =           0.0000                   WEL =           0.0000     WEL_0                            
+
+            TOTAL IN =        1176.4053              TOTAL IN =          18.3657
+
+          OUT:                                     OUT:
+          ----                                     ----
+              STO-SS =          50.8425                STO-SS =           0.0000     STORAGE                          
+                 WEL =        1125.5643                   WEL =          18.3657     WEL_0                            
+
+           TOTAL OUT =        1176.4068             TOTAL OUT =          18.3657
+
+            IN - OUT =      -1.4825E-03              IN - OUT =       1.2177E-06
+
+ PERCENT DISCREPANCY =          -0.00     PERCENT DISCREPANCY =           0.00
+
+
+
+
+         TIME SUMMARY AT END OF TIME STEP    1 IN STRESS PERIOD   12
+                          TIME STEP LENGTH =    7.00000    
+                        STRESS PERIOD TIME =    7.00000    
+                     TOTAL SIMULATION TIME =    84.0000    
+
+end timestep
+
+
+start timestep kper="13" kstp="1" mode="normal"
+
+
+ OUTPUT CONTROL FOR STRESS PERIOD 13 IS REPEATED USING SETTINGS FROM A PREVIOUS STRESS PERIOD.
+ UBDSV1 SAVING           STO-SS ON UNIT   1014 AT TIME STEP      1, STRESS PERIOD     13
+ UBDSV1 SAVING     FLOW-JA-FACE ON UNIT   1014 AT TIME STEP      1, STRESS PERIOD     13
+ UBDSV06 SAVING              WEL IN MODEL VAL_MAX          PACKAGE VAL_MAX         CONNECTED TO MODEL VAL_MAX          PACKAGE WEL_0            ON UNIT   1014 AT TIME STEP      1, STRESS PERIOD     13
+
+ HEAD WILL BE SAVED ON UNIT 1015 AT END OF TIME STEP    1, STRESS PERIOD   13
+
+
+  VOLUME BUDGET FOR ENTIRE MODEL AT END OF TIME STEP    1, STRESS PERIOD  13
+  ---------------------------------------------------------------------------------------------------
+
+     CUMULATIVE VOLUME      L**3       RATES FOR THIS TIME STEP      L**3/T          PACKAGE NAME    
+     ------------------                 ------------------------                     ----------------
+
+           IN:                                      IN:
+           ---                                      ---
+              STO-SS =        1300.7052                STO-SS =          17.7571     STORAGE                          
+                 WEL =           0.0000                   WEL =           0.0000     WEL_0                            
+
+            TOTAL IN =        1300.7052              TOTAL IN =          17.7571
+
+          OUT:                                     OUT:
+          ----                                     ----
+              STO-SS =          50.8425                STO-SS =           0.0000     STORAGE                          
+                 WEL =        1249.8642                   WEL =          17.7571     WEL_0                            
+
+           TOTAL OUT =        1300.7067             TOTAL OUT =          17.7571
+
+            IN - OUT =      -1.4899E-03              IN - OUT =      -1.0596E-06
+
+ PERCENT DISCREPANCY =          -0.00     PERCENT DISCREPANCY =          -0.00
+
+
+
+
+         TIME SUMMARY AT END OF TIME STEP    1 IN STRESS PERIOD   13
+                          TIME STEP LENGTH =    7.00000    
+                        STRESS PERIOD TIME =    7.00000    
+                     TOTAL SIMULATION TIME =    91.0000    
+
+end timestep
+
+
+start timestep kper="14" kstp="1" mode="normal"
+
+
+ OUTPUT CONTROL FOR STRESS PERIOD 14 IS REPEATED USING SETTINGS FROM A PREVIOUS STRESS PERIOD.
+ UBDSV1 SAVING           STO-SS ON UNIT   1014 AT TIME STEP      1, STRESS PERIOD     14
+ UBDSV1 SAVING     FLOW-JA-FACE ON UNIT   1014 AT TIME STEP      1, STRESS PERIOD     14
+ UBDSV06 SAVING              WEL IN MODEL VAL_MAX          PACKAGE VAL_MAX         CONNECTED TO MODEL VAL_MAX          PACKAGE WEL_0            ON UNIT   1014 AT TIME STEP      1, STRESS PERIOD     14
+
+ HEAD WILL BE SAVED ON UNIT 1015 AT END OF TIME STEP    1, STRESS PERIOD   14
+
+
+  VOLUME BUDGET FOR ENTIRE MODEL AT END OF TIME STEP    1, STRESS PERIOD  14
+  ---------------------------------------------------------------------------------------------------
+
+     CUMULATIVE VOLUME      L**3       RATES FOR THIS TIME STEP      L**3/T          PACKAGE NAME    
+     ------------------                 ------------------------                     ----------------
+
+           IN:                                      IN:
+           ---                                      ---
+              STO-SS =        1385.2133                STO-SS =          12.0726     STORAGE                          
+                 WEL =           0.0000                   WEL =           0.0000     WEL_0                            
+
+            TOTAL IN =        1385.2133              TOTAL IN =          12.0726
+
+          OUT:                                     OUT:
+          ----                                     ----
+              STO-SS =          51.5644                STO-SS =           0.1031     STORAGE                          
+                 WEL =        1333.6502                   WEL =          11.9694     WEL_0                            
+
+           TOTAL OUT =        1385.2146             TOTAL OUT =          12.0726
+
+            IN - OUT =      -1.3686E-03              IN - OUT =       1.7328E-05
+
+ PERCENT DISCREPANCY =          -0.00     PERCENT DISCREPANCY =           0.00
+
+
+
+
+         TIME SUMMARY AT END OF TIME STEP    1 IN STRESS PERIOD   14
+                          TIME STEP LENGTH =    7.00000    
+                        STRESS PERIOD TIME =    7.00000    
+                     TOTAL SIMULATION TIME =    98.0000    
+
+end timestep
+
+
+start timestep kper="15" kstp="1" mode="normal"
+
+
+ OUTPUT CONTROL FOR STRESS PERIOD 15 IS REPEATED USING SETTINGS FROM A PREVIOUS STRESS PERIOD.
+ UBDSV1 SAVING           STO-SS ON UNIT   1014 AT TIME STEP      1, STRESS PERIOD     15
+ UBDSV1 SAVING     FLOW-JA-FACE ON UNIT   1014 AT TIME STEP      1, STRESS PERIOD     15
+ UBDSV06 SAVING              WEL IN MODEL VAL_MAX          PACKAGE VAL_MAX         CONNECTED TO MODEL VAL_MAX          PACKAGE WEL_0            ON UNIT   1014 AT TIME STEP      1, STRESS PERIOD     15
+
+ HEAD WILL BE SAVED ON UNIT 1015 AT END OF TIME STEP    1, STRESS PERIOD   15
+
+
+  VOLUME BUDGET FOR ENTIRE MODEL AT END OF TIME STEP    1, STRESS PERIOD  15
+  ---------------------------------------------------------------------------------------------------
+
+     CUMULATIVE VOLUME      L**3       RATES FOR THIS TIME STEP      L**3/T          PACKAGE NAME    
+     ------------------                 ------------------------                     ----------------
+
+           IN:                                      IN:
+           ---                                      ---
+              STO-SS =        1510.2528                STO-SS =          17.8628     STORAGE                          
+                 WEL =           0.0000                   WEL =           0.0000     WEL_0                            
+
+            TOTAL IN =        1510.2528              TOTAL IN =          17.8628
+
+          OUT:                                     OUT:
+          ----                                     ----
+              STO-SS =          51.5644                STO-SS =           0.0000     STORAGE                          
+                 WEL =        1458.6898                   WEL =          17.8628     WEL_0                            
+
+           TOTAL OUT =        1510.2542             TOTAL OUT =          17.8628
+
+            IN - OUT =      -1.4192E-03              IN - OUT =      -7.2293E-06
+
+ PERCENT DISCREPANCY =          -0.00     PERCENT DISCREPANCY =          -0.00
+
+
+
+
+         TIME SUMMARY AT END OF TIME STEP    1 IN STRESS PERIOD   15
+                          TIME STEP LENGTH =    7.00000    
+                        STRESS PERIOD TIME =    7.00000    
+                     TOTAL SIMULATION TIME =    105.000    
+
+end timestep
+
+
+start timestep kper="16" kstp="1" mode="normal"
+
+
+ OUTPUT CONTROL FOR STRESS PERIOD 16 IS REPEATED USING SETTINGS FROM A PREVIOUS STRESS PERIOD.
+ UBDSV1 SAVING           STO-SS ON UNIT   1014 AT TIME STEP      1, STRESS PERIOD     16
+ UBDSV1 SAVING     FLOW-JA-FACE ON UNIT   1014 AT TIME STEP      1, STRESS PERIOD     16
+ UBDSV06 SAVING              WEL IN MODEL VAL_MAX          PACKAGE VAL_MAX         CONNECTED TO MODEL VAL_MAX          PACKAGE WEL_0            ON UNIT   1014 AT TIME STEP      1, STRESS PERIOD     16
+
+ HEAD WILL BE SAVED ON UNIT 1015 AT END OF TIME STEP    1, STRESS PERIOD   16
+
+
+  VOLUME BUDGET FOR ENTIRE MODEL AT END OF TIME STEP    1, STRESS PERIOD  16
+  ---------------------------------------------------------------------------------------------------
+
+     CUMULATIVE VOLUME      L**3       RATES FOR THIS TIME STEP      L**3/T          PACKAGE NAME    
+     ------------------                 ------------------------                     ----------------
+
+           IN:                                      IN:
+           ---                                      ---
+              STO-SS =        1594.0992                STO-SS =          11.9781     STORAGE                          
+                 WEL =           0.0000                   WEL =           0.0000     WEL_0                            
+
+            TOTAL IN =        1594.0992              TOTAL IN =          11.9781
+
+          OUT:                                     OUT:
+          ----                                     ----
+              STO-SS =          52.2640                STO-SS =       9.9948E-02     STORAGE                          
+                 WEL =        1541.8363                   WEL =          11.8781     WEL_0                            
+
+           TOTAL OUT =        1594.1003             TOTAL OUT =          11.9780
+
+            IN - OUT =      -1.1446E-03              IN - OUT =       3.9234E-05
+
+ PERCENT DISCREPANCY =          -0.00     PERCENT DISCREPANCY =           0.00
+
+
+
+
+         TIME SUMMARY AT END OF TIME STEP    1 IN STRESS PERIOD   16
+                          TIME STEP LENGTH =    7.00000    
+                        STRESS PERIOD TIME =    7.00000    
+                     TOTAL SIMULATION TIME =    112.000    
+
+end timestep
+
+
+start timestep kper="17" kstp="1" mode="normal"
+
+
+ OUTPUT CONTROL FOR STRESS PERIOD 17 IS REPEATED USING SETTINGS FROM A PREVIOUS STRESS PERIOD.
+ UBDSV1 SAVING           STO-SS ON UNIT   1014 AT TIME STEP      1, STRESS PERIOD     17
+ UBDSV1 SAVING     FLOW-JA-FACE ON UNIT   1014 AT TIME STEP      1, STRESS PERIOD     17
+ UBDSV06 SAVING              WEL IN MODEL VAL_MAX          PACKAGE VAL_MAX         CONNECTED TO MODEL VAL_MAX          PACKAGE WEL_0            ON UNIT   1014 AT TIME STEP      1, STRESS PERIOD     17
+
+ HEAD WILL BE SAVED ON UNIT 1015 AT END OF TIME STEP    1, STRESS PERIOD   17
+
+
+  VOLUME BUDGET FOR ENTIRE MODEL AT END OF TIME STEP    1, STRESS PERIOD  17
+  ---------------------------------------------------------------------------------------------------
+
+     CUMULATIVE VOLUME      L**3       RATES FOR THIS TIME STEP      L**3/T          PACKAGE NAME    
+     ------------------                 ------------------------                     ----------------
+
+           IN:                                      IN:
+           ---                                      ---
+              STO-SS =        1734.0992                STO-SS =          20.0000     STORAGE                          
+                 WEL =           0.0000                   WEL =           0.0000     WEL_0                            
+
+            TOTAL IN =        1734.0992              TOTAL IN =          20.0000
+
+          OUT:                                     OUT:
+          ----                                     ----
+              STO-SS =          52.2640                STO-SS =           0.0000     STORAGE                          
+                 WEL =        1681.8363                   WEL =          20.0000     WEL_0                            
+
+           TOTAL OUT =        1734.1003             TOTAL OUT =          20.0000
+
+            IN - OUT =      -1.1492E-03              IN - OUT =      -6.5289E-07
+
+ PERCENT DISCREPANCY =          -0.00     PERCENT DISCREPANCY =          -0.00
+
+
+
+
+         TIME SUMMARY AT END OF TIME STEP    1 IN STRESS PERIOD   17
+                          TIME STEP LENGTH =    7.00000    
+                        STRESS PERIOD TIME =    7.00000    
+                     TOTAL SIMULATION TIME =    119.000    
+
+end timestep
+
+
+start timestep kper="18" kstp="1" mode="normal"
+
+
+ OUTPUT CONTROL FOR STRESS PERIOD 18 IS REPEATED USING SETTINGS FROM A PREVIOUS STRESS PERIOD.
+ UBDSV1 SAVING           STO-SS ON UNIT   1014 AT TIME STEP      1, STRESS PERIOD     18
+ UBDSV1 SAVING     FLOW-JA-FACE ON UNIT   1014 AT TIME STEP      1, STRESS PERIOD     18
+ UBDSV06 SAVING              WEL IN MODEL VAL_MAX          PACKAGE VAL_MAX         CONNECTED TO MODEL VAL_MAX          PACKAGE WEL_0            ON UNIT   1014 AT TIME STEP      1, STRESS PERIOD     18
+
+ HEAD WILL BE SAVED ON UNIT 1015 AT END OF TIME STEP    1, STRESS PERIOD   18
+
+
+  VOLUME BUDGET FOR ENTIRE MODEL AT END OF TIME STEP    1, STRESS PERIOD  18
+  ---------------------------------------------------------------------------------------------------
+
+     CUMULATIVE VOLUME      L**3       RATES FOR THIS TIME STEP      L**3/T          PACKAGE NAME    
+     ------------------                 ------------------------                     ----------------
+
+           IN:                                      IN:
+           ---                                      ---
+              STO-SS =        1778.8837                STO-SS =           6.3978     STORAGE                          
+                 WEL =           0.0000                   WEL =           0.0000     WEL_0                            
+
+            TOTAL IN =        1778.8837              TOTAL IN =           6.3978
+
+          OUT:                                     OUT:
+          ----                                     ----
+              STO-SS =          68.4906                STO-SS =           2.3181     STORAGE                          
+                 WEL =        1710.3943                   WEL =           4.0797     WEL_0                            
+
+           TOTAL OUT =        1778.8849             TOTAL OUT =           6.3978
+
+            IN - OUT =      -1.2170E-03              IN - OUT =      -9.6977E-06
+
+ PERCENT DISCREPANCY =          -0.00     PERCENT DISCREPANCY =          -0.00
+
+
+
+
+         TIME SUMMARY AT END OF TIME STEP    1 IN STRESS PERIOD   18
+                          TIME STEP LENGTH =    7.00000    
+                        STRESS PERIOD TIME =    7.00000    
+                     TOTAL SIMULATION TIME =    126.000    
+
+end timestep
+
+
+start timestep kper="19" kstp="1" mode="normal"
+
+
+ OUTPUT CONTROL FOR STRESS PERIOD 19 IS REPEATED USING SETTINGS FROM A PREVIOUS STRESS PERIOD.
+ UBDSV1 SAVING           STO-SS ON UNIT   1014 AT TIME STEP      1, STRESS PERIOD     19
+ UBDSV1 SAVING     FLOW-JA-FACE ON UNIT   1014 AT TIME STEP      1, STRESS PERIOD     19
+ UBDSV06 SAVING              WEL IN MODEL VAL_MAX          PACKAGE VAL_MAX         CONNECTED TO MODEL VAL_MAX          PACKAGE WEL_0            ON UNIT   1014 AT TIME STEP      1, STRESS PERIOD     19
+
+ HEAD WILL BE SAVED ON UNIT 1015 AT END OF TIME STEP    1, STRESS PERIOD   19
+
+
+  VOLUME BUDGET FOR ENTIRE MODEL AT END OF TIME STEP    1, STRESS PERIOD  19
+  ---------------------------------------------------------------------------------------------------
+
+     CUMULATIVE VOLUME      L**3       RATES FOR THIS TIME STEP      L**3/T          PACKAGE NAME    
+     ------------------                 ------------------------                     ----------------
+
+           IN:                                      IN:
+           ---                                      ---
+              STO-SS =        1855.9743                STO-SS =          11.0130     STORAGE                          
+                 WEL =           0.0000                   WEL =           0.0000     WEL_0                            
+
+            TOTAL IN =        1855.9743              TOTAL IN =          11.0130
+
+          OUT:                                     OUT:
+          ----                                     ----
+              STO-SS =          68.4906                STO-SS =           0.0000     STORAGE                          
+                 WEL =        1787.4849                   WEL =          11.0130     WEL_0                            
+
+           TOTAL OUT =        1855.9756             TOTAL OUT =          11.0130
+
+            IN - OUT =      -1.2335E-03              IN - OUT =      -2.3473E-06
+
+ PERCENT DISCREPANCY =          -0.00     PERCENT DISCREPANCY =          -0.00
+
+
+
+
+         TIME SUMMARY AT END OF TIME STEP    1 IN STRESS PERIOD   19
+                          TIME STEP LENGTH =    7.00000    
+                        STRESS PERIOD TIME =    7.00000    
+                     TOTAL SIMULATION TIME =    133.000    
+
+end timestep
+
+
+start timestep kper="20" kstp="1" mode="normal"
+
+
+ OUTPUT CONTROL FOR STRESS PERIOD 20 IS REPEATED USING SETTINGS FROM A PREVIOUS STRESS PERIOD.
+ UBDSV1 SAVING           STO-SS ON UNIT   1014 AT TIME STEP      1, STRESS PERIOD     20
+ UBDSV1 SAVING     FLOW-JA-FACE ON UNIT   1014 AT TIME STEP      1, STRESS PERIOD     20
+ UBDSV06 SAVING              WEL IN MODEL VAL_MAX          PACKAGE VAL_MAX         CONNECTED TO MODEL VAL_MAX          PACKAGE WEL_0            ON UNIT   1014 AT TIME STEP      1, STRESS PERIOD     20
+
+ HEAD WILL BE SAVED ON UNIT 1015 AT END OF TIME STEP    1, STRESS PERIOD   20
+
+
+  VOLUME BUDGET FOR ENTIRE MODEL AT END OF TIME STEP    1, STRESS PERIOD  20
+  ---------------------------------------------------------------------------------------------------
+
+     CUMULATIVE VOLUME      L**3       RATES FOR THIS TIME STEP      L**3/T          PACKAGE NAME    
+     ------------------                 ------------------------                     ----------------
+
+           IN:                                      IN:
+           ---                                      ---
+              STO-SS =        1960.2331                STO-SS =          14.8941     STORAGE                          
+                 WEL =           0.0000                   WEL =           0.0000     WEL_0                            
+
+            TOTAL IN =        1960.2331              TOTAL IN =          14.8941
+
+          OUT:                                     OUT:
+          ----                                     ----
+              STO-SS =          68.4906                STO-SS =           0.0000     STORAGE                          
+                 WEL =        1891.7437                   WEL =          14.8941     WEL_0                            
+
+           TOTAL OUT =        1960.2344             TOTAL OUT =          14.8941
+
+            IN - OUT =      -1.2738E-03              IN - OUT =      -5.7583E-06
+
+ PERCENT DISCREPANCY =          -0.00     PERCENT DISCREPANCY =          -0.00
+
+
+
+
+         TIME SUMMARY AT END OF TIME STEP    1 IN STRESS PERIOD   20
+                          TIME STEP LENGTH =    7.00000    
+                        STRESS PERIOD TIME =    7.00000    
+                     TOTAL SIMULATION TIME =    140.000    
+
+end timestep
+
+
+start timestep kper="21" kstp="1" mode="normal"
+
+
+ OUTPUT CONTROL FOR STRESS PERIOD 21 IS REPEATED USING SETTINGS FROM A PREVIOUS STRESS PERIOD.
+ UBDSV1 SAVING           STO-SS ON UNIT   1014 AT TIME STEP      1, STRESS PERIOD     21
+ UBDSV1 SAVING     FLOW-JA-FACE ON UNIT   1014 AT TIME STEP      1, STRESS PERIOD     21
+ UBDSV06 SAVING              WEL IN MODEL VAL_MAX          PACKAGE VAL_MAX         CONNECTED TO MODEL VAL_MAX          PACKAGE WEL_0            ON UNIT   1014 AT TIME STEP      1, STRESS PERIOD     21
+
+ HEAD WILL BE SAVED ON UNIT 1015 AT END OF TIME STEP    1, STRESS PERIOD   21
+
+
+  VOLUME BUDGET FOR ENTIRE MODEL AT END OF TIME STEP    1, STRESS PERIOD  21
+  ---------------------------------------------------------------------------------------------------
+
+     CUMULATIVE VOLUME      L**3       RATES FOR THIS TIME STEP      L**3/T          PACKAGE NAME    
+     ------------------                 ------------------------                     ----------------
+
+           IN:                                      IN:
+           ---                                      ---
+              STO-SS =        2058.7543                STO-SS =          14.0745     STORAGE                          
+                 WEL =           0.0000                   WEL =           0.0000     WEL_0                            
+
+            TOTAL IN =        2058.7543              TOTAL IN =          14.0745
+
+          OUT:                                     OUT:
+          ----                                     ----
+              STO-SS =          68.4906                STO-SS =           0.0000     STORAGE                          
+                 WEL =        1990.2649                   WEL =          14.0744     WEL_0                            
+
+           TOTAL OUT =        2058.7555             TOTAL OUT =          14.0744
+
+            IN - OUT =      -1.1595E-03              IN - OUT =       1.6329E-05
+
+ PERCENT DISCREPANCY =          -0.00     PERCENT DISCREPANCY =           0.00
+
+
+
+
+         TIME SUMMARY AT END OF TIME STEP    1 IN STRESS PERIOD   21
+                          TIME STEP LENGTH =    7.00000    
+                        STRESS PERIOD TIME =    7.00000    
+                     TOTAL SIMULATION TIME =    147.000    
+
+end timestep
+
+
+start timestep kper="22" kstp="1" mode="normal"
+
+
+ OUTPUT CONTROL FOR STRESS PERIOD 22 IS REPEATED USING SETTINGS FROM A PREVIOUS STRESS PERIOD.
+ UBDSV1 SAVING           STO-SS ON UNIT   1014 AT TIME STEP      1, STRESS PERIOD     22
+ UBDSV1 SAVING     FLOW-JA-FACE ON UNIT   1014 AT TIME STEP      1, STRESS PERIOD     22
+ UBDSV06 SAVING              WEL IN MODEL VAL_MAX          PACKAGE VAL_MAX         CONNECTED TO MODEL VAL_MAX          PACKAGE WEL_0            ON UNIT   1014 AT TIME STEP      1, STRESS PERIOD     22
+
+ HEAD WILL BE SAVED ON UNIT 1015 AT END OF TIME STEP    1, STRESS PERIOD   22
+
+
+  VOLUME BUDGET FOR ENTIRE MODEL AT END OF TIME STEP    1, STRESS PERIOD  22
+  ---------------------------------------------------------------------------------------------------
+
+     CUMULATIVE VOLUME      L**3       RATES FOR THIS TIME STEP      L**3/T          PACKAGE NAME    
+     ------------------                 ------------------------                     ----------------
+
+           IN:                                      IN:
+           ---                                      ---
+              STO-SS =        2187.3605                STO-SS =          18.3723     STORAGE                          
+                 WEL =           0.0000                   WEL =           0.0000     WEL_0                            
+
+            TOTAL IN =        2187.3605              TOTAL IN =          18.3723
+
+          OUT:                                     OUT:
+          ----                                     ----
+              STO-SS =          68.4906                STO-SS =           0.0000     STORAGE                          
+                 WEL =        2118.8711                   WEL =          18.3723     WEL_0                            
+
+           TOTAL OUT =        2187.3617             TOTAL OUT =          18.3723
+
+            IN - OUT =      -1.1933E-03              IN - OUT =      -4.8367E-06
+
+ PERCENT DISCREPANCY =          -0.00     PERCENT DISCREPANCY =          -0.00
+
+
+
+
+         TIME SUMMARY AT END OF TIME STEP    1 IN STRESS PERIOD   22
+                          TIME STEP LENGTH =    7.00000    
+                        STRESS PERIOD TIME =    7.00000    
+                     TOTAL SIMULATION TIME =    154.000    
+
+end timestep
+
+
+start timestep kper="23" kstp="1" mode="normal"
+
+
+ OUTPUT CONTROL FOR STRESS PERIOD 23 IS REPEATED USING SETTINGS FROM A PREVIOUS STRESS PERIOD.
+ UBDSV1 SAVING           STO-SS ON UNIT   1014 AT TIME STEP      1, STRESS PERIOD     23
+ UBDSV1 SAVING     FLOW-JA-FACE ON UNIT   1014 AT TIME STEP      1, STRESS PERIOD     23
+ UBDSV06 SAVING              WEL IN MODEL VAL_MAX          PACKAGE VAL_MAX         CONNECTED TO MODEL VAL_MAX          PACKAGE WEL_0            ON UNIT   1014 AT TIME STEP      1, STRESS PERIOD     23
+
+ HEAD WILL BE SAVED ON UNIT 1015 AT END OF TIME STEP    1, STRESS PERIOD   23
+
+
+  VOLUME BUDGET FOR ENTIRE MODEL AT END OF TIME STEP    1, STRESS PERIOD  23
+  ---------------------------------------------------------------------------------------------------
+
+     CUMULATIVE VOLUME      L**3       RATES FOR THIS TIME STEP      L**3/T          PACKAGE NAME    
+     ------------------                 ------------------------                     ----------------
+
+           IN:                                      IN:
+           ---                                      ---
+              STO-SS =        2251.3314                STO-SS =           9.1387     STORAGE                          
+                 WEL =           0.0000                   WEL =           0.0000     WEL_0                            
+
+            TOTAL IN =        2251.3314              TOTAL IN =           9.1387
+
+          OUT:                                     OUT:
+          ----                                     ----
+              STO-SS =          73.0699                STO-SS =           0.6542     STORAGE                          
+                 WEL =        2178.2633                   WEL =           8.4846     WEL_0                            
+
+           TOTAL OUT =        2251.3332             TOTAL OUT =           9.1388
+
+            IN - OUT =      -1.8344E-03              IN - OUT =      -9.1585E-05
+
+ PERCENT DISCREPANCY =          -0.00     PERCENT DISCREPANCY =          -0.00
+
+
+
+
+         TIME SUMMARY AT END OF TIME STEP    1 IN STRESS PERIOD   23
+                          TIME STEP LENGTH =    7.00000    
+                        STRESS PERIOD TIME =    7.00000    
+                     TOTAL SIMULATION TIME =    161.000    
+
+end timestep
+
+
+start timestep kper="24" kstp="1" mode="normal"
+
+
+ OUTPUT CONTROL FOR STRESS PERIOD 24 IS REPEATED USING SETTINGS FROM A PREVIOUS STRESS PERIOD.
+ UBDSV1 SAVING           STO-SS ON UNIT   1014 AT TIME STEP      1, STRESS PERIOD     24
+ UBDSV1 SAVING     FLOW-JA-FACE ON UNIT   1014 AT TIME STEP      1, STRESS PERIOD     24
+ UBDSV06 SAVING              WEL IN MODEL VAL_MAX          PACKAGE VAL_MAX         CONNECTED TO MODEL VAL_MAX          PACKAGE WEL_0            ON UNIT   1014 AT TIME STEP      1, STRESS PERIOD     24
+
+ HEAD WILL BE SAVED ON UNIT 1015 AT END OF TIME STEP    1, STRESS PERIOD   24
+
+
+  VOLUME BUDGET FOR ENTIRE MODEL AT END OF TIME STEP    1, STRESS PERIOD  24
+  ---------------------------------------------------------------------------------------------------
+
+     CUMULATIVE VOLUME      L**3       RATES FOR THIS TIME STEP      L**3/T          PACKAGE NAME    
+     ------------------                 ------------------------                     ----------------
+
+           IN:                                      IN:
+           ---                                      ---
+              STO-SS =        2342.7354                STO-SS =          13.0577     STORAGE                          
+                 WEL =           0.0000                   WEL =           0.0000     WEL_0                            
+
+            TOTAL IN =        2342.7354              TOTAL IN =          13.0577
+
+          OUT:                                     OUT:
+          ----                                     ----
+              STO-SS =          73.0699                STO-SS =           0.0000     STORAGE                          
+                 WEL =        2269.6674                   WEL =          13.0577     WEL_0                            
+
+           TOTAL OUT =        2342.7373             TOTAL OUT =          13.0577
+
+            IN - OUT =      -1.8456E-03              IN - OUT =      -1.5995E-06
+
+ PERCENT DISCREPANCY =          -0.00     PERCENT DISCREPANCY =          -0.00
+
+
+
+
+         TIME SUMMARY AT END OF TIME STEP    1 IN STRESS PERIOD   24
+                          TIME STEP LENGTH =    7.00000    
+                        STRESS PERIOD TIME =    7.00000    
+                     TOTAL SIMULATION TIME =    168.000    
+
+end timestep
+
+
+start timestep kper="25" kstp="1" mode="normal"
+
+
+ OUTPUT CONTROL FOR STRESS PERIOD 25 IS REPEATED USING SETTINGS FROM A PREVIOUS STRESS PERIOD.
+ UBDSV1 SAVING           STO-SS ON UNIT   1014 AT TIME STEP      1, STRESS PERIOD     25
+ UBDSV1 SAVING     FLOW-JA-FACE ON UNIT   1014 AT TIME STEP      1, STRESS PERIOD     25
+ UBDSV06 SAVING              WEL IN MODEL VAL_MAX          PACKAGE VAL_MAX         CONNECTED TO MODEL VAL_MAX          PACKAGE WEL_0            ON UNIT   1014 AT TIME STEP      1, STRESS PERIOD     25
+
+ HEAD WILL BE SAVED ON UNIT 1015 AT END OF TIME STEP    1, STRESS PERIOD   25
+
+
+  VOLUME BUDGET FOR ENTIRE MODEL AT END OF TIME STEP    1, STRESS PERIOD  25
+  ---------------------------------------------------------------------------------------------------
+
+     CUMULATIVE VOLUME      L**3       RATES FOR THIS TIME STEP      L**3/T          PACKAGE NAME    
+     ------------------                 ------------------------                     ----------------
+
+           IN:                                      IN:
+           ---                                      ---
+              STO-SS =        2482.7354                STO-SS =          20.0000     STORAGE                          
+                 WEL =           0.0000                   WEL =           0.0000     WEL_0                            
+
+            TOTAL IN =        2482.7354              TOTAL IN =          20.0000
+
+          OUT:                                     OUT:
+          ----                                     ----
+              STO-SS =          73.0699                STO-SS =           0.0000     STORAGE                          
+                 WEL =        2409.6674                   WEL =          20.0000     WEL_0                            
+
+           TOTAL OUT =        2482.7373             TOTAL OUT =          20.0000
+
+            IN - OUT =      -1.8448E-03              IN - OUT =       1.1528E-07
+
+ PERCENT DISCREPANCY =          -0.00     PERCENT DISCREPANCY =           0.00
+
+
+
+
+         TIME SUMMARY AT END OF TIME STEP    1 IN STRESS PERIOD   25
+                          TIME STEP LENGTH =    7.00000    
+                        STRESS PERIOD TIME =    7.00000    
+                     TOTAL SIMULATION TIME =    175.000    
+
+end timestep
+
+
+start timestep kper="26" kstp="1" mode="normal"
+
+
+ OUTPUT CONTROL FOR STRESS PERIOD 26 IS REPEATED USING SETTINGS FROM A PREVIOUS STRESS PERIOD.
+ UBDSV1 SAVING           STO-SS ON UNIT   1014 AT TIME STEP      1, STRESS PERIOD     26
+ UBDSV1 SAVING     FLOW-JA-FACE ON UNIT   1014 AT TIME STEP      1, STRESS PERIOD     26
+ UBDSV06 SAVING              WEL IN MODEL VAL_MAX          PACKAGE VAL_MAX         CONNECTED TO MODEL VAL_MAX          PACKAGE WEL_0            ON UNIT   1014 AT TIME STEP      1, STRESS PERIOD     26
+
+ HEAD WILL BE SAVED ON UNIT 1015 AT END OF TIME STEP    1, STRESS PERIOD   26
+
+
+  VOLUME BUDGET FOR ENTIRE MODEL AT END OF TIME STEP    1, STRESS PERIOD  26
+  ---------------------------------------------------------------------------------------------------
+
+     CUMULATIVE VOLUME      L**3       RATES FOR THIS TIME STEP      L**3/T          PACKAGE NAME    
+     ------------------                 ------------------------                     ----------------
+
+           IN:                                      IN:
+           ---                                      ---
+              STO-SS =        2622.7354                STO-SS =          20.0000     STORAGE                          
+                 WEL =           0.0000                   WEL =           0.0000     WEL_0                            
+
+            TOTAL IN =        2622.7354              TOTAL IN =          20.0000
+
+          OUT:                                     OUT:
+          ----                                     ----
+              STO-SS =          73.0699                STO-SS =           0.0000     STORAGE                          
+                 WEL =        2549.6674                   WEL =          20.0000     WEL_0                            
+
+           TOTAL OUT =        2622.7373             TOTAL OUT =          20.0000
+
+            IN - OUT =      -1.8239E-03              IN - OUT =       2.9820E-06
+
+ PERCENT DISCREPANCY =          -0.00     PERCENT DISCREPANCY =           0.00
+
+
+
+
+         TIME SUMMARY AT END OF TIME STEP    1 IN STRESS PERIOD   26
+                          TIME STEP LENGTH =    7.00000    
+                        STRESS PERIOD TIME =    7.00000    
+                     TOTAL SIMULATION TIME =    182.000    
+
+end timestep
+
+
+start timestep kper="27" kstp="1" mode="normal"
+
+
+ OUTPUT CONTROL FOR STRESS PERIOD 27 IS REPEATED USING SETTINGS FROM A PREVIOUS STRESS PERIOD.
+ UBDSV1 SAVING           STO-SS ON UNIT   1014 AT TIME STEP      1, STRESS PERIOD     27
+ UBDSV1 SAVING     FLOW-JA-FACE ON UNIT   1014 AT TIME STEP      1, STRESS PERIOD     27
+ UBDSV06 SAVING              WEL IN MODEL VAL_MAX          PACKAGE VAL_MAX         CONNECTED TO MODEL VAL_MAX          PACKAGE WEL_0            ON UNIT   1014 AT TIME STEP      1, STRESS PERIOD     27
+
+ HEAD WILL BE SAVED ON UNIT 1015 AT END OF TIME STEP    1, STRESS PERIOD   27
+
+
+  VOLUME BUDGET FOR ENTIRE MODEL AT END OF TIME STEP    1, STRESS PERIOD  27
+  ---------------------------------------------------------------------------------------------------
+
+     CUMULATIVE VOLUME      L**3       RATES FOR THIS TIME STEP      L**3/T          PACKAGE NAME    
+     ------------------                 ------------------------                     ----------------
+
+           IN:                                      IN:
+           ---                                      ---
+              STO-SS =        2710.7397                STO-SS =          12.5720     STORAGE                          
+                 WEL =           0.0000                   WEL =           0.0000     WEL_0                            
+
+            TOTAL IN =        2710.7397              TOTAL IN =          12.5720
+
+          OUT:                                     OUT:
+          ----                                     ----
+              STO-SS =          74.7612                STO-SS =           0.2416     STORAGE                          
+                 WEL =        2635.9802                   WEL =          12.3304     WEL_0                            
+
+           TOTAL OUT =        2710.7414             TOTAL OUT =          12.5720
+
+            IN - OUT =      -1.7224E-03              IN - OUT =       1.4501E-05
+
+ PERCENT DISCREPANCY =          -0.00     PERCENT DISCREPANCY =           0.00
+
+
+
+
+         TIME SUMMARY AT END OF TIME STEP    1 IN STRESS PERIOD   27
+                          TIME STEP LENGTH =    7.00000    
+                        STRESS PERIOD TIME =    7.00000    
+                     TOTAL SIMULATION TIME =    189.000    
+
+end timestep
+
+
+start timestep kper="28" kstp="1" mode="normal"
+
+
+ OUTPUT CONTROL FOR STRESS PERIOD 28 IS REPEATED USING SETTINGS FROM A PREVIOUS STRESS PERIOD.
+ UBDSV1 SAVING           STO-SS ON UNIT   1014 AT TIME STEP      1, STRESS PERIOD     28
+ UBDSV1 SAVING     FLOW-JA-FACE ON UNIT   1014 AT TIME STEP      1, STRESS PERIOD     28
+ UBDSV06 SAVING              WEL IN MODEL VAL_MAX          PACKAGE VAL_MAX         CONNECTED TO MODEL VAL_MAX          PACKAGE WEL_0            ON UNIT   1014 AT TIME STEP      1, STRESS PERIOD     28
+
+ HEAD WILL BE SAVED ON UNIT 1015 AT END OF TIME STEP    1, STRESS PERIOD   28
+
+
+  VOLUME BUDGET FOR ENTIRE MODEL AT END OF TIME STEP    1, STRESS PERIOD  28
+  ---------------------------------------------------------------------------------------------------
+
+     CUMULATIVE VOLUME      L**3       RATES FOR THIS TIME STEP      L**3/T          PACKAGE NAME    
+     ------------------                 ------------------------                     ----------------
+
+           IN:                                      IN:
+           ---                                      ---
+              STO-SS =        2753.3441                STO-SS =           6.0863     STORAGE                          
+                 WEL =           0.0000                   WEL =           0.0000     WEL_0                            
+
+            TOTAL IN =        2753.3441              TOTAL IN =           6.0863
+
+          OUT:                                     OUT:
+          ----                                     ----
+              STO-SS =          82.6753                STO-SS =           1.1306     STORAGE                          
+                 WEL =        2670.6706                   WEL =           4.9558     WEL_0                            
+
+           TOTAL OUT =        2753.3459             TOTAL OUT =           6.0864
+
+            IN - OUT =      -1.7803E-03              IN - OUT =      -8.2734E-06
+
+ PERCENT DISCREPANCY =          -0.00     PERCENT DISCREPANCY =          -0.00
+
+
+
+
+         TIME SUMMARY AT END OF TIME STEP    1 IN STRESS PERIOD   28
+                          TIME STEP LENGTH =    7.00000    
+                        STRESS PERIOD TIME =    7.00000    
+                     TOTAL SIMULATION TIME =    196.000    
+
+end timestep
+
+
+start timestep kper="29" kstp="1" mode="normal"
+
+
+ OUTPUT CONTROL FOR STRESS PERIOD 29 IS REPEATED USING SETTINGS FROM A PREVIOUS STRESS PERIOD.
+ UBDSV1 SAVING           STO-SS ON UNIT   1014 AT TIME STEP      1, STRESS PERIOD     29
+ UBDSV1 SAVING     FLOW-JA-FACE ON UNIT   1014 AT TIME STEP      1, STRESS PERIOD     29
+ UBDSV06 SAVING              WEL IN MODEL VAL_MAX          PACKAGE VAL_MAX         CONNECTED TO MODEL VAL_MAX          PACKAGE WEL_0            ON UNIT   1014 AT TIME STEP      1, STRESS PERIOD     29
+
+ HEAD WILL BE SAVED ON UNIT 1015 AT END OF TIME STEP    1, STRESS PERIOD   29
+
+
+  VOLUME BUDGET FOR ENTIRE MODEL AT END OF TIME STEP    1, STRESS PERIOD  29
+  ---------------------------------------------------------------------------------------------------
+
+     CUMULATIVE VOLUME      L**3       RATES FOR THIS TIME STEP      L**3/T          PACKAGE NAME    
+     ------------------                 ------------------------                     ----------------
+
+           IN:                                      IN:
+           ---                                      ---
+              STO-SS =        2856.0233                STO-SS =          14.6685     STORAGE                          
+                 WEL =           0.0000                   WEL =           0.0000     WEL_0                            
+
+            TOTAL IN =        2856.0233              TOTAL IN =          14.6685
+
+          OUT:                                     OUT:
+          ----                                     ----
+              STO-SS =          82.6753                STO-SS =           0.0000     STORAGE                          
+                 WEL =        2773.3498                   WEL =          14.6685     WEL_0                            
+
+           TOTAL OUT =        2856.0251             TOTAL OUT =          14.6685
+
+            IN - OUT =      -1.7994E-03              IN - OUT =      -2.7194E-06
+
+ PERCENT DISCREPANCY =          -0.00     PERCENT DISCREPANCY =          -0.00
+
+
+
+
+         TIME SUMMARY AT END OF TIME STEP    1 IN STRESS PERIOD   29
+                          TIME STEP LENGTH =    7.00000    
+                        STRESS PERIOD TIME =    7.00000    
+                     TOTAL SIMULATION TIME =    203.000    
+
+end timestep
+
+
+start timestep kper="30" kstp="1" mode="normal"
+
+
+ OUTPUT CONTROL FOR STRESS PERIOD 30 IS REPEATED USING SETTINGS FROM A PREVIOUS STRESS PERIOD.
+ UBDSV1 SAVING           STO-SS ON UNIT   1014 AT TIME STEP      1, STRESS PERIOD     30
+ UBDSV1 SAVING     FLOW-JA-FACE ON UNIT   1014 AT TIME STEP      1, STRESS PERIOD     30
+ UBDSV06 SAVING              WEL IN MODEL VAL_MAX          PACKAGE VAL_MAX         CONNECTED TO MODEL VAL_MAX          PACKAGE WEL_0            ON UNIT   1014 AT TIME STEP      1, STRESS PERIOD     30
+
+ HEAD WILL BE SAVED ON UNIT 1015 AT END OF TIME STEP    1, STRESS PERIOD   30
+
+
+  VOLUME BUDGET FOR ENTIRE MODEL AT END OF TIME STEP    1, STRESS PERIOD  30
+  ---------------------------------------------------------------------------------------------------
+
+     CUMULATIVE VOLUME      L**3       RATES FOR THIS TIME STEP      L**3/T          PACKAGE NAME    
+     ------------------                 ------------------------                     ----------------
+
+           IN:                                      IN:
+           ---                                      ---
+              STO-SS =        2879.6009                STO-SS =           3.3682     STORAGE                          
+                 WEL =           0.0000                   WEL =           0.0000     WEL_0                            
+
+            TOTAL IN =        2879.6009              TOTAL IN =           3.3682
+
+          OUT:                                     OUT:
+          ----                                     ----
+              STO-SS =         103.6361                STO-SS =           2.9944     STORAGE                          
+                 WEL =        2775.9685                   WEL =           0.3741     WEL_0                            
+
+           TOTAL OUT =        2879.6046             TOTAL OUT =           3.3685
+
+            IN - OUT =      -3.6813E-03              IN - OUT =      -2.6885E-04
+
+ PERCENT DISCREPANCY =          -0.00     PERCENT DISCREPANCY =          -0.01
+
+
+
+
+         TIME SUMMARY AT END OF TIME STEP    1 IN STRESS PERIOD   30
+                          TIME STEP LENGTH =    7.00000    
+                        STRESS PERIOD TIME =    7.00000    
+                     TOTAL SIMULATION TIME =    210.000    
+
+end timestep
+
+
+start timestep kper="31" kstp="1" mode="normal"
+
+
+ OUTPUT CONTROL FOR STRESS PERIOD 31 IS REPEATED USING SETTINGS FROM A PREVIOUS STRESS PERIOD.
+ UBDSV1 SAVING           STO-SS ON UNIT   1014 AT TIME STEP      1, STRESS PERIOD     31
+ UBDSV1 SAVING     FLOW-JA-FACE ON UNIT   1014 AT TIME STEP      1, STRESS PERIOD     31
+ UBDSV06 SAVING              WEL IN MODEL VAL_MAX          PACKAGE VAL_MAX         CONNECTED TO MODEL VAL_MAX          PACKAGE WEL_0            ON UNIT   1014 AT TIME STEP      1, STRESS PERIOD     31
+
+ HEAD WILL BE SAVED ON UNIT 1015 AT END OF TIME STEP    1, STRESS PERIOD   31
+
+
+  VOLUME BUDGET FOR ENTIRE MODEL AT END OF TIME STEP    1, STRESS PERIOD  31
+  ---------------------------------------------------------------------------------------------------
+
+     CUMULATIVE VOLUME      L**3       RATES FOR THIS TIME STEP      L**3/T          PACKAGE NAME    
+     ------------------                 ------------------------                     ----------------
+
+           IN:                                      IN:
+           ---                                      ---
+              STO-SS =        3019.6009                STO-SS =          20.0000     STORAGE                          
+                 WEL =           0.0000                   WEL =           0.0000     WEL_0                            
+
+            TOTAL IN =        3019.6009              TOTAL IN =          20.0000
+
+          OUT:                                     OUT:
+          ----                                     ----
+              STO-SS =         103.6361                STO-SS =           0.0000     STORAGE                          
+                 WEL =        2915.9685                   WEL =          20.0000     WEL_0                            
+
+           TOTAL OUT =        3019.6046             TOTAL OUT =          20.0000
+
+            IN - OUT =      -3.6576E-03              IN - OUT =       3.3860E-06
+
+ PERCENT DISCREPANCY =          -0.00     PERCENT DISCREPANCY =           0.00
+
+
+
+
+         TIME SUMMARY AT END OF TIME STEP    1 IN STRESS PERIOD   31
+                          TIME STEP LENGTH =    7.00000    
+                        STRESS PERIOD TIME =    7.00000    
+                     TOTAL SIMULATION TIME =    217.000    
+
+end timestep
+
+
+start timestep kper="32" kstp="1" mode="normal"
+
+
+ OUTPUT CONTROL FOR STRESS PERIOD 32 IS REPEATED USING SETTINGS FROM A PREVIOUS STRESS PERIOD.
+ UBDSV1 SAVING           STO-SS ON UNIT   1014 AT TIME STEP      1, STRESS PERIOD     32
+ UBDSV1 SAVING     FLOW-JA-FACE ON UNIT   1014 AT TIME STEP      1, STRESS PERIOD     32
+ UBDSV06 SAVING              WEL IN MODEL VAL_MAX          PACKAGE VAL_MAX         CONNECTED TO MODEL VAL_MAX          PACKAGE WEL_0            ON UNIT   1014 AT TIME STEP      1, STRESS PERIOD     32
+
+ HEAD WILL BE SAVED ON UNIT 1015 AT END OF TIME STEP    1, STRESS PERIOD   32
+
+
+  VOLUME BUDGET FOR ENTIRE MODEL AT END OF TIME STEP    1, STRESS PERIOD  32
+  ---------------------------------------------------------------------------------------------------
+
+     CUMULATIVE VOLUME      L**3       RATES FOR THIS TIME STEP      L**3/T          PACKAGE NAME    
+     ------------------                 ------------------------                     ----------------
+
+           IN:                                      IN:
+           ---                                      ---
+              STO-SS =        3150.4587                STO-SS =          18.6940     STORAGE                          
+                 WEL =           0.0000                   WEL =           0.0000     WEL_0                            
+
+            TOTAL IN =        3150.4587              TOTAL IN =          18.6940
+
+          OUT:                                     OUT:
+          ----                                     ----
+              STO-SS =         103.6361                STO-SS =           0.0000     STORAGE                          
+                 WEL =        3046.8263                   WEL =          18.6940     WEL_0                            
+
+           TOTAL OUT =        3150.4624             TOTAL OUT =          18.6940
+
+            IN - OUT =      -3.6671E-03              IN - OUT =      -1.3549E-06
+
+ PERCENT DISCREPANCY =          -0.00     PERCENT DISCREPANCY =          -0.00
+
+
+
+
+         TIME SUMMARY AT END OF TIME STEP    1 IN STRESS PERIOD   32
+                          TIME STEP LENGTH =    7.00000    
+                        STRESS PERIOD TIME =    7.00000    
+                     TOTAL SIMULATION TIME =    224.000    
+
+end timestep
+
+
+start timestep kper="33" kstp="1" mode="normal"
+
+
+ OUTPUT CONTROL FOR STRESS PERIOD 33 IS REPEATED USING SETTINGS FROM A PREVIOUS STRESS PERIOD.
+ UBDSV1 SAVING           STO-SS ON UNIT   1014 AT TIME STEP      1, STRESS PERIOD     33
+ UBDSV1 SAVING     FLOW-JA-FACE ON UNIT   1014 AT TIME STEP      1, STRESS PERIOD     33
+ UBDSV06 SAVING              WEL IN MODEL VAL_MAX          PACKAGE VAL_MAX         CONNECTED TO MODEL VAL_MAX          PACKAGE WEL_0            ON UNIT   1014 AT TIME STEP      1, STRESS PERIOD     33
+
+ HEAD WILL BE SAVED ON UNIT 1015 AT END OF TIME STEP    1, STRESS PERIOD   33
+
+
+  VOLUME BUDGET FOR ENTIRE MODEL AT END OF TIME STEP    1, STRESS PERIOD  33
+  ---------------------------------------------------------------------------------------------------
+
+     CUMULATIVE VOLUME      L**3       RATES FOR THIS TIME STEP      L**3/T          PACKAGE NAME    
+     ------------------                 ------------------------                     ----------------
+
+           IN:                                      IN:
+           ---                                      ---
+              STO-SS =        3290.4587                STO-SS =          20.0000     STORAGE                          
+                 WEL =           0.0000                   WEL =           0.0000     WEL_0                            
+
+            TOTAL IN =        3290.4587              TOTAL IN =          20.0000
+
+          OUT:                                     OUT:
+          ----                                     ----
+              STO-SS =         103.6361                STO-SS =           0.0000     STORAGE                          
+                 WEL =        3186.8263                   WEL =          20.0000     WEL_0                            
+
+           TOTAL OUT =        3290.4624             TOTAL OUT =          20.0000
+
+            IN - OUT =      -3.6555E-03              IN - OUT =       1.6631E-06
+
+ PERCENT DISCREPANCY =          -0.00     PERCENT DISCREPANCY =           0.00
+
+
+
+
+         TIME SUMMARY AT END OF TIME STEP    1 IN STRESS PERIOD   33
+                          TIME STEP LENGTH =    7.00000    
+                        STRESS PERIOD TIME =    7.00000    
+                     TOTAL SIMULATION TIME =    231.000    
+
+end timestep
+
+
+start timestep kper="34" kstp="1" mode="normal"
+
+
+ OUTPUT CONTROL FOR STRESS PERIOD 34 IS REPEATED USING SETTINGS FROM A PREVIOUS STRESS PERIOD.
+ UBDSV1 SAVING           STO-SS ON UNIT   1014 AT TIME STEP      1, STRESS PERIOD     34
+ UBDSV1 SAVING     FLOW-JA-FACE ON UNIT   1014 AT TIME STEP      1, STRESS PERIOD     34
+ UBDSV06 SAVING              WEL IN MODEL VAL_MAX          PACKAGE VAL_MAX         CONNECTED TO MODEL VAL_MAX          PACKAGE WEL_0            ON UNIT   1014 AT TIME STEP      1, STRESS PERIOD     34
+
+ HEAD WILL BE SAVED ON UNIT 1015 AT END OF TIME STEP    1, STRESS PERIOD   34
+
+
+  VOLUME BUDGET FOR ENTIRE MODEL AT END OF TIME STEP    1, STRESS PERIOD  34
+  ---------------------------------------------------------------------------------------------------
+
+     CUMULATIVE VOLUME      L**3       RATES FOR THIS TIME STEP      L**3/T          PACKAGE NAME    
+     ------------------                 ------------------------                     ----------------
+
+           IN:                                      IN:
+           ---                                      ---
+              STO-SS =        3388.8379                STO-SS =          14.0542     STORAGE                          
+                 WEL =           0.0000                   WEL =           0.0000     WEL_0                            
+
+            TOTAL IN =        3388.8379              TOTAL IN =          14.0542
+
+          OUT:                                     OUT:
+          ----                                     ----
+              STO-SS =         104.2353                STO-SS =       8.5604E-02     STORAGE                          
+                 WEL =        3284.6061                   WEL =          13.9685     WEL_0                            
+
+           TOTAL OUT =        3388.8414             TOTAL OUT =          14.0541
+
+            IN - OUT =      -3.5281E-03              IN - OUT =       1.8196E-05
+
+ PERCENT DISCREPANCY =          -0.00     PERCENT DISCREPANCY =           0.00
+
+
+
+
+         TIME SUMMARY AT END OF TIME STEP    1 IN STRESS PERIOD   34
+                          TIME STEP LENGTH =    7.00000    
+                        STRESS PERIOD TIME =    7.00000    
+                     TOTAL SIMULATION TIME =    238.000    
+
+end timestep
+
+
+start timestep kper="35" kstp="1" mode="normal"
+
+
+ OUTPUT CONTROL FOR STRESS PERIOD 35 IS REPEATED USING SETTINGS FROM A PREVIOUS STRESS PERIOD.
+ UBDSV1 SAVING           STO-SS ON UNIT   1014 AT TIME STEP      1, STRESS PERIOD     35
+ UBDSV1 SAVING     FLOW-JA-FACE ON UNIT   1014 AT TIME STEP      1, STRESS PERIOD     35
+ UBDSV06 SAVING              WEL IN MODEL VAL_MAX          PACKAGE VAL_MAX         CONNECTED TO MODEL VAL_MAX          PACKAGE WEL_0            ON UNIT   1014 AT TIME STEP      1, STRESS PERIOD     35
+
+ HEAD WILL BE SAVED ON UNIT 1015 AT END OF TIME STEP    1, STRESS PERIOD   35
+
+
+  VOLUME BUDGET FOR ENTIRE MODEL AT END OF TIME STEP    1, STRESS PERIOD  35
+  ---------------------------------------------------------------------------------------------------
+
+     CUMULATIVE VOLUME      L**3       RATES FOR THIS TIME STEP      L**3/T          PACKAGE NAME    
+     ------------------                 ------------------------                     ----------------
+
+           IN:                                      IN:
+           ---                                      ---
+              STO-SS =        3528.8379                STO-SS =          20.0000     STORAGE                          
+                 WEL =           0.0000                   WEL =           0.0000     WEL_0                            
+
+            TOTAL IN =        3528.8379              TOTAL IN =          20.0000
+
+          OUT:                                     OUT:
+          ----                                     ----
+              STO-SS =         104.2353                STO-SS =           0.0000     STORAGE                          
+                 WEL =        3424.6061                   WEL =          20.0000     WEL_0                            
+
+           TOTAL OUT =        3528.8414             TOTAL OUT =          20.0000
+
+            IN - OUT =      -3.5466E-03              IN - OUT =      -2.6397E-06
+
+ PERCENT DISCREPANCY =          -0.00     PERCENT DISCREPANCY =          -0.00
+
+
+
+
+         TIME SUMMARY AT END OF TIME STEP    1 IN STRESS PERIOD   35
+                          TIME STEP LENGTH =    7.00000    
+                        STRESS PERIOD TIME =    7.00000    
+                     TOTAL SIMULATION TIME =    245.000    
+
+end timestep
+
+
+start timestep kper="36" kstp="1" mode="normal"
+
+
+ OUTPUT CONTROL FOR STRESS PERIOD 36 IS REPEATED USING SETTINGS FROM A PREVIOUS STRESS PERIOD.
+ UBDSV1 SAVING           STO-SS ON UNIT   1014 AT TIME STEP      1, STRESS PERIOD     36
+ UBDSV1 SAVING     FLOW-JA-FACE ON UNIT   1014 AT TIME STEP      1, STRESS PERIOD     36
+ UBDSV06 SAVING              WEL IN MODEL VAL_MAX          PACKAGE VAL_MAX         CONNECTED TO MODEL VAL_MAX          PACKAGE WEL_0            ON UNIT   1014 AT TIME STEP      1, STRESS PERIOD     36
+
+ HEAD WILL BE SAVED ON UNIT 1015 AT END OF TIME STEP    1, STRESS PERIOD   36
+
+
+  VOLUME BUDGET FOR ENTIRE MODEL AT END OF TIME STEP    1, STRESS PERIOD  36
+  ---------------------------------------------------------------------------------------------------
+
+     CUMULATIVE VOLUME      L**3       RATES FOR THIS TIME STEP      L**3/T          PACKAGE NAME    
+     ------------------                 ------------------------                     ----------------
+
+           IN:                                      IN:
+           ---                                      ---
+              STO-SS =        3586.9815                STO-SS =           8.3062     STORAGE                          
+                 WEL =           0.0000                   WEL =           0.0000     WEL_0                            
+
+            TOTAL IN =        3586.9815              TOTAL IN =           8.3062
+
+          OUT:                                     OUT:
+          ----                                     ----
+              STO-SS =         113.7837                STO-SS =           1.3641     STORAGE                          
+                 WEL =        3473.2014                   WEL =           6.9422     WEL_0                            
+
+           TOTAL OUT =        3586.9851             TOTAL OUT =           8.3062
+
+            IN - OUT =      -3.5784E-03              IN - OUT =      -4.5394E-06
+
+ PERCENT DISCREPANCY =          -0.00     PERCENT DISCREPANCY =          -0.00
+
+
+
+
+         TIME SUMMARY AT END OF TIME STEP    1 IN STRESS PERIOD   36
+                          TIME STEP LENGTH =    7.00000    
+                        STRESS PERIOD TIME =    7.00000    
+                     TOTAL SIMULATION TIME =    252.000    
+
+end timestep
+
+
+start timestep kper="37" kstp="1" mode="normal"
+
+
+ OUTPUT CONTROL FOR STRESS PERIOD 37 IS REPEATED USING SETTINGS FROM A PREVIOUS STRESS PERIOD.
+ UBDSV1 SAVING           STO-SS ON UNIT   1014 AT TIME STEP      1, STRESS PERIOD     37
+ UBDSV1 SAVING     FLOW-JA-FACE ON UNIT   1014 AT TIME STEP      1, STRESS PERIOD     37
+ UBDSV06 SAVING              WEL IN MODEL VAL_MAX          PACKAGE VAL_MAX         CONNECTED TO MODEL VAL_MAX          PACKAGE WEL_0            ON UNIT   1014 AT TIME STEP      1, STRESS PERIOD     37
+
+ HEAD WILL BE SAVED ON UNIT 1015 AT END OF TIME STEP    1, STRESS PERIOD   37
+
+
+  VOLUME BUDGET FOR ENTIRE MODEL AT END OF TIME STEP    1, STRESS PERIOD  37
+  ---------------------------------------------------------------------------------------------------
+
+     CUMULATIVE VOLUME      L**3       RATES FOR THIS TIME STEP      L**3/T          PACKAGE NAME    
+     ------------------                 ------------------------                     ----------------
+
+           IN:                                      IN:
+           ---                                      ---
+              STO-SS =        3726.9815                STO-SS =          20.0000     STORAGE                          
+                 WEL =           0.0000                   WEL =           0.0000     WEL_0                            
+
+            TOTAL IN =        3726.9815              TOTAL IN =          20.0000
+
+          OUT:                                     OUT:
+          ----                                     ----
+              STO-SS =         113.7837                STO-SS =           0.0000     STORAGE                          
+                 WEL =        3613.2014                   WEL =          20.0000     WEL_0                            
+
+           TOTAL OUT =        3726.9851             TOTAL OUT =          20.0000
+
+            IN - OUT =      -3.5713E-03              IN - OUT =       1.0038E-06
+
+ PERCENT DISCREPANCY =          -0.00     PERCENT DISCREPANCY =           0.00
+
+
+
+
+         TIME SUMMARY AT END OF TIME STEP    1 IN STRESS PERIOD   37
+                          TIME STEP LENGTH =    7.00000    
+                        STRESS PERIOD TIME =    7.00000    
+                     TOTAL SIMULATION TIME =    259.000    
+
+end timestep
+
+
+start timestep kper="38" kstp="1" mode="normal"
+
+
+ OUTPUT CONTROL FOR STRESS PERIOD 38 IS REPEATED USING SETTINGS FROM A PREVIOUS STRESS PERIOD.
+ UBDSV1 SAVING           STO-SS ON UNIT   1014 AT TIME STEP      1, STRESS PERIOD     38
+ UBDSV1 SAVING     FLOW-JA-FACE ON UNIT   1014 AT TIME STEP      1, STRESS PERIOD     38
+ UBDSV06 SAVING              WEL IN MODEL VAL_MAX          PACKAGE VAL_MAX         CONNECTED TO MODEL VAL_MAX          PACKAGE WEL_0            ON UNIT   1014 AT TIME STEP      1, STRESS PERIOD     38
+
+ HEAD WILL BE SAVED ON UNIT 1015 AT END OF TIME STEP    1, STRESS PERIOD   38
+
+
+  VOLUME BUDGET FOR ENTIRE MODEL AT END OF TIME STEP    1, STRESS PERIOD  38
+  ---------------------------------------------------------------------------------------------------
+
+     CUMULATIVE VOLUME      L**3       RATES FOR THIS TIME STEP      L**3/T          PACKAGE NAME    
+     ------------------                 ------------------------                     ----------------
+
+           IN:                                      IN:
+           ---                                      ---
+              STO-SS =        3891.1775                STO-SS =          23.4566     STORAGE                          
+                 WEL =           0.0000                   WEL =           0.0000     WEL_0                            
+
+            TOTAL IN =        3891.1775              TOTAL IN =          23.4566
+
+          OUT:                                     OUT:
+          ----                                     ----
+              STO-SS =         113.7837                STO-SS =           0.0000     STORAGE                          
+                 WEL =        3777.3974                   WEL =          23.4566     WEL_0                            
+
+           TOTAL OUT =        3891.1811             TOTAL OUT =          23.4566
+
+            IN - OUT =      -3.5977E-03              IN - OUT =      -3.7687E-06
+
+ PERCENT DISCREPANCY =          -0.00     PERCENT DISCREPANCY =          -0.00
+
+
+
+
+         TIME SUMMARY AT END OF TIME STEP    1 IN STRESS PERIOD   38
+                          TIME STEP LENGTH =    7.00000    
+                        STRESS PERIOD TIME =    7.00000    
+                     TOTAL SIMULATION TIME =    266.000    
+
+end timestep
+
+
+start timestep kper="39" kstp="1" mode="normal"
+
+
+ OUTPUT CONTROL FOR STRESS PERIOD 39 IS REPEATED USING SETTINGS FROM A PREVIOUS STRESS PERIOD.
+ UBDSV1 SAVING           STO-SS ON UNIT   1014 AT TIME STEP      1, STRESS PERIOD     39
+ UBDSV1 SAVING     FLOW-JA-FACE ON UNIT   1014 AT TIME STEP      1, STRESS PERIOD     39
+ UBDSV06 SAVING              WEL IN MODEL VAL_MAX          PACKAGE VAL_MAX         CONNECTED TO MODEL VAL_MAX          PACKAGE WEL_0            ON UNIT   1014 AT TIME STEP      1, STRESS PERIOD     39
+
+ HEAD WILL BE SAVED ON UNIT 1015 AT END OF TIME STEP    1, STRESS PERIOD   39
+
+
+  VOLUME BUDGET FOR ENTIRE MODEL AT END OF TIME STEP    1, STRESS PERIOD  39
+  ---------------------------------------------------------------------------------------------------
+
+     CUMULATIVE VOLUME      L**3       RATES FOR THIS TIME STEP      L**3/T          PACKAGE NAME    
+     ------------------                 ------------------------                     ----------------
+
+           IN:                                      IN:
+           ---                                      ---
+              STO-SS =        4031.1925                STO-SS =          20.0022     STORAGE                          
+                 WEL =           0.0000                   WEL =           0.0000     WEL_0                            
+
+            TOTAL IN =        4031.1925              TOTAL IN =          20.0022
+
+          OUT:                                     OUT:
+          ----                                     ----
+              STO-SS =         113.7986                STO-SS =       2.1370E-03     STORAGE                          
+                 WEL =        3917.3974                   WEL =          20.0000     WEL_0                            
+
+           TOTAL OUT =        4031.1960             TOTAL OUT =          20.0021
+
+            IN - OUT =      -3.5038E-03              IN - OUT =       1.3416E-05
+
+ PERCENT DISCREPANCY =          -0.00     PERCENT DISCREPANCY =           0.00
+
+
+
+
+         TIME SUMMARY AT END OF TIME STEP    1 IN STRESS PERIOD   39
+                          TIME STEP LENGTH =    7.00000    
+                        STRESS PERIOD TIME =    7.00000    
+                     TOTAL SIMULATION TIME =    273.000    
+
+end timestep
+
+
+start timestep kper="40" kstp="1" mode="normal"
+
+
+ OUTPUT CONTROL FOR STRESS PERIOD 40 IS REPEATED USING SETTINGS FROM A PREVIOUS STRESS PERIOD.
+ UBDSV1 SAVING           STO-SS ON UNIT   1014 AT TIME STEP      1, STRESS PERIOD     40
+ UBDSV1 SAVING     FLOW-JA-FACE ON UNIT   1014 AT TIME STEP      1, STRESS PERIOD     40
+ UBDSV06 SAVING              WEL IN MODEL VAL_MAX          PACKAGE VAL_MAX         CONNECTED TO MODEL VAL_MAX          PACKAGE WEL_0            ON UNIT   1014 AT TIME STEP      1, STRESS PERIOD     40
+
+ HEAD WILL BE SAVED ON UNIT 1015 AT END OF TIME STEP    1, STRESS PERIOD   40
+
+
+  VOLUME BUDGET FOR ENTIRE MODEL AT END OF TIME STEP    1, STRESS PERIOD  40
+  ---------------------------------------------------------------------------------------------------
+
+     CUMULATIVE VOLUME      L**3       RATES FOR THIS TIME STEP      L**3/T          PACKAGE NAME    
+     ------------------                 ------------------------                     ----------------
+
+           IN:                                      IN:
+           ---                                      ---
+              STO-SS =        4119.1788                STO-SS =          12.5695     STORAGE                          
+                 WEL =           0.0000                   WEL =           0.0000     WEL_0                            
+
+            TOTAL IN =        4119.1788              TOTAL IN =          12.5695
+
+          OUT:                                     OUT:
+          ----                                     ----
+              STO-SS =         116.0305                STO-SS =           0.3188     STORAGE                          
+                 WEL =        4003.1520                   WEL =          12.2507     WEL_0                            
+
+           TOTAL OUT =        4119.1825             TOTAL OUT =          12.5695
+
+            IN - OUT =      -3.7567E-03              IN - OUT =      -3.6129E-05
+
+ PERCENT DISCREPANCY =          -0.00     PERCENT DISCREPANCY =          -0.00
+
+
+
+
+         TIME SUMMARY AT END OF TIME STEP    1 IN STRESS PERIOD   40
+                          TIME STEP LENGTH =    7.00000    
+                        STRESS PERIOD TIME =    7.00000    
+                     TOTAL SIMULATION TIME =    280.000    
+
+end timestep
+
+
+start timestep kper="41" kstp="1" mode="normal"
+
+
+ OUTPUT CONTROL FOR STRESS PERIOD 41 IS REPEATED USING SETTINGS FROM A PREVIOUS STRESS PERIOD.
+ UBDSV1 SAVING           STO-SS ON UNIT   1014 AT TIME STEP      1, STRESS PERIOD     41
+ UBDSV1 SAVING     FLOW-JA-FACE ON UNIT   1014 AT TIME STEP      1, STRESS PERIOD     41
+ UBDSV06 SAVING              WEL IN MODEL VAL_MAX          PACKAGE VAL_MAX         CONNECTED TO MODEL VAL_MAX          PACKAGE WEL_0            ON UNIT   1014 AT TIME STEP      1, STRESS PERIOD     41
+
+ HEAD WILL BE SAVED ON UNIT 1015 AT END OF TIME STEP    1, STRESS PERIOD   41
+
+
+  VOLUME BUDGET FOR ENTIRE MODEL AT END OF TIME STEP    1, STRESS PERIOD  41
+  ---------------------------------------------------------------------------------------------------
+
+     CUMULATIVE VOLUME      L**3       RATES FOR THIS TIME STEP      L**3/T          PACKAGE NAME    
+     ------------------                 ------------------------                     ----------------
+
+           IN:                                      IN:
+           ---                                      ---
+              STO-SS =        4212.4620                STO-SS =          13.3262     STORAGE                          
+                 WEL =           0.0000                   WEL =           0.0000     WEL_0                            
+
+            TOTAL IN =        4212.4620              TOTAL IN =          13.3262
+
+          OUT:                                     OUT:
+          ----                                     ----
+              STO-SS =         116.0305                STO-SS =           0.0000     STORAGE                          
+                 WEL =        4096.4351                   WEL =          13.3262     WEL_0                            
+
+           TOTAL OUT =        4212.4657             TOTAL OUT =          13.3262
+
+            IN - OUT =      -3.7084E-03              IN - OUT =       6.9010E-06
+
+ PERCENT DISCREPANCY =          -0.00     PERCENT DISCREPANCY =           0.00
+
+
+
+
+         TIME SUMMARY AT END OF TIME STEP    1 IN STRESS PERIOD   41
+                          TIME STEP LENGTH =    7.00000    
+                        STRESS PERIOD TIME =    7.00000    
+                     TOTAL SIMULATION TIME =    287.000    
+
+end timestep
+
+
+start timestep kper="42" kstp="1" mode="normal"
+
+
+ OUTPUT CONTROL FOR STRESS PERIOD 42 IS REPEATED USING SETTINGS FROM A PREVIOUS STRESS PERIOD.
+ UBDSV1 SAVING           STO-SS ON UNIT   1014 AT TIME STEP      1, STRESS PERIOD     42
+ UBDSV1 SAVING     FLOW-JA-FACE ON UNIT   1014 AT TIME STEP      1, STRESS PERIOD     42
+ UBDSV06 SAVING              WEL IN MODEL VAL_MAX          PACKAGE VAL_MAX         CONNECTED TO MODEL VAL_MAX          PACKAGE WEL_0            ON UNIT   1014 AT TIME STEP      1, STRESS PERIOD     42
+
+ HEAD WILL BE SAVED ON UNIT 1015 AT END OF TIME STEP    1, STRESS PERIOD   42
+
+
+  VOLUME BUDGET FOR ENTIRE MODEL AT END OF TIME STEP    1, STRESS PERIOD  42
+  ---------------------------------------------------------------------------------------------------
+
+     CUMULATIVE VOLUME      L**3       RATES FOR THIS TIME STEP      L**3/T          PACKAGE NAME    
+     ------------------                 ------------------------                     ----------------
+
+           IN:                                      IN:
+           ---                                      ---
+              STO-SS =        4282.1618                STO-SS =           9.9571     STORAGE                          
+                 WEL =           0.0000                   WEL =           0.0000     WEL_0                            
+
+            TOTAL IN =        4282.1618              TOTAL IN =           9.9571
+
+          OUT:                                     OUT:
+          ----                                     ----
+              STO-SS =         116.3099                STO-SS =       3.9916E-02     STORAGE                          
+                 WEL =        4165.8558                   WEL =           9.9172     WEL_0                            
+
+           TOTAL OUT =        4282.1657             TOTAL OUT =           9.9572
+
+            IN - OUT =      -3.8864E-03              IN - OUT =      -2.5433E-05
+
+ PERCENT DISCREPANCY =          -0.00     PERCENT DISCREPANCY =          -0.00
+
+
+
+
+         TIME SUMMARY AT END OF TIME STEP    1 IN STRESS PERIOD   42
+                          TIME STEP LENGTH =    7.00000    
+                        STRESS PERIOD TIME =    7.00000    
+                     TOTAL SIMULATION TIME =    294.000    
+
+end timestep
+
+
+start timestep kper="43" kstp="1" mode="normal"
+
+
+ OUTPUT CONTROL FOR STRESS PERIOD 43 IS REPEATED USING SETTINGS FROM A PREVIOUS STRESS PERIOD.
+ UBDSV1 SAVING           STO-SS ON UNIT   1014 AT TIME STEP      1, STRESS PERIOD     43
+ UBDSV1 SAVING     FLOW-JA-FACE ON UNIT   1014 AT TIME STEP      1, STRESS PERIOD     43
+ UBDSV06 SAVING              WEL IN MODEL VAL_MAX          PACKAGE VAL_MAX         CONNECTED TO MODEL VAL_MAX          PACKAGE WEL_0            ON UNIT   1014 AT TIME STEP      1, STRESS PERIOD     43
+
+ HEAD WILL BE SAVED ON UNIT 1015 AT END OF TIME STEP    1, STRESS PERIOD   43
+
+
+  VOLUME BUDGET FOR ENTIRE MODEL AT END OF TIME STEP    1, STRESS PERIOD  43
+  ---------------------------------------------------------------------------------------------------
+
+     CUMULATIVE VOLUME      L**3       RATES FOR THIS TIME STEP      L**3/T          PACKAGE NAME    
+     ------------------                 ------------------------                     ----------------
+
+           IN:                                      IN:
+           ---                                      ---
+              STO-SS =        4352.7779                STO-SS =          10.0880     STORAGE                          
+                 WEL =           0.0000                   WEL =           0.0000     WEL_0                            
+
+            TOTAL IN =        4352.7779              TOTAL IN =          10.0880
+
+          OUT:                                     OUT:
+          ----                                     ----
+              STO-SS =         116.3099                STO-SS =           0.0000     STORAGE                          
+                 WEL =        4236.4716                   WEL =          10.0880     WEL_0                            
+
+           TOTAL OUT =        4352.7816             TOTAL OUT =          10.0880
+
+            IN - OUT =      -3.6312E-03              IN - OUT =       3.6463E-05
+
+ PERCENT DISCREPANCY =          -0.00     PERCENT DISCREPANCY =           0.00
+
+
+
+
+         TIME SUMMARY AT END OF TIME STEP    1 IN STRESS PERIOD   43
+                          TIME STEP LENGTH =    7.00000    
+                        STRESS PERIOD TIME =    7.00000    
+                     TOTAL SIMULATION TIME =    301.000    
+
+end timestep
+
+
+start timestep kper="44" kstp="1" mode="normal"
+
+
+ OUTPUT CONTROL FOR STRESS PERIOD 44 IS REPEATED USING SETTINGS FROM A PREVIOUS STRESS PERIOD.
+ UBDSV1 SAVING           STO-SS ON UNIT   1014 AT TIME STEP      1, STRESS PERIOD     44
+ UBDSV1 SAVING     FLOW-JA-FACE ON UNIT   1014 AT TIME STEP      1, STRESS PERIOD     44
+ UBDSV06 SAVING              WEL IN MODEL VAL_MAX          PACKAGE VAL_MAX         CONNECTED TO MODEL VAL_MAX          PACKAGE WEL_0            ON UNIT   1014 AT TIME STEP      1, STRESS PERIOD     44
+
+ HEAD WILL BE SAVED ON UNIT 1015 AT END OF TIME STEP    1, STRESS PERIOD   44
+
+
+  VOLUME BUDGET FOR ENTIRE MODEL AT END OF TIME STEP    1, STRESS PERIOD  44
+  ---------------------------------------------------------------------------------------------------
+
+     CUMULATIVE VOLUME      L**3       RATES FOR THIS TIME STEP      L**3/T          PACKAGE NAME    
+     ------------------                 ------------------------                     ----------------
+
+           IN:                                      IN:
+           ---                                      ---
+              STO-SS =        4395.7364                STO-SS =           6.1369     STORAGE                          
+                 WEL =           0.0000                   WEL =           0.0000     WEL_0                            
+
+            TOTAL IN =        4395.7364              TOTAL IN =           6.1369
+
+          OUT:                                     OUT:
+          ----                                     ----
+              STO-SS =         117.7802                STO-SS =           0.2100     STORAGE                          
+                 WEL =        4277.9599                   WEL =           5.9269     WEL_0                            
+
+           TOTAL OUT =        4395.7401             TOTAL OUT =           6.1369
+
+            IN - OUT =      -3.7782E-03              IN - OUT =      -2.1006E-05
+
+ PERCENT DISCREPANCY =          -0.00     PERCENT DISCREPANCY =          -0.00
+
+
+
+
+         TIME SUMMARY AT END OF TIME STEP    1 IN STRESS PERIOD   44
+                          TIME STEP LENGTH =    7.00000    
+                        STRESS PERIOD TIME =    7.00000    
+                     TOTAL SIMULATION TIME =    308.000    
+
+end timestep
+
+
+start timestep kper="45" kstp="1" mode="normal"
+
+
+ OUTPUT CONTROL FOR STRESS PERIOD 45 IS REPEATED USING SETTINGS FROM A PREVIOUS STRESS PERIOD.
+ UBDSV1 SAVING           STO-SS ON UNIT   1014 AT TIME STEP      1, STRESS PERIOD     45
+ UBDSV1 SAVING     FLOW-JA-FACE ON UNIT   1014 AT TIME STEP      1, STRESS PERIOD     45
+ UBDSV06 SAVING              WEL IN MODEL VAL_MAX          PACKAGE VAL_MAX         CONNECTED TO MODEL VAL_MAX          PACKAGE WEL_0            ON UNIT   1014 AT TIME STEP      1, STRESS PERIOD     45
+
+ HEAD WILL BE SAVED ON UNIT 1015 AT END OF TIME STEP    1, STRESS PERIOD   45
+
+
+  VOLUME BUDGET FOR ENTIRE MODEL AT END OF TIME STEP    1, STRESS PERIOD  45
+  ---------------------------------------------------------------------------------------------------
+
+     CUMULATIVE VOLUME      L**3       RATES FOR THIS TIME STEP      L**3/T          PACKAGE NAME    
+     ------------------                 ------------------------                     ----------------
+
+           IN:                                      IN:
+           ---                                      ---
+              STO-SS =        4419.4507                STO-SS =           3.3878     STORAGE                          
+                 WEL =           0.0000                   WEL =           0.0000     WEL_0                            
+
+            TOTAL IN =        4419.4507              TOTAL IN =           3.3878
+
+          OUT:                                     OUT:
+          ----                                     ----
+              STO-SS =         120.6432                STO-SS =           0.4090     STORAGE                          
+                 WEL =        4298.8114                   WEL =           2.9788     WEL_0                            
+
+           TOTAL OUT =        4419.4546             TOTAL OUT =           3.3878
+
+            IN - OUT =      -3.9262E-03              IN - OUT =      -2.1132E-05
+
+ PERCENT DISCREPANCY =          -0.00     PERCENT DISCREPANCY =          -0.00
+
+
+
+
+         TIME SUMMARY AT END OF TIME STEP    1 IN STRESS PERIOD   45
+                          TIME STEP LENGTH =    7.00000    
+                        STRESS PERIOD TIME =    7.00000    
+                     TOTAL SIMULATION TIME =    315.000    
+
+end timestep
+
+
+start timestep kper="46" kstp="1" mode="normal"
+
+
+ OUTPUT CONTROL FOR STRESS PERIOD 46 IS REPEATED USING SETTINGS FROM A PREVIOUS STRESS PERIOD.
+ UBDSV1 SAVING           STO-SS ON UNIT   1014 AT TIME STEP      1, STRESS PERIOD     46
+ UBDSV1 SAVING     FLOW-JA-FACE ON UNIT   1014 AT TIME STEP      1, STRESS PERIOD     46
+ UBDSV06 SAVING              WEL IN MODEL VAL_MAX          PACKAGE VAL_MAX         CONNECTED TO MODEL VAL_MAX          PACKAGE WEL_0            ON UNIT   1014 AT TIME STEP      1, STRESS PERIOD     46
+
+ HEAD WILL BE SAVED ON UNIT 1015 AT END OF TIME STEP    1, STRESS PERIOD   46
+
+
+  VOLUME BUDGET FOR ENTIRE MODEL AT END OF TIME STEP    1, STRESS PERIOD  46
+  ---------------------------------------------------------------------------------------------------
+
+     CUMULATIVE VOLUME      L**3       RATES FOR THIS TIME STEP      L**3/T          PACKAGE NAME    
+     ------------------                 ------------------------                     ----------------
+
+           IN:                                      IN:
+           ---                                      ---
+              STO-SS =        4452.8965                STO-SS =           4.7780     STORAGE                          
+                 WEL =           0.0000                   WEL =           0.0000     WEL_0                            
+
+            TOTAL IN =        4452.8965              TOTAL IN =           4.7780
+
+          OUT:                                     OUT:
+          ----                                     ----
+              STO-SS =         120.6432                STO-SS =           0.0000     STORAGE                          
+                 WEL =        4332.2576                   WEL =           4.7780     WEL_0                            
+
+           TOTAL OUT =        4452.9008             TOTAL OUT =           4.7780
+
+            IN - OUT =      -4.2209E-03              IN - OUT =      -4.2100E-05
+
+ PERCENT DISCREPANCY =          -0.00     PERCENT DISCREPANCY =          -0.00
+
+
+
+
+         TIME SUMMARY AT END OF TIME STEP    1 IN STRESS PERIOD   46
+                          TIME STEP LENGTH =    7.00000    
+                        STRESS PERIOD TIME =    7.00000    
+                     TOTAL SIMULATION TIME =    322.000    
+
+end timestep
+
+
+start timestep kper="47" kstp="1" mode="normal"
+
+
+ OUTPUT CONTROL FOR STRESS PERIOD 47 IS REPEATED USING SETTINGS FROM A PREVIOUS STRESS PERIOD.
+ UBDSV1 SAVING           STO-SS ON UNIT   1014 AT TIME STEP      1, STRESS PERIOD     47
+ UBDSV1 SAVING     FLOW-JA-FACE ON UNIT   1014 AT TIME STEP      1, STRESS PERIOD     47
+ UBDSV06 SAVING              WEL IN MODEL VAL_MAX          PACKAGE VAL_MAX         CONNECTED TO MODEL VAL_MAX          PACKAGE WEL_0            ON UNIT   1014 AT TIME STEP      1, STRESS PERIOD     47
+
+ HEAD WILL BE SAVED ON UNIT 1015 AT END OF TIME STEP    1, STRESS PERIOD   47
+
+
+  VOLUME BUDGET FOR ENTIRE MODEL AT END OF TIME STEP    1, STRESS PERIOD  47
+  ---------------------------------------------------------------------------------------------------
+
+     CUMULATIVE VOLUME      L**3       RATES FOR THIS TIME STEP      L**3/T          PACKAGE NAME    
+     ------------------                 ------------------------                     ----------------
+
+           IN:                                      IN:
+           ---                                      ---
+              STO-SS =        4592.8965                STO-SS =          20.0000     STORAGE                          
+                 WEL =           0.0000                   WEL =           0.0000     WEL_0                            
+
+            TOTAL IN =        4592.8965              TOTAL IN =          20.0000
+
+          OUT:                                     OUT:
+          ----                                     ----
+              STO-SS =         120.6432                STO-SS =           0.0000     STORAGE                          
+                 WEL =        4472.2576                   WEL =          20.0000     WEL_0                            
+
+           TOTAL OUT =        4592.9008             TOTAL OUT =          20.0000
+
+            IN - OUT =      -4.2179E-03              IN - OUT =       4.2336E-07
+
+ PERCENT DISCREPANCY =          -0.00     PERCENT DISCREPANCY =           0.00
+
+
+
+
+         TIME SUMMARY AT END OF TIME STEP    1 IN STRESS PERIOD   47
+                          TIME STEP LENGTH =    7.00000    
+                        STRESS PERIOD TIME =    7.00000    
+                     TOTAL SIMULATION TIME =    329.000    
+
+end timestep
+
+
+start timestep kper="48" kstp="1" mode="normal"
+
+
+ OUTPUT CONTROL FOR STRESS PERIOD 48 IS REPEATED USING SETTINGS FROM A PREVIOUS STRESS PERIOD.
+ UBDSV1 SAVING           STO-SS ON UNIT   1014 AT TIME STEP      1, STRESS PERIOD     48
+ UBDSV1 SAVING     FLOW-JA-FACE ON UNIT   1014 AT TIME STEP      1, STRESS PERIOD     48
+ UBDSV06 SAVING              WEL IN MODEL VAL_MAX          PACKAGE VAL_MAX         CONNECTED TO MODEL VAL_MAX          PACKAGE WEL_0            ON UNIT   1014 AT TIME STEP      1, STRESS PERIOD     48
+
+ HEAD WILL BE SAVED ON UNIT 1015 AT END OF TIME STEP    1, STRESS PERIOD   48
+
+
+  VOLUME BUDGET FOR ENTIRE MODEL AT END OF TIME STEP    1, STRESS PERIOD  48
+  ---------------------------------------------------------------------------------------------------
+
+     CUMULATIVE VOLUME      L**3       RATES FOR THIS TIME STEP      L**3/T          PACKAGE NAME    
+     ------------------                 ------------------------                     ----------------
+
+           IN:                                      IN:
+           ---                                      ---
+              STO-SS =        4620.4347                STO-SS =           3.9340     STORAGE                          
+                 WEL =           0.0000                   WEL =           0.0000     WEL_0                            
+
+            TOTAL IN =        4620.4347              TOTAL IN =           3.9340
+
+          OUT:                                     OUT:
+          ----                                     ----
+              STO-SS =         144.4935                STO-SS =           3.4072     STORAGE                          
+                 WEL =        4475.9464                   WEL =           0.5270     WEL_0                            
+
+           TOTAL OUT =        4620.4398             TOTAL OUT =           3.9341
+
+            IN - OUT =      -5.1205E-03              IN - OUT =      -1.2894E-04
+
+ PERCENT DISCREPANCY =          -0.00     PERCENT DISCREPANCY =          -0.00
+
+
+
+
+         TIME SUMMARY AT END OF TIME STEP    1 IN STRESS PERIOD   48
+                          TIME STEP LENGTH =    7.00000    
+                        STRESS PERIOD TIME =    7.00000    
+                     TOTAL SIMULATION TIME =    336.000    
+
+end timestep
+
+
+start timestep kper="49" kstp="1" mode="normal"
+
+
+ OUTPUT CONTROL FOR STRESS PERIOD 49 IS REPEATED USING SETTINGS FROM A PREVIOUS STRESS PERIOD.
+ UBDSV1 SAVING           STO-SS ON UNIT   1014 AT TIME STEP      1, STRESS PERIOD     49
+ UBDSV1 SAVING     FLOW-JA-FACE ON UNIT   1014 AT TIME STEP      1, STRESS PERIOD     49
+ UBDSV06 SAVING              WEL IN MODEL VAL_MAX          PACKAGE VAL_MAX         CONNECTED TO MODEL VAL_MAX          PACKAGE WEL_0            ON UNIT   1014 AT TIME STEP      1, STRESS PERIOD     49
+
+ HEAD WILL BE SAVED ON UNIT 1015 AT END OF TIME STEP    1, STRESS PERIOD   49
+
+
+  VOLUME BUDGET FOR ENTIRE MODEL AT END OF TIME STEP    1, STRESS PERIOD  49
+  ---------------------------------------------------------------------------------------------------
+
+     CUMULATIVE VOLUME      L**3       RATES FOR THIS TIME STEP      L**3/T          PACKAGE NAME    
+     ------------------                 ------------------------                     ----------------
+
+           IN:                                      IN:
+           ---                                      ---
+              STO-SS =        4656.3307                STO-SS =           5.1280     STORAGE                          
+                 WEL =           0.0000                   WEL =           0.0000     WEL_0                            
+
+            TOTAL IN =        4656.3307              TOTAL IN =           5.1280
+
+          OUT:                                     OUT:
+          ----                                     ----
+              STO-SS =         144.4935                STO-SS =           0.0000     STORAGE                          
+                 WEL =        4511.8424                   WEL =           5.1280     WEL_0                            
+
+           TOTAL OUT =        4656.3359             TOTAL OUT =           5.1280
+
+            IN - OUT =      -5.1642E-03              IN - OUT =      -6.2402E-06
+
+ PERCENT DISCREPANCY =          -0.00     PERCENT DISCREPANCY =          -0.00
+
+
+
+
+         TIME SUMMARY AT END OF TIME STEP    1 IN STRESS PERIOD   49
+                          TIME STEP LENGTH =    7.00000    
+                        STRESS PERIOD TIME =    7.00000    
+                     TOTAL SIMULATION TIME =    343.000    
+
+end timestep
+
+
+start timestep kper="50" kstp="1" mode="normal"
+
+
+ OUTPUT CONTROL FOR STRESS PERIOD 50 IS REPEATED USING SETTINGS FROM A PREVIOUS STRESS PERIOD.
+ UBDSV1 SAVING           STO-SS ON UNIT   1014 AT TIME STEP      1, STRESS PERIOD     50
+ UBDSV1 SAVING     FLOW-JA-FACE ON UNIT   1014 AT TIME STEP      1, STRESS PERIOD     50
+ UBDSV06 SAVING              WEL IN MODEL VAL_MAX          PACKAGE VAL_MAX         CONNECTED TO MODEL VAL_MAX          PACKAGE WEL_0            ON UNIT   1014 AT TIME STEP      1, STRESS PERIOD     50
+
+ HEAD WILL BE SAVED ON UNIT 1015 AT END OF TIME STEP    1, STRESS PERIOD   50
+
+
+  VOLUME BUDGET FOR ENTIRE MODEL AT END OF TIME STEP    1, STRESS PERIOD  50
+  ---------------------------------------------------------------------------------------------------
+
+     CUMULATIVE VOLUME      L**3       RATES FOR THIS TIME STEP      L**3/T          PACKAGE NAME    
+     ------------------                 ------------------------                     ----------------
+
+           IN:                                      IN:
+           ---                                      ---
+              STO-SS =        4729.1924                STO-SS =          10.4088     STORAGE                          
+                 WEL =           0.0000                   WEL =           0.0000     WEL_0                            
+
+            TOTAL IN =        4729.1924              TOTAL IN =          10.4088
+
+          OUT:                                     OUT:
+          ----                                     ----
+              STO-SS =         144.4935                STO-SS =           0.0000     STORAGE                          
+                 WEL =        4584.7042                   WEL =          10.4088     WEL_0                            
+
+           TOTAL OUT =        4729.1976             TOTAL OUT =          10.4088
+
+            IN - OUT =      -5.2396E-03              IN - OUT =      -1.0775E-05
+
+ PERCENT DISCREPANCY =          -0.00     PERCENT DISCREPANCY =          -0.00
+
+
+
+
+         TIME SUMMARY AT END OF TIME STEP    1 IN STRESS PERIOD   50
+                          TIME STEP LENGTH =    7.00000    
+                        STRESS PERIOD TIME =    7.00000    
+                     TOTAL SIMULATION TIME =    350.000    
+
+end timestep
+
+
+start timestep kper="51" kstp="1" mode="normal"
+
+
+ OUTPUT CONTROL FOR STRESS PERIOD 51 IS REPEATED USING SETTINGS FROM A PREVIOUS STRESS PERIOD.
+ UBDSV1 SAVING           STO-SS ON UNIT   1014 AT TIME STEP      1, STRESS PERIOD     51
+ UBDSV1 SAVING     FLOW-JA-FACE ON UNIT   1014 AT TIME STEP      1, STRESS PERIOD     51
+ UBDSV06 SAVING              WEL IN MODEL VAL_MAX          PACKAGE VAL_MAX         CONNECTED TO MODEL VAL_MAX          PACKAGE WEL_0            ON UNIT   1014 AT TIME STEP      1, STRESS PERIOD     51
+
+ HEAD WILL BE SAVED ON UNIT 1015 AT END OF TIME STEP    1, STRESS PERIOD   51
+
+
+  VOLUME BUDGET FOR ENTIRE MODEL AT END OF TIME STEP    1, STRESS PERIOD  51
+  ---------------------------------------------------------------------------------------------------
+
+     CUMULATIVE VOLUME      L**3       RATES FOR THIS TIME STEP      L**3/T          PACKAGE NAME    
+     ------------------                 ------------------------                     ----------------
+
+           IN:                                      IN:
+           ---                                      ---
+              STO-SS =        4854.5528                STO-SS =          17.9086     STORAGE                          
+                 WEL =           0.0000                   WEL =           0.0000     WEL_0                            
+
+            TOTAL IN =        4854.5528              TOTAL IN =          17.9086
+
+          OUT:                                     OUT:
+          ----                                     ----
+              STO-SS =         144.4935                STO-SS =           0.0000     STORAGE                          
+                 WEL =        4710.0646                   WEL =          17.9086     WEL_0                            
+
+           TOTAL OUT =        4854.5580             TOTAL OUT =          17.9086
+
+            IN - OUT =      -5.2467E-03              IN - OUT =      -1.0150E-06
+
+ PERCENT DISCREPANCY =          -0.00     PERCENT DISCREPANCY =          -0.00
+
+
+
+
+         TIME SUMMARY AT END OF TIME STEP    1 IN STRESS PERIOD   51
+                          TIME STEP LENGTH =    7.00000    
+                        STRESS PERIOD TIME =    7.00000    
+                     TOTAL SIMULATION TIME =    357.000    
+
+end timestep
+
+
+start timestep kper="52" kstp="1" mode="normal"
+
+
+ OUTPUT CONTROL FOR STRESS PERIOD 52 IS REPEATED USING SETTINGS FROM A PREVIOUS STRESS PERIOD.
+ UBDSV1 SAVING           STO-SS ON UNIT   1014 AT TIME STEP      1, STRESS PERIOD     52
+ UBDSV1 SAVING     FLOW-JA-FACE ON UNIT   1014 AT TIME STEP      1, STRESS PERIOD     52
+ UBDSV06 SAVING              WEL IN MODEL VAL_MAX          PACKAGE VAL_MAX         CONNECTED TO MODEL VAL_MAX          PACKAGE WEL_0            ON UNIT   1014 AT TIME STEP      1, STRESS PERIOD     52
+
+ HEAD WILL BE SAVED ON UNIT 1015 AT END OF TIME STEP    1, STRESS PERIOD   52
+
+
+  VOLUME BUDGET FOR ENTIRE MODEL AT END OF TIME STEP    1, STRESS PERIOD  52
+  ---------------------------------------------------------------------------------------------------
+
+     CUMULATIVE VOLUME      L**3       RATES FOR THIS TIME STEP      L**3/T          PACKAGE NAME    
+     ------------------                 ------------------------                     ----------------
+
+           IN:                                      IN:
+           ---                                      ---
+              STO-SS =        4896.1135                STO-SS =           5.9372     STORAGE                          
+                 WEL =           0.0000                   WEL =           0.0000     WEL_0                            
+
+            TOTAL IN =        4896.1135              TOTAL IN =           5.9372
+
+          OUT:                                     OUT:
+          ----                                     ----
+              STO-SS =         155.5155                STO-SS =           1.5746     STORAGE                          
+                 WEL =        4740.6033                   WEL =           4.3627     WEL_0                            
+
+           TOTAL OUT =        4896.1188             TOTAL OUT =           5.9372
+
+            IN - OUT =      -5.2935E-03              IN - OUT =      -6.6907E-06
+
+ PERCENT DISCREPANCY =          -0.00     PERCENT DISCREPANCY =          -0.00
+
+
+
+
+         TIME SUMMARY AT END OF TIME STEP    1 IN STRESS PERIOD   52
+                          TIME STEP LENGTH =    7.00000    
+                        STRESS PERIOD TIME =    7.00000    
+                     TOTAL SIMULATION TIME =    364.000    
+
+end timestep
+
