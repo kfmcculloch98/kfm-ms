@@ -19,4 +19,5 @@ dependencies = [
     "tqdm>=4.67.1",
     "wqchartpy>=0.1.10",
     "xarray>=2025.7.1",
+    "numpy>=1.24,<2.0"
 ]

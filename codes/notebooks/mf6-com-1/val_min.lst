@@ -101,14 +101,14 @@ Logical Variables
 
 
  Setting Discretization Options
-    XORIGIN = -33.00000000000000
-    YORIGIN = -68.00000000000000
+    XORIGIN = -40.50000000000000
+    YORIGIN = -31.50000000000000
  End Setting Discretization Options
 
  Setting Discretization Dimensions
     NLAY = 1
-    NROW = 68
-    NCOL = 33
+    NROW = 21
+    NCOL = 27
  End Setting Discretization Dimensions
 
  Setting Discretization Griddata
@@ -215,19 +215,19 @@ start timestep kper="1" kstp="1" mode="normal"
 
            IN:                                      IN:
            ---                                      ---
-              STO-SS =          12.6631                STO-SS =           1.8090     STORAGE                          
+              STO-SS =          12.4043                STO-SS =           1.7720     STORAGE                          
                  WEL =           0.0000                   WEL =           0.0000     WEL_0                            
 
-            TOTAL IN =          12.6631              TOTAL IN =           1.8090
+            TOTAL IN =          12.4043              TOTAL IN =           1.7720
 
           OUT:                                     OUT:
           ----                                     ----
               STO-SS =           0.0000                STO-SS =           0.0000     STORAGE                          
-                 WEL =          12.6633                   WEL =           1.8090     WEL_0                            
+                 WEL =          12.4043                   WEL =           1.7720     WEL_0                            
 
-           TOTAL OUT =          12.6633             TOTAL OUT =           1.8090
+           TOTAL OUT =          12.4043             TOTAL OUT =           1.7720
 
-            IN - OUT =      -1.5620E-04              IN - OUT =      -2.2314E-05
+            IN - OUT =      -5.9087E-09              IN - OUT =      -8.4410E-10
 
  PERCENT DISCREPANCY =          -0.00     PERCENT DISCREPANCY =          -0.00
 
@@ -261,21 +261,21 @@ start timestep kper="2" kstp="1" mode="normal"
 
            IN:                                      IN:
            ---                                      ---
-              STO-SS =          37.0879                STO-SS =           3.4892     STORAGE                          
+              STO-SS =          47.8871                STO-SS =           5.0690     STORAGE                          
                  WEL =           0.0000                   WEL =           0.0000     WEL_0                            
 
-            TOTAL IN =          37.0879              TOTAL IN =           3.4892
+            TOTAL IN =          47.8871              TOTAL IN =           5.0690
 
           OUT:                                     OUT:
           ----                                     ----
               STO-SS =           0.0000                STO-SS =           0.0000     STORAGE                          
-                 WEL =          37.0881                   WEL =           3.4893     WEL_0                            
+                 WEL =          47.8871                   WEL =           5.0690     WEL_0                            
 
-           TOTAL OUT =          37.0881             TOTAL OUT =           3.4893
+           TOTAL OUT =          47.8871             TOTAL OUT =           5.0690
 
-            IN - OUT =      -2.4103E-04              IN - OUT =      -1.2118E-05
+            IN - OUT =      -4.5229E-09              IN - OUT =       1.9797E-10
 
- PERCENT DISCREPANCY =          -0.00     PERCENT DISCREPANCY =          -0.00
+ PERCENT DISCREPANCY =          -0.00     PERCENT DISCREPANCY =           0.00
 
 
 
@@ -307,21 +307,21 @@ start timestep kper="3" kstp="1" mode="normal"
 
            IN:                                      IN:
            ---                                      ---
-              STO-SS =          76.0439                STO-SS =           5.5652     STORAGE                          
+              STO-SS =          91.2764                STO-SS =           6.1985     STORAGE                          
                  WEL =           0.0000                   WEL =           0.0000     WEL_0                            
 
-            TOTAL IN =          76.0439              TOTAL IN =           5.5652
+            TOTAL IN =          91.2764              TOTAL IN =           6.1985
 
           OUT:                                     OUT:
           ----                                     ----
               STO-SS =           0.0000                STO-SS =           0.0000     STORAGE                          
-                 WEL =          76.0442                   WEL =           5.5652     WEL_0                            
+                 WEL =          91.2764                   WEL =           6.1985     WEL_0                            
 
-           TOTAL OUT =          76.0442             TOTAL OUT =           5.5652
+           TOTAL OUT =          91.2764             TOTAL OUT =           6.1985
 
-            IN - OUT =      -3.2979E-04              IN - OUT =      -1.2681E-05
+            IN - OUT =      -1.3578E-09              IN - OUT =       4.5217E-10
 
- PERCENT DISCREPANCY =          -0.00     PERCENT DISCREPANCY =          -0.00
+ PERCENT DISCREPANCY =          -0.00     PERCENT DISCREPANCY =           0.00
 
 
 
@@ -353,21 +353,21 @@ start timestep kper="4" kstp="1" mode="normal"
 
            IN:                                      IN:
            ---                                      ---
-              STO-SS =         113.7220                STO-SS =           5.3826     STORAGE                          
+              STO-SS =         155.9854                STO-SS =           9.2441     STORAGE                          
                  WEL =           0.0000                   WEL =           0.0000     WEL_0                            
 
-            TOTAL IN =         113.7220              TOTAL IN =           5.3826
+            TOTAL IN =         155.9854              TOTAL IN =           9.2441
 
           OUT:                                     OUT:
           ----                                     ----
               STO-SS =           0.0000                STO-SS =           0.0000     STORAGE                          
-                 WEL =         113.7223                   WEL =           5.3826     WEL_0                            
+                 WEL =         155.9854                   WEL =           9.2441     WEL_0                            
 
-           TOTAL OUT =         113.7223             TOTAL OUT =           5.3826
+           TOTAL OUT =         155.9854             TOTAL OUT =           9.2441
 
-            IN - OUT =      -3.3184E-04              IN - OUT =      -2.9225E-07
+            IN - OUT =       6.4728E-10              IN - OUT =       2.8644E-10
 
- PERCENT DISCREPANCY =          -0.00     PERCENT DISCREPANCY =          -0.00
+ PERCENT DISCREPANCY =           0.00     PERCENT DISCREPANCY =           0.00
 
 
 
@@ -399,21 +399,21 @@ start timestep kper="5" kstp="1" mode="normal"
 
            IN:                                      IN:
            ---                                      ---
-              STO-SS =         149.7787                STO-SS =           5.1510     STORAGE                          
+              STO-SS =         211.0227                STO-SS =           7.8625     STORAGE                          
                  WEL =           0.0000                   WEL =           0.0000     WEL_0                            
 
-            TOTAL IN =         149.7787              TOTAL IN =           5.1510
+            TOTAL IN =         211.0227              TOTAL IN =           7.8625
 
           OUT:                                     OUT:
           ----                                     ----
               STO-SS =           0.0000                STO-SS =           0.0000     STORAGE                          
-                 WEL =         149.7790                   WEL =           5.1510     WEL_0                            
+                 WEL =         211.0227                   WEL =           7.8625     WEL_0                            
 
-           TOTAL OUT =         149.7790             TOTAL OUT =           5.1510
+           TOTAL OUT =         211.0227             TOTAL OUT =           7.8625
 
-            IN - OUT =      -2.8906E-04              IN - OUT =       6.1114E-06
+            IN - OUT =      -2.1124E-08              IN - OUT =      -3.1101E-09
 
- PERCENT DISCREPANCY =          -0.00     PERCENT DISCREPANCY =           0.00
+ PERCENT DISCREPANCY =          -0.00     PERCENT DISCREPANCY =          -0.00
 
 
 
@@ -445,21 +445,21 @@ start timestep kper="6" kstp="1" mode="normal"
 
            IN:                                      IN:
            ---                                      ---
-              STO-SS =         184.7083                STO-SS =           4.9899     STORAGE                          
+              STO-SS =         261.7266                STO-SS =           7.2434     STORAGE                          
                  WEL =           0.0000                   WEL =           0.0000     WEL_0                            
 
-            TOTAL IN =         184.7083              TOTAL IN =           4.9899
+            TOTAL IN =         261.7266              TOTAL IN =           7.2434
 
           OUT:                                     OUT:
           ----                                     ----
               STO-SS =           0.0000                STO-SS =           0.0000     STORAGE                          
-                 WEL =         184.7085                   WEL =           4.9899     WEL_0                            
+                 WEL =         261.7266                   WEL =           7.2434     WEL_0                            
 
-           TOTAL OUT =         184.7085             TOTAL OUT =           4.9899
+           TOTAL OUT =         261.7266             TOTAL OUT =           7.2434
 
-            IN - OUT =      -2.6558E-04              IN - OUT =       3.3545E-06
+            IN - OUT =      -9.5924E-08              IN - OUT =      -1.0686E-08
 
- PERCENT DISCREPANCY =          -0.00     PERCENT DISCREPANCY =           0.00
+ PERCENT DISCREPANCY =          -0.00     PERCENT DISCREPANCY =          -0.00
 
 
 
@@ -491,19 +491,19 @@ start timestep kper="7" kstp="1" mode="normal"
 
            IN:                                      IN:
            ---                                      ---
-              STO-SS =         218.7678                STO-SS =           4.8656     STORAGE                          
+              STO-SS =         324.1999                STO-SS =           8.9248     STORAGE                          
                  WEL =           0.0000                   WEL =           0.0000     WEL_0                            
 
-            TOTAL IN =         218.7678              TOTAL IN =           4.8656
+            TOTAL IN =         324.1999              TOTAL IN =           8.9248
 
           OUT:                                     OUT:
           ----                                     ----
               STO-SS =           0.0000                STO-SS =           0.0000     STORAGE                          
-                 WEL =         218.7680                   WEL =           4.8656     WEL_0                            
+                 WEL =         324.1999                   WEL =           8.9248     WEL_0                            
 
-           TOTAL OUT =         218.7680             TOTAL OUT =           4.8656
+           TOTAL OUT =         324.1999             TOTAL OUT =           8.9248
 
-            IN - OUT =      -2.3862E-04              IN - OUT =       3.8508E-06
+            IN - OUT =      -9.0179E-08              IN - OUT =       8.2060E-10
 
  PERCENT DISCREPANCY =          -0.00     PERCENT DISCREPANCY =           0.00
 
@@ -537,19 +537,19 @@ start timestep kper="8" kstp="1" mode="normal"
 
            IN:                                      IN:
            ---                                      ---
-              STO-SS =         261.0203                STO-SS =           6.0361     STORAGE                          
+              STO-SS =         371.3960                STO-SS =           6.7423     STORAGE                          
                  WEL =           0.0000                   WEL =           0.0000     WEL_0                            
 
-            TOTAL IN =         261.0203              TOTAL IN =           6.0361
+            TOTAL IN =         371.3960              TOTAL IN =           6.7423
 
           OUT:                                     OUT:
           ----                                     ----
-              STO-SS =           0.0000                STO-SS =           0.0000     STORAGE                          
-                 WEL =         261.0205                   WEL =           6.0361     WEL_0                            
+              STO-SS =       1.7535E-02                STO-SS =       2.5050E-03     STORAGE                          
+                 WEL =         371.3784                   WEL =           6.7398     WEL_0                            
 
-           TOTAL OUT =         261.0205             TOTAL OUT =           6.0361
+           TOTAL OUT =         371.3960             TOTAL OUT =           6.7423
 
-            IN - OUT =      -2.3254E-04              IN - OUT =       8.6929E-07
+            IN - OUT =      -8.7292E-08              IN - OUT =       4.1247E-10
 
  PERCENT DISCREPANCY =          -0.00     PERCENT DISCREPANCY =           0.00
 
@@ -583,19 +583,19 @@ start timestep kper="9" kstp="1" mode="normal"
 
            IN:                                      IN:
            ---                                      ---
-              STO-SS =         306.7956                STO-SS =           6.5393     STORAGE                          
+              STO-SS =         408.7546                STO-SS =           5.3370     STORAGE                          
                  WEL =           0.0000                   WEL =           0.0000     WEL_0                            
 
-            TOTAL IN =         306.7956              TOTAL IN =           6.5393
+            TOTAL IN =         408.7546              TOTAL IN =           5.3370
 
           OUT:                                     OUT:
           ----                                     ----
-              STO-SS =           0.0000                STO-SS =           0.0000     STORAGE                          
-                 WEL =         306.7958                   WEL =           6.5393     WEL_0                            
+              STO-SS =       2.2758E-02                STO-SS =       7.4609E-04     STORAGE                          
+                 WEL =         408.7319                   WEL =           5.3362     WEL_0                            
 
-           TOTAL OUT =         306.7958             TOTAL OUT =           6.5393
+           TOTAL OUT =         408.7546             TOTAL OUT =           5.3370
 
-            IN - OUT =      -1.9508E-04              IN - OUT =       5.3507E-06
+            IN - OUT =      -6.5728E-08              IN - OUT =       3.0805E-09
 
  PERCENT DISCREPANCY =          -0.00     PERCENT DISCREPANCY =           0.00
 
@@ -629,19 +629,19 @@ start timestep kper="10" kstp="1" mode="normal"
 
            IN:                                      IN:
            ---                                      ---
-              STO-SS =         358.3194                STO-SS =           7.3605     STORAGE                          
+              STO-SS =         449.2008                STO-SS =           5.7780     STORAGE                          
                  WEL =           0.0000                   WEL =           0.0000     WEL_0                            
 
-            TOTAL IN =         358.3194              TOTAL IN =           7.3605
+            TOTAL IN =         449.2008              TOTAL IN =           5.7780
 
           OUT:                                     OUT:
           ----                                     ----
-              STO-SS =           0.0000                STO-SS =           0.0000     STORAGE                          
-                 WEL =         358.3196                   WEL =           7.3605     WEL_0                            
+              STO-SS =       2.2758E-02                STO-SS =           0.0000     STORAGE                          
+                 WEL =         449.1781                   WEL =           5.7780     WEL_0                            
 
-           TOTAL OUT =         358.3196             TOTAL OUT =           7.3605
+           TOTAL OUT =         449.2008             TOTAL OUT =           5.7780
 
-            IN - OUT =      -1.9791E-04              IN - OUT =      -4.0379E-07
+            IN - OUT =      -8.3405E-08              IN - OUT =      -2.5252E-09
 
  PERCENT DISCREPANCY =          -0.00     PERCENT DISCREPANCY =          -0.00
 
@@ -675,19 +675,19 @@ start timestep kper="11" kstp="1" mode="normal"
 
            IN:                                      IN:
            ---                                      ---
-              STO-SS =         410.2222                STO-SS =           7.4147     STORAGE                          
+              STO-SS =         492.9790                STO-SS =           6.2540     STORAGE                          
                  WEL =           0.0000                   WEL =           0.0000     WEL_0                            
 
-            TOTAL IN =         410.2222              TOTAL IN =           7.4147
+            TOTAL IN =         492.9790              TOTAL IN =           6.2540
 
           OUT:                                     OUT:
           ----                                     ----
-              STO-SS =           0.0000                STO-SS =           0.0000     STORAGE                          
-                 WEL =         410.2223                   WEL =           7.4147     WEL_0                            
+              STO-SS =       2.2758E-02                STO-SS =           0.0000     STORAGE                          
+                 WEL =         492.9562                   WEL =           6.2540     WEL_0                            
 
-           TOTAL OUT =         410.2223             TOTAL OUT =           7.4147
+           TOTAL OUT =         492.9790             TOTAL OUT =           6.2540
 
-            IN - OUT =      -7.8155E-05              IN - OUT =       1.7108E-05
+            IN - OUT =      -7.6606E-08              IN - OUT =       9.7121E-10
 
  PERCENT DISCREPANCY =          -0.00     PERCENT DISCREPANCY =           0.00
 
@@ -721,21 +721,21 @@ start timestep kper="12" kstp="1" mode="normal"
 
            IN:                                      IN:
            ---                                      ---
-              STO-SS =         464.2835                STO-SS =           7.7230     STORAGE                          
+              STO-SS =         536.2932                STO-SS =           6.1877     STORAGE                          
                  WEL =           0.0000                   WEL =           0.0000     WEL_0                            
 
-            TOTAL IN =         464.2835              TOTAL IN =           7.7230
+            TOTAL IN =         536.2932              TOTAL IN =           6.1877
 
           OUT:                                     OUT:
           ----                                     ----
-              STO-SS =           0.0000                STO-SS =           0.0000     STORAGE                          
-                 WEL =         464.2835                   WEL =           7.7230     WEL_0                            
+              STO-SS =       2.2758E-02                STO-SS =           0.0000     STORAGE                          
+                 WEL =         536.2705                   WEL =           6.1877     WEL_0                            
 
-           TOTAL OUT =         464.2835             TOTAL OUT =           7.7230
+           TOTAL OUT =         536.2932             TOTAL OUT =           6.1877
 
-            IN - OUT =       6.0964E-05              IN - OUT =       1.9874E-05
+            IN - OUT =      -7.5632E-08              IN - OUT =       1.3921E-10
 
- PERCENT DISCREPANCY =           0.00     PERCENT DISCREPANCY =           0.00
+ PERCENT DISCREPANCY =          -0.00     PERCENT DISCREPANCY =           0.00
 
 
 
@@ -767,21 +767,21 @@ start timestep kper="13" kstp="1" mode="normal"
 
            IN:                                      IN:
            ---                                      ---
-              STO-SS =         526.8870                STO-SS =           8.9434     STORAGE                          
+              STO-SS =         579.6536                STO-SS =           6.1943     STORAGE                          
                  WEL =           0.0000                   WEL =           0.0000     WEL_0                            
 
-            TOTAL IN =         526.8870              TOTAL IN =           8.9434
+            TOTAL IN =         579.6536              TOTAL IN =           6.1943
 
           OUT:                                     OUT:
           ----                                     ----
-              STO-SS =           0.0000                STO-SS =           0.0000     STORAGE                          
-                 WEL =         526.8869                   WEL =           8.9434     WEL_0                            
+              STO-SS =       2.2758E-02                STO-SS =           0.0000     STORAGE                          
+                 WEL =         579.6309                   WEL =           6.1943     WEL_0                            
 
-           TOTAL OUT =         526.8869             TOTAL OUT =           8.9434
+           TOTAL OUT =         579.6536             TOTAL OUT =           6.1943
 
-            IN - OUT =       5.0894E-05              IN - OUT =      -1.4386E-06
+            IN - OUT =      -7.6100E-08              IN - OUT =      -6.6956E-11
 
- PERCENT DISCREPANCY =           0.00     PERCENT DISCREPANCY =          -0.00
+ PERCENT DISCREPANCY =          -0.00     PERCENT DISCREPANCY =          -0.00
 
 
 
@@ -813,21 +813,21 @@ start timestep kper="14" kstp="1" mode="normal"
 
            IN:                                      IN:
            ---                                      ---
-              STO-SS =         588.3807                STO-SS =           8.7848     STORAGE                          
+              STO-SS =         618.7498                STO-SS =           5.5852     STORAGE                          
                  WEL =           0.0000                   WEL =           0.0000     WEL_0                            
 
-            TOTAL IN =         588.3807              TOTAL IN =           8.7848
+            TOTAL IN =         618.7498              TOTAL IN =           5.5852
 
           OUT:                                     OUT:
           ----                                     ----
-              STO-SS =           0.0000                STO-SS =           0.0000     STORAGE                          
-                 WEL =         588.3806                   WEL =           8.7848     WEL_0                            
+              STO-SS =       2.2758E-02                STO-SS =           0.0000     STORAGE                          
+                 WEL =         618.7270                   WEL =           5.5852     WEL_0                            
 
-           TOTAL OUT =         588.3806             TOTAL OUT =           8.7848
+           TOTAL OUT =         618.7498             TOTAL OUT =           5.5852
 
-            IN - OUT =       1.6106E-04              IN - OUT =       1.5739E-05
+            IN - OUT =      -1.3583E-07              IN - OUT =      -8.5333E-09
 
- PERCENT DISCREPANCY =           0.00     PERCENT DISCREPANCY =           0.00
+ PERCENT DISCREPANCY =          -0.00     PERCENT DISCREPANCY =          -0.00
 
 
 
@@ -859,21 +859,21 @@ start timestep kper="15" kstp="1" mode="normal"
 
            IN:                                      IN:
            ---                                      ---
-              STO-SS =         646.1522                STO-SS =           8.2531     STORAGE                          
+              STO-SS =         652.6618                STO-SS =           4.8446     STORAGE                          
                  WEL =           0.0000                   WEL =           0.0000     WEL_0                            
 
-            TOTAL IN =         646.1522              TOTAL IN =           8.2531
+            TOTAL IN =         652.6618              TOTAL IN =           4.8446
 
           OUT:                                     OUT:
           ----                                     ----
-              STO-SS =           0.0000                STO-SS =           0.0000     STORAGE                          
-                 WEL =         646.1520                   WEL =           8.2531     WEL_0                            
+              STO-SS =       2.2758E-02                STO-SS =           0.0000     STORAGE                          
+                 WEL =         652.6390                   WEL =           4.8446     WEL_0                            
 
-           TOTAL OUT =         646.1520             TOTAL OUT =           8.2531
+           TOTAL OUT =         652.6618             TOTAL OUT =           4.8446
 
-            IN - OUT =       2.0739E-04              IN - OUT =       6.6186E-06
+            IN - OUT =      -1.2108E-07              IN - OUT =       2.1073E-09
 
- PERCENT DISCREPANCY =           0.00     PERCENT DISCREPANCY =           0.00
+ PERCENT DISCREPANCY =          -0.00     PERCENT DISCREPANCY =           0.00
 
 
 
@@ -905,21 +905,21 @@ start timestep kper="16" kstp="1" mode="normal"
 
            IN:                                      IN:
            ---                                      ---
-              STO-SS =         695.8935                STO-SS =           7.1059     STORAGE                          
+              STO-SS =         681.5428                STO-SS =           4.1259     STORAGE                          
                  WEL =           0.0000                   WEL =           0.0000     WEL_0                            
 
-            TOTAL IN =         695.8935              TOTAL IN =           7.1059
+            TOTAL IN =         681.5428              TOTAL IN =           4.1259
 
           OUT:                                     OUT:
           ----                                     ----
-              STO-SS =       7.5990E-03                STO-SS =       1.0856E-03     STORAGE                          
-                 WEL =         695.8856                   WEL =           7.1048     WEL_0                            
+              STO-SS =       2.2758E-02                STO-SS =           0.0000     STORAGE                          
+                 WEL =         681.5200                   WEL =           4.1259     WEL_0                            
 
-           TOTAL OUT =         695.8932             TOTAL OUT =           7.1059
+           TOTAL OUT =         681.5428             TOTAL OUT =           4.1259
 
-            IN - OUT =       3.8584E-04              IN - OUT =       2.5492E-05
+            IN - OUT =      -1.0812E-07              IN - OUT =       1.8513E-09
 
- PERCENT DISCREPANCY =           0.00     PERCENT DISCREPANCY =           0.00
+ PERCENT DISCREPANCY =          -0.00     PERCENT DISCREPANCY =           0.00
 
 
 
@@ -951,21 +951,21 @@ start timestep kper="17" kstp="1" mode="normal"
 
            IN:                                      IN:
            ---                                      ---
-              STO-SS =         742.8949                STO-SS =           6.7145     STORAGE                          
+              STO-SS =         719.7535                STO-SS =           5.4587     STORAGE                          
                  WEL =           0.0000                   WEL =           0.0000     WEL_0                            
 
-            TOTAL IN =         742.8949              TOTAL IN =           6.7145
+            TOTAL IN =         719.7535              TOTAL IN =           5.4587
 
           OUT:                                     OUT:
           ----                                     ----
-              STO-SS =       7.5990E-03                STO-SS =           0.0000     STORAGE                          
-                 WEL =         742.8867                   WEL =           6.7145     WEL_0                            
+              STO-SS =       2.2758E-02                STO-SS =           0.0000     STORAGE                          
+                 WEL =         719.7308                   WEL =           5.4587     WEL_0                            
 
-           TOTAL OUT =         742.8943             TOTAL OUT =           6.7145
+           TOTAL OUT =         719.7535             TOTAL OUT =           5.4587
 
-            IN - OUT =       5.6209E-04              IN - OUT =       2.5179E-05
+            IN - OUT =      -1.0417E-07              IN - OUT =       5.6486E-10
 
- PERCENT DISCREPANCY =           0.00     PERCENT DISCREPANCY =           0.00
+ PERCENT DISCREPANCY =          -0.00     PERCENT DISCREPANCY =           0.00
 
 
 
@@ -997,21 +997,21 @@ start timestep kper="18" kstp="1" mode="normal"
 
            IN:                                      IN:
            ---                                      ---
-              STO-SS =         784.1189                STO-SS =           5.8891     STORAGE                          
+              STO-SS =         758.2353                STO-SS =           5.4974     STORAGE                          
                  WEL =           0.0000                   WEL =           0.0000     WEL_0                            
 
-            TOTAL IN =         784.1189              TOTAL IN =           5.8891
+            TOTAL IN =         758.2353              TOTAL IN =           5.4974
 
           OUT:                                     OUT:
           ----                                     ----
-              STO-SS =       1.1370E-02                STO-SS =       5.3878E-04     STORAGE                          
-                 WEL =         784.1068                   WEL =           5.8886     WEL_0                            
+              STO-SS =       2.2758E-02                STO-SS =           0.0000     STORAGE                          
+                 WEL =         758.2125                   WEL =           5.4974     WEL_0                            
 
-           TOTAL OUT =         784.1182             TOTAL OUT =           5.8891
+           TOTAL OUT =         758.2353             TOTAL OUT =           5.4974
 
-            IN - OUT =       6.9812E-04              IN - OUT =       1.9434E-05
+            IN - OUT =      -7.4879E-08              IN - OUT =       4.1844E-09
 
- PERCENT DISCREPANCY =           0.00     PERCENT DISCREPANCY =           0.00
+ PERCENT DISCREPANCY =          -0.00     PERCENT DISCREPANCY =           0.00
 
 
 
@@ -1043,21 +1043,21 @@ start timestep kper="19" kstp="1" mode="normal"
 
            IN:                                      IN:
            ---                                      ---
-              STO-SS =         819.7511                STO-SS =           5.0903     STORAGE                          
+              STO-SS =         809.9597                STO-SS =           7.3892     STORAGE                          
                  WEL =           0.0000                   WEL =           0.0000     WEL_0                            
 
-            TOTAL IN =         819.7511              TOTAL IN =           5.0903
+            TOTAL IN =         809.9597              TOTAL IN =           7.3892
 
           OUT:                                     OUT:
           ----                                     ----
-              STO-SS =       1.7500E-02                STO-SS =       8.7558E-04     STORAGE                          
-                 WEL =         819.7328                   WEL =           5.0894     WEL_0                            
+              STO-SS =       2.2758E-02                STO-SS =           0.0000     STORAGE                          
+                 WEL =         809.9370                   WEL =           7.3892     WEL_0                            
 
-           TOTAL OUT =         819.7503             TOTAL OUT =           5.0903
+           TOTAL OUT =         809.9597             TOTAL OUT =           7.3892
 
-            IN - OUT =       7.6514E-04              IN - OUT =       9.5739E-06
+            IN - OUT =      -7.1074E-08              IN - OUT =       5.4354E-10
 
- PERCENT DISCREPANCY =           0.00     PERCENT DISCREPANCY =           0.00
+ PERCENT DISCREPANCY =          -0.00     PERCENT DISCREPANCY =           0.00
 
 
 
@@ -1089,21 +1089,21 @@ start timestep kper="20" kstp="1" mode="normal"
 
            IN:                                      IN:
            ---                                      ---
-              STO-SS =         853.4227                STO-SS =           4.8102     STORAGE                          
+              STO-SS =         842.9030                STO-SS =           4.7062     STORAGE                          
                  WEL =           0.0000                   WEL =           0.0000     WEL_0                            
 
-            TOTAL IN =         853.4227              TOTAL IN =           4.8102
+            TOTAL IN =         842.9030              TOTAL IN =           4.7062
 
           OUT:                                     OUT:
           ----                                     ----
-              STO-SS =       1.7500E-02                STO-SS =           0.0000     STORAGE                          
-                 WEL =         853.4043                   WEL =           4.8102     WEL_0                            
+              STO-SS =           0.1156                STO-SS =       1.3262E-02     STORAGE                          
+                 WEL =         842.7874                   WEL =           4.6929     WEL_0                            
 
-           TOTAL OUT =         853.4218             TOTAL OUT =           4.8102
+           TOTAL OUT =         842.9030             TOTAL OUT =           4.7062
 
-            IN - OUT =       8.7292E-04              IN - OUT =       1.5396E-05
+            IN - OUT =      -3.7389E-08              IN - OUT =       4.8121E-09
 
- PERCENT DISCREPANCY =           0.00     PERCENT DISCREPANCY =           0.00
+ PERCENT DISCREPANCY =          -0.00     PERCENT DISCREPANCY =           0.00
 
 
 
@@ -1135,21 +1135,21 @@ start timestep kper="21" kstp="1" mode="normal"
 
            IN:                                      IN:
            ---                                      ---
-              STO-SS =         894.8453                STO-SS =           5.9175     STORAGE                          
+              STO-SS =         895.5086                STO-SS =           7.5151     STORAGE                          
                  WEL =           0.0000                   WEL =           0.0000     WEL_0                            
 
-            TOTAL IN =         894.8453              TOTAL IN =           5.9175
+            TOTAL IN =         895.5086              TOTAL IN =           7.5151
 
           OUT:                                     OUT:
           ----                                     ----
-              STO-SS =       1.7500E-02                STO-SS =           0.0000     STORAGE                          
-                 WEL =         894.8268                   WEL =           5.9175     WEL_0                            
+              STO-SS =           0.1156                STO-SS =           0.0000     STORAGE                          
+                 WEL =         895.3930                   WEL =           7.5151     WEL_0                            
 
-           TOTAL OUT =         894.8443             TOTAL OUT =           5.9175
+           TOTAL OUT =         895.5086             TOTAL OUT =           7.5151
 
-            IN - OUT =       9.3343E-04              IN - OUT =       8.6448E-06
+            IN - OUT =      -3.3988E-08              IN - OUT =       4.8581E-10
 
- PERCENT DISCREPANCY =           0.00     PERCENT DISCREPANCY =           0.00
+ PERCENT DISCREPANCY =          -0.00     PERCENT DISCREPANCY =           0.00
 
 
 
@@ -1181,21 +1181,21 @@ start timestep kper="22" kstp="1" mode="normal"
 
            IN:                                      IN:
            ---                                      ---
-              STO-SS =         939.4959                STO-SS =           6.3787     STORAGE                          
+              STO-SS =         951.3419                STO-SS =           7.9762     STORAGE                          
                  WEL =           0.0000                   WEL =           0.0000     WEL_0                            
 
-            TOTAL IN =         939.4959              TOTAL IN =           6.3787
+            TOTAL IN =         951.3419              TOTAL IN =           7.9762
 
           OUT:                                     OUT:
           ----                                     ----
-              STO-SS =       1.7500E-02                STO-SS =           0.0000     STORAGE                          
-                 WEL =         939.4774                   WEL =           6.3786     WEL_0                            
+              STO-SS =           0.1156                STO-SS =           0.0000     STORAGE                          
+                 WEL =         951.2263                   WEL =           7.9762     WEL_0                            
 
-           TOTAL OUT =         939.4949             TOTAL OUT =           6.3786
+           TOTAL OUT =         951.3419             TOTAL OUT =           7.9762
 
-            IN - OUT =       9.9163E-04              IN - OUT =       8.3142E-06
+            IN - OUT =      -2.7143E-08              IN - OUT =       9.7788E-10
 
- PERCENT DISCREPANCY =           0.00     PERCENT DISCREPANCY =           0.00
+ PERCENT DISCREPANCY =          -0.00     PERCENT DISCREPANCY =           0.00
 
 
 
@@ -1227,21 +1227,21 @@ start timestep kper="23" kstp="1" mode="normal"
 
            IN:                                      IN:
            ---                                      ---
-              STO-SS =         983.2328                STO-SS =           6.2481     STORAGE                          
+              STO-SS =        1003.1708                STO-SS =           7.4041     STORAGE                          
                  WEL =           0.0000                   WEL =           0.0000     WEL_0                            
 
-            TOTAL IN =         983.2328              TOTAL IN =           6.2481
+            TOTAL IN =        1003.1708              TOTAL IN =           7.4041
 
           OUT:                                     OUT:
           ----                                     ----
-              STO-SS =       1.7500E-02                STO-SS =           0.0000     STORAGE                          
-                 WEL =         983.2142                   WEL =           6.2481     WEL_0                            
+              STO-SS =           0.1156                STO-SS =           0.0000     STORAGE                          
+                 WEL =        1003.0552                   WEL =           7.4041     WEL_0                            
 
-           TOTAL OUT =         983.2317             TOTAL OUT =           6.2481
+           TOTAL OUT =        1003.1708             TOTAL OUT =           7.4041
 
-            IN - OUT =       1.0539E-03              IN - OUT =       8.8896E-06
+            IN - OUT =      -8.4751E-08              IN - OUT =      -8.2297E-09
 
- PERCENT DISCREPANCY =           0.00     PERCENT DISCREPANCY =           0.00
+ PERCENT DISCREPANCY =          -0.00     PERCENT DISCREPANCY =          -0.00
 
 
 
@@ -1273,21 +1273,21 @@ start timestep kper="24" kstp="1" mode="normal"
 
            IN:                                      IN:
            ---                                      ---
-              STO-SS =        1029.0337                STO-SS =           6.5430     STORAGE                          
+              STO-SS =        1046.9676                STO-SS =           6.2567     STORAGE                          
                  WEL =           0.0000                   WEL =           0.0000     WEL_0                            
 
-            TOTAL IN =        1029.0337              TOTAL IN =           6.5430
+            TOTAL IN =        1046.9676              TOTAL IN =           6.2567
 
           OUT:                                     OUT:
           ----                                     ----
-              STO-SS =       1.7500E-02                STO-SS =           0.0000     STORAGE                          
-                 WEL =        1029.0150                   WEL =           6.5430     WEL_0                            
+              STO-SS =           0.1156                STO-SS =           0.0000     STORAGE                          
+                 WEL =        1046.8520                   WEL =           6.2567     WEL_0                            
 
-           TOTAL OUT =        1029.0325             TOTAL OUT =           6.5430
+           TOTAL OUT =        1046.9676             TOTAL OUT =           6.2567
 
-            IN - OUT =       1.1819E-03              IN - OUT =       1.8295E-05
+            IN - OUT =      -8.3141E-08              IN - OUT =       2.3011E-10
 
- PERCENT DISCREPANCY =           0.00     PERCENT DISCREPANCY =           0.00
+ PERCENT DISCREPANCY =          -0.00     PERCENT DISCREPANCY =           0.00
 
 
 
@@ -1319,21 +1319,21 @@ start timestep kper="25" kstp="1" mode="normal"
 
            IN:                                      IN:
            ---                                      ---
-              STO-SS =        1075.4731                STO-SS =           6.6342     STORAGE                          
+              STO-SS =        1079.6366                STO-SS =           4.6670     STORAGE                          
                  WEL =           0.0000                   WEL =           0.0000     WEL_0                            
 
-            TOTAL IN =        1075.4731              TOTAL IN =           6.6342
+            TOTAL IN =        1079.6366              TOTAL IN =           4.6670
 
           OUT:                                     OUT:
           ----                                     ----
-              STO-SS =       1.7500E-02                STO-SS =           0.0000     STORAGE                          
-                 WEL =        1075.4543                   WEL =           6.6342     WEL_0                            
+              STO-SS =           0.1365                STO-SS =       2.9802E-03     STORAGE                          
+                 WEL =        1079.5001                   WEL =           4.6640     WEL_0                            
 
-           TOTAL OUT =        1075.4718             TOTAL OUT =           6.6342
+           TOTAL OUT =        1079.6366             TOTAL OUT =           4.6670
 
-            IN - OUT =       1.2913E-03              IN - OUT =       1.5625E-05
+            IN - OUT =      -6.2209E-08              IN - OUT =       2.9902E-09
 
- PERCENT DISCREPANCY =           0.00     PERCENT DISCREPANCY =           0.00
+ PERCENT DISCREPANCY =          -0.00     PERCENT DISCREPANCY =           0.00
 
 
 
@@ -1365,21 +1365,21 @@ start timestep kper="26" kstp="1" mode="normal"
 
            IN:                                      IN:
            ---                                      ---
-              STO-SS =        1130.0455                STO-SS =           7.7961     STORAGE                          
+              STO-SS =        1109.7035                STO-SS =           4.2953     STORAGE                          
                  WEL =           0.0000                   WEL =           0.0000     WEL_0                            
 
-            TOTAL IN =        1130.0455              TOTAL IN =           7.7961
+            TOTAL IN =        1109.7035              TOTAL IN =           4.2953
 
           OUT:                                     OUT:
           ----                                     ----
-              STO-SS =       1.7500E-02                STO-SS =           0.0000     STORAGE                          
-                 WEL =        1130.0267                   WEL =           7.7961     WEL_0                            
+              STO-SS =           0.1365                STO-SS =           0.0000     STORAGE                          
+                 WEL =        1109.5671                   WEL =           4.2953     WEL_0                            
 
-           TOTAL OUT =        1130.0442             TOTAL OUT =           7.7961
+           TOTAL OUT =        1109.7035             TOTAL OUT =           4.2953
 
-            IN - OUT =       1.2925E-03              IN - OUT =       1.7546E-07
+            IN - OUT =      -8.0172E-08              IN - OUT =      -2.5662E-09
 
- PERCENT DISCREPANCY =           0.00     PERCENT DISCREPANCY =           0.00
+ PERCENT DISCREPANCY =          -0.00     PERCENT DISCREPANCY =          -0.00
 
 
 
@@ -1411,21 +1411,21 @@ start timestep kper="27" kstp="1" mode="normal"
 
            IN:                                      IN:
            ---                                      ---
-              STO-SS =        1181.1628                STO-SS =           7.3025     STORAGE                          
+              STO-SS =        1153.1426                STO-SS =           6.2056     STORAGE                          
                  WEL =           0.0000                   WEL =           0.0000     WEL_0                            
 
-            TOTAL IN =        1181.1628              TOTAL IN =           7.3025
+            TOTAL IN =        1153.1426              TOTAL IN =           6.2056
 
           OUT:                                     OUT:
           ----                                     ----
-              STO-SS =       1.7500E-02                STO-SS =           0.0000     STORAGE                          
-                 WEL =        1181.1440                   WEL =           7.3025     WEL_0                            
+              STO-SS =           0.1365                STO-SS =           0.0000     STORAGE                          
+                 WEL =        1153.0062                   WEL =           6.2056     WEL_0                            
 
-           TOTAL OUT =        1181.1615             TOTAL OUT =           7.3025
+           TOTAL OUT =        1153.1426             TOTAL OUT =           6.2056
 
-            IN - OUT =       1.3076E-03              IN - OUT =       2.1594E-06
+            IN - OUT =      -7.6711E-08              IN - OUT =       4.9445E-10
 
- PERCENT DISCREPANCY =           0.00     PERCENT DISCREPANCY =           0.00
+ PERCENT DISCREPANCY =          -0.00     PERCENT DISCREPANCY =           0.00
 
 
 
@@ -1457,21 +1457,21 @@ start timestep kper="28" kstp="1" mode="normal"
 
            IN:                                      IN:
            ---                                      ---
-              STO-SS =        1235.4535                STO-SS =           7.7558     STORAGE                          
+              STO-SS =        1213.9354                STO-SS =           8.6847     STORAGE                          
                  WEL =           0.0000                   WEL =           0.0000     WEL_0                            
 
-            TOTAL IN =        1235.4535              TOTAL IN =           7.7558
+            TOTAL IN =        1213.9354              TOTAL IN =           8.6847
 
           OUT:                                     OUT:
           ----                                     ----
-              STO-SS =       1.7500E-02                STO-SS =           0.0000     STORAGE                          
-                 WEL =        1235.4346                   WEL =           7.7558     WEL_0                            
+              STO-SS =           0.1365                STO-SS =           0.0000     STORAGE                          
+                 WEL =        1213.7989                   WEL =           8.6847     WEL_0                            
 
-           TOTAL OUT =        1235.4521             TOTAL OUT =           7.7558
+           TOTAL OUT =        1213.9354             TOTAL OUT =           8.6847
 
-            IN - OUT =       1.4059E-03              IN - OUT =       1.4038E-05
+            IN - OUT =      -7.3778E-08              IN - OUT =       4.1900E-10
 
- PERCENT DISCREPANCY =           0.00     PERCENT DISCREPANCY =           0.00
+ PERCENT DISCREPANCY =          -0.00     PERCENT DISCREPANCY =           0.00
 
 
 
@@ -1503,21 +1503,21 @@ start timestep kper="29" kstp="1" mode="normal"
 
            IN:                                      IN:
            ---                                      ---
-              STO-SS =        1288.4653                STO-SS =           7.5731     STORAGE                          
+              STO-SS =        1263.2328                STO-SS =           7.0425     STORAGE                          
                  WEL =           0.0000                   WEL =           0.0000     WEL_0                            
 
-            TOTAL IN =        1288.4653              TOTAL IN =           7.5731
+            TOTAL IN =        1263.2328              TOTAL IN =           7.0425
 
           OUT:                                     OUT:
           ----                                     ----
-              STO-SS =       1.7500E-02                STO-SS =           0.0000     STORAGE                          
-                 WEL =        1288.4464                   WEL =           7.5731     WEL_0                            
+              STO-SS =           0.1365                STO-SS =           0.0000     STORAGE                          
+                 WEL =        1263.0964                   WEL =           7.0425     WEL_0                            
 
-           TOTAL OUT =        1288.4639             TOTAL OUT =           7.5731
+           TOTAL OUT =        1263.2328             TOTAL OUT =           7.0425
 
-            IN - OUT =       1.4083E-03              IN - OUT =       3.4396E-07
+            IN - OUT =      -6.7468E-08              IN - OUT =       9.0148E-10
 
- PERCENT DISCREPANCY =           0.00     PERCENT DISCREPANCY =           0.00
+ PERCENT DISCREPANCY =          -0.00     PERCENT DISCREPANCY =           0.00
 
 
 
@@ -1549,21 +1549,21 @@ start timestep kper="30" kstp="1" mode="normal"
 
            IN:                                      IN:
            ---                                      ---
-              STO-SS =        1341.7283                STO-SS =           7.6090     STORAGE                          
+              STO-SS =        1297.3195                STO-SS =           4.8695     STORAGE                          
                  WEL =           0.0000                   WEL =           0.0000     WEL_0                            
 
-            TOTAL IN =        1341.7283              TOTAL IN =           7.6090
+            TOTAL IN =        1297.3195              TOTAL IN =           4.8695
 
           OUT:                                     OUT:
           ----                                     ----
-              STO-SS =       1.7500E-02                STO-SS =           0.0000     STORAGE                          
-                 WEL =        1341.7094                   WEL =           7.6090     WEL_0                            
+              STO-SS =           0.1830                STO-SS =       6.6527E-03     STORAGE                          
+                 WEL =        1297.1364                   WEL =           4.8629     WEL_0                            
 
-           TOTAL OUT =        1341.7269             TOTAL OUT =           7.6090
+           TOTAL OUT =        1297.3195             TOTAL OUT =           4.8695
 
-            IN - OUT =       1.3881E-03              IN - OUT =      -2.8924E-06
+            IN - OUT =      -4.2630E-08              IN - OUT =       3.5483E-09
 
- PERCENT DISCREPANCY =           0.00     PERCENT DISCREPANCY =          -0.00
+ PERCENT DISCREPANCY =          -0.00     PERCENT DISCREPANCY =           0.00
 
 
 
@@ -1595,21 +1595,21 @@ start timestep kper="31" kstp="1" mode="normal"
 
            IN:                                      IN:
            ---                                      ---
-              STO-SS =        1393.4968                STO-SS =           7.3955     STORAGE                          
+              STO-SS =        1332.5363                STO-SS =           5.0310     STORAGE                          
                  WEL =           0.0000                   WEL =           0.0000     WEL_0                            
 
-            TOTAL IN =        1393.4968              TOTAL IN =           7.3955
+            TOTAL IN =        1332.5363              TOTAL IN =           5.0310
 
           OUT:                                     OUT:
           ----                                     ----
-              STO-SS =       1.7500E-02                STO-SS =           0.0000     STORAGE                          
-                 WEL =        1393.4779                   WEL =           7.3955     WEL_0                            
+              STO-SS =           0.1830                STO-SS =           0.0000     STORAGE                          
+                 WEL =        1332.3533                   WEL =           5.0310     WEL_0                            
 
-           TOTAL OUT =        1393.4954             TOTAL OUT =           7.3955
+           TOTAL OUT =        1332.5363             TOTAL OUT =           5.0310
 
-            IN - OUT =       1.4230E-03              IN - OUT =       4.9851E-06
+            IN - OUT =      -4.0948E-08              IN - OUT =       2.4021E-10
 
- PERCENT DISCREPANCY =           0.00     PERCENT DISCREPANCY =           0.00
+ PERCENT DISCREPANCY =          -0.00     PERCENT DISCREPANCY =           0.00
 
 
 
@@ -1641,21 +1641,21 @@ start timestep kper="32" kstp="1" mode="normal"
 
            IN:                                      IN:
            ---                                      ---
-              STO-SS =        1441.0539                STO-SS =           6.7939     STORAGE                          
+              STO-SS =        1387.0640                STO-SS =           7.7897     STORAGE                          
                  WEL =           0.0000                   WEL =           0.0000     WEL_0                            
 
-            TOTAL IN =        1441.0539              TOTAL IN =           6.7939
+            TOTAL IN =        1387.0640              TOTAL IN =           7.7897
 
           OUT:                                     OUT:
           ----                                     ----
-              STO-SS =       1.7500E-02                STO-SS =           0.0000     STORAGE                          
-                 WEL =        1441.0348                   WEL =           6.7938     WEL_0                            
+              STO-SS =           0.1830                STO-SS =           0.0000     STORAGE                          
+                 WEL =        1386.8810                   WEL =           7.7897     WEL_0                            
 
-           TOTAL OUT =        1441.0523             TOTAL OUT =           6.7938
+           TOTAL OUT =        1387.0640             TOTAL OUT =           7.7897
 
-            IN - OUT =       1.5716E-03              IN - OUT =       2.1230E-05
+            IN - OUT =      -3.8332E-08              IN - OUT =       3.7376E-10
 
- PERCENT DISCREPANCY =           0.00     PERCENT DISCREPANCY =           0.00
+ PERCENT DISCREPANCY =          -0.00     PERCENT DISCREPANCY =           0.00
 
 
 
@@ -1687,21 +1687,21 @@ start timestep kper="33" kstp="1" mode="normal"
 
            IN:                                      IN:
            ---                                      ---
-              STO-SS =        1482.8728                STO-SS =           5.9741     STORAGE                          
+              STO-SS =        1428.5397                STO-SS =           5.9251     STORAGE                          
                  WEL =           0.0000                   WEL =           0.0000     WEL_0                            
 
-            TOTAL IN =        1482.8728              TOTAL IN =           5.9741
+            TOTAL IN =        1428.5397              TOTAL IN =           5.9251
 
           OUT:                                     OUT:
           ----                                     ----
-              STO-SS =       2.0714E-02                STO-SS =       4.5924E-04     STORAGE                          
-                 WEL =        1482.8503                   WEL =           5.9737     WEL_0                            
+              STO-SS =           0.1930                STO-SS =       1.4260E-03     STORAGE                          
+                 WEL =        1428.3467                   WEL =           5.9237     WEL_0                            
 
-           TOTAL OUT =        1482.8711             TOTAL OUT =           5.9741
+           TOTAL OUT =        1428.5397             TOTAL OUT =           5.9251
 
-            IN - OUT =       1.7183E-03              IN - OUT =       2.0958E-05
+            IN - OUT =      -4.2068E-08              IN - OUT =      -5.3365E-10
 
- PERCENT DISCREPANCY =           0.00     PERCENT DISCREPANCY =           0.00
+ PERCENT DISCREPANCY =          -0.00     PERCENT DISCREPANCY =          -0.00
 
 
 
@@ -1733,21 +1733,21 @@ start timestep kper="34" kstp="1" mode="normal"
 
            IN:                                      IN:
            ---                                      ---
-              STO-SS =        1523.7009                STO-SS =           5.8326     STORAGE                          
+              STO-SS =        1487.3016                STO-SS =           8.3946     STORAGE                          
                  WEL =           0.0000                   WEL =           0.0000     WEL_0                            
 
-            TOTAL IN =        1523.7009              TOTAL IN =           5.8326
+            TOTAL IN =        1487.3016              TOTAL IN =           8.3946
 
           OUT:                                     OUT:
           ----                                     ----
-              STO-SS =       2.0714E-02                STO-SS =           0.0000     STORAGE                          
-                 WEL =        1523.6783                   WEL =           5.8326     WEL_0                            
+              STO-SS =           0.1930                STO-SS =           0.0000     STORAGE                          
+                 WEL =        1487.1086                   WEL =           8.3946     WEL_0                            
 
-           TOTAL OUT =        1523.6990             TOTAL OUT =           5.8326
+           TOTAL OUT =        1487.3016             TOTAL OUT =           8.3946
 
-            IN - OUT =       1.8691E-03              IN - OUT =       2.1548E-05
+            IN - OUT =      -3.7957E-08              IN - OUT =       5.8719E-10
 
- PERCENT DISCREPANCY =           0.00     PERCENT DISCREPANCY =           0.00
+ PERCENT DISCREPANCY =          -0.00     PERCENT DISCREPANCY =           0.00
 
 
 
@@ -1779,21 +1779,21 @@ start timestep kper="35" kstp="1" mode="normal"
 
            IN:                                      IN:
            ---                                      ---
-              STO-SS =        1572.9981                STO-SS =           7.0425     STORAGE                          
+              STO-SS =        1560.2018                STO-SS =          10.4143     STORAGE                          
                  WEL =           0.0000                   WEL =           0.0000     WEL_0                            
 
-            TOTAL IN =        1572.9981              TOTAL IN =           7.0425
+            TOTAL IN =        1560.2018              TOTAL IN =          10.4143
 
           OUT:                                     OUT:
           ----                                     ----
-              STO-SS =       2.0714E-02                STO-SS =           0.0000     STORAGE                          
-                 WEL =        1572.9755                   WEL =           7.0425     WEL_0                            
+              STO-SS =           0.1930                STO-SS =           0.0000     STORAGE                          
+                 WEL =        1560.0088                   WEL =          10.4143     WEL_0                            
 
-           TOTAL OUT =        1572.9962             TOTAL OUT =           7.0425
+           TOTAL OUT =        1560.2018             TOTAL OUT =          10.4143
 
-            IN - OUT =       1.9220E-03              IN - OUT =       7.5507E-06
+            IN - OUT =      -3.2878E-08              IN - OUT =       7.2552E-10
 
- PERCENT DISCREPANCY =           0.00     PERCENT DISCREPANCY =           0.00
+ PERCENT DISCREPANCY =          -0.00     PERCENT DISCREPANCY =           0.00
 
 
 
@@ -1825,21 +1825,21 @@ start timestep kper="36" kstp="1" mode="normal"
 
            IN:                                      IN:
            ---                                      ---
-              STO-SS =        1625.4117                STO-SS =           7.4877     STORAGE                          
+              STO-SS =        1622.3134                STO-SS =           8.8731     STORAGE                          
                  WEL =           0.0000                   WEL =           0.0000     WEL_0                            
 
-            TOTAL IN =        1625.4117              TOTAL IN =           7.4877
+            TOTAL IN =        1622.3134              TOTAL IN =           8.8731
 
           OUT:                                     OUT:
           ----                                     ----
-              STO-SS =       2.0714E-02                STO-SS =           0.0000     STORAGE                          
-                 WEL =        1625.3890                   WEL =           7.4877     WEL_0                            
+              STO-SS =           0.1930                STO-SS =           0.0000     STORAGE                          
+                 WEL =        1622.1204                   WEL =           8.8731     WEL_0                            
 
-           TOTAL OUT =        1625.4098             TOTAL OUT =           7.4877
+           TOTAL OUT =        1622.3134             TOTAL OUT =           8.8731
 
-            IN - OUT =       1.9871E-03              IN - OUT =       9.3030E-06
+            IN - OUT =      -2.5961E-08              IN - OUT =       9.8825E-10
 
- PERCENT DISCREPANCY =           0.00     PERCENT DISCREPANCY =           0.00
+ PERCENT DISCREPANCY =          -0.00     PERCENT DISCREPANCY =           0.00
 
 
 
@@ -1871,21 +1871,21 @@ start timestep kper="37" kstp="1" mode="normal"
 
            IN:                                      IN:
            ---                                      ---
-              STO-SS =        1677.5366                STO-SS =           7.4464     STORAGE                          
+              STO-SS =        1696.2756                STO-SS =          10.5660     STORAGE                          
                  WEL =           0.0000                   WEL =           0.0000     WEL_0                            
 
-            TOTAL IN =        1677.5366              TOTAL IN =           7.4464
+            TOTAL IN =        1696.2756              TOTAL IN =          10.5660
 
           OUT:                                     OUT:
           ----                                     ----
-              STO-SS =       2.0714E-02                STO-SS =           0.0000     STORAGE                          
-                 WEL =        1677.5138                   WEL =           7.4464     WEL_0                            
+              STO-SS =           0.1930                STO-SS =           0.0000     STORAGE                          
+                 WEL =        1696.0826                   WEL =          10.5660     WEL_0                            
 
-           TOTAL OUT =        1677.5345             TOTAL OUT =           7.4464
+           TOTAL OUT =        1696.2756             TOTAL OUT =          10.5660
 
-            IN - OUT =       2.0958E-03              IN - OUT =       1.5529E-05
+            IN - OUT =      -1.9407E-08              IN - OUT =       9.3621E-10
 
- PERCENT DISCREPANCY =           0.00     PERCENT DISCREPANCY =           0.00
+ PERCENT DISCREPANCY =          -0.00     PERCENT DISCREPANCY =           0.00
 
 
 
@@ -1917,21 +1917,21 @@ start timestep kper="38" kstp="1" mode="normal"
 
            IN:                                      IN:
            ---                                      ---
-              STO-SS =        1719.6806                STO-SS =           6.0206     STORAGE                          
+              STO-SS =        1744.6216                STO-SS =           6.9066     STORAGE                          
                  WEL =           0.0000                   WEL =           0.0000     WEL_0                            
 
-            TOTAL IN =        1719.6806              TOTAL IN =           6.0206
+            TOTAL IN =        1744.6216              TOTAL IN =           6.9066
 
           OUT:                                     OUT:
           ----                                     ----
-              STO-SS =       4.9119E-02                STO-SS =       4.0578E-03     STORAGE                          
-                 WEL =        1719.6292                   WEL =           6.0165     WEL_0                            
+              STO-SS =           0.2997                STO-SS =       1.5249E-02     STORAGE                          
+                 WEL =        1744.3219                   WEL =           6.8913     WEL_0                            
 
-           TOTAL OUT =        1719.6783             TOTAL OUT =           6.0206
+           TOTAL OUT =        1744.6216             TOTAL OUT =           6.9066
 
-            IN - OUT =       2.2357E-03              IN - OUT =       1.9991E-05
+            IN - OUT =      -2.0162E-08              IN - OUT =      -1.0786E-10
 
- PERCENT DISCREPANCY =           0.00     PERCENT DISCREPANCY =           0.00
+ PERCENT DISCREPANCY =          -0.00     PERCENT DISCREPANCY =          -0.00
 
 
 
@@ -1963,19 +1963,19 @@ start timestep kper="39" kstp="1" mode="normal"
 
            IN:                                      IN:
            ---                                      ---
-              STO-SS =        1759.2010                STO-SS =           5.6458     STORAGE                          
+              STO-SS =        1772.1498                STO-SS =           3.9326     STORAGE                          
                  WEL =           0.0000                   WEL =           0.0000     WEL_0                            
 
-            TOTAL IN =        1759.2010              TOTAL IN =           5.6458
+            TOTAL IN =        1772.1498              TOTAL IN =           3.9326
 
           OUT:                                     OUT:
           ----                                     ----
-              STO-SS =       4.9119E-02                STO-SS =           0.0000     STORAGE                          
-                 WEL =        1759.1495                   WEL =           5.6458     WEL_0                            
+              STO-SS =           0.6280                STO-SS =       4.6898E-02     STORAGE                          
+                 WEL =        1771.5218                   WEL =           3.8857     WEL_0                            
 
-           TOTAL OUT =        1759.1986             TOTAL OUT =           5.6458
+           TOTAL OUT =        1772.1498             TOTAL OUT =           3.9326
 
-            IN - OUT =       2.3836E-03              IN - OUT =       2.1118E-05
+            IN - OUT =       4.4034E-08              IN - OUT =       9.1709E-09
 
  PERCENT DISCREPANCY =           0.00     PERCENT DISCREPANCY =           0.00
 
@@ -2009,19 +2009,19 @@ start timestep kper="40" kstp="1" mode="normal"
 
            IN:                                      IN:
            ---                                      ---
-              STO-SS =        1803.4742                STO-SS =           6.3247     STORAGE                          
+              STO-SS =        1820.5225                STO-SS =           6.9104     STORAGE                          
                  WEL =           0.0000                   WEL =           0.0000     WEL_0                            
 
-            TOTAL IN =        1803.4742              TOTAL IN =           6.3247
+            TOTAL IN =        1820.5225              TOTAL IN =           6.9104
 
           OUT:                                     OUT:
           ----                                     ----
-              STO-SS =       4.9119E-02                STO-SS =           0.0000     STORAGE                          
-                 WEL =        1803.4226                   WEL =           6.3247     WEL_0                            
+              STO-SS =           0.6280                STO-SS =           0.0000     STORAGE                          
+                 WEL =        1819.8945                   WEL =           6.9104     WEL_0                            
 
-           TOTAL OUT =        1803.4717             TOTAL OUT =           6.3247
+           TOTAL OUT =        1820.5225             TOTAL OUT =           6.9104
 
-            IN - OUT =       2.4837E-03              IN - OUT =       1.4313E-05
+            IN - OUT =       4.7188E-08              IN - OUT =       4.5063E-10
 
  PERCENT DISCREPANCY =           0.00     PERCENT DISCREPANCY =           0.00
 
@@ -2055,19 +2055,19 @@ start timestep kper="41" kstp="1" mode="normal"
 
            IN:                                      IN:
            ---                                      ---
-              STO-SS =        1854.9117                STO-SS =           7.3482     STORAGE                          
+              STO-SS =        1872.3268                STO-SS =           7.4006     STORAGE                          
                  WEL =           0.0000                   WEL =           0.0000     WEL_0                            
 
-            TOTAL IN =        1854.9117              TOTAL IN =           7.3482
+            TOTAL IN =        1872.3268              TOTAL IN =           7.4006
 
           OUT:                                     OUT:
           ----                                     ----
-              STO-SS =       4.9119E-02                STO-SS =           0.0000     STORAGE                          
-                 WEL =        1854.8601                   WEL =           7.3482     WEL_0                            
+              STO-SS =           0.6280                STO-SS =           0.0000     STORAGE                          
+                 WEL =        1871.6988                   WEL =           7.4006     WEL_0                            
 
-           TOTAL OUT =        1854.9092             TOTAL OUT =           7.3482
+           TOTAL OUT =        1872.3268             TOTAL OUT =           7.4006
 
-            IN - OUT =       2.5152E-03              IN - OUT =       4.4926E-06
+            IN - OUT =       5.4672E-08              IN - OUT =       1.0690E-09
 
  PERCENT DISCREPANCY =           0.00     PERCENT DISCREPANCY =           0.00
 
@@ -2101,19 +2101,19 @@ start timestep kper="42" kstp="1" mode="normal"
 
            IN:                                      IN:
            ---                                      ---
-              STO-SS =        1906.3086                STO-SS =           7.3424     STORAGE                          
+              STO-SS =        1909.2790                STO-SS =           5.2789     STORAGE                          
                  WEL =           0.0000                   WEL =           0.0000     WEL_0                            
 
-            TOTAL IN =        1906.3086              TOTAL IN =           7.3424
+            TOTAL IN =        1909.2790              TOTAL IN =           5.2789
 
           OUT:                                     OUT:
           ----                                     ----
-              STO-SS =       4.9119E-02                STO-SS =           0.0000     STORAGE                          
-                 WEL =        1906.2569                   WEL =           7.3424     WEL_0                            
+              STO-SS =           0.6626                STO-SS =       4.9326E-03     STORAGE                          
+                 WEL =        1908.6165                   WEL =           5.2740     WEL_0                            
 
-           TOTAL OUT =        1906.3060             TOTAL OUT =           7.3424
+           TOTAL OUT =        1909.2790             TOTAL OUT =           5.2789
 
-            IN - OUT =       2.6423E-03              IN - OUT =       1.8154E-05
+            IN - OUT =       6.5720E-08              IN - OUT =       1.5783E-09
 
  PERCENT DISCREPANCY =           0.00     PERCENT DISCREPANCY =           0.00
 
@@ -2147,19 +2147,19 @@ start timestep kper="43" kstp="1" mode="normal"
 
            IN:                                      IN:
            ---                                      ---
-              STO-SS =        1956.0671                STO-SS =           7.1084     STORAGE                          
+              STO-SS =        1935.1668                STO-SS =           3.6983     STORAGE                          
                  WEL =           0.0000                   WEL =           0.0000     WEL_0                            
 
-            TOTAL IN =        1956.0671              TOTAL IN =           7.1084
+            TOTAL IN =        1935.1668              TOTAL IN =           3.6983
 
           OUT:                                     OUT:
           ----                                     ----
-              STO-SS =       4.9119E-02                STO-SS =           0.0000     STORAGE                          
-                 WEL =        1956.0154                   WEL =           7.1084     WEL_0                            
+              STO-SS =           0.6966                STO-SS =       4.8566E-03     STORAGE                          
+                 WEL =        1934.4703                   WEL =           3.6934     WEL_0                            
 
-           TOTAL OUT =        1956.0645             TOTAL OUT =           7.1084
+           TOTAL OUT =        1935.1668             TOTAL OUT =           3.6983
 
-            IN - OUT =       2.6642E-03              IN - OUT =       3.1329E-06
+            IN - OUT =       9.2209E-08              IN - OUT =       3.7841E-09
 
  PERCENT DISCREPANCY =           0.00     PERCENT DISCREPANCY =           0.00
 
@@ -2193,19 +2193,19 @@ start timestep kper="44" kstp="1" mode="normal"
 
            IN:                                      IN:
            ---                                      ---
-              STO-SS =        2011.2105                STO-SS =           7.8776     STORAGE                          
+              STO-SS =        1971.2701                STO-SS =           5.1576     STORAGE                          
                  WEL =           0.0000                   WEL =           0.0000     WEL_0                            
 
-            TOTAL IN =        2011.2105              TOTAL IN =           7.8776
+            TOTAL IN =        1971.2701              TOTAL IN =           5.1576
 
           OUT:                                     OUT:
           ----                                     ----
-              STO-SS =       4.9119E-02                STO-SS =           0.0000     STORAGE                          
-                 WEL =        2011.1586                   WEL =           7.8776     WEL_0                            
+              STO-SS =           0.6966                STO-SS =           0.0000     STORAGE                          
+                 WEL =        1970.5735                   WEL =           5.1576     WEL_0                            
 
-           TOTAL OUT =        2011.2078             TOTAL OUT =           7.8776
+           TOTAL OUT =        1971.2701             TOTAL OUT =           5.1576
 
-            IN - OUT =       2.7250E-03              IN - OUT =       8.6857E-06
+            IN - OUT =       9.6473E-08              IN - OUT =       6.0922E-10
 
  PERCENT DISCREPANCY =           0.00     PERCENT DISCREPANCY =           0.00
 
@@ -2239,19 +2239,19 @@ start timestep kper="45" kstp="1" mode="normal"
 
            IN:                                      IN:
            ---                                      ---
-              STO-SS =        2063.4015                STO-SS =           7.4559     STORAGE                          
+              STO-SS =        2021.5530                STO-SS =           7.1833     STORAGE                          
                  WEL =           0.0000                   WEL =           0.0000     WEL_0                            
 
-            TOTAL IN =        2063.4015              TOTAL IN =           7.4559
+            TOTAL IN =        2021.5530              TOTAL IN =           7.1833
 
           OUT:                                     OUT:
           ----                                     ----
-              STO-SS =       4.9119E-02                STO-SS =           0.0000     STORAGE                          
-                 WEL =        2063.3496                   WEL =           7.4558     WEL_0                            
+              STO-SS =           0.6966                STO-SS =           0.0000     STORAGE                          
+                 WEL =        2020.8564                   WEL =           7.1833     WEL_0                            
 
-           TOTAL OUT =        2063.3987             TOTAL OUT =           7.4558
+           TOTAL OUT =        2021.5530             TOTAL OUT =           7.1833
 
-            IN - OUT =       2.7588E-03              IN - OUT =       4.8347E-06
+            IN - OUT =       9.9517E-08              IN - OUT =       4.3485E-10
 
  PERCENT DISCREPANCY =           0.00     PERCENT DISCREPANCY =           0.00
 
@@ -2285,19 +2285,19 @@ start timestep kper="46" kstp="1" mode="normal"
 
            IN:                                      IN:
            ---                                      ---
-              STO-SS =        2113.1943                STO-SS =           7.1133     STORAGE                          
+              STO-SS =        2082.4419                STO-SS =           8.6984     STORAGE                          
                  WEL =           0.0000                   WEL =           0.0000     WEL_0                            
 
-            TOTAL IN =        2113.1943              TOTAL IN =           7.1133
+            TOTAL IN =        2082.4419              TOTAL IN =           8.6984
 
           OUT:                                     OUT:
           ----                                     ----
-              STO-SS =       4.9119E-02                STO-SS =           0.0000     STORAGE                          
-                 WEL =        2113.1424                   WEL =           7.1133     WEL_0                            
+              STO-SS =           0.6966                STO-SS =           0.0000     STORAGE                          
+                 WEL =        2081.7453                   WEL =           8.6984     WEL_0                            
 
-           TOTAL OUT =        2113.1915             TOTAL OUT =           7.1133
+           TOTAL OUT =        2082.4419             TOTAL OUT =           8.6984
 
-            IN - OUT =       2.8091E-03              IN - OUT =       7.1864E-06
+            IN - OUT =       1.0422E-07              IN - OUT =       6.7137E-10
 
  PERCENT DISCREPANCY =           0.00     PERCENT DISCREPANCY =           0.00
 
@@ -2331,21 +2331,21 @@ start timestep kper="47" kstp="1" mode="normal"
 
            IN:                                      IN:
            ---                                      ---
-              STO-SS =        2164.3813                STO-SS =           7.3124     STORAGE                          
+              STO-SS =        2141.1913                STO-SS =           8.3928     STORAGE                          
                  WEL =           0.0000                   WEL =           0.0000     WEL_0                            
 
-            TOTAL IN =        2164.3813              TOTAL IN =           7.3124
+            TOTAL IN =        2141.1913              TOTAL IN =           8.3928
 
           OUT:                                     OUT:
           ----                                     ----
-              STO-SS =       4.9119E-02                STO-SS =           0.0000     STORAGE                          
-                 WEL =        2164.3293                   WEL =           7.3124     WEL_0                            
+              STO-SS =           0.6966                STO-SS =           0.0000     STORAGE                          
+                 WEL =        2140.4948                   WEL =           8.3928     WEL_0                            
 
-           TOTAL OUT =        2164.3785             TOTAL OUT =           7.3124
+           TOTAL OUT =        2141.1913             TOTAL OUT =           8.3928
 
-            IN - OUT =       2.8016E-03              IN - OUT =      -1.0823E-06
+            IN - OUT =       1.0535E-07              IN - OUT =       1.6261E-10
 
- PERCENT DISCREPANCY =           0.00     PERCENT DISCREPANCY =          -0.00
+ PERCENT DISCREPANCY =           0.00     PERCENT DISCREPANCY =           0.00
 
 
 
@@ -2377,21 +2377,21 @@ start timestep kper="48" kstp="1" mode="normal"
 
            IN:                                      IN:
            ---                                      ---
-              STO-SS =        2214.5938                STO-SS =           7.1732     STORAGE                          
+              STO-SS =        2198.1143                STO-SS =           8.1319     STORAGE                          
                  WEL =           0.0000                   WEL =           0.0000     WEL_0                            
 
-            TOTAL IN =        2214.5938              TOTAL IN =           7.1732
+            TOTAL IN =        2198.1143              TOTAL IN =           8.1319
 
           OUT:                                     OUT:
           ----                                     ----
-              STO-SS =       4.9119E-02                STO-SS =           0.0000     STORAGE                          
-                 WEL =        2214.5419                   WEL =           7.1732     WEL_0                            
+              STO-SS =           0.6966                STO-SS =           0.0000     STORAGE                          
+                 WEL =        2197.4178                   WEL =           8.1319     WEL_0                            
 
-           TOTAL OUT =        2214.5910             TOTAL OUT =           7.1732
+           TOTAL OUT =        2198.1143             TOTAL OUT =           8.1319
 
-            IN - OUT =       2.8234E-03              IN - OUT =       3.1184E-06
+            IN - OUT =       1.0488E-07              IN - OUT =      -6.7113E-11
 
- PERCENT DISCREPANCY =           0.00     PERCENT DISCREPANCY =           0.00
+ PERCENT DISCREPANCY =           0.00     PERCENT DISCREPANCY =          -0.00
 
 
 
@@ -2423,21 +2423,21 @@ start timestep kper="49" kstp="1" mode="normal"
 
            IN:                                      IN:
            ---                                      ---
-              STO-SS =        2264.0471                STO-SS =           7.0648     STORAGE                          
+              STO-SS =        2258.5092                STO-SS =           8.6278     STORAGE                          
                  WEL =           0.0000                   WEL =           0.0000     WEL_0                            
 
-            TOTAL IN =        2264.0471              TOTAL IN =           7.0648
+            TOTAL IN =        2258.5092              TOTAL IN =           8.6278
 
           OUT:                                     OUT:
           ----                                     ----
-              STO-SS =       4.9119E-02                STO-SS =           0.0000     STORAGE                          
-                 WEL =        2263.9951                   WEL =           7.0647     WEL_0                            
+              STO-SS =           0.6966                STO-SS =           0.0000     STORAGE                          
+                 WEL =        2257.8127                   WEL =           8.6278     WEL_0                            
 
-           TOTAL OUT =        2264.0443             TOTAL OUT =           7.0647
+           TOTAL OUT =        2258.5092             TOTAL OUT =           8.6278
 
-            IN - OUT =       2.8488E-03              IN - OUT =       3.6323E-06
+            IN - OUT =       1.0208E-07              IN - OUT =      -3.9994E-10
 
- PERCENT DISCREPANCY =           0.00     PERCENT DISCREPANCY =           0.00
+ PERCENT DISCREPANCY =           0.00     PERCENT DISCREPANCY =          -0.00
 
 
 
@@ -2469,19 +2469,19 @@ start timestep kper="50" kstp="1" mode="normal"
 
            IN:                                      IN:
            ---                                      ---
-              STO-SS =        2311.7363                STO-SS =           6.8127     STORAGE                          
+              STO-SS =        2299.6353                STO-SS =           5.8752     STORAGE                          
                  WEL =           0.0000                   WEL =           0.0000     WEL_0                            
 
-            TOTAL IN =        2311.7363              TOTAL IN =           6.8127
+            TOTAL IN =        2299.6353              TOTAL IN =           5.8752
 
           OUT:                                     OUT:
           ----                                     ----
-              STO-SS =       4.9119E-02                STO-SS =           0.0000     STORAGE                          
-                 WEL =        2311.6843                   WEL =           6.8127     WEL_0                            
+              STO-SS =           0.7547                STO-SS =       8.3065E-03     STORAGE                          
+                 WEL =        2298.8806                   WEL =           5.8669     WEL_0                            
 
-           TOTAL OUT =        2311.7334             TOTAL OUT =           6.8127
+           TOTAL OUT =        2299.6353             TOTAL OUT =           5.8752
 
-            IN - OUT =       2.8855E-03              IN - OUT =       5.2326E-06
+            IN - OUT =       1.3270E-07              IN - OUT =       4.3732E-09
 
  PERCENT DISCREPANCY =           0.00     PERCENT DISCREPANCY =           0.00
 
@@ -2515,21 +2515,21 @@ start timestep kper="51" kstp="1" mode="normal"
 
            IN:                                      IN:
            ---                                      ---
-              STO-SS =        2361.4806                STO-SS =           7.1063     STORAGE                          
+              STO-SS =        2344.0963                STO-SS =           6.3516     STORAGE                          
                  WEL =           0.0000                   WEL =           0.0000     WEL_0                            
 
-            TOTAL IN =        2361.4806              TOTAL IN =           7.1063
+            TOTAL IN =        2344.0963              TOTAL IN =           6.3516
 
           OUT:                                     OUT:
           ----                                     ----
-              STO-SS =       4.9119E-02                STO-SS =           0.0000     STORAGE                          
-                 WEL =        2361.4285                   WEL =           7.1063     WEL_0                            
+              STO-SS =           0.7547                STO-SS =           0.0000     STORAGE                          
+                 WEL =        2343.3416                   WEL =           6.3516     WEL_0                            
 
-           TOTAL OUT =        2361.4776             TOTAL OUT =           7.1063
+           TOTAL OUT =        2344.0963             TOTAL OUT =           6.3516
 
-            IN - OUT =       2.9878E-03              IN - OUT =       1.4622E-05
+            IN - OUT =       1.2979E-07              IN - OUT =      -4.1556E-10
 
- PERCENT DISCREPANCY =           0.00     PERCENT DISCREPANCY =           0.00
+ PERCENT DISCREPANCY =           0.00     PERCENT DISCREPANCY =          -0.00
 
 
 
@@ -2561,21 +2561,21 @@ start timestep kper="52" kstp="1" mode="normal"
 
            IN:                                      IN:
            ---                                      ---
-              STO-SS =        2417.2320                STO-SS =           7.9645     STORAGE                          
+              STO-SS =        2373.2777                STO-SS =           4.1688     STORAGE                          
                  WEL =           0.0000                   WEL =           0.0000     WEL_0                            
 
-            TOTAL IN =        2417.2320              TOTAL IN =           7.9645
+            TOTAL IN =        2373.2777              TOTAL IN =           4.1688
 
           OUT:                                     OUT:
           ----                                     ----
-              STO-SS =       4.9119E-02                STO-SS =           0.0000     STORAGE                          
-                 WEL =        2417.1798                   WEL =           7.9645     WEL_0                            
+              STO-SS =           0.8234                STO-SS =       9.8125E-03     STORAGE                          
+                 WEL =        2372.4543                   WEL =           4.1590     WEL_0                            
 
-           TOTAL OUT =        2417.2290             TOTAL OUT =           7.9645
+           TOTAL OUT =        2373.2777             TOTAL OUT =           4.1688
 
-            IN - OUT =       3.0366E-03              IN - OUT =       6.9753E-06
+            IN - OUT =       1.2775E-07              IN - OUT =      -2.9152E-10
 
- PERCENT DISCREPANCY =           0.00     PERCENT DISCREPANCY =           0.00
+ PERCENT DISCREPANCY =           0.00     PERCENT DISCREPANCY =          -0.00
 
 
 
