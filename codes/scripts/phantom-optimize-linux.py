@@ -21,7 +21,7 @@ from pathlib import Path
 notebook_dir = os.getcwd()
 
 MODFLOW_PATH = "../binaries/MODFLOW6/linux"
-mf6_elf = os.path.join(notebook_dir, MODFLOW_PATH, "mf6.elf")
+mf6_elf = os.path.join(notebook_dir, MODFLOW_PATH, "mf6")
 
 # check if MODFLOW is accessible at the specified path
 # if not, attempt to download it using flopy's utility function
