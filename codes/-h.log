@@ -1,0 +1,3 @@
+time,elapsed_seconds,message
+17:10:58,8.53e-05,PEST++ performance logger started
+17:10:58,0.0003122,starting to process control file
