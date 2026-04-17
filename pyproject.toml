@@ -1,7 +1,7 @@
 [project]
-name = "hwrs564b-course-materials"
+name = "kfm-ms"
 version = "0.1.0"
-description = "Add your description here"
+description = "uv venv to support Kaden Francis McCulloch MS project, University of Arizona (2026)"
 readme = "README.md"
 requires-python = ">=3.11"
 dependencies = [
@@ -19,5 +19,4 @@ dependencies = [
     "tqdm>=4.67.1",
     "wqchartpy>=0.1.10",
     "xarray>=2025.7.1",
-    "numpy>=1.24,<2.0"
 ]
