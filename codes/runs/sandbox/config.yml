@@ -1,9 +1,0 @@
-S: 0.001
-T: 100.0
-t_eval: 365.0
-well_at_compliance:
-  Q: 26.926207306013833
-  radial_dist: 81.7325874080391
-well_at_pit:
-  Q: 26.926207306013833
-  radial_dist: 21.092304202426895
