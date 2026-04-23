@@ -40,7 +40,7 @@ workspace = None
 dt, nper = 7.0, 10
 
 # grid parameters: cell size and number of rows/columns
-cell_dim, ncol, nrow = 2.0, 50, 50
+cell_dim, ncol, nrow = 1.0, 50, 50
 lx, ly = ncol * cell_dim, nrow * cell_dim
 
 def setup_sim(name, wel_data, ws):
@@ -64,8 +64,8 @@ def setup_sim(name, wel_data, ws):
     
     # create groundwater flow model
     gwf = flopy.mf6.ModflowGwf(sim, modelname=name, save_flows=True)
-    flopy.mf6.ModflowGwfdis(gwf, nlay=1, nrow=nrow, ncol=ncol, top=0.0, botm=[-10.0],
-                            delr=cell_dim, delc=cell_dim, xorigin=-lx/2, yorigin=-ly/2)
+    flopy.mf6.ModflowGwfdis(gwf, nlay=1, nrow=nrow, ncol=ncol, top=0.0, botm=[-100.0],
+                            delr=cell_dim, delc=cell_dim, xorigin=0.0, yorigin=0.0)
     
     # hydraulic properties: horizontal conductivity (k) and cell type (icelltype=0 for confined)
     flopy.mf6.ModflowGwfnpf(gwf, k=1e-3, icelltype=0) 
@@ -142,11 +142,21 @@ if __name__ == "__main__":
     workspace = os.path.join(workspace_base, root)
     workspace = os.path.abspath(workspace)
 
-    # define perimeter cells (control points) along the edges of the grid
-    r_start, r_end, c_start, c_end = 5, 45, 5, 45
+    # define perimeter cells (control points) offset by from the domain boundary by a margin
+    margin = 5
+
+    r_start, r_end = margin, (nrow - margin) - 1
+    c_start, c_end = margin, (ncol - margin) - 1
     cp_cells = []
-    for c in range(c_start, c_end + 1): cp_cells.extend([(r_start, c), (r_end, c)])
-    for r in range(r_start + 1, r_end): cp_cells.extend([(r, c_start), (r, c_end)])
+
+    # top and bottom
+    for c in range(c_start, c_end + 1): 
+        cp_cells.extend([(r_start, c), (r_end, c)])
+
+    # left and right excluding corners
+    for r in range(r_start + 1, r_end): 
+        cp_cells.extend([(r, c_start), (r, c_end)])
+
     n_cp = len(cp_cells)
     print(f"Defined {nrow} x {ncol} grid with {n_cp} perimeter cells...")
 
@@ -163,17 +173,18 @@ if __name__ == "__main__":
     
     # pick n_real random locations for the real wells from the inner grid (excluding perimeter)
     real_locs = random.sample(inner_coords, n_real)
+    print(f"Real well locations (Row, Col): {real_locs}")
     
     print(f"Running simulation for {n_real} Real wells...")
     real_wells_data = []
     for (r, c) in real_locs:
         real_wells_data.append({
             'r': r, 'c': c, 
-            'Q': np.random.uniform(0.5, 2.0, nper)
+            # random pumping rates between specified bounds
+            'Q': np.random.uniform(0.005, 0.02, nper) 
         })
     
     # create a well stress period data structure for the real wells
-    # random pumping rates between 0.5 and 2.0
     wel_spd_real = {p: [((0, w['r'], w['c']), -w['Q'][p]) for w in real_wells_data] for p in range(nper)}
     
     # run the "real" simulation to get the target drawdown at perimeter cells

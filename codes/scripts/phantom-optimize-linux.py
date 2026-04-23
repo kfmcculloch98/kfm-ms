@@ -163,6 +163,7 @@ if __name__ == "__main__":
     
     # pick n_real random locations for the real wells from the inner grid (excluding perimeter)
     real_locs = random.sample(inner_coords, n_real)
+    print(f"Real well locations (Row, Col): {real_locs}")
     
     print(f"Running simulation for {n_real} Real wells...")
     real_wells_data = []
