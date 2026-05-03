@@ -1,0 +1,100 @@
+time,elapsed_seconds,message
+18:02:14,7.88e-05,PEST++ performance logger started
+18:02:14,0.0014826,starting to process control file
+18:02:15,0.086756,finished processing control file
+18:02:15,0.0116457,starting basic model IO error checking
+18:02:15,0.022528,finished basic model IO error checking
+18:02:15,0.0043558,initializing
+18:02:15,0.000334,using glm algorithm
+18:02:15,8.93e-05,using REDSVD for truncated svd solve
+18:02:15,8.61e-05,maxsing: 10000000
+18:02:15,8.15e-05,eigthresh:  1e-06
+18:02:15,9.75e-05,initializing localizer
+18:02:15,0.0003088,not using localization
+18:02:15,0.0004583,using lambda multipliers: 
+18:02:15,0.0003068,using lambda scaling factors: 
+18:02:15,0.0002242,acceptable phi factor:  1.05
+18:02:15,0.0001201,lambda increase factor:  10
+18:02:15,9.91e-05,lambda decrease factor:  0.75
+18:02:15,0.0002258,max run fail:  1
+18:02:15,0.0006608,initializing prior parameter covariance matrix
+18:02:15,2.51e-05,initializing parcov
+18:02:15,0.0002784,parcov loaded  from parameter bounds, using par_sigma_range 4
+18:02:15,0.000274,initializing observation noise covariance matrix
+18:02:15,0.0020455,obscov loaded  from observation weights
+18:02:15,0.0027344,drawing parameter realizations:  50
+18:02:15,0.0004082,parameters not grouped by parameter groups, reordering par ensemble
+18:02:15,0.0003318,making standard normal draws
+18:02:15,0.000153,scaling by std
+18:02:15,1.27e-05,checking realization for invalid values
+18:02:15,2.97e-05,resizing reals matrix
+18:02:15,1.86e-05,filling reals matrix and adding mean values
+18:02:15,0.000361,not using prior parameter covariance matrix scaling
+18:02:15,0.0004813,NOTE: no obs-noise-specific options have been passed, resetting to `ies_no_noise` to true
+18:02:15,9.37e-05,initializing no-noise observation ensemble of :  50
+18:02:15,0.0013376,setting weights ensemble from control file weights
+18:02:15,0.0821653,saved weight ensemble to  inversion_level_1.weights.csv
+18:02:15,4.58e-05,checking for denormal values in weights ensemble
+18:02:15,0.0003818,adding 'base' parameter values to ensemble
+18:02:15,0.0013,adding 'base' observation values to ensemble
+18:02:15,0.001454,adding 'base' weight values to weight ensemble
+18:02:15,0.0007886,checking for denormal values in pe
+18:02:15,0.0062937,saved initial parameter ensemble to  inversion_level_1.0.par.csv
+18:02:15,2.93e-05,checking for denormal values in obs + noise ensemble
+18:02:15,0.128124,saved obs+noise observation ensemble (obsval + noise realizations) to  inversion_level_1.obs+noise.csv
+18:02:15,0.0007571,using subset in lambda testing, percentage of realizations used in subset testing:  10
+18:02:15,0.0002243,subset how:  RANDOM
+18:02:15,0.0024344,centering on ensemble mean vector
+18:02:15,1.79e-05,running initial ensemble
+18:02:15,0.0004018,running initial ensemble of size 50
+18:02:15,4.48e-05,queuing 50 runs
+18:02:15,0.005328,making runs
+18:05:07,171.723,processing runs
+18:05:07,0.24198,saved initial obs ensemble to inversion_level_1.0.obs.csv
+18:05:07,0.0613513,calc pre-drop phi
+18:05:07,0.0231125,pre-drop initial phi summary
+18:05:07,0.0066935,checking for prior-data conflict
+18:05:07,0.0092737,calc initial phi
+18:05:07,0.0165293,initial phi summary
+18:05:07,0.0042796,current lambda: 1e+06
+18:05:07,0.0030672,initialization complete
+18:05:07,0.0002474,starting solve for iteration: 1
+18:05:07,1.6e-05,starting solve for iteration: 1
+18:05:07,0.0001185,current lambda:  1e+06
+18:05:07,2.66e-05,subset defined as a percentage of ensemble size, using 5 realizations for subset
+
+18:05:07,1.47e-05,reordering variables in pe
+18:05:07,0.0016467,preparing EnsembleSolver
+18:05:07,0.0026493,starting calcs for glm factor 100000
+18:05:07,3.02e-05,see .log file for more details
+18:05:07,0.025445,finished calcs for: 100000
+18:05:07,0.0001386,starting calcs for glm factor 1e+06
+18:05:07,2.39e-05,see .log file for more details
+18:05:07,0.0264311,finished calcs for: 1e+06
+18:05:07,0.0003318,starting calcs for glm factor 1e+07
+18:05:07,2.34e-05,see .log file for more details
+18:05:07,0.0258586,finished calcs for: 1e+07
+18:05:07,0.0001964,running upgrade ensembles
+18:05:07,3.47e-05,queuing 9 ensembles
+18:05:07,0.0046179,subset idx:pe real name:  4:4, 27:27, 33:33, 42:42, 49:BASE, 
+18:05:07,0.0005733,subset idx:oe real name:  4:4, 27:27, 33:33, 42:42, 49:BASE, 
+18:05:07,0.0058638,making runs
+18:07:38,151.325,processing runs
+18:07:38,0.0349684,evaluating upgrade ensembles
+18:07:38,0.0003796,last mean:  9.04794e+09
+18:07:38,0.0003061,last stdev:  4.53404e+09
+18:07:38,0.0097075,phi summary for lambda, scale fac:
+18:07:38,0.0070215,phi summary for lambda, scale fac:
+18:07:38,0.0069858,phi summary for lambda, scale fac:
+18:07:38,0.0071893,phi summary for lambda, scale fac:
+18:07:38,0.0072224,phi summary for lambda, scale fac:
+18:07:38,0.0073672,phi summary for lambda, scale fac:
+18:07:38,0.0076396,phi summary for lambda, scale fac:
+18:07:38,0.0154157,phi summary for lambda, scale fac:
+18:07:38,0.0119217,phi summary for lambda, scale fac:
+18:07:38,0.0016264,phi summary for best lambda, scale fac: 
+18:07:38,0.0065008,running remaining realizations for best lambda, scale:
+18:07:38,4.14e-05,dropping subset idxs from remaining_pe_lam
+18:07:38,4.25e-05,dropping subset idxs from remaining_oe_lam
+18:07:38,0.0003393,queuing 45 runs
+18:07:38,0.0051275,making runs
