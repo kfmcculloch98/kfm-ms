@@ -1,0 +1,679 @@
+                                   MODFLOW 6
+                U.S. GEOLOGICAL SURVEY MODULAR HYDROLOGIC MODEL
+                          GROUNDWATER FLOW MODEL (GWF)
+                            VERSION 6.6.3 09/29/2025
+
+   MODFLOW 6 compiled Oct 07 2025 23:07:48 with Intel(R) Fortran Intel(R) 64
+   Compiler Classic for applications running on Intel(R) 64, Version 2021.7.0
+                             Build 20220726_000000
+
+This software has been approved for release by the U.S. Geological 
+Survey (USGS). Although the software has been subjected to rigorous 
+review, the USGS reserves the right to update the software as needed 
+pursuant to further analysis and review. No warranty, expressed or 
+implied, is made by the USGS or the U.S. Government as to the 
+functionality of the software and related material nor shall the 
+fact of release constitute any such warranty. Furthermore, the 
+software is released on condition that neither the USGS nor the U.S. 
+Government shall be held liable for any damages resulting from its 
+authorized or unauthorized use. Also refer to the USGS Water 
+Resources Software User Rights Notice for complete use, copyright, 
+and distribution information.
+
+
+As a work of the United States Government, this USGS product is 
+in the public domain within the United States. You can copy, 
+modify, distribute, and perform the work, even for commercial 
+purposes, all without asking permission. Additionally, USGS 
+waives copyright and related rights in the work worldwide 
+through CC0 1.0 Universal Public Domain Dedication 
+(https://creativecommons.org/publicdomain/zero/1.0/).
+
+The following GNU Lesser General Public License (LGPL) libraries
+are used in this USGS product:
+
+    SPARSKIT version 2.0
+      ilut, luson, and qsplit 
+      (https://www-users.cse.umn.edu/~saad/software/SPARSKIT/)
+
+    RCM - Reverse Cuthill McKee Ordering
+      (https://people.math.sc.edu/Burkardt/f_src/rcm/rcm.html)
+
+    BLAS - Basic Linear Algebra Subprograms Level 1
+      (https://people.math.sc.edu/Burkardt/f_src/blas1_d/blas1_d.html)
+
+    SPARSEKIT - Sparse Matrix Utility Package
+      amux, dperm, dvperm, rperm, and cperm
+      (https://people.sc.fsu.edu/~jburkardt/f77_src/sparsekit/sparsekit.html)
+
+The following BSD-3 License libraries are used in this USGS product:
+
+    Modern Fortran DAG Library
+      Copyright (c) 2018, Jacob Williams
+      All rights reserved.
+      (https://github.com/jacobwilliams/daglib)
+
+MODFLOW 6 compiler options: /O2 /heap-arrays:0 /fpe:0 /traceback /nologo /fpp
+/c /module:win64\mod_mf6\ /object:win64\obj_mf6\
+
+System command used to initiate simulation:
+C:\Python\Personal\kfm-ms\codes\binaries\MODFLOW6\windows\mf6.exe
+
+MODFLOW was compiled using uniform precision.
+
+Real Variables
+  KIND: 8
+  TINY (smallest non-zero value):    2.225074-308
+  HUGE (largest value):    1.797693+308
+  PRECISION: 15
+  SIZE IN BITS: 64
+
+Integer Variables
+  KIND: 4
+  HUGE (largest value): 2147483647
+  SIZE IN BITS: 32
+
+Long Integer Variables
+  KIND: 8
+  HUGE (largest value): 9223372036854775807
+  SIZE IN BITS: 64
+
+Logical Variables
+  KIND: 4
+  SIZE IN BITS: 32
+ 
+ NAMEFILE OPTIONS:
+    FLOWS WILL BE SAVED TO BUDGET FILE SPECIFIED IN OUTPUT CONTROL
+ END NAMEFILE OPTIONS:
+
+ DIS -- STRUCTURED GRID DISCRETIZATION PACKAGE, VERSION 2 : 3/27/2014 - INPUT READ FROM MEMPATH: __INPUT__/PHANTOM_41/DIS                          
+
+
+ NPF -- NODE PROPERTY FLOW PACKAGE, VERSION 1, 3/30/2015 INPUT READ FROM MEMPATH: __INPUT__/PHANTOM_41/NPF                          
+
+
+ IC -- Initial Conditions Package, Version 8, 3/28/2015 input read from mempath: __INPUT__/PHANTOM_41/IC                           
+
+
+ Setting Discretization Options
+    XORIGIN = .000000000000000
+    YORIGIN = .000000000000000
+ End Setting Discretization Options
+
+ Setting Discretization Dimensions
+    NLAY = 1
+    NROW = 50
+    NCOL = 50
+ End Setting Discretization Dimensions
+
+ Setting Discretization Griddata
+    DELR set from input file
+    DELC set from input file
+    TOP set from input file
+    BOTM set from input file
+    IDOMAIN set from input file
+ End Setting Discretization Griddata
+
+
+ The specified IDOMAIN results in a reduced number of cells.
+ Number of user nodes: 2500
+ Number of nodes in solution: 2400
+
+
+ Setting NPF Options
+ End Setting NPF Options
+
+ Setting NPF Griddata
+    ICELLTYPE set from input file
+    K set from input file
+    K33 not provided.  Setting K33 = K.
+    K22 not provided.  Setting K22 = K.
+ End Setting NPF Griddata
+
+
+ WEL -- WEL PACKAGE, VERSION 8, 2/22/2014 INPUT READ FROM MEMPATH: __INPUT__/PHANTOM_41/WEL                          
+
+ PROCESSING WEL BASE OPTIONS
+ END OF WEL BASE OPTIONS
+
+ PROCESSING WEL OPTIONS
+ END OF WEL OPTIONS
+
+ PROCESSING WEL BASE DIMENSIONS
+    MAXBOUND =       1
+ END OF WEL BASE DIMENSIONS
+
+ CHD -- CHD PACKAGE, VERSION 8, 2/22/2014 INPUT READ FROM MEMPATH: __INPUT__/PHANTOM_41/CHD_LEFT                     
+
+ PROCESSING CHD BASE OPTIONS
+ END OF CHD BASE OPTIONS
+
+ PROCESSING CHD BASE DIMENSIONS
+    MAXBOUND =      48
+ END OF CHD BASE DIMENSIONS
+
+ CHD -- CHD PACKAGE, VERSION 8, 2/22/2014 INPUT READ FROM MEMPATH: __INPUT__/PHANTOM_41/CHD_RIGHT                    
+
+ PROCESSING CHD BASE OPTIONS
+ END OF CHD BASE OPTIONS
+
+ PROCESSING CHD BASE DIMENSIONS
+    MAXBOUND =      48
+ END OF CHD BASE DIMENSIONS
+    STRT set from input file
+
+ STO -- STORAGE PACKAGE, VERSION 1, 5/19/2014 INPUT READ FROM MEMPATH: __INPUT__/PHANTOM_41/STO                          
+
+
+ PROCESSING STORAGE OPTIONS
+ END OF STORAGE OPTIONS
+    BINARY GRID INFORMATION WILL BE WRITTEN TO:
+      UNIT NUMBER: 1017
+      FILE NAME: phantom_41.dis.grb
+
+ OPENED phantom_41.dis.grb
+ FILE TYPE:DATA(BINARY)   UNIT 1017   STATUS:REPLACE             
+ FORMAT:UNFORMATTED            ACCESS:STREAM              
+ ACTION:READWRITE           
+
+      THE LAST TIME STEP WILL BE PRINTED
+      THE LAST TIME STEP WILL BE PRINTED
+ # File generated by Flopy version 3.10.0 on 05/18/2026 at 15:14:41.
+
+ PROCESSING OC OPTIONS
+
+    HEAD INFORMATION WILL BE WRITTEN TO:
+      UNIT NUMBER: 1018
+      FILE NAME: phantom_41.hds
+
+ OPENED phantom_41.hds
+ FILE TYPE:DATA(BINARY)   UNIT 1018   STATUS:REPLACE             
+ FORMAT:UNFORMATTED            ACCESS:STREAM              
+ ACTION:READWRITE           
+
+ END OF OC OPTIONS
+
+start timestep kper="1" kstp="1" mode="normal"
+
+
+ BEGIN READING OUTPUT CONTROL FOR STRESS PERIOD 1
+      ALL TIME STEPS WILL BE SAVED
+
+ END READING OUTPUT CONTROL FOR STRESS PERIOD 1
+
+
+ PROCESSING STORAGE PERIOD DATA
+ END PROCESSING STORAGE PERIOD DATA
+
+
+ STRESS PERIOD 1 IS TRANSIENT
+
+
+ HEAD WILL BE SAVED ON UNIT 1018 AT END OF TIME STEP    1, STRESS PERIOD    1
+
+
+  VOLUME BUDGET FOR ENTIRE MODEL AT END OF TIME STEP    1, STRESS PERIOD   1
+  ---------------------------------------------------------------------------------------------------
+
+     CUMULATIVE VOLUME      L**3       RATES FOR THIS TIME STEP      L**3/T          PACKAGE NAME    
+     ------------------                 ------------------------                     ----------------
+
+           IN:                                      IN:
+           ---                                      ---
+              STO-SS =           1.4589                STO-SS =           0.2084     STORAGE                          
+                 WEL =           0.0000                   WEL =           0.0000     WEL                              
+                 CHD =           4.2851                   CHD =           0.6122     CHD_LEFT                         
+                 CHD =           2.5632                   CHD =           0.3662     CHD_RIGHT                        
+
+            TOTAL IN =           8.3072              TOTAL IN =           1.1867
+
+          OUT:                                     OUT:
+          ----                                     ----
+              STO-SS =           0.0000                STO-SS =           0.0000     STORAGE                          
+                 WEL =           7.0000                   WEL =           1.0000     WEL                              
+                 CHD =           0.0000                   CHD =           0.0000     CHD_LEFT                         
+                 CHD =           1.3442                   CHD =           0.1920     CHD_RIGHT                        
+
+           TOTAL OUT =           8.3442             TOTAL OUT =           1.1920
+
+            IN - OUT =      -3.6994E-02              IN - OUT =      -5.2849E-03
+
+ PERCENT DISCREPANCY =          -0.44     PERCENT DISCREPANCY =          -0.44
+
+
+
+
+         TIME SUMMARY AT END OF TIME STEP    1 IN STRESS PERIOD    1
+                          TIME STEP LENGTH =    7.00000    
+                        STRESS PERIOD TIME =    7.00000    
+                     TOTAL SIMULATION TIME =    7.00000    
+
+end timestep
+
+
+start timestep kper="2" kstp="1" mode="normal"
+
+
+ END OF FILE DETECTED IN OUTPUT CONTROL.
+ CURRENT OUTPUT CONTROL SETTINGS WILL BE 
+ REPEATED UNTIL THE END OF THE SIMULATION.
+
+ OUTPUT CONTROL FOR STRESS PERIOD 2 IS REPEATED USING SETTINGS FROM A PREVIOUS STRESS PERIOD.
+
+ HEAD WILL BE SAVED ON UNIT 1018 AT END OF TIME STEP    1, STRESS PERIOD    2
+
+
+  VOLUME BUDGET FOR ENTIRE MODEL AT END OF TIME STEP    1, STRESS PERIOD   2
+  ---------------------------------------------------------------------------------------------------
+
+     CUMULATIVE VOLUME      L**3       RATES FOR THIS TIME STEP      L**3/T          PACKAGE NAME    
+     ------------------                 ------------------------                     ----------------
+
+           IN:                                      IN:
+           ---                                      ---
+              STO-SS =           1.8182                STO-SS =       5.1334E-02     STORAGE                          
+                 WEL =           0.0000                   WEL =           0.0000     WEL                              
+                 CHD =           8.9642                   CHD =           0.6684     CHD_LEFT                         
+                 CHD =           5.6168                   CHD =           0.4362     CHD_RIGHT                        
+
+            TOTAL IN =          16.3992              TOTAL IN =           1.1560
+
+          OUT:                                     OUT:
+          ----                                     ----
+              STO-SS =           0.0000                STO-SS =           0.0000     STORAGE                          
+                 WEL =          14.0000                   WEL =           1.0000     WEL                              
+                 CHD =           0.0000                   CHD =           0.0000     CHD_LEFT                         
+                 CHD =           2.4593                   CHD =           0.1593     CHD_RIGHT                        
+
+           TOTAL OUT =          16.4593             TOTAL OUT =           1.1593
+
+            IN - OUT =      -6.0043E-02              IN - OUT =      -3.2928E-03
+
+ PERCENT DISCREPANCY =          -0.37     PERCENT DISCREPANCY =          -0.28
+
+
+
+
+         TIME SUMMARY AT END OF TIME STEP    1 IN STRESS PERIOD    2
+                          TIME STEP LENGTH =    7.00000    
+                        STRESS PERIOD TIME =    7.00000    
+                     TOTAL SIMULATION TIME =    14.0000    
+
+end timestep
+
+
+start timestep kper="3" kstp="1" mode="normal"
+
+
+ OUTPUT CONTROL FOR STRESS PERIOD 3 IS REPEATED USING SETTINGS FROM A PREVIOUS STRESS PERIOD.
+
+ HEAD WILL BE SAVED ON UNIT 1018 AT END OF TIME STEP    1, STRESS PERIOD    3
+
+
+  VOLUME BUDGET FOR ENTIRE MODEL AT END OF TIME STEP    1, STRESS PERIOD   3
+  ---------------------------------------------------------------------------------------------------
+
+     CUMULATIVE VOLUME      L**3       RATES FOR THIS TIME STEP      L**3/T          PACKAGE NAME    
+     ------------------                 ------------------------                     ----------------
+
+           IN:                                      IN:
+           ---                                      ---
+              STO-SS =           1.9098                STO-SS =       1.3078E-02     STORAGE                          
+                 WEL =           0.0000                   WEL =           0.0000     WEL                              
+                 CHD =          13.7618                   CHD =           0.6854     CHD_LEFT                         
+                 CHD =           8.7567                   CHD =           0.4486     CHD_RIGHT                        
+
+            TOTAL IN =          24.4283              TOTAL IN =           1.1470
+
+          OUT:                                     OUT:
+          ----                                     ----
+              STO-SS =           0.0000                STO-SS =           0.0000     STORAGE                          
+                 WEL =          21.0000                   WEL =           1.0000     WEL                              
+                 CHD =           0.0000                   CHD =           0.0000     CHD_LEFT                         
+                 CHD =           3.5124                   CHD =           0.1504     CHD_RIGHT                        
+
+           TOTAL OUT =          24.5124             TOTAL OUT =           1.1504
+
+            IN - OUT =      -8.4061E-02              IN - OUT =      -3.4310E-03
+
+ PERCENT DISCREPANCY =          -0.34     PERCENT DISCREPANCY =          -0.30
+
+
+
+
+         TIME SUMMARY AT END OF TIME STEP    1 IN STRESS PERIOD    3
+                          TIME STEP LENGTH =    7.00000    
+                        STRESS PERIOD TIME =    7.00000    
+                     TOTAL SIMULATION TIME =    21.0000    
+
+end timestep
+
+
+start timestep kper="4" kstp="1" mode="normal"
+
+
+ OUTPUT CONTROL FOR STRESS PERIOD 4 IS REPEATED USING SETTINGS FROM A PREVIOUS STRESS PERIOD.
+
+ HEAD WILL BE SAVED ON UNIT 1018 AT END OF TIME STEP    1, STRESS PERIOD    4
+
+
+  VOLUME BUDGET FOR ENTIRE MODEL AT END OF TIME STEP    1, STRESS PERIOD   4
+  ---------------------------------------------------------------------------------------------------
+
+     CUMULATIVE VOLUME      L**3       RATES FOR THIS TIME STEP      L**3/T          PACKAGE NAME    
+     ------------------                 ------------------------                     ----------------
+
+           IN:                                      IN:
+           ---                                      ---
+              STO-SS =           1.9373                STO-SS =       3.9294E-03     STORAGE                          
+                 WEL =           0.0000                   WEL =           0.0000     WEL                              
+                 CHD =          18.5998                   CHD =           0.6911     CHD_LEFT                         
+                 CHD =          11.9134                   CHD =           0.4510     CHD_RIGHT                        
+
+            TOTAL IN =          32.4506              TOTAL IN =           1.1460
+
+          OUT:                                     OUT:
+          ----                                     ----
+              STO-SS =           0.0000                STO-SS =           0.0000     STORAGE                          
+                 WEL =          28.0000                   WEL =           1.0000     WEL                              
+                 CHD =           0.0000                   CHD =           0.0000     CHD_LEFT                         
+                 CHD =           4.5450                   CHD =           0.1475     CHD_RIGHT                        
+
+           TOTAL OUT =          32.5450             TOTAL OUT =           1.1475
+
+            IN - OUT =      -9.4485E-02              IN - OUT =      -1.4892E-03
+
+ PERCENT DISCREPANCY =          -0.29     PERCENT DISCREPANCY =          -0.13
+
+
+
+
+         TIME SUMMARY AT END OF TIME STEP    1 IN STRESS PERIOD    4
+                          TIME STEP LENGTH =    7.00000    
+                        STRESS PERIOD TIME =    7.00000    
+                     TOTAL SIMULATION TIME =    28.0000    
+
+end timestep
+
+
+start timestep kper="5" kstp="1" mode="normal"
+
+
+ OUTPUT CONTROL FOR STRESS PERIOD 5 IS REPEATED USING SETTINGS FROM A PREVIOUS STRESS PERIOD.
+
+ HEAD WILL BE SAVED ON UNIT 1018 AT END OF TIME STEP    1, STRESS PERIOD    5
+
+
+  VOLUME BUDGET FOR ENTIRE MODEL AT END OF TIME STEP    1, STRESS PERIOD   5
+  ---------------------------------------------------------------------------------------------------
+
+     CUMULATIVE VOLUME      L**3       RATES FOR THIS TIME STEP      L**3/T          PACKAGE NAME    
+     ------------------                 ------------------------                     ----------------
+
+           IN:                                      IN:
+           ---                                      ---
+              STO-SS =           1.9446                STO-SS =       1.0484E-03     STORAGE                          
+                 WEL =           0.0000                   WEL =           0.0000     WEL                              
+                 CHD =          23.4493                   CHD =           0.6928     CHD_LEFT                         
+                 CHD =          15.0749                   CHD =           0.4516     CHD_RIGHT                        
+
+            TOTAL IN =          40.4688              TOTAL IN =           1.1455
+
+          OUT:                                     OUT:
+          ----                                     ----
+              STO-SS =           0.0000                STO-SS =           0.0000     STORAGE                          
+                 WEL =          35.0000                   WEL =           1.0000     WEL                              
+                 CHD =           0.0000                   CHD =           0.0000     CHD_LEFT                         
+                 CHD =           5.5711                   CHD =           0.1466     CHD_RIGHT                        
+
+           TOTAL OUT =          40.5711             TOTAL OUT =           1.1466
+
+            IN - OUT =          -0.1023              IN - OUT =      -1.1185E-03
+
+ PERCENT DISCREPANCY =          -0.25     PERCENT DISCREPANCY =          -0.10
+
+
+
+
+         TIME SUMMARY AT END OF TIME STEP    1 IN STRESS PERIOD    5
+                          TIME STEP LENGTH =    7.00000    
+                        STRESS PERIOD TIME =    7.00000    
+                     TOTAL SIMULATION TIME =    35.0000    
+
+end timestep
+
+
+start timestep kper="6" kstp="1" mode="normal"
+
+
+ OUTPUT CONTROL FOR STRESS PERIOD 6 IS REPEATED USING SETTINGS FROM A PREVIOUS STRESS PERIOD.
+
+ HEAD WILL BE SAVED ON UNIT 1018 AT END OF TIME STEP    1, STRESS PERIOD    6
+
+
+  VOLUME BUDGET FOR ENTIRE MODEL AT END OF TIME STEP    1, STRESS PERIOD   6
+  ---------------------------------------------------------------------------------------------------
+
+     CUMULATIVE VOLUME      L**3       RATES FOR THIS TIME STEP      L**3/T          PACKAGE NAME    
+     ------------------                 ------------------------                     ----------------
+
+           IN:                                      IN:
+           ---                                      ---
+              STO-SS =           1.9452                STO-SS =       8.5146E-05     STORAGE                          
+                 WEL =           0.0000                   WEL =           0.0000     WEL                              
+                 CHD =          28.2993                   CHD =           0.6928     CHD_LEFT                         
+                 CHD =          18.2370                   CHD =           0.4517     CHD_RIGHT                        
+
+            TOTAL IN =          48.4814              TOTAL IN =           1.1447
+
+          OUT:                                     OUT:
+          ----                                     ----
+              STO-SS =       3.6353E-06                STO-SS =       5.1932E-07     STORAGE                          
+                 WEL =          42.0000                   WEL =           1.0000     WEL                              
+                 CHD =           0.0000                   CHD =           0.0000     CHD_LEFT                         
+                 CHD =           6.5969                   CHD =           0.1465     CHD_RIGHT                        
+
+           TOTAL OUT =          48.5969             TOTAL OUT =           1.1465
+
+            IN - OUT =          -0.1155              IN - OUT =      -1.8769E-03
+
+ PERCENT DISCREPANCY =          -0.24     PERCENT DISCREPANCY =          -0.16
+
+
+
+
+         TIME SUMMARY AT END OF TIME STEP    1 IN STRESS PERIOD    6
+                          TIME STEP LENGTH =    7.00000    
+                        STRESS PERIOD TIME =    7.00000    
+                     TOTAL SIMULATION TIME =    42.0000    
+
+end timestep
+
+
+start timestep kper="7" kstp="1" mode="normal"
+
+
+ OUTPUT CONTROL FOR STRESS PERIOD 7 IS REPEATED USING SETTINGS FROM A PREVIOUS STRESS PERIOD.
+
+ HEAD WILL BE SAVED ON UNIT 1018 AT END OF TIME STEP    1, STRESS PERIOD    7
+
+
+  VOLUME BUDGET FOR ENTIRE MODEL AT END OF TIME STEP    1, STRESS PERIOD   7
+  ---------------------------------------------------------------------------------------------------
+
+     CUMULATIVE VOLUME      L**3       RATES FOR THIS TIME STEP      L**3/T          PACKAGE NAME    
+     ------------------                 ------------------------                     ----------------
+
+           IN:                                      IN:
+           ---                                      ---
+              STO-SS =           1.9476                STO-SS =       3.3911E-04     STORAGE                          
+                 WEL =           0.0000                   WEL =           0.0000     WEL                              
+                 CHD =          33.1524                   CHD =           0.6933     CHD_LEFT                         
+                 CHD =          21.4005                   CHD =           0.4519     CHD_RIGHT                        
+
+            TOTAL IN =          56.5004              TOTAL IN =           1.1456
+
+          OUT:                                     OUT:
+          ----                                     ----
+              STO-SS =       3.6353E-06                STO-SS =           0.0000     STORAGE                          
+                 WEL =          49.0000                   WEL =           1.0000     WEL                              
+                 CHD =           0.0000                   CHD =           0.0000     CHD_LEFT                         
+                 CHD =           7.6212                   CHD =           0.1463     CHD_RIGHT                        
+
+           TOTAL OUT =          56.6212             TOTAL OUT =           1.1463
+
+            IN - OUT =          -0.1208              IN - OUT =      -7.6699E-04
+
+ PERCENT DISCREPANCY =          -0.21     PERCENT DISCREPANCY =          -0.07
+
+
+
+
+         TIME SUMMARY AT END OF TIME STEP    1 IN STRESS PERIOD    7
+                          TIME STEP LENGTH =    7.00000    
+                        STRESS PERIOD TIME =    7.00000    
+                     TOTAL SIMULATION TIME =    49.0000    
+
+end timestep
+
+
+start timestep kper="8" kstp="1" mode="normal"
+
+
+ OUTPUT CONTROL FOR STRESS PERIOD 8 IS REPEATED USING SETTINGS FROM A PREVIOUS STRESS PERIOD.
+
+ HEAD WILL BE SAVED ON UNIT 1018 AT END OF TIME STEP    1, STRESS PERIOD    8
+
+
+  VOLUME BUDGET FOR ENTIRE MODEL AT END OF TIME STEP    1, STRESS PERIOD   8
+  ---------------------------------------------------------------------------------------------------
+
+     CUMULATIVE VOLUME      L**3       RATES FOR THIS TIME STEP      L**3/T          PACKAGE NAME    
+     ------------------                 ------------------------                     ----------------
+
+           IN:                                      IN:
+           ---                                      ---
+              STO-SS =           1.9479                STO-SS =       4.7258E-05     STORAGE                          
+                 WEL =           0.0000                   WEL =           0.0000     WEL                              
+                 CHD =          38.0063                   CHD =           0.6934     CHD_LEFT                         
+                 CHD =          24.5641                   CHD =           0.4519     CHD_RIGHT                        
+
+            TOTAL IN =          64.5183              TOTAL IN =           1.1454
+
+          OUT:                                     OUT:
+          ----                                     ----
+              STO-SS =       5.7319E-06                STO-SS =       2.9952E-07     STORAGE                          
+                 WEL =          56.0000                   WEL =           1.0000     WEL                              
+                 CHD =           0.0000                   CHD =           0.0000     CHD_LEFT                         
+                 CHD =           8.6451                   CHD =           0.1463     CHD_RIGHT                        
+
+           TOTAL OUT =          64.6451             TOTAL OUT =           1.1463
+
+            IN - OUT =          -0.1268              IN - OUT =      -8.5133E-04
+
+ PERCENT DISCREPANCY =          -0.20     PERCENT DISCREPANCY =          -0.07
+
+
+
+
+         TIME SUMMARY AT END OF TIME STEP    1 IN STRESS PERIOD    8
+                          TIME STEP LENGTH =    7.00000    
+                        STRESS PERIOD TIME =    7.00000    
+                     TOTAL SIMULATION TIME =    56.0000    
+
+end timestep
+
+
+start timestep kper="9" kstp="1" mode="normal"
+
+
+ OUTPUT CONTROL FOR STRESS PERIOD 9 IS REPEATED USING SETTINGS FROM A PREVIOUS STRESS PERIOD.
+
+ HEAD WILL BE SAVED ON UNIT 1018 AT END OF TIME STEP    1, STRESS PERIOD    9
+
+
+  VOLUME BUDGET FOR ENTIRE MODEL AT END OF TIME STEP    1, STRESS PERIOD   9
+  ---------------------------------------------------------------------------------------------------
+
+     CUMULATIVE VOLUME      L**3       RATES FOR THIS TIME STEP      L**3/T          PACKAGE NAME    
+     ------------------                 ------------------------                     ----------------
+
+           IN:                                      IN:
+           ---                                      ---
+              STO-SS =           1.9490                STO-SS =       1.5896E-04     STORAGE                          
+                 WEL =           0.0000                   WEL =           0.0000     WEL                              
+                 CHD =          42.8621                   CHD =           0.6937     CHD_LEFT                         
+                 CHD =          27.7284                   CHD =           0.4521     CHD_RIGHT                        
+
+            TOTAL IN =          72.5395              TOTAL IN =           1.1459
+
+          OUT:                                     OUT:
+          ----                                     ----
+              STO-SS =       5.7319E-06                STO-SS =           0.0000     STORAGE                          
+                 WEL =          63.0000                   WEL =           1.0000     WEL                              
+                 CHD =           0.0000                   CHD =           0.0000     CHD_LEFT                         
+                 CHD =           9.6679                   CHD =           0.1461     CHD_RIGHT                        
+
+           TOTAL OUT =          72.6679             TOTAL OUT =           1.1461
+
+            IN - OUT =          -0.1284              IN - OUT =      -2.3133E-04
+
+ PERCENT DISCREPANCY =          -0.18     PERCENT DISCREPANCY =          -0.02
+
+
+
+
+         TIME SUMMARY AT END OF TIME STEP    1 IN STRESS PERIOD    9
+                          TIME STEP LENGTH =    7.00000    
+                        STRESS PERIOD TIME =    7.00000    
+                     TOTAL SIMULATION TIME =    63.0000    
+
+end timestep
+
+
+start timestep kper="10" kstp="1" mode="normal"
+
+
+ OUTPUT CONTROL FOR STRESS PERIOD 10 IS REPEATED USING SETTINGS FROM A PREVIOUS STRESS PERIOD.
+
+ HEAD WILL BE SAVED ON UNIT 1018 AT END OF TIME STEP    1, STRESS PERIOD   10
+
+
+  VOLUME BUDGET FOR ENTIRE MODEL AT END OF TIME STEP    1, STRESS PERIOD  10
+  ---------------------------------------------------------------------------------------------------
+
+     CUMULATIVE VOLUME      L**3       RATES FOR THIS TIME STEP      L**3/T          PACKAGE NAME    
+     ------------------                 ------------------------                     ----------------
+
+           IN:                                      IN:
+           ---                                      ---
+              STO-SS =           1.9491                STO-SS =       1.4973E-05     STORAGE                          
+                 WEL =           0.0000                   WEL =           0.0000     WEL                              
+                 CHD =          47.7179                   CHD =           0.6937     CHD_LEFT                         
+                 CHD =          30.8929                   CHD =           0.4521     CHD_RIGHT                        
+
+            TOTAL IN =          80.5599              TOTAL IN =           1.1458
+
+          OUT:                                     OUT:
+          ----                                     ----
+              STO-SS =       5.8192E-06                STO-SS =       1.2470E-08     STORAGE                          
+                 WEL =          70.0000                   WEL =           1.0000     WEL                              
+                 CHD =           0.0000                   CHD =           0.0000     CHD_LEFT                         
+                 CHD =          10.6907                   CHD =           0.1461     CHD_RIGHT                        
+
+           TOTAL OUT =          80.6908             TOTAL OUT =           1.1461
+
+            IN - OUT =          -0.1308              IN - OUT =      -3.4370E-04
+
+ PERCENT DISCREPANCY =          -0.16     PERCENT DISCREPANCY =          -0.03
+
+
+
+
+         TIME SUMMARY AT END OF TIME STEP    1 IN STRESS PERIOD   10
+                          TIME STEP LENGTH =    7.00000    
+                        STRESS PERIOD TIME =    7.00000    
+                     TOTAL SIMULATION TIME =    70.0000    
+
+end timestep
+

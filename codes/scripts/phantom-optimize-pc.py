@@ -188,6 +188,7 @@ if __name__ == "__main__":
     inner_coords = [(r, c) for r in inner_rows for c in inner_cols]
 
     # select random locations for the real wells from the inner grid
+    random.seed(2026)
     real_locs = random.sample(inner_coords, n_real)
     print(f"Real well locations (row, col): {real_locs}")
 
