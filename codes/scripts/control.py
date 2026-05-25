@@ -97,11 +97,8 @@ def build_modular_pst(level):
     options_block = [
         "\n",
         "* pestpp options\n",
-        "run_manage multiprocess\n",
+        "run_manage master\n",
         "max_run_fail 5\n",
-        "n_iter_base -1\n",
-        "n_iter_super 3\n",
-        "lambda_scale_fac 1.0\n"
     ]
 
     with open(final_pst_path, "a") as f:
@@ -112,6 +109,6 @@ def build_modular_pst(level):
 
 
 if __name__ == "__main__":
-    choice = input("\nselect level (1, 2, or 3): ").strip()
+    choice = input("\nSelect level (1, 2, or 3): ").strip()
     if choice in ["1", "2", "3"]:
         build_modular_pst(choice)

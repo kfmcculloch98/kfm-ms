@@ -1,0 +1,46 @@
+
+
+version: 5.2.25
+binary compiled on Jan  6 2026 at 12:34:59
+using control file: "inversion_level_1.pst"
+in directory: "C:\Python\Personal\kfm-ms\codes\pest_workers\worker_2"
+on host: "TTL-HBJ6674"
+on a(n) windows operating system
+with release configuration
+started at 05/25/26 07:35:06
+
+panther agent starting...
+using control file: "inversion_level_1.pst"
+
+
+
+version: 5.2.25
+binary compiled on Jan  6 2026 at 12:41:12
+
+in directory: "C:\Python\Personal\kfm-ms\codes\pest_workers\worker_2"
+
+05/25/26 07:35:06->processing control file
+...reading external file 'inversion_level_1.pargp_data.csv'
+...header line: PARGPNME,INCTYP,DERINC,DERINCLB,FORCEN,DERINCMUL,DERMTHD,SPLITTHRESH,SPLITRELDIFF,SPLITACTION
+...read 2 lines from external file
+...reading external file 'inversion_level_1.par_data.csv'
+...header line: PARNME,PARTRANS,PARCHGLIM,PARVAL1,PARLBND,PARUBND,PARGP,SCALE,OFFSET,DERCOM,C,INST,PNAME,PSTYLE,PTYPE,R,SP,USECOL
+...read 101 lines from external file
+...reading external file 'inversion_level_1.obs_data.csv'
+...header line: OBSNME,OBSVAL,WEIGHT,OBGNME,ONAME,OTYPE,USECOL
+...read 1561 lines from external file
+WARNING: single and/or double quote char(s) found in model command line :"c:\Python\Personal\kfm-ms\.venv\Scripts\python.exe" forward_run.py
+         new model command line: c:\Python\Personal\kfm-ms\.venv\Scripts\python.exe forward_run.py
+...reading external file 'inversion_level_1.tplfile_data.csv'
+...header line: PEST_FILE,MODEL_FILE
+...read 2 lines from external file
+...reading external file 'inversion_level_1.insfile_data.csv'
+...header line: PEST_FILE,MODEL_FILE
+...read 2 lines from external file
+05/25/26 07:35:06->checking model interface files
+control file parsing error: error in model interface file access:Could not access the following model interface files: obs.csv.ins , 
+Error processing control file: inversion_level_1.pst
+
+control file parsing error: error in model interface file access:Could not access the following model interface files: obs.csv.ins , 
+
+

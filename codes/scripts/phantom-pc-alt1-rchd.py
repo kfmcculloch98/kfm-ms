@@ -207,23 +207,23 @@ if __name__ == "__main__":
     c_start, c_end = margin, (ncol - margin) - 1
     cp_cells = []
 
-    # Top border (Left to Right)
+    # top border
     for c in range(c_start, c_end + 1):
         cp_cells.append((r_start, c))
-    # Right border (Top to Bottom, excluding corner)
+    # right border
     for r in range(r_start + 1, r_end + 1):
         cp_cells.append((r, c_end))
-    # Bottom border (Right to Left, excluding corner)
+    # bottom border
     for c in range(c_end - 1, c_start - 1, -1):
         cp_cells.append((r_end, c))
-    # Left border (Bottom to Top, excluding corners)
+    # left border
     for r in range(r_end - 1, r_start, -1):
         cp_cells.append((r, c_start))
 
     n_cp = len(cp_cells)
     print(f"Defined {nrow} x {ncol} grid with {n_cp} continuous perimeter cells...")
 
-    # 2. Slice every second cell along the continuous track
+    # place a Phantom well in every even-numbered perimeter cell
     phantom_locs = cp_cells[::2] 
     n_phantom = len(phantom_locs)
     print(f"Set up {n_phantom} PHANTOM wells along even-numbered perimeter cells...")
