@@ -14,7 +14,7 @@ in directory: "C:\Python\Personal\kfm-ms\codes\pest_workers\master_run"
 on host: "TTL-HBJ6674"
 on a(n) windows operating system
 with release configuration
-started at 05/25/26 07:35:05
+started at 05/25/26 08:20:07
 
 ...reading external file 'inversion_level_1.pargp_data.csv'
 ...header line: PARGPNME,INCTYP,DERINC,DERINCLB,FORCEN,DERINCMUL,DERMTHD,SPLITTHRESH,SPLITRELDIFF,SPLITACTION
