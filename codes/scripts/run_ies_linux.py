@@ -4,12 +4,11 @@ import pyemu
 from pathlib import Path
 
 # paths
-PEST_DIR = r"C:\Python\Personal\kfm-ms\codes\pest"
-IES_EXE = r"C:\Python\Personal\kfm-ms\codes\binaries\PESTPP\linux\pestpp-ies"
+HOME = Path.home() # Dynamically points to /home/u30/kfmcculloch
+PEST_DIR = os.path.abspath(HOME / "kfm-ms/codes/pest")
+IES_EXE = os.path.abspath(HOME / "kfm-ms/codes/binaries/PESTPP/linux/pestpp-ies")
 PST_NAME = "inversion_level_1.pst"
-
-# create a sibling directory for each parallel execution
-WORKER_ROOT = r"C:\Python\Personal\kfm-ms\codes\pest_workers"
+WORKER_ROOT = os.path.abspath(HOME / "kfm-ms/codes/pestpp/pest_workers")
 
 def run_parallel_inversion():
     print("Initializing parallel PESTPP-IES run via pyemu...")
