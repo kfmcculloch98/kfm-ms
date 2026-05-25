@@ -27,7 +27,7 @@ def run_parallel_inversion():
         worker_dir=PEST_DIR,           # source folder to duplicate
         exe_rel_path=IES_EXE,          # PEST binary path
         pst_rel_path=PST_NAME,         # PEST control file name
-        num_workers=8,                 # number of parallel local workers to spawn (# of cores - 2)
+        num_workers=7,                 # number of parallel local workers to spawn (# of cores - 2)
         master_dir=os.path.join(WORKER_ROOT, "master_run"), # master subdirectory name
         worker_root=WORKER_ROOT,       # isolated parent directory for all run folders
         port=4005                      # TCP port
