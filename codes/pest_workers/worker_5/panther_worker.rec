@@ -7,7 +7,7 @@ in directory: "C:\Python\Personal\kfm-ms\codes\pest_workers\worker_5"
 on host: "TTL-HBJ6674"
 on a(n) windows operating system
 with release configuration
-started at 05/25/26 08:20:08
+started at 05/25/26 17:10:32
 
 panther agent starting...
 using control file: "inversion_level_1.pst"
@@ -19,7 +19,7 @@ binary compiled on Jan  6 2026 at 12:41:12
 
 in directory: "C:\Python\Personal\kfm-ms\codes\pest_workers\worker_5"
 
-05/25/26 08:20:08->processing control file
+05/25/26 17:10:32->processing control file
 ...reading external file 'inversion_level_1.pargp_data.csv'
 ...header line: PARGPNME,INCTYP,DERINC,DERINCLB,FORCEN,DERINCMUL,DERMTHD,SPLITTHRESH,SPLITRELDIFF,SPLITACTION
 ...read 2 lines from external file
@@ -37,7 +37,7 @@ WARNING: single and/or double quote char(s) found in model command line :"c:\Pyt
 ...reading external file 'inversion_level_1.insfile_data.csv'
 ...header line: PEST_FILE,MODEL_FILE
 ...read 2 lines from external file
-05/25/26 08:20:08->checking model interface files
+05/25/26 17:10:32->checking model interface files
 control file parsing error: error in model interface file access:Could not access the following model interface files: obs.csv.ins , 
 Error processing control file: inversion_level_1.pst
 
