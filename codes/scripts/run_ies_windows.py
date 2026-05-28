@@ -17,21 +17,25 @@ def run_parallel_inversion():
     # delete any old worker directories
     if os.path.exists(WORKER_ROOT):
         print(f"Cleaning up previous workspace at {WORKER_ROOT}...")
-        shutil.rmtree(WORKER_ROOT)
+        try:
+            shutil.rmtree(WORKER_ROOT)
+        except OSError:
+            os.system(f'rmdir /s /q "{WORKER_ROOT}"')
+            
     os.makedirs(WORKER_ROOT, exist_ok=True)
 
     # change local execution context to PEST source directory
     os.chdir(PEST_DIR)
-
+    
     pyemu.utils.start_workers(
         worker_dir=PEST_DIR,           # source folder to duplicate
         exe_rel_path=IES_EXE,          # PEST binary path
         pst_rel_path=PST_NAME,         # PEST control file name
-        num_workers=6,                 # number of parallel local workers to spawn (# of cores - 2)
-        master_dir=os.path.join(WORKER_ROOT, "master_run"), # master subdirectory name
+        num_workers=8,                 # number of parallel local workers to spawn
+        master_dir="master_run",       # <-- FIX: Just the folder name string! PyEMU builds this inside worker_root
         worker_root=WORKER_ROOT,       # isolated parent directory for all run folders
-        port=4005                      # TCP port
+        port=25318                     # TCP port
     )
-
+    
 if __name__ == "__main__":
     run_parallel_inversion()

@@ -10,11 +10,11 @@
 version: 5.2.25
 binary compiled on Jan  6 2026 at 12:34:59
 using control file: "inversion_level_1.pst"
-in directory: "C:\Python\Personal\kfm-ms\codes\pest_workers\master_run"
+in directory: "C:\Python\Personal\kfm-ms\codes\pest\master_run"
 on host: "TTL-HBJ6674"
 on a(n) windows operating system
 with release configuration
-started at 05/25/26 17:10:31
+started at 05/28/26 09:22:28
 
 ...reading external file 'inversion_level_1.pargp_data.csv'
 ...header line: PARGPNME,INCTYP,DERINC,DERINCLB,FORCEN,DERINCMUL,DERMTHD,SPLITTHRESH,SPLITRELDIFF,SPLITACTION
@@ -33,9 +33,10 @@ WARNING: single and/or double quote char(s) found in model command line :"c:\Pyt
 ...reading external file 'inversion_level_1.insfile_data.csv'
 ...header line: PEST_FILE,MODEL_FILE
 ...read 2 lines from external file
-Note: 2 unused lines in pest control file:
+Note: 3 unused lines in pest control file:
   -->  line number 22: 'run_manage master' 
-  -->  line number 23: 'max_run_fail 5' 
+  -->  line number 23: 'num_reals 300' 
+  -->  line number 24: 'max_run_fail 5' 
 
     This software has been approved for release by the
     U.S.Geological Survey(USGS).Although the software has 

@@ -21,4 +21,5 @@ inversion_level_1.insfile_data.csv
 
 * pestpp options
 run_manage master
+num_reals 300 
 max_run_fail 5

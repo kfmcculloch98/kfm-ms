@@ -1,0 +1,49 @@
+time,elapsed_seconds,message
+09:22:28,0.0001157,PEST++ performance logger started
+09:22:28,0.0012998,starting to process control file
+09:22:28,0.0641405,finished processing control file
+09:22:28,0.0185921,initializing
+09:22:28,0.0003515,using glm algorithm
+09:22:28,0.000119,using REDSVD for truncated svd solve
+09:22:28,0.0001142,maxsing: 10000000
+09:22:28,0.0001195,eigthresh:  1e-06
+09:22:28,0.0001997,initializing localizer
+09:22:28,0.000153,not using localization
+09:22:28,0.0001637,using lambda multipliers: 
+09:22:28,0.0001155,using lambda scaling factors: 
+09:22:28,0.0001129,acceptable phi factor:  1.05
+09:22:28,0.000809,lambda increase factor:  10
+09:22:28,0.0001232,lambda decrease factor:  0.75
+09:22:28,8.06e-05,max run fail:  1
+09:22:28,0.0004634,initializing prior parameter covariance matrix
+09:22:28,2.03e-05,initializing parcov
+09:22:28,0.00022,parcov loaded  from parameter bounds, using par_sigma_range 4
+09:22:28,0.0001994,initializing observation noise covariance matrix
+09:22:28,0.0017437,obscov loaded  from observation weights
+09:22:28,0.0025191,drawing parameter realizations:  50
+09:22:28,0.0004806,parameters not grouped by parameter groups, reordering par ensemble
+09:22:28,0.0002638,making standard normal draws
+09:22:28,0.0001596,scaling by std
+09:22:28,1.39e-05,checking realization for invalid values
+09:22:28,3.96e-05,resizing reals matrix
+09:22:28,2.14e-05,filling reals matrix and adding mean values
+09:22:28,0.0006997,not using prior parameter covariance matrix scaling
+09:22:28,0.0008659,NOTE: no obs-noise-specific options have been passed, resetting to `ies_no_noise` to true
+09:22:28,0.0001072,initializing no-noise observation ensemble of :  50
+09:22:28,0.0023988,setting weights ensemble from control file weights
+09:22:28,0.0899266,saved weight ensemble to  inversion_level_1.weights.csv
+09:22:28,4.6e-05,checking for denormal values in weights ensemble
+09:22:28,0.0005108,adding 'base' parameter values to ensemble
+09:22:28,0.0021513,adding 'base' observation values to ensemble
+09:22:28,0.0015629,adding 'base' weight values to weight ensemble
+09:22:28,0.0007863,checking for denormal values in pe
+09:22:28,0.006226,saved initial parameter ensemble to  inversion_level_1.0.par.csv
+09:22:28,4e-05,checking for denormal values in obs + noise ensemble
+09:22:28,0.128237,saved obs+noise observation ensemble (obsval + noise realizations) to  inversion_level_1.obs+noise.csv
+09:22:28,0.0001726,using subset in lambda testing, percentage of realizations used in subset testing:  10
+09:22:28,0.0001224,subset how:  RANDOM
+09:22:28,0.0016771,centering on ensemble mean vector
+09:22:28,1.65e-05,running initial ensemble
+09:22:28,6.04e-05,running initial ensemble of size 50
+09:22:28,1.44e-05,queuing 50 runs
+09:22:28,0.0062675,making runs

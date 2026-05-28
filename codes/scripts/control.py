@@ -56,7 +56,6 @@ def build_modular_pst(level):
     pst.model_command = f'"{PYTHON_LOC}" forward_run.py'
 
     pst.control_data.noptmax = 10
-    pst.pestpp_options = {} 
 
     # set default parameter behaviour before applying level-specific access rules
     pst.parameter_data.loc[:, "partrans"] = "fixed"
@@ -98,6 +97,7 @@ def build_modular_pst(level):
         "\n",
         "* pestpp options\n",
         "run_manage master\n",
+        "num_reals 300 \n",
         "max_run_fail 5\n",
     ]
 

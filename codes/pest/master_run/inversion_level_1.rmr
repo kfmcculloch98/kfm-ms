@@ -1,0 +1,85 @@
+
+PANTHER master listening on socket:0.0.0.0:25318 (IPv4)
+running model 50 times
+05/28/26 09:22:28->waiting for agents to appear
+
+05/28/26 09:22:29->new connection from:TTL-HBJ6674.tt.local:51801
+05/28/26 09:22:29->initializing new agent connection from:TTL-HBJ6674.tt.local$C:\Python\Personal\kfm-ms\codes\pest_workers\worker_0 socket:TTL-HBJ6674.tt.local:51801 number of agents:1
+05/28/26 09:22:29->new connection from:TTL-HBJ6674.tt.local:51802
+05/28/26 09:22:29->initializing new agent connection from:TTL-HBJ6674.tt.local$C:\Python\Personal\kfm-ms\codes\pest_workers\worker_1 socket:TTL-HBJ6674.tt.local:51802 number of agents:2
+05/28/26 09:22:29->new connection from:TTL-HBJ6674.tt.local:51803
+05/28/26 09:22:29->initializing new agent connection from:TTL-HBJ6674.tt.local$C:\Python\Personal\kfm-ms\codes\pest_workers\worker_2 socket:TTL-HBJ6674.tt.local:51803 number of agents:3
+05/28/26 09:22:29->new connection from:TTL-HBJ6674.tt.local:51804
+05/28/26 09:22:29->initializing new agent connection from:TTL-HBJ6674.tt.local$C:\Python\Personal\kfm-ms\codes\pest_workers\worker_3 socket:TTL-HBJ6674.tt.local:51804 number of agents:4
+05/28/26 09:22:29->new agent ready:TTL-HBJ6674.tt.local$C:\Python\Personal\kfm-ms\codes\pest_workers\worker_0 socket:TTL-HBJ6674.tt.local:51801
+05/28/26 09:22:29->Sending run_id:0 to:TTL-HBJ6674.tt.local$C:\Python\Personal\kfm-ms\codes\pest_workers\worker_0 group_id:2  da_cycle:-9999   iteration:0  realization:0 concurrent:1)
+05/28/26 09:22:29->new connection from:TTL-HBJ6674.tt.local:51805
+05/28/26 09:22:29->initializing new agent connection from:TTL-HBJ6674.tt.local$C:\Python\Personal\kfm-ms\codes\pest_workers\worker_4 socket:TTL-HBJ6674.tt.local:51805 number of agents:5
+05/28/26 09:22:29->new agent ready:TTL-HBJ6674.tt.local$C:\Python\Personal\kfm-ms\codes\pest_workers\worker_1 socket:TTL-HBJ6674.tt.local:51802
+05/28/26 09:22:29->Sending run_id:1 to:TTL-HBJ6674.tt.local$C:\Python\Personal\kfm-ms\codes\pest_workers\worker_1 group_id:2  da_cycle:-9999   iteration:0  realization:1 concurrent:1)
+05/28/26 09:22:29->new connection from:TTL-HBJ6674.tt.local:51806
+05/28/26 09:22:29->initializing new agent connection from:TTL-HBJ6674.tt.local$C:\Python\Personal\kfm-ms\codes\pest_workers\worker_5 socket:TTL-HBJ6674.tt.local:51806 number of agents:6
+05/28/26 09:22:29->new agent ready:TTL-HBJ6674.tt.local$C:\Python\Personal\kfm-ms\codes\pest_workers\worker_2 socket:TTL-HBJ6674.tt.local:51803
+05/28/26 09:22:29->Sending run_id:2 to:TTL-HBJ6674.tt.local$C:\Python\Personal\kfm-ms\codes\pest_workers\worker_2 group_id:2  da_cycle:-9999   iteration:0  realization:2 concurrent:1)
+05/28/26 09:22:29->new connection from:TTL-HBJ6674.tt.local:51807
+05/28/26 09:22:29->initializing new agent connection from:TTL-HBJ6674.tt.local$C:\Python\Personal\kfm-ms\codes\pest_workers\worker_6 socket:TTL-HBJ6674.tt.local:51807 number of agents:7
+05/28/26 09:22:29->new agent ready:TTL-HBJ6674.tt.local$C:\Python\Personal\kfm-ms\codes\pest_workers\worker_3 socket:TTL-HBJ6674.tt.local:51804
+05/28/26 09:22:29->Sending run_id:3 to:TTL-HBJ6674.tt.local$C:\Python\Personal\kfm-ms\codes\pest_workers\worker_3 group_id:2  da_cycle:-9999   iteration:0  realization:3 concurrent:1)
+05/28/26 09:22:29->new agent ready:TTL-HBJ6674.tt.local$C:\Python\Personal\kfm-ms\codes\pest_workers\worker_4 socket:TTL-HBJ6674.tt.local:51805
+05/28/26 09:22:29->Sending run_id:4 to:TTL-HBJ6674.tt.local$C:\Python\Personal\kfm-ms\codes\pest_workers\worker_4 group_id:2  da_cycle:-9999   iteration:0  realization:4 concurrent:1)
+05/28/26 09:22:29->new connection from:TTL-HBJ6674.tt.local:51808
+05/28/26 09:22:29->initializing new agent connection from:TTL-HBJ6674.tt.local$C:\Python\Personal\kfm-ms\codes\pest_workers\worker_7 socket:TTL-HBJ6674.tt.local:51808 number of agents:8
+05/28/26 09:22:29->new agent ready:TTL-HBJ6674.tt.local$C:\Python\Personal\kfm-ms\codes\pest_workers\worker_5 socket:TTL-HBJ6674.tt.local:51806
+05/28/26 09:22:29->Sending run_id:5 to:TTL-HBJ6674.tt.local$C:\Python\Personal\kfm-ms\codes\pest_workers\worker_5 group_id:2  da_cycle:-9999   iteration:0  realization:5 concurrent:1)
+05/28/26 09:22:29->new agent ready:TTL-HBJ6674.tt.local$C:\Python\Personal\kfm-ms\codes\pest_workers\worker_6 socket:TTL-HBJ6674.tt.local:51807
+05/28/26 09:22:29->Sending run_id:6 to:TTL-HBJ6674.tt.local$C:\Python\Personal\kfm-ms\codes\pest_workers\worker_6 group_id:2  da_cycle:-9999   iteration:0  realization:6 concurrent:1)
+05/28/26 09:22:30->new agent ready:TTL-HBJ6674.tt.local$C:\Python\Personal\kfm-ms\codes\pest_workers\worker_7 socket:TTL-HBJ6674.tt.local:51808
+05/28/26 09:22:30->Sending run_id:7 to:TTL-HBJ6674.tt.local$C:\Python\Personal\kfm-ms\codes\pest_workers\worker_7 group_id:2  da_cycle:-9999   iteration:0  realization:7 concurrent:1)
+05/28/26 09:22:35-> run_id:0 received from:TTL-HBJ6674.tt.local$C:\Python\Personal\kfm-ms\codes\pest_workers\worker_0  run_time:0.11015  avg_run_time:0.11015 group_id:2  da_cycle:-9999   iteration:0  realization:0  worker_time:0.108333 concurrent:1
+05/28/26 09:22:35->run 0 processed
+05/28/26 09:22:35->Sending run_id:8 to:TTL-HBJ6674.tt.local$C:\Python\Personal\kfm-ms\codes\pest_workers\worker_0 group_id:2  da_cycle:-9999   iteration:0  realization:8 concurrent:1)
+05/28/26 09:22:36-> run_id:1 received from:TTL-HBJ6674.tt.local$C:\Python\Personal\kfm-ms\codes\pest_workers\worker_1  run_time:0.113767  avg_run_time:0.111958 group_id:2  da_cycle:-9999   iteration:0  realization:1  worker_time:0.111917 concurrent:1
+05/28/26 09:22:36->run 1 processed
+05/28/26 09:22:36->Sending run_id:9 to:TTL-HBJ6674.tt.local$C:\Python\Personal\kfm-ms\codes\pest_workers\worker_1 group_id:2  da_cycle:-9999   iteration:0  realization:9 concurrent:1)
+05/28/26 09:22:36-> run_id:2 received from:TTL-HBJ6674.tt.local$C:\Python\Personal\kfm-ms\codes\pest_workers\worker_2  run_time:0.113767  avg_run_time:0.112561 group_id:2  da_cycle:-9999   iteration:0  realization:2  worker_time:0.111967 concurrent:1
+05/28/26 09:22:36->run 2 processed
+05/28/26 09:22:36->Sending run_id:10 to:TTL-HBJ6674.tt.local$C:\Python\Personal\kfm-ms\codes\pest_workers\worker_2 group_id:2  da_cycle:-9999   iteration:0  realization:10 concurrent:1)
+05/28/26 09:22:36-> run_id:3 received from:TTL-HBJ6674.tt.local$C:\Python\Personal\kfm-ms\codes\pest_workers\worker_3  run_time:0.115533  avg_run_time:0.113304 group_id:2  da_cycle:-9999   iteration:0  realization:3  worker_time:0.113733 concurrent:1
+05/28/26 09:22:36->run 3 processed
+05/28/26 09:22:36->Sending run_id:11 to:TTL-HBJ6674.tt.local$C:\Python\Personal\kfm-ms\codes\pest_workers\worker_3 group_id:2  da_cycle:-9999   iteration:0  realization:11 concurrent:1)
+05/28/26 09:22:36-> run_id:4 received from:TTL-HBJ6674.tt.local$C:\Python\Personal\kfm-ms\codes\pest_workers\worker_4  run_time:0.115283  avg_run_time:0.1137 group_id:2  da_cycle:-9999   iteration:0  realization:4  worker_time:0.113483 concurrent:1
+05/28/26 09:22:36->run 4 processed
+05/28/26 09:22:36->Sending run_id:12 to:TTL-HBJ6674.tt.local$C:\Python\Personal\kfm-ms\codes\pest_workers\worker_4 group_id:2  da_cycle:-9999   iteration:0  realization:12 concurrent:1)
+05/28/26 09:22:36-> run_id:5 received from:TTL-HBJ6674.tt.local$C:\Python\Personal\kfm-ms\codes\pest_workers\worker_5  run_time:0.11735  avg_run_time:0.114308 group_id:2  da_cycle:-9999   iteration:0  realization:5  worker_time:0.115517 concurrent:1
+05/28/26 09:22:36->run 5 processed
+05/28/26 09:22:36->Sending run_id:13 to:TTL-HBJ6674.tt.local$C:\Python\Personal\kfm-ms\codes\pest_workers\worker_5 group_id:2  da_cycle:-9999   iteration:0  realization:13 concurrent:1)
+05/28/26 09:22:36-> run_id:7 received from:TTL-HBJ6674.tt.local$C:\Python\Personal\kfm-ms\codes\pest_workers\worker_7  run_time:0.113783  avg_run_time:0.114233 group_id:2  da_cycle:-9999   iteration:0  realization:7  worker_time:0.111967 concurrent:1
+05/28/26 09:22:36->run 7 processed
+05/28/26 09:22:36->Sending run_id:14 to:TTL-HBJ6674.tt.local$C:\Python\Personal\kfm-ms\codes\pest_workers\worker_7 group_id:2  da_cycle:-9999   iteration:0  realization:14 concurrent:1)
+05/28/26 09:22:37-> run_id:6 received from:TTL-HBJ6674.tt.local$C:\Python\Personal\kfm-ms\codes\pest_workers\worker_6  run_time:0.11735  avg_run_time:0.114623 group_id:2  da_cycle:-9999   iteration:0  realization:6  worker_time:0.115533 concurrent:1
+05/28/26 09:22:37->run 6 processed
+05/28/26 09:22:37->Sending run_id:15 to:TTL-HBJ6674.tt.local$C:\Python\Personal\kfm-ms\codes\pest_workers\worker_6 group_id:2  da_cycle:-9999   iteration:0  realization:15 concurrent:1)
+05/28/26 09:22:41-> run_id:8 received from:TTL-HBJ6674.tt.local$C:\Python\Personal\kfm-ms\codes\pest_workers\worker_0  run_time:0.103883  avg_run_time:0.11384 group_id:2  da_cycle:-9999   iteration:0  realization:8  worker_time:0.0958 concurrent:1
+05/28/26 09:22:41->run 8 processed
+05/28/26 09:22:41->Sending run_id:16 to:TTL-HBJ6674.tt.local$C:\Python\Personal\kfm-ms\codes\pest_workers\worker_0 group_id:2  da_cycle:-9999   iteration:0  realization:16 concurrent:1)
+05/28/26 09:22:42-> run_id:9 received from:TTL-HBJ6674.tt.local$C:\Python\Personal\kfm-ms\codes\pest_workers\worker_1  run_time:0.10745  avg_run_time:0.11305 group_id:2  da_cycle:-9999   iteration:0  realization:9  worker_time:0.0993167 concurrent:1
+05/28/26 09:22:42->run 9 processed
+05/28/26 09:22:42->Sending run_id:17 to:TTL-HBJ6674.tt.local$C:\Python\Personal\kfm-ms\codes\pest_workers\worker_1 group_id:2  da_cycle:-9999   iteration:0  realization:17 concurrent:1)
+05/28/26 09:22:42-> run_id:10 received from:TTL-HBJ6674.tt.local$C:\Python\Personal\kfm-ms\codes\pest_workers\worker_2  run_time:0.107333  avg_run_time:0.112246 group_id:2  da_cycle:-9999   iteration:0  realization:10  worker_time:0.0991 concurrent:1
+05/28/26 09:22:42->run 10 processed
+05/28/26 09:22:42->Sending run_id:18 to:TTL-HBJ6674.tt.local$C:\Python\Personal\kfm-ms\codes\pest_workers\worker_2 group_id:2  da_cycle:-9999   iteration:0  realization:18 concurrent:1)
+05/28/26 09:22:42-> run_id:12 received from:TTL-HBJ6674.tt.local$C:\Python\Personal\kfm-ms\codes\pest_workers\worker_4  run_time:0.110017  avg_run_time:0.111587 group_id:2  da_cycle:-9999   iteration:0  realization:12  worker_time:0.102933 concurrent:1
+05/28/26 09:22:42->run 12 processed
+05/28/26 09:22:42->Sending run_id:19 to:TTL-HBJ6674.tt.local$C:\Python\Personal\kfm-ms\codes\pest_workers\worker_4 group_id:2  da_cycle:-9999   iteration:0  realization:19 concurrent:1)
+05/28/26 09:22:42-> run_id:11 received from:TTL-HBJ6674.tt.local$C:\Python\Personal\kfm-ms\codes\pest_workers\worker_3  run_time:0.111033  avg_run_time:0.111025 group_id:2  da_cycle:-9999   iteration:0  realization:11  worker_time:0.104767 concurrent:1
+05/28/26 09:22:42->run 11 processed
+05/28/26 09:22:42->Sending run_id:20 to:TTL-HBJ6674.tt.local$C:\Python\Personal\kfm-ms\codes\pest_workers\worker_3 group_id:2  da_cycle:-9999   iteration:0  realization:20 concurrent:1)
+05/28/26 09:22:43-> run_id:14 received from:TTL-HBJ6674.tt.local$C:\Python\Personal\kfm-ms\codes\pest_workers\worker_7  run_time:0.10835  avg_run_time:0.110346 group_id:2  da_cycle:-9999   iteration:0  realization:14  worker_time:0.101133 concurrent:1
+05/28/26 09:22:43->run 14 processed
+05/28/26 09:22:43->Sending run_id:21 to:TTL-HBJ6674.tt.local$C:\Python\Personal\kfm-ms\codes\pest_workers\worker_7 group_id:2  da_cycle:-9999   iteration:0  realization:21 concurrent:1)
+05/28/26 09:22:43-> run_id:13 received from:TTL-HBJ6674.tt.local$C:\Python\Personal\kfm-ms\codes\pest_workers\worker_5  run_time:0.111033  avg_run_time:0.109556 group_id:2  da_cycle:-9999   iteration:0  realization:13  worker_time:0.102967 concurrent:1
+05/28/26 09:22:43->run 13 processed
+05/28/26 09:22:43->Sending run_id:22 to:TTL-HBJ6674.tt.local$C:\Python\Personal\kfm-ms\codes\pest_workers\worker_5 group_id:2  da_cycle:-9999   iteration:0  realization:22 concurrent:1)
+05/28/26 09:22:43-> run_id:15 received from:TTL-HBJ6674.tt.local$C:\Python\Personal\kfm-ms\codes\pest_workers\worker_6  run_time:0.111033  avg_run_time:0.108767 group_id:2  da_cycle:-9999   iteration:0  realization:15  worker_time:0.102933 concurrent:1
+05/28/26 09:22:43->run 15 processed
+05/28/26 09:22:43->Sending run_id:23 to:TTL-HBJ6674.tt.local$C:\Python\Personal\kfm-ms\codes\pest_workers\worker_6 group_id:2  da_cycle:-9999   iteration:0  realization:23 concurrent:1)
