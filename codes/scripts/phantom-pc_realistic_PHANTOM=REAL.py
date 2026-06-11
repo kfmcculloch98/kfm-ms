@@ -222,8 +222,8 @@ if __name__ == "__main__":
     real_locs = random.sample(inner_coords, n_real)
     print(f"Real well locations (row, col): {real_locs}")
 
-    # use the same locations as phantom well locations
-    phantom_locs = cp_cells
+    # define phantom well locations to be the same as the real wells for a direct comparison of their responses
+    phantom_locs = real_locs
     n_phantom = len(phantom_locs)
     print(f"Set up {n_phantom} PHANTOM wells...")
 

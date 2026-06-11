@@ -222,7 +222,8 @@ if __name__ == "__main__":
     real_locs = random.sample(inner_coords, n_real)
     print(f"Real well locations (row, col): {real_locs}")
 
-    # use the same locations as phantom well locations
+    # define phantom well locations along the perimeter control points
+    # to characterise the system response at the compliance boundary
     phantom_locs = cp_cells
     n_phantom = len(phantom_locs)
     print(f"Set up {n_phantom} PHANTOM wells...")
