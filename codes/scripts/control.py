@@ -1,19 +1,18 @@
-import pyemu
-import pandas as pd
 import os
+import pandas as pd
 import shutil
 from pathlib import Path
+import pyemu
 
 # configure paths
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 PEST_DIR = os.path.abspath(os.path.join(SCRIPT_DIR, "..", "pest"))
-MODEL_WS = os.path.abspath(os.path.join(SCRIPT_DIR, "..", "sims", "real-basis", "real"))
+MODEL_WS = os.path.abspath(os.path.join(SCRIPT_DIR, "..", "sims", "realistic", "real"))
 RESULTS_DIR = Path(r"c:\Python\Personal\kfm-ms\codes\results")
 PYTHON_LOC = Path(r"c:\Python\Personal\kfm-ms\.venv\Scripts\python.exe")
 MASTER_TRUTH_FILE = "master_truth.csv"  # filename stored in pest_dir
 
-
-def build_modular_pst(level):
+def build_modular_pst(level, root_name):
     print(f"\ninitializing pest setup in: {PEST_DIR}")
 
     # initialise the pest-from workflow using the reference model workspace
@@ -24,9 +23,8 @@ def build_modular_pst(level):
         longnames=True
     )
 
-    # copy the surrogate response matrix into the pest workspace
-    # this file is not part of the modflow model, but is required by the inversion workflow
-    source_g = os.path.join(RESULTS_DIR, "G_real_basis.npy") 
+    # handle the dynamic {root} naming convention for the surrogate matrix export
+    source_g = os.path.join(RESULTS_DIR, f"G_real_basis.npy")
     dest_g = os.path.join(PEST_DIR, "G_real_basis.npy")
     shutil.copy(source_g, dest_g)
 
@@ -57,11 +55,13 @@ def build_modular_pst(level):
 
     pst.control_data.noptmax = 10
 
-    # set default parameter behaviour before applying level-specific access rules
+    # configure the parameters: log-transform, base value, and bounds
+    # set all parameters to fixed with a base value of 1.0 to create a clean slate for later subsetting 
+    # based on the master truth file
     pst.parameter_data.loc[:, "partrans"] = "fixed"
-    pst.parameter_data.loc[:, "parval1"] = 1e-6
-    pst.parameter_data.loc[:, "parlbnd"] = 1e-6
-    pst.parameter_data.loc[:, "parubnd"] = 500.0
+    pst.parameter_data.loc[:, "parval1"] = 1.0     # Clean base guess for non-active wells
+    pst.parameter_data.loc[:, "parlbnd"] = 1e-3     # Floor bounded pumping extraction constraint
+    pst.parameter_data.loc[:, "parubnd"] = 3000.0  # Raised from 500 to cleanly capture the max 2,730 flux
 
     # load the master truth file for parameter subsetting
     df_truth = pd.read_csv(os.path.join(PEST_DIR, MASTER_TRUTH_FILE))
@@ -69,11 +69,10 @@ def build_modular_pst(level):
     if level == "1":
         print(">>> mode: level 1 (full knowledge)")
         for _, row in df_truth.iterrows():
-            # match the parameter naming convention used by pstfrom
             tag = f"r:{int(row.r)}_c:{int(row.c)}_sp:{int(row.sp)}"
             well_mask = pst.parameter_data.index.str.contains(tag)
             pst.parameter_data.loc[well_mask, "partrans"] = "log"
-            pst.parameter_data.loc[well_mask, "parval1"] = 1.0
+            pst.parameter_data.loc[well_mask, "parval1"] = 100.0  # Realistic base starting value
 
     elif level == "2":
         print(">>> mode: level 2 (known locations)")
@@ -82,12 +81,12 @@ def build_modular_pst(level):
             loc_tag = f"r:{int(row.r)}_c:{int(row.c)}"
             mask = pst.parameter_data.index.str.contains(loc_tag)
             pst.parameter_data.loc[mask, "partrans"] = "log"
-            pst.parameter_data.loc[mask, "parval1"] = 1.0
+            pst.parameter_data.loc[mask, "parval1"] = 100.0
 
     elif level == "3":
         print(">>> mode: level 3 (blind)")
         pst.parameter_data.loc[:, "partrans"] = "log"
-        pst.parameter_data.loc[:, "parval1"] = 1.0
+        pst.parameter_data.loc[:, "parval1"] = 100.0
 
     final_pst_path = os.path.join(PEST_DIR, f"inversion_level_{level}.pst")
     pst.write(final_pst_path, version=2)
@@ -105,10 +104,11 @@ def build_modular_pst(level):
         f.writelines(options_block)
 
     print(f"\n[!] Success: Control file created: inversion_level_{level}.pst")
-    print("[!] Note: pestpp options block appended to the control file.")
 
 
 if __name__ == "__main__":
-    choice = input("\nSelect level (1, 2, or 3): ").strip()
+    # prompt for root name to ensure filenames map correctly
+    root_name = input("Enter root name for this run (e.g. realistic): ").strip()
+    choice = input("Select level (1, 2, or 3): ").strip()
     if choice in ["1", "2", "3"]:
-        build_modular_pst(choice)
+        build_modular_pst(choice, root_name)

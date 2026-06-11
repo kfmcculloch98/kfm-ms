@@ -24,3 +24,4 @@ results/**/*
 # misc
 .ipynb_checkpoints/
 codes/pest_workers/
+codes/pest/

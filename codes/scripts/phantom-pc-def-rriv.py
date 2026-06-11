@@ -36,7 +36,7 @@ workspace = None
 ########################
 
 # stress period length (days) and number of periods
-dt, nper = 7.0, 10
+dt, nper = 30, 12
 
 # grid parameters: cell size and number of rows and columns
 cell_dim, ncol, nrow = 1.0, 50, 50
@@ -80,11 +80,8 @@ def setup_sim(name, wel_data, ws):
     # create the groundwater flow model
     gwf = flopy.mf6.ModflowGwf(sim, modelname=name, save_flows=True)
     
-    # Define IDOMAIN for top and bottom border no-flow zones
-    # Active cells = 1, No-flow cells = 0
+        # All cells are now active to allow river boundaries on all sides
     idomain = np.ones((1, nrow, ncol), dtype=int)
-    idomain[0, 0, :] = 0   # Top row (Row 0) -> No-flow
-    idomain[0, -1, :] = 0  # Bottom row (Last row) -> No-flow
 
     flopy.mf6.ModflowGwfdis(
         gwf,
@@ -105,36 +102,39 @@ def setup_sim(name, wel_data, ws):
     flopy.mf6.ModflowGwfsto(gwf, ss=1e-5, transient=True)
 
     # set initial heads
-    # gradient from 10.0 to 5.0
     strt_gradient = np.linspace(10.0, 5.0, ncol)
     strt_array = np.zeros((1, nrow, ncol), dtype=float)
     for c in range(ncol):
         strt_array[0, :, c] = strt_gradient[c]
     flopy.mf6.ModflowGwfic(gwf, strt=strt_array)
 
-    # left border: 
-    # skip the top and bottom corners because they are no-flow (range from 1 to nrow-1)
-
-    # Constant Head (CHD) package
-    chd_data = []
-    for r in range(1, nrow - 1):
-        # ((layer, row, col), head_value)
-        chd_data.append(((0, r, 0), 10.0)) # Example head value of 10.0
+    # define river boundaries along the left and right borders, with a stage gradient from 10.0 to 5.0 across the domain
+    riv_cells = set()  # use a set to prevent duplicate corner entries
     
-    chd_period_data = {per: chd_data for per in range(nper)}
-    flopy.mf6.ModflowGwfchd(gwf, pname="chd", stress_period_data=chd_period_data)
+    #  top and bottom rows (all columns)
+    for c in range(ncol):
+        riv_cells.add((0, 0, c))         # top row
+        riv_cells.add((0, nrow - 1, c))  # bottom row
+        
+    # 2. Left and Right columns (all rows)
+    for r in range(nrow):
+        riv_cells.add((0, r, 0))         # left column
+        riv_cells.add((0, r, ncol - 1))  # right column
 
-    # right border: 
-    # skip the top and bottom corners because they are no-flow
-
-    # River (RIV) package
+    # build river stress period data
     riv_data = []
-    for r in range(1, nrow - 1):
+    for k, r, c in riv_cells:
+        # define stage based on left-to-right (10.0 to 5.0) gradient
+        stage = 10.0 if c == 0 else (5.0 if c == ncol - 1 else strt_gradient[c])
+        rbot = stage - 1.0  # river bottom 1 unit below stage
+        cond = 0.1          # conductance of the river cell
+        
         # ((layer, row, col), stage, conductance, rbot)
-        riv_data.append(((0, r, ncol - 1), 5.0, 0.1, 4.0))
+        riv_data.append(((k, r, c), stage, cond, rbot))
         
     riv_period_data = {per: riv_data for per in range(nper)}
     flopy.mf6.ModflowGwfriv(gwf, pname="riv", stress_period_data=riv_period_data)
+
 
     # Well Package
     flopy.mf6.ModflowGwfwel(gwf, pname="wel", stress_period_data=wel_data)

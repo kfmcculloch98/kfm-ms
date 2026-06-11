@@ -9,7 +9,7 @@ import pyemu
 
 # configure paths
 base_dir = Path(__file__).resolve().parent
-output_dir = (base_dir.parent / "sims" / "real-basis" / "real").resolve()
+output_dir = (base_dir.parent / "sims" / "realistic" / "real").resolve()
 model_ws = output_dir
 
 
@@ -18,7 +18,8 @@ def ensure_dir():
     output_dir.mkdir(parents=True, exist_ok=True)
 
 
-def get_cp_cells(sim_ws, model_name, margin=5):
+# FIXED: Changed default margin to 25 to align with your interior compliance loop
+def get_cp_cells(sim_ws, model_name, margin=25):
     """identify perimeter control points and save their locations."""
     sim = flopy.mf6.MFSimulation.load(sim_ws=sim_ws, verbosity_level=0)
     gwf = sim.get_model(model_name)
@@ -86,15 +87,21 @@ def extract_master_truth(gwf, nper):
 
 
 def extract_target_values(gwf, cp_cells, nper):
-    """extract heads at the control points and convert them to drawdown."""
+    """extract heads at the control points and convert them to accurate positive drawdown."""
     head_file = Path(gwf.model_ws) / f"{gwf.name}.hds"
     hds = flopy.utils.binaryfile.HeadFile(str(head_file))
+    
+    # Re-generate the identical initial hydraulic gradient column array (ncol=92)
+    ncol = int(gwf.dis.ncol.array)
+    strt_gradient = np.linspace((2377.0 - 100), (1707 + 100), ncol)
 
     b_target = []
     for p in range(nper):
         head_array = hds.get_data(kstpkper=(0, p))
         for r, c in cp_cells:
-            b_target.append(0.0 - head_array[0, r, c])
+            # FIXED: Drawdown = Initial Head Gradient Profile at Column 'c' - Current Head
+            h_init = strt_gradient[c]
+            b_target.append(h_init - head_array[0, r, c])
 
     hds.close()
     return b_target
@@ -125,7 +132,8 @@ if __name__ == "__main__":
     model_name = input("enter model name: ").strip()
     nper = int(input("enter number of stress periods (nper): "))
 
-    cp_cells, gwf_model = get_cp_cells(target_ws, model_name)
+    # FIXED: Added explicit margin parameter pass to handle the 25-cell boundary structure
+    cp_cells, gwf_model = get_cp_cells(target_ws, model_name, margin=25)
     extract_master_truth(gwf_model, nper)
     b_target = extract_target_values(gwf_model, cp_cells, nper)
     gen_pest_obs(b_target, nper, len(cp_cells))
