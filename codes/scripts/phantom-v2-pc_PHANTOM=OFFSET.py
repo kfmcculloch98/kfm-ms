@@ -1,6 +1,7 @@
 import os
 import random
 import time
+import math
 from concurrent.futures import ProcessPoolExecutor
 from pathlib import Path
 
@@ -217,38 +218,58 @@ if __name__ == "__main__":
     if len(inner_coords) < n_real:
         raise ValueError(f"Grid too small! well_buffer={well_buffer} left only {len(inner_coords)} cells for {n_real} wells.")
 
+    # define a random seed for reproducibility
+    random.seed(42)
+
     # select random locations for the real wells from the inner grid
     real_locs = random.sample(inner_coords, n_real)
     print(f"Real well locations (row, col): {real_locs}")
 
-    # define the 8 possible movements for a 1-cell offset for phantom wells
+    # define a ratio of phantom wells to real wells
+    phantom_ratio = 2
+    n_phantom = math.floor(n_real * phantom_ratio) # round to nearest integer
+
+    # calculate how many phantoms to generate per real well
+    # e.g., if ratio = 1.50 and n_real = 20, phantoms_per_well = 1.5
+    phantoms_per_well = n_phantom / n_real
+
+    # define possible directions for phantom wells to be placed around each real well (8 surrounding cells)
     directions = [(dr, dc) for dr in [-1, 0, 1] for dc in [-1, 0, 1] if not (dr == 0 and dc == 0)]
 
-    # generate phantom locations by adding a random 1-cell offset to each real well
     phantom_locs = []
-    for r, c in real_locs:
-        dr, dc = random.choice(directions)
-        phantom_locs.append((r + dr, c + dc))
+    for i, (r, c) in enumerate(real_locs):
+        # determine if this specific well gets 1, 2, or more phantoms
+        # distributes the extra phantoms evenly across the list
+        count_for_this_well = math.floor((i + 1) * phantoms_per_well) - math.floor(i * phantoms_per_well)
+        
+        # pick distinct directions for this specific well so they don't overlap on the exact same cell
+        chosen_dirs = random.sample(directions, count_for_this_well)
+        
+        for dr, dc in chosen_dirs:
+            phantom_locs.append((r + dr, c + dc))
 
-    n_phantom = len(phantom_locs)
-    print(f"Set up {n_phantom} PHANTOM wells...")
+    print(f"Set up {len(phantom_locs)} PHANTOM wells...")
+
 
     print(f"Running simulation for {n_real} real wells...")
 
+    # initialize a random number generator with a fixed seed
+    rng = np.random.default_rng(seed=42)
+
+    # generate pumping schedules for the real wells using a random uniform baseline rate multiplied by a random binary on/off pattern
     real_wells_data = []
     for r, c in real_locs:
         # pick a single baseline rate for this specific well
-        base_rate = np.random.uniform(273, 2730)
+        base_rate = rng.uniform(273, 2730)
         
         # multiply that single rate by a 52-week array of 0s and 1s
-        rates = base_rate * np.random.choice([0, 1], size=nper)
+        rates = base_rate * rng.choice([0, 1], size=nper)
         
         real_wells_data.append({
             "r": r,
             "c": c,
             "Q": rates
         })
-
 
     # assemble stress period data for the real wells
     wel_spd_real = {
@@ -270,6 +291,7 @@ if __name__ == "__main__":
                 }
             )
 
+    # write master truth file for PEST
     master_truth_df = pd.DataFrame(rows)
     master_truth_save_path = os.path.join(workspace, "real", "master_truth.csv")
     os.makedirs(os.path.dirname(master_truth_save_path), exist_ok=True)

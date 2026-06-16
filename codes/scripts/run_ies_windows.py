@@ -30,7 +30,7 @@ def run_parallel_inversion():
     print(f"Loading {PST_NAME} to inject ensemble-generation rules...")
     pst = pyemu.Pst(PST_NAME)
     
-    # number of iterations is set low
+    # number of iterations
     pst.control_data.noptmax = 2
     
     # prevent pestpp from auto-generating ensembles on its own since we'll handle that via pyemu's built-in functionality
@@ -52,7 +52,7 @@ def run_parallel_inversion():
         "* pestpp options\n",
         "ies_autogen_par_ensem          true\n",
         "ies_autogen_obs_ensem          true\n",
-        "ies_ensemble_size             300\n"
+        "ies_ensemble_size             500\n"
     ]
 
     with open(PST_NAME, "a") as f:

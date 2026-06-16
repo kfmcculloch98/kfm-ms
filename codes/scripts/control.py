@@ -96,7 +96,7 @@ def build_modular_pst(level, root_name):
         "\n",
         "* pestpp options\n",
         "run_manage master\n",
-        "num_reals 300 \n",
+        "num_reals 500 \n",
         "max_run_fail 5\n",
     ]
 

@@ -22,4 +22,4 @@ inversion_level_1.insfile_data.csv
 * pestpp options
 ies_autogen_par_ensem          true
 ies_autogen_obs_ensem          true
-ies_ensemble_size             300
+ies_ensemble_size             500
