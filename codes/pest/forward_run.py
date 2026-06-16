@@ -6,25 +6,25 @@ import pyemu
 
 # function added thru PstFrom.add_py_function()
 def run_surrogate():
-    # 1. Load the surrogate matrix operator
+    # load the surrogate basis matrix G (precomputed from the full forward model)
     G = np.load("G_real_basis.npy") 
     
-    # 2. Read parameters exactly in the native sequence PEST writes them
+    # read the master truth pumping schedule (the "q" vector) from the CSV file
     q_df = pd.read_csv("master_truth.csv")
     
-    # FIXED: Stripped the .sort_values() call to maintain strict 1:1 parameter index matching
+    # strip the "q" column to get the pumping schedule as a numpy array
     q_vec = q_df["q"].values 
     
-    # 3. Perform index-aligned linear convolution matrix multiplication
+    # compute the surrogate-predicted drawdown at the control points using matrix multiplication
     b_sim = G @ q_vec 
     
-    # 4. Read the registered observation structure layout
+    # read the registered observation structure layout
     obs_df = pd.read_csv("dummy_obs.csv") 
     
-    # 5. Map the simulated drawdowns directly to the observation target vector
+    # map the simulated drawdowns directly to the observation target vector
     obs_df["obsval"] = b_sim
     
-    # 6. Export the final data back to disk where PEST expects it
+    # export the final data back to disk where PEST expects it
     obs_df.to_csv("obs.csv", index=False)
 def main():
 

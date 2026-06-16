@@ -59,33 +59,33 @@ def build_modular_pst(level, root_name):
     # set all parameters to fixed with a base value of 1.0 to create a clean slate for later subsetting 
     # based on the master truth file
     pst.parameter_data.loc[:, "partrans"] = "fixed"
-    pst.parameter_data.loc[:, "parval1"] = 1.0     # Clean base guess for non-active wells
-    pst.parameter_data.loc[:, "parlbnd"] = 1e-3     # Floor bounded pumping extraction constraint
-    pst.parameter_data.loc[:, "parubnd"] = 3000.0  # Raised from 500 to cleanly capture the max 2,730 flux
+    pst.parameter_data.loc[:, "parval1"] = 1.0     # base value to be overwritten later based on the master truth file
+    pst.parameter_data.loc[:, "parlbnd"] = 1e-3     # lower bound to prevent numerical issues in the surrogate
+    pst.parameter_data.loc[:, "parubnd"] = 3000.0  # upper bound based on known max pumping rates in the field
 
     # load the master truth file for parameter subsetting
     df_truth = pd.read_csv(os.path.join(PEST_DIR, MASTER_TRUTH_FILE))
 
     if level == "1":
-        print(">>> mode: level 1 (full knowledge)")
+        print("You selected Level 1 (Full Knowledge)")
         for _, row in df_truth.iterrows():
             tag = f"r:{int(row.r)}_c:{int(row.c)}_sp:{int(row.sp)}"
             well_mask = pst.parameter_data.index.str.contains(tag)
-            pst.parameter_data.loc[well_mask, "partrans"] = "log"
-            pst.parameter_data.loc[well_mask, "parval1"] = 100.0  # Realistic base starting value
+            pst.parameter_data.loc[well_mask, "partrans"] = "none"
+            pst.parameter_data.loc[well_mask, "parval1"] = 100.0  # realistic base starting value
 
     elif level == "2":
-        print(">>> mode: level 2 (known locations)")
+        print("You selected Level 2 (Known Locations)")
         unique_locs = df_truth[["r", "c"]].drop_duplicates()
         for _, row in unique_locs.iterrows():
             loc_tag = f"r:{int(row.r)}_c:{int(row.c)}"
             mask = pst.parameter_data.index.str.contains(loc_tag)
-            pst.parameter_data.loc[mask, "partrans"] = "log"
+            pst.parameter_data.loc[mask, "partrans"] = "none"
             pst.parameter_data.loc[mask, "parval1"] = 100.0
 
     elif level == "3":
-        print(">>> mode: level 3 (blind)")
-        pst.parameter_data.loc[:, "partrans"] = "log"
+        print("You selected Level 3 (Blind)")
+        pst.parameter_data.loc[:, "partrans"] = "none"
         pst.parameter_data.loc[:, "parval1"] = 100.0
 
     final_pst_path = os.path.join(PEST_DIR, f"inversion_level_{level}.pst")

@@ -57,14 +57,15 @@ def run_parallel_inversion():
 
     with open(PST_NAME, "a") as f:
         f.writelines(options_block)
-    # =================================================================
-    
-    print(f"Spawning 8 local workers inside {WORKER_ROOT}...")
+
+    num_workers = 8
+
+    print(f"Spawning {num_workers} local workers inside {WORKER_ROOT}...")
     pyemu.utils.start_workers(
         worker_dir=PEST_DIR,           # source folder to duplicate
         exe_rel_path=IES_EXE,          # PEST binary path
         pst_rel_path=PST_NAME,         # PEST control file name
-        num_workers=8,                 # number of parallel local workers to spawn
+        num_workers=num_workers,       # number of parallel local workers to spawn
         master_dir="master_run",       # master coordination folder name
         worker_root=WORKER_ROOT,       # isolated parent directory for all run folders
         port=25318                     # TCP port

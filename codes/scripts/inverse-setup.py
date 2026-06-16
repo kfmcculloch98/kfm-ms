@@ -14,13 +14,11 @@ model_ws = output_dir
 
 
 def ensure_dir():
-    """create the output directory if it does not already exist."""
+    """Create the output directory if it does not already exist."""
     output_dir.mkdir(parents=True, exist_ok=True)
 
-
-# FIXED: Changed default margin to 25 to align with your interior compliance loop
 def get_cp_cells(sim_ws, model_name, margin=25):
-    """identify perimeter control points and save their locations."""
+    """Identify perimeter control points and save their locations."""
     sim = flopy.mf6.MFSimulation.load(sim_ws=sim_ws, verbosity_level=0)
     gwf = sim.get_model(model_name)
 
@@ -52,9 +50,8 @@ def get_cp_cells(sim_ws, model_name, margin=25):
 
     return cp_cells, gwf
 
-
 def extract_master_truth(gwf, nper):
-    """extract the real well pumping schedule for later verification."""
+    """Extract the Real well pumping schedule for later verification."""
     wel = gwf.get_package("wel")
     spd = wel.stress_period_data.get_data()
 
@@ -87,19 +84,20 @@ def extract_master_truth(gwf, nper):
 
 
 def extract_target_values(gwf, cp_cells, nper):
-    """extract heads at the control points and convert them to accurate positive drawdown."""
+    """Extract heads at the control points and convert them to accurate positive drawdown."""
     head_file = Path(gwf.model_ws) / f"{gwf.name}.hds"
     hds = flopy.utils.binaryfile.HeadFile(str(head_file))
     
-    # Re-generate the identical initial hydraulic gradient column array (ncol=92)
+    # re-generate the identical initial hydraulic gradient column array (ncol=92)
     ncol = int(gwf.dis.ncol.array)
-    strt_gradient = np.linspace((2377.0 - 100), (1707 + 100), ncol)
+    strt_gradient = np.linspace((2377.0), (1707), ncol)
 
     b_target = []
     for p in range(nper):
         head_array = hds.get_data(kstpkper=(0, p))
         for r, c in cp_cells:
-            # FIXED: Drawdown = Initial Head Gradient Profile at Column 'c' - Current Head
+            # calculate the initial head at the control point location using the known gradient
+            # then compute the target drawdown by subtracting the simulated head from the initial head
             h_init = strt_gradient[c]
             b_target.append(h_init - head_array[0, r, c])
 
@@ -132,10 +130,10 @@ if __name__ == "__main__":
     model_name = input("enter model name: ").strip()
     nper = int(input("enter number of stress periods (nper): "))
 
-    # FIXED: Added explicit margin parameter pass to handle the 25-cell boundary structure
+    # add margin argument to get_cp_cells to align with the interior compliance loop in control.py
     cp_cells, gwf_model = get_cp_cells(target_ws, model_name, margin=25)
     extract_master_truth(gwf_model, nper)
     b_target = extract_target_values(gwf_model, cp_cells, nper)
     gen_pest_obs(b_target, nper, len(cp_cells))
 
-    print("Data generation complete! Now run control.py to build the PEST files.")
+    print("Synthetic data generation complete! Now run control.py to build the PEST files.")
