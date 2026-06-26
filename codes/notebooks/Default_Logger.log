@@ -1,0 +1,5 @@
+2026-06-19 07:28:15.202007 starting: opening Default_Logger.log for logging
+2026-06-19 07:28:15.202007 starting: plot res_1to1
+2026-06-19 07:28:15.207003 starting: plotting 1to1 for oname:obs.csv_otype:lst_usecol:obsval
+2026-06-19 07:28:27.724949 finished: plotting 1to1 for oname:obs.csv_otype:lst_usecol:obsval took: 0:00:12.517946
+2026-06-19 07:28:28.344637 finished: plot res_1to1 took: 0:00:13.142630

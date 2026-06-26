@@ -1,0 +1,2 @@
+root,iterations,success,status_message,cost
+anabasis,1000,False,The maximum number of iterations is exceeded.,8.585924199521712e-07

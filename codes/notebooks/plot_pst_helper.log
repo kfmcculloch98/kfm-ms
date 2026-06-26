@@ -1,0 +1,7 @@
+2026-06-17 07:38:57.948128 starting: opening plot_pst_helper.log for logging
+2026-06-17 07:38:57.948128 plot_utils.pst_helper()
+2026-06-17 07:38:57.948128 starting: plot res_1to1
+2026-06-17 07:38:58.124623 starting: plotting 1to1 for oname:obs.csv_otype:lst_usecol:obsval
+2026-06-17 07:38:58.128652 using control file obsvals to calculate residuals
+2026-06-17 07:38:58.167865 finished: plotting 1to1 for oname:obs.csv_otype:lst_usecol:obsval took: 0:00:00.043242
+2026-06-17 07:38:58.532641 finished: plot res_1to1 took: 0:00:00.584513

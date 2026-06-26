@@ -1,0 +1,23 @@
+pcf version=2
+* control data keyword
+pestmode                                 estimation
+noptmax                                 0
+svdmode                                 1
+maxsing                          10000000
+eigthresh                           1e-06
+eigwrite                                1
+ies_num_reals                  250
+ies_enforce_bounds             true
+ies_parameter_ensemble         inversion_level_1.par.csv
+* parameter groups external
+inversion_level_1.pargp_data.csv
+* parameter data external
+inversion_level_1.par_data.csv
+* observation data external
+inversion_level_1.obs_data.csv
+* model command line
+python forward_run.py
+* model input external
+inversion_level_1.tplfile_data.csv
+* model output external
+inversion_level_1.insfile_data.csv

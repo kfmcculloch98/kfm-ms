@@ -1,0 +1,3941 @@
+                                   MODFLOW 6
+                U.S. GEOLOGICAL SURVEY MODULAR HYDROLOGIC MODEL
+                          GROUNDWATER FLOW MODEL (GWF)
+                            VERSION 6.6.3 09/29/2025
+
+   MODFLOW 6 compiled Oct 07 2025 23:07:48 with Intel(R) Fortran Intel(R) 64
+   Compiler Classic for applications running on Intel(R) 64, Version 2021.7.0
+                             Build 20220726_000000
+
+This software has been approved for release by the U.S. Geological 
+Survey (USGS). Although the software has been subjected to rigorous 
+review, the USGS reserves the right to update the software as needed 
+pursuant to further analysis and review. No warranty, expressed or 
+implied, is made by the USGS or the U.S. Government as to the 
+functionality of the software and related material nor shall the 
+fact of release constitute any such warranty. Furthermore, the 
+software is released on condition that neither the USGS nor the U.S. 
+Government shall be held liable for any damages resulting from its 
+authorized or unauthorized use. Also refer to the USGS Water 
+Resources Software User Rights Notice for complete use, copyright, 
+and distribution information.
+
+
+As a work of the United States Government, this USGS product is 
+in the public domain within the United States. You can copy, 
+modify, distribute, and perform the work, even for commercial 
+purposes, all without asking permission. Additionally, USGS 
+waives copyright and related rights in the work worldwide 
+through CC0 1.0 Universal Public Domain Dedication 
+(https://creativecommons.org/publicdomain/zero/1.0/).
+
+The following GNU Lesser General Public License (LGPL) libraries
+are used in this USGS product:
+
+    SPARSKIT version 2.0
+      ilut, luson, and qsplit 
+      (https://www-users.cse.umn.edu/~saad/software/SPARSKIT/)
+
+    RCM - Reverse Cuthill McKee Ordering
+      (https://people.math.sc.edu/Burkardt/f_src/rcm/rcm.html)
+
+    BLAS - Basic Linear Algebra Subprograms Level 1
+      (https://people.math.sc.edu/Burkardt/f_src/blas1_d/blas1_d.html)
+
+    SPARSEKIT - Sparse Matrix Utility Package
+      amux, dperm, dvperm, rperm, and cperm
+      (https://people.sc.fsu.edu/~jburkardt/f77_src/sparsekit/sparsekit.html)
+
+The following BSD-3 License libraries are used in this USGS product:
+
+    Modern Fortran DAG Library
+      Copyright (c) 2018, Jacob Williams
+      All rights reserved.
+      (https://github.com/jacobwilliams/daglib)
+
+MODFLOW 6 compiler options: /O2 /heap-arrays:0 /fpe:0 /traceback /nologo /fpp
+/c /module:win64\mod_mf6\ /object:win64\obj_mf6\
+
+System command used to initiate simulation:
+C:\Python\Personal\kfm-ms\codes\binaries\MODFLOW6\windows\mf6.exe
+
+MODFLOW was compiled using uniform precision.
+
+Real Variables
+  KIND: 8
+  TINY (smallest non-zero value):    2.225074-308
+  HUGE (largest value):    1.797693+308
+  PRECISION: 15
+  SIZE IN BITS: 64
+
+Integer Variables
+  KIND: 4
+  HUGE (largest value): 2147483647
+  SIZE IN BITS: 32
+
+Long Integer Variables
+  KIND: 8
+  HUGE (largest value): 9223372036854775807
+  SIZE IN BITS: 64
+
+Logical Variables
+  KIND: 4
+  SIZE IN BITS: 32
+ 
+ NAMEFILE OPTIONS:
+    FLOWS WILL BE SAVED TO BUDGET FILE SPECIFIED IN OUTPUT CONTROL
+ END NAMEFILE OPTIONS:
+
+ DIS -- STRUCTURED GRID DISCRETIZATION PACKAGE, VERSION 2 : 3/27/2014 - INPUT READ FROM MEMPATH: __INPUT__/PHANTOM_2/DIS                           
+
+
+ NPF -- NODE PROPERTY FLOW PACKAGE, VERSION 1, 3/30/2015 INPUT READ FROM MEMPATH: __INPUT__/PHANTOM_2/NPF                           
+
+
+ IC -- Initial Conditions Package, Version 8, 3/28/2015 input read from mempath: __INPUT__/PHANTOM_2/IC                            
+
+
+ Setting Discretization Options
+    XORIGIN = .000000000000000
+    YORIGIN = .000000000000000
+ End Setting Discretization Options
+
+ Setting Discretization Dimensions
+    NLAY = 1
+    NROW = 116
+    NCOL = 92
+ End Setting Discretization Dimensions
+
+ Setting Discretization Griddata
+    DELR set from input file
+    DELC set from input file
+    TOP set from input file
+    BOTM set from input file
+    IDOMAIN set from input file
+ End Setting Discretization Griddata
+
+ Setting NPF Options
+ End Setting NPF Options
+
+ Setting NPF Griddata
+    ICELLTYPE set from input file
+    K set from input file
+    K33 not provided.  Setting K33 = K.
+    K22 not provided.  Setting K22 = K.
+ End Setting NPF Griddata
+
+
+ WEL -- WEL PACKAGE, VERSION 8, 2/22/2014 INPUT READ FROM MEMPATH: __INPUT__/PHANTOM_2/WEL                           
+
+ PROCESSING WEL BASE OPTIONS
+ END OF WEL BASE OPTIONS
+
+ PROCESSING WEL OPTIONS
+ END OF WEL OPTIONS
+
+ PROCESSING WEL BASE DIMENSIONS
+    MAXBOUND =       1
+ END OF WEL BASE DIMENSIONS
+
+ GHB -- GHB PACKAGE, VERSION 8, 2/22/2014 INPUT READ FROM MEMPATH: __INPUT__/PHANTOM_2/GHB                           
+
+ PROCESSING GHB BASE OPTIONS
+ END OF GHB BASE OPTIONS
+
+ PROCESSING GHB OPTIONS
+ END OF GHB OPTIONS
+
+ PROCESSING GHB BASE DIMENSIONS
+    MAXBOUND =     232
+ END OF GHB BASE DIMENSIONS
+    STRT set from input file
+
+ STO -- STORAGE PACKAGE, VERSION 1, 5/19/2014 INPUT READ FROM MEMPATH: __INPUT__/PHANTOM_2/STO                           
+
+
+ PROCESSING STORAGE OPTIONS
+ END OF STORAGE OPTIONS
+    BINARY GRID INFORMATION WILL BE WRITTEN TO:
+      UNIT NUMBER: 1015
+      FILE NAME: phantom_2.dis.grb
+
+ OPENED phantom_2.dis.grb
+ FILE TYPE:DATA(BINARY)   UNIT 1015   STATUS:REPLACE             
+ FORMAT:UNFORMATTED            ACCESS:STREAM              
+ ACTION:READWRITE           
+
+      THE LAST TIME STEP WILL BE PRINTED
+      THE LAST TIME STEP WILL BE PRINTED
+ # File generated by Flopy version 3.10.0 on 06/24/2026 at 07:56:10.
+
+ PROCESSING OC OPTIONS
+
+    HEAD INFORMATION WILL BE WRITTEN TO:
+      UNIT NUMBER: 1016
+      FILE NAME: phantom_2.hds
+
+ OPENED phantom_2.hds
+ FILE TYPE:DATA(BINARY)   UNIT 1016   STATUS:REPLACE             
+ FORMAT:UNFORMATTED            ACCESS:STREAM              
+ ACTION:READWRITE           
+
+ END OF OC OPTIONS
+
+start timestep kper="1" kstp="1" mode="normal"
+
+
+ BEGIN READING OUTPUT CONTROL FOR STRESS PERIOD 1
+      THE LAST TIME STEP WILL BE SAVED
+
+ END READING OUTPUT CONTROL FOR STRESS PERIOD 1
+
+
+ PROCESSING STORAGE PERIOD DATA
+ END PROCESSING STORAGE PERIOD DATA
+
+
+ STRESS PERIOD 1 IS TRANSIENT
+
+
+end timestep
+
+
+start timestep kper="1" kstp="2" mode="normal"
+
+
+end timestep
+
+
+start timestep kper="1" kstp="3" mode="normal"
+
+
+end timestep
+
+
+start timestep kper="1" kstp="4" mode="normal"
+
+
+end timestep
+
+
+start timestep kper="1" kstp="5" mode="normal"
+
+
+ HEAD WILL BE SAVED ON UNIT 1016 AT END OF TIME STEP    5, STRESS PERIOD    1
+
+
+  VOLUME BUDGET FOR ENTIRE MODEL AT END OF TIME STEP    5, STRESS PERIOD   1
+  ---------------------------------------------------------------------------------------------------
+
+     CUMULATIVE VOLUME      L**3       RATES FOR THIS TIME STEP      L**3/T          PACKAGE NAME    
+     ------------------                 ------------------------                     ----------------
+
+           IN:                                      IN:
+           ---                                      ---
+              STO-SS =       51096.2843                STO-SS =        7294.7255     STORAGE                          
+                 WEL =           0.0000                   WEL =           0.0000     WEL                              
+                 GHB =          54.6549                   GHB =          12.5515     GHB                              
+
+            TOTAL IN =       51150.9392              TOTAL IN =        7307.2770
+
+          OUT:                                     OUT:
+          ----                                     ----
+              STO-SS =       44096.2843                STO-SS =        6294.7255     STORAGE                          
+                 WEL =        7000.0000                   WEL =        1000.0000     WEL                              
+                 GHB =          54.6549                   GHB =          12.5515     GHB                              
+
+           TOTAL OUT =       51150.9392             TOTAL OUT =        7307.2770
+
+            IN - OUT =       5.0420E-07              IN - OUT =       5.2299E-08
+
+ PERCENT DISCREPANCY =           0.00     PERCENT DISCREPANCY =           0.00
+
+
+
+
+         TIME SUMMARY AT END OF TIME STEP    5 IN STRESS PERIOD    1
+                    SECONDS     MINUTES      HOURS       DAYS        YEARS
+                    -----------------------------------------------------------
+   TIME STEP LENGTH 1.20960E+05  2016.0      33.600      1.4000     3.83299E-03
+ STRESS PERIOD TIME 6.04800E+05  10080.      168.00      7.0000     1.91650E-02
+         TOTAL TIME 6.04800E+05  10080.      168.00      7.0000     1.91650E-02
+
+
+end timestep
+
+
+start timestep kper="2" kstp="1" mode="normal"
+
+
+ END OF FILE DETECTED IN OUTPUT CONTROL.
+ CURRENT OUTPUT CONTROL SETTINGS WILL BE 
+ REPEATED UNTIL THE END OF THE SIMULATION.
+
+ OUTPUT CONTROL FOR STRESS PERIOD 2 IS REPEATED USING SETTINGS FROM A PREVIOUS STRESS PERIOD.
+
+end timestep
+
+
+start timestep kper="2" kstp="2" mode="normal"
+
+
+end timestep
+
+
+start timestep kper="2" kstp="3" mode="normal"
+
+
+end timestep
+
+
+start timestep kper="2" kstp="4" mode="normal"
+
+
+end timestep
+
+
+start timestep kper="2" kstp="5" mode="normal"
+
+
+ HEAD WILL BE SAVED ON UNIT 1016 AT END OF TIME STEP    5, STRESS PERIOD    2
+
+
+  VOLUME BUDGET FOR ENTIRE MODEL AT END OF TIME STEP    5, STRESS PERIOD   2
+  ---------------------------------------------------------------------------------------------------
+
+     CUMULATIVE VOLUME      L**3       RATES FOR THIS TIME STEP      L**3/T          PACKAGE NAME    
+     ------------------                 ------------------------                     ----------------
+
+           IN:                                      IN:
+           ---                                      ---
+              STO-SS =       97449.1847                STO-SS =        6519.7417     STORAGE                          
+                 WEL =           0.0000                   WEL =           0.0000     WEL                              
+                 GHB =         185.1197                   GHB =          22.4251     GHB                              
+
+            TOTAL IN =       97634.3043              TOTAL IN =        6542.1667
+
+          OUT:                                     OUT:
+          ----                                     ----
+              STO-SS =       90449.1847                STO-SS =        6519.7417     STORAGE                          
+                 WEL =        7000.0000                   WEL =           0.0000     WEL                              
+                 GHB =         185.1197                   GHB =          22.4251     GHB                              
+
+           TOTAL OUT =       97634.3043             TOTAL OUT =        6542.1667
+
+            IN - OUT =       4.8218E-07              IN - OUT =      -2.4814E-07
+
+ PERCENT DISCREPANCY =           0.00     PERCENT DISCREPANCY =          -0.00
+
+
+
+
+         TIME SUMMARY AT END OF TIME STEP    5 IN STRESS PERIOD    2
+                    SECONDS     MINUTES      HOURS       DAYS        YEARS
+                    -----------------------------------------------------------
+   TIME STEP LENGTH 1.20960E+05  2016.0      33.600      1.4000     3.83299E-03
+ STRESS PERIOD TIME 6.04800E+05  10080.      168.00      7.0000     1.91650E-02
+         TOTAL TIME 1.20960E+06  20160.      336.00      14.000     3.83299E-02
+
+
+end timestep
+
+
+start timestep kper="3" kstp="1" mode="normal"
+
+
+ OUTPUT CONTROL FOR STRESS PERIOD 3 IS REPEATED USING SETTINGS FROM A PREVIOUS STRESS PERIOD.
+
+end timestep
+
+
+start timestep kper="3" kstp="2" mode="normal"
+
+
+end timestep
+
+
+start timestep kper="3" kstp="3" mode="normal"
+
+
+end timestep
+
+
+start timestep kper="3" kstp="4" mode="normal"
+
+
+end timestep
+
+
+start timestep kper="3" kstp="5" mode="normal"
+
+
+ HEAD WILL BE SAVED ON UNIT 1016 AT END OF TIME STEP    5, STRESS PERIOD    3
+
+
+  VOLUME BUDGET FOR ENTIRE MODEL AT END OF TIME STEP    5, STRESS PERIOD   3
+  ---------------------------------------------------------------------------------------------------
+
+     CUMULATIVE VOLUME      L**3       RATES FOR THIS TIME STEP      L**3/T          PACKAGE NAME    
+     ------------------                 ------------------------                     ----------------
+
+           IN:                                      IN:
+           ---                                      ---
+              STO-SS =      142634.9170                STO-SS =        6417.5588     STORAGE                          
+                 WEL =           0.0000                   WEL =           0.0000     WEL                              
+                 GHB =         377.4395                   GHB =          30.6677     GHB                              
+
+            TOTAL IN =      143012.3565              TOTAL IN =        6448.2265
+
+          OUT:                                     OUT:
+          ----                                     ----
+              STO-SS =      135634.9170                STO-SS =        6417.5588     STORAGE                          
+                 WEL =        7000.0000                   WEL =           0.0000     WEL                              
+                 GHB =         377.4395                   GHB =          30.6677     GHB                              
+
+           TOTAL OUT =      143012.3564             TOTAL OUT =        6448.2265
+
+            IN - OUT =       1.1669E-06              IN - OUT =       5.6512E-08
+
+ PERCENT DISCREPANCY =           0.00     PERCENT DISCREPANCY =           0.00
+
+
+
+
+         TIME SUMMARY AT END OF TIME STEP    5 IN STRESS PERIOD    3
+                    SECONDS     MINUTES      HOURS       DAYS        YEARS
+                    -----------------------------------------------------------
+   TIME STEP LENGTH 1.20960E+05  2016.0      33.600      1.4000     3.83299E-03
+ STRESS PERIOD TIME 6.04800E+05  10080.      168.00      7.0000     1.91650E-02
+         TOTAL TIME 1.81440E+06  30240.      504.00      21.000     5.74949E-02
+
+
+end timestep
+
+
+start timestep kper="4" kstp="1" mode="normal"
+
+
+ OUTPUT CONTROL FOR STRESS PERIOD 4 IS REPEATED USING SETTINGS FROM A PREVIOUS STRESS PERIOD.
+
+end timestep
+
+
+start timestep kper="4" kstp="2" mode="normal"
+
+
+end timestep
+
+
+start timestep kper="4" kstp="3" mode="normal"
+
+
+end timestep
+
+
+start timestep kper="4" kstp="4" mode="normal"
+
+
+end timestep
+
+
+start timestep kper="4" kstp="5" mode="normal"
+
+
+ HEAD WILL BE SAVED ON UNIT 1016 AT END OF TIME STEP    5, STRESS PERIOD    4
+
+
+  VOLUME BUDGET FOR ENTIRE MODEL AT END OF TIME STEP    5, STRESS PERIOD   4
+  ---------------------------------------------------------------------------------------------------
+
+     CUMULATIVE VOLUME      L**3       RATES FOR THIS TIME STEP      L**3/T          PACKAGE NAME    
+     ------------------                 ------------------------                     ----------------
+
+           IN:                                      IN:
+           ---                                      ---
+              STO-SS =      187361.8529                STO-SS =        6373.6397     STORAGE                          
+                 WEL =           0.0000                   WEL =           0.0000     WEL                              
+                 GHB =         622.7022                   GHB =          37.8319     GHB                              
+
+            TOTAL IN =      187984.5552              TOTAL IN =        6411.4716
+
+          OUT:                                     OUT:
+          ----                                     ----
+              STO-SS =      180361.8529                STO-SS =        6373.6397     STORAGE                          
+                 WEL =        7000.0000                   WEL =           0.0000     WEL                              
+                 GHB =         622.7022                   GHB =          37.8319     GHB                              
+
+           TOTAL OUT =      187984.5552             TOTAL OUT =        6411.4716
+
+            IN - OUT =       1.6525E-06              IN - OUT =       8.1799E-08
+
+ PERCENT DISCREPANCY =           0.00     PERCENT DISCREPANCY =           0.00
+
+
+
+
+         TIME SUMMARY AT END OF TIME STEP    5 IN STRESS PERIOD    4
+                    SECONDS     MINUTES      HOURS       DAYS        YEARS
+                    -----------------------------------------------------------
+   TIME STEP LENGTH 1.20960E+05  2016.0      33.600      1.4000     3.83299E-03
+ STRESS PERIOD TIME 6.04800E+05  10080.      168.00      7.0000     1.91650E-02
+         TOTAL TIME 2.41920E+06  40320.      672.00      28.000     7.66598E-02
+
+
+end timestep
+
+
+start timestep kper="5" kstp="1" mode="normal"
+
+
+ OUTPUT CONTROL FOR STRESS PERIOD 5 IS REPEATED USING SETTINGS FROM A PREVIOUS STRESS PERIOD.
+
+end timestep
+
+
+start timestep kper="5" kstp="2" mode="normal"
+
+
+end timestep
+
+
+start timestep kper="5" kstp="3" mode="normal"
+
+
+end timestep
+
+
+start timestep kper="5" kstp="4" mode="normal"
+
+
+end timestep
+
+
+start timestep kper="5" kstp="5" mode="normal"
+
+
+ HEAD WILL BE SAVED ON UNIT 1016 AT END OF TIME STEP    5, STRESS PERIOD    5
+
+
+  VOLUME BUDGET FOR ENTIRE MODEL AT END OF TIME STEP    5, STRESS PERIOD   5
+  ---------------------------------------------------------------------------------------------------
+
+     CUMULATIVE VOLUME      L**3       RATES FOR THIS TIME STEP      L**3/T          PACKAGE NAME    
+     ------------------                 ------------------------                     ----------------
+
+           IN:                                      IN:
+           ---                                      ---
+              STO-SS =      231842.9238                STO-SS =        6342.5458     STORAGE                          
+                 WEL =           0.0000                   WEL =           0.0000     WEL                              
+                 GHB =         914.7730                   GHB =          44.2325     GHB                              
+
+            TOTAL IN =      232757.6968              TOTAL IN =        6386.7783
+
+          OUT:                                     OUT:
+          ----                                     ----
+              STO-SS =      224842.9238                STO-SS =        6342.5458     STORAGE                          
+                 WEL =        7000.0000                   WEL =           0.0000     WEL                              
+                 GHB =         914.7730                   GHB =          44.2325     GHB                              
+
+           TOTAL OUT =      232757.6968             TOTAL OUT =        6386.7783
+
+            IN - OUT =       2.1405E-06              IN - OUT =       7.2018E-08
+
+ PERCENT DISCREPANCY =           0.00     PERCENT DISCREPANCY =           0.00
+
+
+
+
+         TIME SUMMARY AT END OF TIME STEP    5 IN STRESS PERIOD    5
+                    SECONDS     MINUTES      HOURS       DAYS        YEARS
+                    -----------------------------------------------------------
+   TIME STEP LENGTH 1.20960E+05  2016.0      33.600      1.4000     3.83299E-03
+ STRESS PERIOD TIME 6.04800E+05  10080.      168.00      7.0000     1.91650E-02
+         TOTAL TIME 3.02400E+06  50400.      840.00      35.000     9.58248E-02
+
+
+end timestep
+
+
+start timestep kper="6" kstp="1" mode="normal"
+
+
+ OUTPUT CONTROL FOR STRESS PERIOD 6 IS REPEATED USING SETTINGS FROM A PREVIOUS STRESS PERIOD.
+
+end timestep
+
+
+start timestep kper="6" kstp="2" mode="normal"
+
+
+end timestep
+
+
+start timestep kper="6" kstp="3" mode="normal"
+
+
+end timestep
+
+
+start timestep kper="6" kstp="4" mode="normal"
+
+
+end timestep
+
+
+start timestep kper="6" kstp="5" mode="normal"
+
+
+ HEAD WILL BE SAVED ON UNIT 1016 AT END OF TIME STEP    5, STRESS PERIOD    6
+
+
+  VOLUME BUDGET FOR ENTIRE MODEL AT END OF TIME STEP    5, STRESS PERIOD   6
+  ---------------------------------------------------------------------------------------------------
+
+     CUMULATIVE VOLUME      L**3       RATES FOR THIS TIME STEP      L**3/T          PACKAGE NAME    
+     ------------------                 ------------------------                     ----------------
+
+           IN:                                      IN:
+           ---                                      ---
+              STO-SS =      276163.4405                STO-SS =        6324.4382     STORAGE                          
+                 WEL =           0.0000                   WEL =           0.0000     WEL                              
+                 GHB =        1249.1642                   GHB =          50.0621     GHB                              
+
+            TOTAL IN =      277412.6047              TOTAL IN =        6374.5002
+
+          OUT:                                     OUT:
+          ----                                     ----
+              STO-SS =      269163.4405                STO-SS =        6324.4382     STORAGE                          
+                 WEL =        7000.0000                   WEL =           0.0000     WEL                              
+                 GHB =        1249.1642                   GHB =          50.0621     GHB                              
+
+           TOTAL OUT =      277412.6047             TOTAL OUT =        6374.5002
+
+            IN - OUT =       2.4183E-06              IN - OUT =       3.9480E-08
+
+ PERCENT DISCREPANCY =           0.00     PERCENT DISCREPANCY =           0.00
+
+
+
+
+         TIME SUMMARY AT END OF TIME STEP    5 IN STRESS PERIOD    6
+                    SECONDS     MINUTES      HOURS       DAYS        YEARS
+                    -----------------------------------------------------------
+   TIME STEP LENGTH 1.20960E+05  2016.0      33.600      1.4000     3.83299E-03
+ STRESS PERIOD TIME 6.04800E+05  10080.      168.00      7.0000     1.91650E-02
+         TOTAL TIME 3.62880E+06  60480.      1008.0      42.000     0.11499    
+
+
+end timestep
+
+
+start timestep kper="7" kstp="1" mode="normal"
+
+
+ OUTPUT CONTROL FOR STRESS PERIOD 7 IS REPEATED USING SETTINGS FROM A PREVIOUS STRESS PERIOD.
+
+end timestep
+
+
+start timestep kper="7" kstp="2" mode="normal"
+
+
+end timestep
+
+
+start timestep kper="7" kstp="3" mode="normal"
+
+
+end timestep
+
+
+start timestep kper="7" kstp="4" mode="normal"
+
+
+end timestep
+
+
+start timestep kper="7" kstp="5" mode="normal"
+
+
+ HEAD WILL BE SAVED ON UNIT 1016 AT END OF TIME STEP    5, STRESS PERIOD    7
+
+
+  VOLUME BUDGET FOR ENTIRE MODEL AT END OF TIME STEP    5, STRESS PERIOD   7
+  ---------------------------------------------------------------------------------------------------
+
+     CUMULATIVE VOLUME      L**3       RATES FOR THIS TIME STEP      L**3/T          PACKAGE NAME    
+     ------------------                 ------------------------                     ----------------
+
+           IN:                                      IN:
+           ---                                      ---
+              STO-SS =      320365.2168                STO-SS =        6308.2186     STORAGE                          
+                 WEL =           0.0000                   WEL =           0.0000     WEL                              
+                 GHB =        1622.4338                   GHB =          55.4461     GHB                              
+
+            TOTAL IN =      321987.6507              TOTAL IN =        6363.6647
+
+          OUT:                                     OUT:
+          ----                                     ----
+              STO-SS =      313365.2168                STO-SS =        6308.2186     STORAGE                          
+                 WEL =        7000.0000                   WEL =           0.0000     WEL                              
+                 GHB =        1622.4338                   GHB =          55.4461     GHB                              
+
+           TOTAL OUT =      321987.6507             TOTAL OUT =        6363.6647
+
+            IN - OUT =       2.7120E-06              IN - OUT =       8.9301E-08
+
+ PERCENT DISCREPANCY =           0.00     PERCENT DISCREPANCY =           0.00
+
+
+
+
+         TIME SUMMARY AT END OF TIME STEP    5 IN STRESS PERIOD    7
+                    SECONDS     MINUTES      HOURS       DAYS        YEARS
+                    -----------------------------------------------------------
+   TIME STEP LENGTH 1.20960E+05  2016.0      33.600      1.4000     3.83299E-03
+ STRESS PERIOD TIME 6.04800E+05  10080.      168.00      7.0000     1.91650E-02
+         TOTAL TIME 4.23360E+06  70560.      1176.0      49.000     0.13415    
+
+
+end timestep
+
+
+start timestep kper="8" kstp="1" mode="normal"
+
+
+ OUTPUT CONTROL FOR STRESS PERIOD 8 IS REPEATED USING SETTINGS FROM A PREVIOUS STRESS PERIOD.
+
+end timestep
+
+
+start timestep kper="8" kstp="2" mode="normal"
+
+
+end timestep
+
+
+start timestep kper="8" kstp="3" mode="normal"
+
+
+end timestep
+
+
+start timestep kper="8" kstp="4" mode="normal"
+
+
+end timestep
+
+
+start timestep kper="8" kstp="5" mode="normal"
+
+
+ HEAD WILL BE SAVED ON UNIT 1016 AT END OF TIME STEP    5, STRESS PERIOD    8
+
+
+  VOLUME BUDGET FOR ENTIRE MODEL AT END OF TIME STEP    5, STRESS PERIOD   8
+  ---------------------------------------------------------------------------------------------------
+
+     CUMULATIVE VOLUME      L**3       RATES FOR THIS TIME STEP      L**3/T          PACKAGE NAME    
+     ------------------                 ------------------------                     ----------------
+
+           IN:                                      IN:
+           ---                                      ---
+              STO-SS =      364466.1776                STO-SS =        6295.3661     STORAGE                          
+                 WEL =           0.0000                   WEL =           0.0000     WEL                              
+                 GHB =        2031.8424                   GHB =          60.4709     GHB                              
+
+            TOTAL IN =      366498.0200              TOTAL IN =        6355.8369
+
+          OUT:                                     OUT:
+          ----                                     ----
+              STO-SS =      357466.1776                STO-SS =        6295.3661     STORAGE                          
+                 WEL =        7000.0000                   WEL =           0.0000     WEL                              
+                 GHB =        2031.8424                   GHB =          60.4709     GHB                              
+
+           TOTAL OUT =      366498.0200             TOTAL OUT =        6355.8369
+
+            IN - OUT =       3.2455E-06              IN - OUT =       5.8138E-08
+
+ PERCENT DISCREPANCY =           0.00     PERCENT DISCREPANCY =           0.00
+
+
+
+
+         TIME SUMMARY AT END OF TIME STEP    5 IN STRESS PERIOD    8
+                    SECONDS     MINUTES      HOURS       DAYS        YEARS
+                    -----------------------------------------------------------
+   TIME STEP LENGTH 1.20960E+05  2016.0      33.600      1.4000     3.83299E-03
+ STRESS PERIOD TIME 6.04800E+05  10080.      168.00      7.0000     1.91650E-02
+         TOTAL TIME 4.83840E+06  80640.      1344.0      56.000     0.15332    
+
+
+end timestep
+
+
+start timestep kper="9" kstp="1" mode="normal"
+
+
+ OUTPUT CONTROL FOR STRESS PERIOD 9 IS REPEATED USING SETTINGS FROM A PREVIOUS STRESS PERIOD.
+
+end timestep
+
+
+start timestep kper="9" kstp="2" mode="normal"
+
+
+end timestep
+
+
+start timestep kper="9" kstp="3" mode="normal"
+
+
+end timestep
+
+
+start timestep kper="9" kstp="4" mode="normal"
+
+
+end timestep
+
+
+start timestep kper="9" kstp="5" mode="normal"
+
+
+ HEAD WILL BE SAVED ON UNIT 1016 AT END OF TIME STEP    5, STRESS PERIOD    9
+
+
+  VOLUME BUDGET FOR ENTIRE MODEL AT END OF TIME STEP    5, STRESS PERIOD   9
+  ---------------------------------------------------------------------------------------------------
+
+     CUMULATIVE VOLUME      L**3       RATES FOR THIS TIME STEP      L**3/T          PACKAGE NAME    
+     ------------------                 ------------------------                     ----------------
+
+           IN:                                      IN:
+           ---                                      ---
+              STO-SS =      408489.7555                STO-SS =        6285.2851     STORAGE                          
+                 WEL =           0.0000                   WEL =           0.0000     WEL                              
+                 GHB =        2475.1460                   GHB =          65.1983     GHB                              
+
+            TOTAL IN =      410964.9015              TOTAL IN =        6350.4834
+
+          OUT:                                     OUT:
+          ----                                     ----
+              STO-SS =      401489.7555                STO-SS =        6285.2851     STORAGE                          
+                 WEL =        7000.0000                   WEL =           0.0000     WEL                              
+                 GHB =        2475.1460                   GHB =          65.1983     GHB                              
+
+           TOTAL OUT =      410964.9015             TOTAL OUT =        6350.4834
+
+            IN - OUT =       3.5640E-06              IN - OUT =       1.2627E-07
+
+ PERCENT DISCREPANCY =           0.00     PERCENT DISCREPANCY =           0.00
+
+
+
+
+         TIME SUMMARY AT END OF TIME STEP    5 IN STRESS PERIOD    9
+                    SECONDS     MINUTES      HOURS       DAYS        YEARS
+                    -----------------------------------------------------------
+   TIME STEP LENGTH 1.20960E+05  2016.0      33.600      1.4000     3.83299E-03
+ STRESS PERIOD TIME 6.04800E+05  10080.      168.00      7.0000     1.91650E-02
+         TOTAL TIME 5.44320E+06  90720.      1512.0      63.000     0.17248    
+
+
+end timestep
+
+
+start timestep kper="10" kstp="1" mode="normal"
+
+
+ OUTPUT CONTROL FOR STRESS PERIOD 10 IS REPEATED USING SETTINGS FROM A PREVIOUS STRESS PERIOD.
+
+end timestep
+
+
+start timestep kper="10" kstp="2" mode="normal"
+
+
+end timestep
+
+
+start timestep kper="10" kstp="3" mode="normal"
+
+
+end timestep
+
+
+start timestep kper="10" kstp="4" mode="normal"
+
+
+end timestep
+
+
+start timestep kper="10" kstp="5" mode="normal"
+
+
+ HEAD WILL BE SAVED ON UNIT 1016 AT END OF TIME STEP    5, STRESS PERIOD   10
+
+
+  VOLUME BUDGET FOR ENTIRE MODEL AT END OF TIME STEP    5, STRESS PERIOD  10
+  ---------------------------------------------------------------------------------------------------
+
+     CUMULATIVE VOLUME      L**3       RATES FOR THIS TIME STEP      L**3/T          PACKAGE NAME    
+     ------------------                 ------------------------                     ----------------
+
+           IN:                                      IN:
+           ---                                      ---
+              STO-SS =      452449.1967                STO-SS =        6276.4234     STORAGE                          
+                 WEL =           0.0000                   WEL =           0.0000     WEL                              
+                 GHB =        2950.4641                   GHB =          69.6745     GHB                              
+
+            TOTAL IN =      455399.6608              TOTAL IN =        6346.0979
+
+          OUT:                                     OUT:
+          ----                                     ----
+              STO-SS =      445449.1967                STO-SS =        6276.4234     STORAGE                          
+                 WEL =        7000.0000                   WEL =           0.0000     WEL                              
+                 GHB =        2950.4641                   GHB =          69.6745     GHB                              
+
+           TOTAL OUT =      455399.6608             TOTAL OUT =        6346.0979
+
+            IN - OUT =       4.1081E-06              IN - OUT =       1.0039E-07
+
+ PERCENT DISCREPANCY =           0.00     PERCENT DISCREPANCY =           0.00
+
+
+
+
+         TIME SUMMARY AT END OF TIME STEP    5 IN STRESS PERIOD   10
+                    SECONDS     MINUTES      HOURS       DAYS        YEARS
+                    -----------------------------------------------------------
+   TIME STEP LENGTH 1.20960E+05  2016.0      33.600      1.4000     3.83299E-03
+ STRESS PERIOD TIME 6.04800E+05  10080.      168.00      7.0000     1.91650E-02
+         TOTAL TIME 6.04800E+06 1.00800E+05  1680.0      70.000     0.19165    
+
+
+end timestep
+
+
+start timestep kper="11" kstp="1" mode="normal"
+
+
+ OUTPUT CONTROL FOR STRESS PERIOD 11 IS REPEATED USING SETTINGS FROM A PREVIOUS STRESS PERIOD.
+
+end timestep
+
+
+start timestep kper="11" kstp="2" mode="normal"
+
+
+end timestep
+
+
+start timestep kper="11" kstp="3" mode="normal"
+
+
+end timestep
+
+
+start timestep kper="11" kstp="4" mode="normal"
+
+
+end timestep
+
+
+start timestep kper="11" kstp="5" mode="normal"
+
+
+ HEAD WILL BE SAVED ON UNIT 1016 AT END OF TIME STEP    5, STRESS PERIOD   11
+
+
+  VOLUME BUDGET FOR ENTIRE MODEL AT END OF TIME STEP    5, STRESS PERIOD  11
+  ---------------------------------------------------------------------------------------------------
+
+     CUMULATIVE VOLUME      L**3       RATES FOR THIS TIME STEP      L**3/T          PACKAGE NAME    
+     ------------------                 ------------------------                     ----------------
+
+           IN:                                      IN:
+           ---                                      ---
+              STO-SS =      496349.3970                STO-SS =        6268.3198     STORAGE                          
+                 WEL =           0.0000                   WEL =           0.0000     WEL                              
+                 GHB =        3456.1921                   GHB =          73.9350     GHB                              
+
+            TOTAL IN =      499805.5891              TOTAL IN =        6342.2547
+
+          OUT:                                     OUT:
+          ----                                     ----
+              STO-SS =      489349.3970                STO-SS =        6268.3198     STORAGE                          
+                 WEL =        7000.0000                   WEL =           0.0000     WEL                              
+                 GHB =        3456.1921                   GHB =          73.9350     GHB                              
+
+           TOTAL OUT =      499805.5891             TOTAL OUT =        6342.2547
+
+            IN - OUT =       4.6814E-06              IN - OUT =       8.6480E-08
+
+ PERCENT DISCREPANCY =           0.00     PERCENT DISCREPANCY =           0.00
+
+
+
+
+         TIME SUMMARY AT END OF TIME STEP    5 IN STRESS PERIOD   11
+                    SECONDS     MINUTES      HOURS       DAYS        YEARS
+                    -----------------------------------------------------------
+   TIME STEP LENGTH 1.20960E+05  2016.0      33.600      1.4000     3.83299E-03
+ STRESS PERIOD TIME 6.04800E+05  10080.      168.00      7.0000     1.91650E-02
+         TOTAL TIME 6.65280E+06 1.10880E+05  1848.0      77.000     0.21081    
+
+
+end timestep
+
+
+start timestep kper="12" kstp="1" mode="normal"
+
+
+ OUTPUT CONTROL FOR STRESS PERIOD 12 IS REPEATED USING SETTINGS FROM A PREVIOUS STRESS PERIOD.
+
+end timestep
+
+
+start timestep kper="12" kstp="2" mode="normal"
+
+
+end timestep
+
+
+start timestep kper="12" kstp="3" mode="normal"
+
+
+end timestep
+
+
+start timestep kper="12" kstp="4" mode="normal"
+
+
+end timestep
+
+
+start timestep kper="12" kstp="5" mode="normal"
+
+
+ HEAD WILL BE SAVED ON UNIT 1016 AT END OF TIME STEP    5, STRESS PERIOD   12
+
+
+  VOLUME BUDGET FOR ENTIRE MODEL AT END OF TIME STEP    5, STRESS PERIOD  12
+  ---------------------------------------------------------------------------------------------------
+
+     CUMULATIVE VOLUME      L**3       RATES FOR THIS TIME STEP      L**3/T          PACKAGE NAME    
+     ------------------                 ------------------------                     ----------------
+
+           IN:                                      IN:
+           ---                                      ---
+              STO-SS =      540197.7574                STO-SS =        6261.2592     STORAGE                          
+                 WEL =           0.0000                   WEL =           0.0000     WEL                              
+                 GHB =        3990.9394                   GHB =          78.0074     GHB                              
+
+            TOTAL IN =      544188.6968              TOTAL IN =        6339.2666
+
+          OUT:                                     OUT:
+          ----                                     ----
+              STO-SS =      533197.7573                STO-SS =        6261.2592     STORAGE                          
+                 WEL =        7000.0000                   WEL =           0.0000     WEL                              
+                 GHB =        3990.9394                   GHB =          78.0074     GHB                              
+
+           TOTAL OUT =      544188.6968             TOTAL OUT =        6339.2666
+
+            IN - OUT =       5.2545E-06              IN - OUT =       1.0665E-07
+
+ PERCENT DISCREPANCY =           0.00     PERCENT DISCREPANCY =           0.00
+
+
+
+
+         TIME SUMMARY AT END OF TIME STEP    5 IN STRESS PERIOD   12
+                    SECONDS     MINUTES      HOURS       DAYS        YEARS
+                    -----------------------------------------------------------
+   TIME STEP LENGTH 1.20960E+05  2016.0      33.600      1.4000     3.83299E-03
+ STRESS PERIOD TIME 6.04800E+05  10080.      168.00      7.0000     1.91650E-02
+         TOTAL TIME 7.25760E+06 1.20960E+05  2016.0      84.000     0.22998    
+
+
+end timestep
+
+
+start timestep kper="13" kstp="1" mode="normal"
+
+
+ OUTPUT CONTROL FOR STRESS PERIOD 13 IS REPEATED USING SETTINGS FROM A PREVIOUS STRESS PERIOD.
+
+end timestep
+
+
+start timestep kper="13" kstp="2" mode="normal"
+
+
+end timestep
+
+
+start timestep kper="13" kstp="3" mode="normal"
+
+
+end timestep
+
+
+start timestep kper="13" kstp="4" mode="normal"
+
+
+end timestep
+
+
+start timestep kper="13" kstp="5" mode="normal"
+
+
+ HEAD WILL BE SAVED ON UNIT 1016 AT END OF TIME STEP    5, STRESS PERIOD   13
+
+
+  VOLUME BUDGET FOR ENTIRE MODEL AT END OF TIME STEP    5, STRESS PERIOD  13
+  ---------------------------------------------------------------------------------------------------
+
+     CUMULATIVE VOLUME      L**3       RATES FOR THIS TIME STEP      L**3/T          PACKAGE NAME    
+     ------------------                 ------------------------                     ----------------
+
+           IN:                                      IN:
+           ---                                      ---
+              STO-SS =      583998.6033                STO-SS =        6254.6907     STORAGE                          
+                 WEL =           0.0000                   WEL =           0.0000     WEL                              
+                 GHB =        4553.4868                   GHB =          81.9141     GHB                              
+
+            TOTAL IN =      588552.0901              TOTAL IN =        6336.6048
+
+          OUT:                                     OUT:
+          ----                                     ----
+              STO-SS =      576998.6033                STO-SS =        6254.6907     STORAGE                          
+                 WEL =        7000.0000                   WEL =           0.0000     WEL                              
+                 GHB =        4553.4868                   GHB =          81.9141     GHB                              
+
+           TOTAL OUT =      588552.0901             TOTAL OUT =        6336.6048
+
+            IN - OUT =       5.6508E-06              IN - OUT =       8.9302E-08
+
+ PERCENT DISCREPANCY =           0.00     PERCENT DISCREPANCY =           0.00
+
+
+
+
+         TIME SUMMARY AT END OF TIME STEP    5 IN STRESS PERIOD   13
+                    SECONDS     MINUTES      HOURS       DAYS        YEARS
+                    -----------------------------------------------------------
+   TIME STEP LENGTH 1.20960E+05  2016.0      33.600      1.4000     3.83299E-03
+ STRESS PERIOD TIME 6.04800E+05  10080.      168.00      7.0000     1.91650E-02
+         TOTAL TIME 7.86240E+06 1.31040E+05  2184.0      91.000     0.24914    
+
+
+end timestep
+
+
+start timestep kper="14" kstp="1" mode="normal"
+
+
+ OUTPUT CONTROL FOR STRESS PERIOD 14 IS REPEATED USING SETTINGS FROM A PREVIOUS STRESS PERIOD.
+
+end timestep
+
+
+start timestep kper="14" kstp="2" mode="normal"
+
+
+end timestep
+
+
+start timestep kper="14" kstp="3" mode="normal"
+
+
+end timestep
+
+
+start timestep kper="14" kstp="4" mode="normal"
+
+
+end timestep
+
+
+start timestep kper="14" kstp="5" mode="normal"
+
+
+ HEAD WILL BE SAVED ON UNIT 1016 AT END OF TIME STEP    5, STRESS PERIOD   14
+
+
+  VOLUME BUDGET FOR ENTIRE MODEL AT END OF TIME STEP    5, STRESS PERIOD  14
+  ---------------------------------------------------------------------------------------------------
+
+     CUMULATIVE VOLUME      L**3       RATES FOR THIS TIME STEP      L**3/T          PACKAGE NAME    
+     ------------------                 ------------------------                     ----------------
+
+           IN:                                      IN:
+           ---                                      ---
+              STO-SS =      627756.1832                STO-SS =        6248.7777     STORAGE                          
+                 WEL =           0.0000                   WEL =           0.0000     WEL                              
+                 GHB =        5142.7532                   GHB =          85.6735     GHB                              
+
+            TOTAL IN =      632898.9364              TOTAL IN =        6334.4512
+
+          OUT:                                     OUT:
+          ----                                     ----
+              STO-SS =      620756.1832                STO-SS =        6248.7777     STORAGE                          
+                 WEL =        7000.0000                   WEL =           0.0000     WEL                              
+                 GHB =        5142.7532                   GHB =          85.6735     GHB                              
+
+           TOTAL OUT =      632898.9364             TOTAL OUT =        6334.4512
+
+            IN - OUT =       6.1198E-06              IN - OUT =      -2.3656E-09
+
+ PERCENT DISCREPANCY =           0.00     PERCENT DISCREPANCY =          -0.00
+
+
+
+
+         TIME SUMMARY AT END OF TIME STEP    5 IN STRESS PERIOD   14
+                    SECONDS     MINUTES      HOURS       DAYS        YEARS
+                    -----------------------------------------------------------
+   TIME STEP LENGTH 1.20960E+05  2016.0      33.600      1.4000     3.83299E-03
+ STRESS PERIOD TIME 6.04800E+05  10080.      168.00      7.0000     1.91650E-02
+         TOTAL TIME 8.46720E+06 1.41120E+05  2352.0      98.000     0.26831    
+
+
+end timestep
+
+
+start timestep kper="15" kstp="1" mode="normal"
+
+
+ OUTPUT CONTROL FOR STRESS PERIOD 15 IS REPEATED USING SETTINGS FROM A PREVIOUS STRESS PERIOD.
+
+end timestep
+
+
+start timestep kper="15" kstp="2" mode="normal"
+
+
+end timestep
+
+
+start timestep kper="15" kstp="3" mode="normal"
+
+
+end timestep
+
+
+start timestep kper="15" kstp="4" mode="normal"
+
+
+end timestep
+
+
+start timestep kper="15" kstp="5" mode="normal"
+
+
+ HEAD WILL BE SAVED ON UNIT 1016 AT END OF TIME STEP    5, STRESS PERIOD   15
+
+
+  VOLUME BUDGET FOR ENTIRE MODEL AT END OF TIME STEP    5, STRESS PERIOD  15
+  ---------------------------------------------------------------------------------------------------
+
+     CUMULATIVE VOLUME      L**3       RATES FOR THIS TIME STEP      L**3/T          PACKAGE NAME    
+     ------------------                 ------------------------                     ----------------
+
+           IN:                                      IN:
+           ---                                      ---
+              STO-SS =      671474.4662                STO-SS =        6243.3225     STORAGE                          
+                 WEL =           0.0000                   WEL =           0.0000     WEL                              
+                 GHB =        5757.7719                   GHB =          89.3006     GHB                              
+
+            TOTAL IN =      677232.2381              TOTAL IN =        6332.6231
+
+          OUT:                                     OUT:
+          ----                                     ----
+              STO-SS =      664474.4662                STO-SS =        6243.3225     STORAGE                          
+                 WEL =        7000.0000                   WEL =           0.0000     WEL                              
+                 GHB =        5757.7719                   GHB =          89.3006     GHB                              
+
+           TOTAL OUT =      677232.2381             TOTAL OUT =        6332.6231
+
+            IN - OUT =       6.5594E-06              IN - OUT =       1.9952E-08
+
+ PERCENT DISCREPANCY =           0.00     PERCENT DISCREPANCY =           0.00
+
+
+
+
+         TIME SUMMARY AT END OF TIME STEP    5 IN STRESS PERIOD   15
+                    SECONDS     MINUTES      HOURS       DAYS        YEARS
+                    -----------------------------------------------------------
+   TIME STEP LENGTH 1.20960E+05  2016.0      33.600      1.4000     3.83299E-03
+ STRESS PERIOD TIME 6.04800E+05  10080.      168.00      7.0000     1.91650E-02
+         TOTAL TIME 9.07200E+06 1.51200E+05  2520.0      105.00     0.28747    
+
+
+end timestep
+
+
+start timestep kper="16" kstp="1" mode="normal"
+
+
+ OUTPUT CONTROL FOR STRESS PERIOD 16 IS REPEATED USING SETTINGS FROM A PREVIOUS STRESS PERIOD.
+
+end timestep
+
+
+start timestep kper="16" kstp="2" mode="normal"
+
+
+end timestep
+
+
+start timestep kper="16" kstp="3" mode="normal"
+
+
+end timestep
+
+
+start timestep kper="16" kstp="4" mode="normal"
+
+
+end timestep
+
+
+start timestep kper="16" kstp="5" mode="normal"
+
+
+ HEAD WILL BE SAVED ON UNIT 1016 AT END OF TIME STEP    5, STRESS PERIOD   16
+
+
+  VOLUME BUDGET FOR ENTIRE MODEL AT END OF TIME STEP    5, STRESS PERIOD  16
+  ---------------------------------------------------------------------------------------------------
+
+     CUMULATIVE VOLUME      L**3       RATES FOR THIS TIME STEP      L**3/T          PACKAGE NAME    
+     ------------------                 ------------------------                     ----------------
+
+           IN:                                      IN:
+           ---                                      ---
+              STO-SS =      715155.9950                STO-SS =        6238.2118     STORAGE                          
+                 WEL =           0.0000                   WEL =           0.0000     WEL                              
+                 GHB =        6397.6717                   GHB =          92.8082     GHB                              
+
+            TOTAL IN =      721553.6667              TOTAL IN =        6331.0200
+
+          OUT:                                     OUT:
+          ----                                     ----
+              STO-SS =      708155.9950                STO-SS =        6238.2118     STORAGE                          
+                 WEL =        7000.0000                   WEL =           0.0000     WEL                              
+                 GHB =        6397.6717                   GHB =          92.8082     GHB                              
+
+           TOTAL OUT =      721553.6667             TOTAL OUT =        6331.0200
+
+            IN - OUT =       7.2249E-06              IN - OUT =       1.3326E-07
+
+ PERCENT DISCREPANCY =           0.00     PERCENT DISCREPANCY =           0.00
+
+
+
+
+         TIME SUMMARY AT END OF TIME STEP    5 IN STRESS PERIOD   16
+                    SECONDS     MINUTES      HOURS       DAYS        YEARS
+                    -----------------------------------------------------------
+   TIME STEP LENGTH 1.20960E+05  2016.0      33.600      1.4000     3.83299E-03
+ STRESS PERIOD TIME 6.04800E+05  10080.      168.00      7.0000     1.91650E-02
+         TOTAL TIME 9.67680E+06 1.61280E+05  2688.0      112.00     0.30664    
+
+
+end timestep
+
+
+start timestep kper="17" kstp="1" mode="normal"
+
+
+ OUTPUT CONTROL FOR STRESS PERIOD 17 IS REPEATED USING SETTINGS FROM A PREVIOUS STRESS PERIOD.
+
+end timestep
+
+
+start timestep kper="17" kstp="2" mode="normal"
+
+
+end timestep
+
+
+start timestep kper="17" kstp="3" mode="normal"
+
+
+end timestep
+
+
+start timestep kper="17" kstp="4" mode="normal"
+
+
+end timestep
+
+
+start timestep kper="17" kstp="5" mode="normal"
+
+
+ HEAD WILL BE SAVED ON UNIT 1016 AT END OF TIME STEP    5, STRESS PERIOD   17
+
+
+  VOLUME BUDGET FOR ENTIRE MODEL AT END OF TIME STEP    5, STRESS PERIOD  17
+  ---------------------------------------------------------------------------------------------------
+
+     CUMULATIVE VOLUME      L**3       RATES FOR THIS TIME STEP      L**3/T          PACKAGE NAME    
+     ------------------                 ------------------------                     ----------------
+
+           IN:                                      IN:
+           ---                                      ---
+              STO-SS =      758803.2938                STO-SS =        6233.4291     STORAGE                          
+                 WEL =           0.0000                   WEL =           0.0000     WEL                              
+                 GHB =        7061.6620                   GHB =          96.2070     GHB                              
+
+            TOTAL IN =      765864.9558              TOTAL IN =        6329.6361
+
+          OUT:                                     OUT:
+          ----                                     ----
+              STO-SS =      751803.2938                STO-SS =        6233.4291     STORAGE                          
+                 WEL =        7000.0000                   WEL =           0.0000     WEL                              
+                 GHB =        7061.6620                   GHB =          96.2070     GHB                              
+
+           TOTAL OUT =      765864.9558             TOTAL OUT =        6329.6361
+
+            IN - OUT =       7.7913E-06              IN - OUT =       9.3687E-08
+
+ PERCENT DISCREPANCY =           0.00     PERCENT DISCREPANCY =           0.00
+
+
+
+
+         TIME SUMMARY AT END OF TIME STEP    5 IN STRESS PERIOD   17
+                    SECONDS     MINUTES      HOURS       DAYS        YEARS
+                    -----------------------------------------------------------
+   TIME STEP LENGTH 1.20960E+05  2016.0      33.600      1.4000     3.83299E-03
+ STRESS PERIOD TIME 6.04800E+05  10080.      168.00      7.0000     1.91650E-02
+         TOTAL TIME 1.02816E+07 1.71360E+05  2856.0      119.00     0.32580    
+
+
+end timestep
+
+
+start timestep kper="18" kstp="1" mode="normal"
+
+
+ OUTPUT CONTROL FOR STRESS PERIOD 18 IS REPEATED USING SETTINGS FROM A PREVIOUS STRESS PERIOD.
+
+end timestep
+
+
+start timestep kper="18" kstp="2" mode="normal"
+
+
+end timestep
+
+
+start timestep kper="18" kstp="3" mode="normal"
+
+
+end timestep
+
+
+start timestep kper="18" kstp="4" mode="normal"
+
+
+end timestep
+
+
+start timestep kper="18" kstp="5" mode="normal"
+
+
+ HEAD WILL BE SAVED ON UNIT 1016 AT END OF TIME STEP    5, STRESS PERIOD   18
+
+
+  VOLUME BUDGET FOR ENTIRE MODEL AT END OF TIME STEP    5, STRESS PERIOD  18
+  ---------------------------------------------------------------------------------------------------
+
+     CUMULATIVE VOLUME      L**3       RATES FOR THIS TIME STEP      L**3/T          PACKAGE NAME    
+     ------------------                 ------------------------                     ----------------
+
+           IN:                                      IN:
+           ---                                      ---
+              STO-SS =      802417.8398                STO-SS =        6228.8193     STORAGE                          
+                 WEL =           0.0000                   WEL =           0.0000     WEL                              
+                 GHB =        7749.0214                   GHB =          99.5063     GHB                              
+
+            TOTAL IN =      810166.8612              TOTAL IN =        6328.3256
+
+          OUT:                                     OUT:
+          ----                                     ----
+              STO-SS =      795417.8398                STO-SS =        6228.8193     STORAGE                          
+                 WEL =        7000.0000                   WEL =           0.0000     WEL                              
+                 GHB =        7749.0214                   GHB =          99.5063     GHB                              
+
+           TOTAL OUT =      810166.8612             TOTAL OUT =        6328.3256
+
+            IN - OUT =       8.2867E-06              IN - OUT =       8.6059E-08
+
+ PERCENT DISCREPANCY =           0.00     PERCENT DISCREPANCY =           0.00
+
+
+
+
+         TIME SUMMARY AT END OF TIME STEP    5 IN STRESS PERIOD   18
+                    SECONDS     MINUTES      HOURS       DAYS        YEARS
+                    -----------------------------------------------------------
+   TIME STEP LENGTH 1.20960E+05  2016.0      33.600      1.4000     3.83299E-03
+ STRESS PERIOD TIME 6.04800E+05  10080.      168.00      7.0000     1.91650E-02
+         TOTAL TIME 1.08864E+07 1.81440E+05  3024.0      126.00     0.34497    
+
+
+end timestep
+
+
+start timestep kper="19" kstp="1" mode="normal"
+
+
+ OUTPUT CONTROL FOR STRESS PERIOD 19 IS REPEATED USING SETTINGS FROM A PREVIOUS STRESS PERIOD.
+
+end timestep
+
+
+start timestep kper="19" kstp="2" mode="normal"
+
+
+end timestep
+
+
+start timestep kper="19" kstp="3" mode="normal"
+
+
+end timestep
+
+
+start timestep kper="19" kstp="4" mode="normal"
+
+
+end timestep
+
+
+start timestep kper="19" kstp="5" mode="normal"
+
+
+ HEAD WILL BE SAVED ON UNIT 1016 AT END OF TIME STEP    5, STRESS PERIOD   19
+
+
+  VOLUME BUDGET FOR ENTIRE MODEL AT END OF TIME STEP    5, STRESS PERIOD  19
+  ---------------------------------------------------------------------------------------------------
+
+     CUMULATIVE VOLUME      L**3       RATES FOR THIS TIME STEP      L**3/T          PACKAGE NAME    
+     ------------------                 ------------------------                     ----------------
+
+           IN:                                      IN:
+           ---                                      ---
+              STO-SS =      846000.8356                STO-SS =        6224.3803     STORAGE                          
+                 WEL =           0.0000                   WEL =           0.0000     WEL                              
+                 GHB =        8459.0879                   GHB =         102.7142     GHB                              
+
+            TOTAL IN =      854459.9235              TOTAL IN =        6327.0945
+
+          OUT:                                     OUT:
+          ----                                     ----
+              STO-SS =      839000.8356                STO-SS =        6224.3803     STORAGE                          
+                 WEL =        7000.0000                   WEL =           0.0000     WEL                              
+                 GHB =        8459.0879                   GHB =         102.7142     GHB                              
+
+           TOTAL OUT =      854459.9235             TOTAL OUT =        6327.0945
+
+            IN - OUT =       8.5682E-06              IN - OUT =       8.8239E-08
+
+ PERCENT DISCREPANCY =           0.00     PERCENT DISCREPANCY =           0.00
+
+
+
+
+         TIME SUMMARY AT END OF TIME STEP    5 IN STRESS PERIOD   19
+                    SECONDS     MINUTES      HOURS       DAYS        YEARS
+                    -----------------------------------------------------------
+   TIME STEP LENGTH 1.20960E+05  2016.0      33.600      1.4000     3.83299E-03
+ STRESS PERIOD TIME 6.04800E+05  10080.      168.00      7.0000     1.91650E-02
+         TOTAL TIME 1.14912E+07 1.91520E+05  3192.0      133.00     0.36413    
+
+
+end timestep
+
+
+start timestep kper="20" kstp="1" mode="normal"
+
+
+ OUTPUT CONTROL FOR STRESS PERIOD 20 IS REPEATED USING SETTINGS FROM A PREVIOUS STRESS PERIOD.
+
+end timestep
+
+
+start timestep kper="20" kstp="2" mode="normal"
+
+
+end timestep
+
+
+start timestep kper="20" kstp="3" mode="normal"
+
+
+end timestep
+
+
+start timestep kper="20" kstp="4" mode="normal"
+
+
+end timestep
+
+
+start timestep kper="20" kstp="5" mode="normal"
+
+
+ HEAD WILL BE SAVED ON UNIT 1016 AT END OF TIME STEP    5, STRESS PERIOD   20
+
+
+  VOLUME BUDGET FOR ENTIRE MODEL AT END OF TIME STEP    5, STRESS PERIOD  20
+  ---------------------------------------------------------------------------------------------------
+
+     CUMULATIVE VOLUME      L**3       RATES FOR THIS TIME STEP      L**3/T          PACKAGE NAME    
+     ------------------                 ------------------------                     ----------------
+
+           IN:                                      IN:
+           ---                                      ---
+              STO-SS =      889553.8829                STO-SS =        6220.2388     STORAGE                          
+                 WEL =           0.0000                   WEL =           0.0000     WEL                              
+                 GHB =        9191.2513                   GHB =         105.8377     GHB                              
+
+            TOTAL IN =      898745.1343              TOTAL IN =        6326.0764
+
+          OUT:                                     OUT:
+          ----                                     ----
+              STO-SS =      882553.8829                STO-SS =        6220.2388     STORAGE                          
+                 WEL =        7000.0000                   WEL =           0.0000     WEL                              
+                 GHB =        9191.2513                   GHB =         105.8377     GHB                              
+
+           TOTAL OUT =      898745.1342             TOTAL OUT =        6326.0764
+
+            IN - OUT =       9.0058E-06              IN - OUT =       7.9131E-08
+
+ PERCENT DISCREPANCY =           0.00     PERCENT DISCREPANCY =           0.00
+
+
+
+
+         TIME SUMMARY AT END OF TIME STEP    5 IN STRESS PERIOD   20
+                    SECONDS     MINUTES      HOURS       DAYS        YEARS
+                    -----------------------------------------------------------
+   TIME STEP LENGTH 1.20960E+05  2016.0      33.600      1.4000     3.83299E-03
+ STRESS PERIOD TIME 6.04800E+05  10080.      168.00      7.0000     1.91650E-02
+         TOTAL TIME 1.20960E+07 2.01600E+05  3360.0      140.00     0.38330    
+
+
+end timestep
+
+
+start timestep kper="21" kstp="1" mode="normal"
+
+
+ OUTPUT CONTROL FOR STRESS PERIOD 21 IS REPEATED USING SETTINGS FROM A PREVIOUS STRESS PERIOD.
+
+end timestep
+
+
+start timestep kper="21" kstp="2" mode="normal"
+
+
+end timestep
+
+
+start timestep kper="21" kstp="3" mode="normal"
+
+
+end timestep
+
+
+start timestep kper="21" kstp="4" mode="normal"
+
+
+end timestep
+
+
+start timestep kper="21" kstp="5" mode="normal"
+
+
+ HEAD WILL BE SAVED ON UNIT 1016 AT END OF TIME STEP    5, STRESS PERIOD   21
+
+
+  VOLUME BUDGET FOR ENTIRE MODEL AT END OF TIME STEP    5, STRESS PERIOD  21
+  ---------------------------------------------------------------------------------------------------
+
+     CUMULATIVE VOLUME      L**3       RATES FOR THIS TIME STEP      L**3/T          PACKAGE NAME    
+     ------------------                 ------------------------                     ----------------
+
+           IN:                                      IN:
+           ---                                      ---
+              STO-SS =      933079.0711                STO-SS =        6216.3286     STORAGE                          
+                 WEL =           0.0000                   WEL =           0.0000     WEL                              
+                 GHB =        9944.9468                   GHB =         108.8828     GHB                              
+
+            TOTAL IN =      943024.0179              TOTAL IN =        6325.2114
+
+          OUT:                                     OUT:
+          ----                                     ----
+              STO-SS =      926079.0711                STO-SS =        6216.3286     STORAGE                          
+                 WEL =        7000.0000                   WEL =           0.0000     WEL                              
+                 GHB =        9944.9468                   GHB =         108.8828     GHB                              
+
+           TOTAL OUT =      943024.0179             TOTAL OUT =        6325.2114
+
+            IN - OUT =       9.7029E-06              IN - OUT =       1.1813E-07
+
+ PERCENT DISCREPANCY =           0.00     PERCENT DISCREPANCY =           0.00
+
+
+
+
+         TIME SUMMARY AT END OF TIME STEP    5 IN STRESS PERIOD   21
+                    SECONDS     MINUTES      HOURS       DAYS        YEARS
+                    -----------------------------------------------------------
+   TIME STEP LENGTH 1.20960E+05  2016.0      33.600      1.4000     3.83299E-03
+ STRESS PERIOD TIME 6.04800E+05  10080.      168.00      7.0000     1.91650E-02
+         TOTAL TIME 1.27008E+07 2.11680E+05  3528.0      147.00     0.40246    
+
+
+end timestep
+
+
+start timestep kper="22" kstp="1" mode="normal"
+
+
+ OUTPUT CONTROL FOR STRESS PERIOD 22 IS REPEATED USING SETTINGS FROM A PREVIOUS STRESS PERIOD.
+
+end timestep
+
+
+start timestep kper="22" kstp="2" mode="normal"
+
+
+end timestep
+
+
+start timestep kper="22" kstp="3" mode="normal"
+
+
+end timestep
+
+
+start timestep kper="22" kstp="4" mode="normal"
+
+
+end timestep
+
+
+start timestep kper="22" kstp="5" mode="normal"
+
+
+ HEAD WILL BE SAVED ON UNIT 1016 AT END OF TIME STEP    5, STRESS PERIOD   22
+
+
+  VOLUME BUDGET FOR ENTIRE MODEL AT END OF TIME STEP    5, STRESS PERIOD  22
+  ---------------------------------------------------------------------------------------------------
+
+     CUMULATIVE VOLUME      L**3       RATES FOR THIS TIME STEP      L**3/T          PACKAGE NAME    
+     ------------------                 ------------------------                     ----------------
+
+           IN:                                      IN:
+           ---                                      ---
+              STO-SS =      976577.3412                STO-SS =        6212.5262     STORAGE                          
+                 WEL =           0.0000                   WEL =           0.0000     WEL                              
+                 GHB =       10719.6496                   GHB =         111.8551     GHB                              
+
+            TOTAL IN =      987296.9908              TOTAL IN =        6324.3813
+
+          OUT:                                     OUT:
+          ----                                     ----
+              STO-SS =      969577.3412                STO-SS =        6212.5262     STORAGE                          
+                 WEL =        7000.0000                   WEL =           0.0000     WEL                              
+                 GHB =       10719.6496                   GHB =         111.8551     GHB                              
+
+           TOTAL OUT =      987296.9908             TOTAL OUT =        6324.3813
+
+            IN - OUT =       1.0192E-05              IN - OUT =       5.7660E-08
+
+ PERCENT DISCREPANCY =           0.00     PERCENT DISCREPANCY =           0.00
+
+
+
+
+         TIME SUMMARY AT END OF TIME STEP    5 IN STRESS PERIOD   22
+                    SECONDS     MINUTES      HOURS       DAYS        YEARS
+                    -----------------------------------------------------------
+   TIME STEP LENGTH 1.20960E+05  2016.0      33.600      1.4000     3.83299E-03
+ STRESS PERIOD TIME 6.04800E+05  10080.      168.00      7.0000     1.91650E-02
+         TOTAL TIME 1.33056E+07 2.21760E+05  3696.0      154.00     0.42163    
+
+
+end timestep
+
+
+start timestep kper="23" kstp="1" mode="normal"
+
+
+ OUTPUT CONTROL FOR STRESS PERIOD 23 IS REPEATED USING SETTINGS FROM A PREVIOUS STRESS PERIOD.
+
+end timestep
+
+
+start timestep kper="23" kstp="2" mode="normal"
+
+
+end timestep
+
+
+start timestep kper="23" kstp="3" mode="normal"
+
+
+end timestep
+
+
+start timestep kper="23" kstp="4" mode="normal"
+
+
+end timestep
+
+
+start timestep kper="23" kstp="5" mode="normal"
+
+
+ HEAD WILL BE SAVED ON UNIT 1016 AT END OF TIME STEP    5, STRESS PERIOD   23
+
+
+  VOLUME BUDGET FOR ENTIRE MODEL AT END OF TIME STEP    5, STRESS PERIOD  23
+  ---------------------------------------------------------------------------------------------------
+
+     CUMULATIVE VOLUME      L**3       RATES FOR THIS TIME STEP      L**3/T          PACKAGE NAME    
+     ------------------                 ------------------------                     ----------------
+
+           IN:                                      IN:
+           ---                                      ---
+              STO-SS =     1020049.6931                STO-SS =        6208.8906     STORAGE                          
+                 WEL =           0.0000                   WEL =           0.0000     WEL                              
+                 GHB =       11514.8703                   GHB =         114.7594     GHB                              
+
+            TOTAL IN =     1031564.5635              TOTAL IN =        6323.6500
+
+          OUT:                                     OUT:
+          ----                                     ----
+              STO-SS =     1013049.6931                STO-SS =        6208.8906     STORAGE                          
+                 WEL =        7000.0000                   WEL =           0.0000     WEL                              
+                 GHB =       11514.8703                   GHB =         114.7594     GHB                              
+
+           TOTAL OUT =     1031564.5635             TOTAL OUT =        6323.6500
+
+            IN - OUT =       1.0715E-05              IN - OUT =       7.0646E-08
+
+ PERCENT DISCREPANCY =           0.00     PERCENT DISCREPANCY =           0.00
+
+
+
+
+         TIME SUMMARY AT END OF TIME STEP    5 IN STRESS PERIOD   23
+                    SECONDS     MINUTES      HOURS       DAYS        YEARS
+                    -----------------------------------------------------------
+   TIME STEP LENGTH 1.20960E+05  2016.0      33.600      1.4000     3.83299E-03
+ STRESS PERIOD TIME 6.04800E+05  10080.      168.00      7.0000     1.91650E-02
+         TOTAL TIME 1.39104E+07 2.31840E+05  3864.0      161.00     0.44079    
+
+
+end timestep
+
+
+start timestep kper="24" kstp="1" mode="normal"
+
+
+ OUTPUT CONTROL FOR STRESS PERIOD 24 IS REPEATED USING SETTINGS FROM A PREVIOUS STRESS PERIOD.
+
+end timestep
+
+
+start timestep kper="24" kstp="2" mode="normal"
+
+
+end timestep
+
+
+start timestep kper="24" kstp="3" mode="normal"
+
+
+end timestep
+
+
+start timestep kper="24" kstp="4" mode="normal"
+
+
+end timestep
+
+
+start timestep kper="24" kstp="5" mode="normal"
+
+
+ HEAD WILL BE SAVED ON UNIT 1016 AT END OF TIME STEP    5, STRESS PERIOD   24
+
+
+  VOLUME BUDGET FOR ENTIRE MODEL AT END OF TIME STEP    5, STRESS PERIOD  24
+  ---------------------------------------------------------------------------------------------------
+
+     CUMULATIVE VOLUME      L**3       RATES FOR THIS TIME STEP      L**3/T          PACKAGE NAME    
+     ------------------                 ------------------------                     ----------------
+
+           IN:                                      IN:
+           ---                                      ---
+              STO-SS =     1063497.0072                STO-SS =        6205.3503     STORAGE                          
+                 WEL =           0.0000                   WEL =           0.0000     WEL                              
+                 GHB =       12330.1515                   GHB =         117.6001     GHB                              
+
+            TOTAL IN =     1075827.1587              TOTAL IN =        6322.9503
+
+          OUT:                                     OUT:
+          ----                                     ----
+              STO-SS =     1056497.0072                STO-SS =        6205.3503     STORAGE                          
+                 WEL =        7000.0000                   WEL =           0.0000     WEL                              
+                 GHB =       12330.1515                   GHB =         117.6001     GHB                              
+
+           TOTAL OUT =     1075827.1587             TOTAL OUT =        6322.9503
+
+            IN - OUT =       1.1097E-05              IN - OUT =       7.4394E-08
+
+ PERCENT DISCREPANCY =           0.00     PERCENT DISCREPANCY =           0.00
+
+
+
+
+         TIME SUMMARY AT END OF TIME STEP    5 IN STRESS PERIOD   24
+                    SECONDS     MINUTES      HOURS       DAYS        YEARS
+                    -----------------------------------------------------------
+   TIME STEP LENGTH 1.20960E+05  2016.0      33.600      1.4000     3.83299E-03
+ STRESS PERIOD TIME 6.04800E+05  10080.      168.00      7.0000     1.91650E-02
+         TOTAL TIME 1.45152E+07 2.41920E+05  4032.0      168.00     0.45996    
+
+
+end timestep
+
+
+start timestep kper="25" kstp="1" mode="normal"
+
+
+ OUTPUT CONTROL FOR STRESS PERIOD 25 IS REPEATED USING SETTINGS FROM A PREVIOUS STRESS PERIOD.
+
+end timestep
+
+
+start timestep kper="25" kstp="2" mode="normal"
+
+
+end timestep
+
+
+start timestep kper="25" kstp="3" mode="normal"
+
+
+end timestep
+
+
+start timestep kper="25" kstp="4" mode="normal"
+
+
+end timestep
+
+
+start timestep kper="25" kstp="5" mode="normal"
+
+
+ HEAD WILL BE SAVED ON UNIT 1016 AT END OF TIME STEP    5, STRESS PERIOD   25
+
+
+  VOLUME BUDGET FOR ENTIRE MODEL AT END OF TIME STEP    5, STRESS PERIOD  25
+  ---------------------------------------------------------------------------------------------------
+
+     CUMULATIVE VOLUME      L**3       RATES FOR THIS TIME STEP      L**3/T          PACKAGE NAME    
+     ------------------                 ------------------------                     ----------------
+
+           IN:                                      IN:
+           ---                                      ---
+              STO-SS =     1106919.9583                STO-SS =        6201.9143     STORAGE                          
+                 WEL =           0.0000                   WEL =           0.0000     WEL                              
+                 GHB =       13165.0639                   GHB =         120.3809     GHB                              
+
+            TOTAL IN =     1120085.0222              TOTAL IN =        6322.2952
+
+          OUT:                                     OUT:
+          ----                                     ----
+              STO-SS =     1099919.9582                STO-SS =        6201.9143     STORAGE                          
+                 WEL =        7000.0000                   WEL =           0.0000     WEL                              
+                 GHB =       13165.0639                   GHB =         120.3809     GHB                              
+
+           TOTAL OUT =     1120085.0221             TOTAL OUT =        6322.2952
+
+            IN - OUT =       1.1680E-05              IN - OUT =       7.4723E-08
+
+ PERCENT DISCREPANCY =           0.00     PERCENT DISCREPANCY =           0.00
+
+
+
+
+         TIME SUMMARY AT END OF TIME STEP    5 IN STRESS PERIOD   25
+                    SECONDS     MINUTES      HOURS       DAYS        YEARS
+                    -----------------------------------------------------------
+   TIME STEP LENGTH 1.20960E+05  2016.0      33.600      1.4000     3.83299E-03
+ STRESS PERIOD TIME 6.04800E+05  10080.      168.00      7.0000     1.91650E-02
+         TOTAL TIME 1.51200E+07 2.52000E+05  4200.0      175.00     0.47912    
+
+
+end timestep
+
+
+start timestep kper="26" kstp="1" mode="normal"
+
+
+ OUTPUT CONTROL FOR STRESS PERIOD 26 IS REPEATED USING SETTINGS FROM A PREVIOUS STRESS PERIOD.
+
+end timestep
+
+
+start timestep kper="26" kstp="2" mode="normal"
+
+
+end timestep
+
+
+start timestep kper="26" kstp="3" mode="normal"
+
+
+end timestep
+
+
+start timestep kper="26" kstp="4" mode="normal"
+
+
+end timestep
+
+
+start timestep kper="26" kstp="5" mode="normal"
+
+
+ HEAD WILL BE SAVED ON UNIT 1016 AT END OF TIME STEP    5, STRESS PERIOD   26
+
+
+  VOLUME BUDGET FOR ENTIRE MODEL AT END OF TIME STEP    5, STRESS PERIOD  26
+  ---------------------------------------------------------------------------------------------------
+
+     CUMULATIVE VOLUME      L**3       RATES FOR THIS TIME STEP      L**3/T          PACKAGE NAME    
+     ------------------                 ------------------------                     ----------------
+
+           IN:                                      IN:
+           ---                                      ---
+              STO-SS =     1150319.2944                STO-SS =        6198.5831     STORAGE                          
+                 WEL =           0.0000                   WEL =           0.0000     WEL                              
+                 GHB =       14019.2039                   GHB =         123.1054     GHB                              
+
+            TOTAL IN =     1164338.4983              TOTAL IN =        6321.6886
+
+          OUT:                                     OUT:
+          ----                                     ----
+              STO-SS =     1143319.2944                STO-SS =        6198.5831     STORAGE                          
+                 WEL =        7000.0000                   WEL =           0.0000     WEL                              
+                 GHB =       14019.2039                   GHB =         123.1054     GHB                              
+
+           TOTAL OUT =     1164338.4983             TOTAL OUT =        6321.6886
+
+            IN - OUT =       1.1991E-05              IN - OUT =       4.3236E-08
+
+ PERCENT DISCREPANCY =           0.00     PERCENT DISCREPANCY =           0.00
+
+
+
+
+         TIME SUMMARY AT END OF TIME STEP    5 IN STRESS PERIOD   26
+                    SECONDS     MINUTES      HOURS       DAYS        YEARS
+                    -----------------------------------------------------------
+   TIME STEP LENGTH 1.20960E+05  2016.0      33.600      1.4000     3.83299E-03
+ STRESS PERIOD TIME 6.04800E+05  10080.      168.00      7.0000     1.91650E-02
+         TOTAL TIME 1.57248E+07 2.62080E+05  4368.0      182.00     0.49829    
+
+
+end timestep
+
+
+start timestep kper="27" kstp="1" mode="normal"
+
+
+ OUTPUT CONTROL FOR STRESS PERIOD 27 IS REPEATED USING SETTINGS FROM A PREVIOUS STRESS PERIOD.
+
+end timestep
+
+
+start timestep kper="27" kstp="2" mode="normal"
+
+
+end timestep
+
+
+start timestep kper="27" kstp="3" mode="normal"
+
+
+end timestep
+
+
+start timestep kper="27" kstp="4" mode="normal"
+
+
+end timestep
+
+
+start timestep kper="27" kstp="5" mode="normal"
+
+
+ HEAD WILL BE SAVED ON UNIT 1016 AT END OF TIME STEP    5, STRESS PERIOD   27
+
+
+  VOLUME BUDGET FOR ENTIRE MODEL AT END OF TIME STEP    5, STRESS PERIOD  27
+  ---------------------------------------------------------------------------------------------------
+
+     CUMULATIVE VOLUME      L**3       RATES FOR THIS TIME STEP      L**3/T          PACKAGE NAME    
+     ------------------                 ------------------------                     ----------------
+
+           IN:                                      IN:
+           ---                                      ---
+              STO-SS =     1193695.8022                STO-SS =        6195.3626     STORAGE                          
+                 WEL =           0.0000                   WEL =           0.0000     WEL                              
+                 GHB =       14892.1909                   GHB =         125.7769     GHB                              
+
+            TOTAL IN =     1208587.9931              TOTAL IN =        6321.1395
+
+          OUT:                                     OUT:
+          ----                                     ----
+              STO-SS =     1186695.8022                STO-SS =        6195.3626     STORAGE                          
+                 WEL =        7000.0000                   WEL =           0.0000     WEL                              
+                 GHB =       14892.1909                   GHB =         125.7769     GHB                              
+
+           TOTAL OUT =     1208587.9931             TOTAL OUT =        6321.1395
+
+            IN - OUT =       1.2460E-05              IN - OUT =       1.5473E-08
+
+ PERCENT DISCREPANCY =           0.00     PERCENT DISCREPANCY =           0.00
+
+
+
+
+         TIME SUMMARY AT END OF TIME STEP    5 IN STRESS PERIOD   27
+                    SECONDS     MINUTES      HOURS       DAYS        YEARS
+                    -----------------------------------------------------------
+   TIME STEP LENGTH 1.20960E+05  2016.0      33.600      1.4000     3.83299E-03
+ STRESS PERIOD TIME 6.04800E+05  10080.      168.00      7.0000     1.91650E-02
+         TOTAL TIME 1.63296E+07 2.72160E+05  4536.0      189.00     0.51745    
+
+
+end timestep
+
+
+start timestep kper="28" kstp="1" mode="normal"
+
+
+ OUTPUT CONTROL FOR STRESS PERIOD 28 IS REPEATED USING SETTINGS FROM A PREVIOUS STRESS PERIOD.
+
+end timestep
+
+
+start timestep kper="28" kstp="2" mode="normal"
+
+
+end timestep
+
+
+start timestep kper="28" kstp="3" mode="normal"
+
+
+end timestep
+
+
+start timestep kper="28" kstp="4" mode="normal"
+
+
+end timestep
+
+
+start timestep kper="28" kstp="5" mode="normal"
+
+
+ HEAD WILL BE SAVED ON UNIT 1016 AT END OF TIME STEP    5, STRESS PERIOD   28
+
+
+  VOLUME BUDGET FOR ENTIRE MODEL AT END OF TIME STEP    5, STRESS PERIOD  28
+  ---------------------------------------------------------------------------------------------------
+
+     CUMULATIVE VOLUME      L**3       RATES FOR THIS TIME STEP      L**3/T          PACKAGE NAME    
+     ------------------                 ------------------------                     ----------------
+
+           IN:                                      IN:
+           ---                                      ---
+              STO-SS =     1237050.1630                STO-SS =        6192.2406     STORAGE                          
+                 WEL =           0.0000                   WEL =           0.0000     WEL                              
+                 GHB =       15783.6656                   GHB =         128.3981     GHB                              
+
+            TOTAL IN =     1252833.8286              TOTAL IN =        6320.6388
+
+          OUT:                                     OUT:
+          ----                                     ----
+              STO-SS =     1230050.1630                STO-SS =        6192.2406     STORAGE                          
+                 WEL =        7000.0000                   WEL =           0.0000     WEL                              
+                 GHB =       15783.6656                   GHB =         128.3981     GHB                              
+
+           TOTAL OUT =     1252833.8286             TOTAL OUT =        6320.6388
+
+            IN - OUT =       1.3083E-05              IN - OUT =       4.4173E-08
+
+ PERCENT DISCREPANCY =           0.00     PERCENT DISCREPANCY =           0.00
+
+
+
+
+         TIME SUMMARY AT END OF TIME STEP    5 IN STRESS PERIOD   28
+                    SECONDS     MINUTES      HOURS       DAYS        YEARS
+                    -----------------------------------------------------------
+   TIME STEP LENGTH 1.20960E+05  2016.0      33.600      1.4000     3.83299E-03
+ STRESS PERIOD TIME 6.04800E+05  10080.      168.00      7.0000     1.91650E-02
+         TOTAL TIME 1.69344E+07 2.82240E+05  4704.0      196.00     0.53662    
+
+
+end timestep
+
+
+start timestep kper="29" kstp="1" mode="normal"
+
+
+ OUTPUT CONTROL FOR STRESS PERIOD 29 IS REPEATED USING SETTINGS FROM A PREVIOUS STRESS PERIOD.
+
+end timestep
+
+
+start timestep kper="29" kstp="2" mode="normal"
+
+
+end timestep
+
+
+start timestep kper="29" kstp="3" mode="normal"
+
+
+end timestep
+
+
+start timestep kper="29" kstp="4" mode="normal"
+
+
+end timestep
+
+
+start timestep kper="29" kstp="5" mode="normal"
+
+
+ HEAD WILL BE SAVED ON UNIT 1016 AT END OF TIME STEP    5, STRESS PERIOD   29
+
+
+  VOLUME BUDGET FOR ENTIRE MODEL AT END OF TIME STEP    5, STRESS PERIOD  29
+  ---------------------------------------------------------------------------------------------------
+
+     CUMULATIVE VOLUME      L**3       RATES FOR THIS TIME STEP      L**3/T          PACKAGE NAME    
+     ------------------                 ------------------------                     ----------------
+
+           IN:                                      IN:
+           ---                                      ---
+              STO-SS =     1280383.0541                STO-SS =        6189.2028     STORAGE                          
+                 WEL =           0.0000                   WEL =           0.0000     WEL                              
+                 GHB =       16693.2877                   GHB =         130.9718     GHB                              
+
+            TOTAL IN =     1297076.3418              TOTAL IN =        6320.1745
+
+          OUT:                                     OUT:
+          ----                                     ----
+              STO-SS =     1273383.0540                STO-SS =        6189.2028     STORAGE                          
+                 WEL =        7000.0000                   WEL =           0.0000     WEL                              
+                 GHB =       16693.2877                   GHB =         130.9718     GHB                              
+
+           TOTAL OUT =     1297076.3417             TOTAL OUT =        6320.1745
+
+            IN - OUT =       1.3610E-05              IN - OUT =       7.3220E-08
+
+ PERCENT DISCREPANCY =           0.00     PERCENT DISCREPANCY =           0.00
+
+
+
+
+         TIME SUMMARY AT END OF TIME STEP    5 IN STRESS PERIOD   29
+                    SECONDS     MINUTES      HOURS       DAYS        YEARS
+                    -----------------------------------------------------------
+   TIME STEP LENGTH 1.20960E+05  2016.0      33.600      1.4000     3.83299E-03
+ STRESS PERIOD TIME 6.04800E+05  10080.      168.00      7.0000     1.91650E-02
+         TOTAL TIME 1.75392E+07 2.92320E+05  4872.0      203.00     0.55578    
+
+
+end timestep
+
+
+start timestep kper="30" kstp="1" mode="normal"
+
+
+ OUTPUT CONTROL FOR STRESS PERIOD 30 IS REPEATED USING SETTINGS FROM A PREVIOUS STRESS PERIOD.
+
+end timestep
+
+
+start timestep kper="30" kstp="2" mode="normal"
+
+
+end timestep
+
+
+start timestep kper="30" kstp="3" mode="normal"
+
+
+end timestep
+
+
+start timestep kper="30" kstp="4" mode="normal"
+
+
+end timestep
+
+
+start timestep kper="30" kstp="5" mode="normal"
+
+
+ HEAD WILL BE SAVED ON UNIT 1016 AT END OF TIME STEP    5, STRESS PERIOD   30
+
+
+  VOLUME BUDGET FOR ENTIRE MODEL AT END OF TIME STEP    5, STRESS PERIOD  30
+  ---------------------------------------------------------------------------------------------------
+
+     CUMULATIVE VOLUME      L**3       RATES FOR THIS TIME STEP      L**3/T          PACKAGE NAME    
+     ------------------                 ------------------------                     ----------------
+
+           IN:                                      IN:
+           ---                                      ---
+              STO-SS =     1323694.9397                STO-SS =        6186.2290     STORAGE                          
+                 WEL =           0.0000                   WEL =           0.0000     WEL                              
+                 GHB =       17620.7343                   GHB =         133.5002     GHB                              
+
+            TOTAL IN =     1341315.6740              TOTAL IN =        6319.7293
+
+          OUT:                                     OUT:
+          ----                                     ----
+              STO-SS =     1316694.9397                STO-SS =        6186.2290     STORAGE                          
+                 WEL =        7000.0000                   WEL =           0.0000     WEL                              
+                 GHB =       17620.7343                   GHB =         133.5002     GHB                              
+
+           TOTAL OUT =     1341315.6740             TOTAL OUT =        6319.7293
+
+            IN - OUT =       1.4157E-05              IN - OUT =       1.0054E-07
+
+ PERCENT DISCREPANCY =           0.00     PERCENT DISCREPANCY =           0.00
+
+
+
+
+         TIME SUMMARY AT END OF TIME STEP    5 IN STRESS PERIOD   30
+                    SECONDS     MINUTES      HOURS       DAYS        YEARS
+                    -----------------------------------------------------------
+   TIME STEP LENGTH 1.20960E+05  2016.0      33.600      1.4000     3.83299E-03
+ STRESS PERIOD TIME 6.04800E+05  10080.      168.00      7.0000     1.91650E-02
+         TOTAL TIME 1.81440E+07 3.02400E+05  5040.0      210.00     0.57495    
+
+
+end timestep
+
+
+start timestep kper="31" kstp="1" mode="normal"
+
+
+ OUTPUT CONTROL FOR STRESS PERIOD 31 IS REPEATED USING SETTINGS FROM A PREVIOUS STRESS PERIOD.
+
+end timestep
+
+
+start timestep kper="31" kstp="2" mode="normal"
+
+
+end timestep
+
+
+start timestep kper="31" kstp="3" mode="normal"
+
+
+end timestep
+
+
+start timestep kper="31" kstp="4" mode="normal"
+
+
+end timestep
+
+
+start timestep kper="31" kstp="5" mode="normal"
+
+
+ HEAD WILL BE SAVED ON UNIT 1016 AT END OF TIME STEP    5, STRESS PERIOD   31
+
+
+  VOLUME BUDGET FOR ENTIRE MODEL AT END OF TIME STEP    5, STRESS PERIOD  31
+  ---------------------------------------------------------------------------------------------------
+
+     CUMULATIVE VOLUME      L**3       RATES FOR THIS TIME STEP      L**3/T          PACKAGE NAME    
+     ------------------                 ------------------------                     ----------------
+
+           IN:                                      IN:
+           ---                                      ---
+              STO-SS =     1366986.3652                STO-SS =        6183.3401     STORAGE                          
+                 WEL =           0.0000                   WEL =           0.0000     WEL                              
+                 GHB =       18565.6987                   GHB =         135.9858     GHB                              
+
+            TOTAL IN =     1385552.0639              TOTAL IN =        6319.3258
+
+          OUT:                                     OUT:
+          ----                                     ----
+              STO-SS =     1359986.3652                STO-SS =        6183.3401     STORAGE                          
+                 WEL =        7000.0000                   WEL =           0.0000     WEL                              
+                 GHB =       18565.6987                   GHB =         135.9858     GHB                              
+
+           TOTAL OUT =     1385552.0639             TOTAL OUT =        6319.3258
+
+            IN - OUT =       1.4604E-05              IN - OUT =       3.8180E-08
+
+ PERCENT DISCREPANCY =           0.00     PERCENT DISCREPANCY =           0.00
+
+
+
+
+         TIME SUMMARY AT END OF TIME STEP    5 IN STRESS PERIOD   31
+                    SECONDS     MINUTES      HOURS       DAYS        YEARS
+                    -----------------------------------------------------------
+   TIME STEP LENGTH 1.20960E+05  2016.0      33.600      1.4000     3.83299E-03
+ STRESS PERIOD TIME 6.04800E+05  10080.      168.00      7.0000     1.91650E-02
+         TOTAL TIME 1.87488E+07 3.12480E+05  5208.0      217.00     0.59411    
+
+
+end timestep
+
+
+start timestep kper="32" kstp="1" mode="normal"
+
+
+ OUTPUT CONTROL FOR STRESS PERIOD 32 IS REPEATED USING SETTINGS FROM A PREVIOUS STRESS PERIOD.
+
+end timestep
+
+
+start timestep kper="32" kstp="2" mode="normal"
+
+
+end timestep
+
+
+start timestep kper="32" kstp="3" mode="normal"
+
+
+end timestep
+
+
+start timestep kper="32" kstp="4" mode="normal"
+
+
+end timestep
+
+
+start timestep kper="32" kstp="5" mode="normal"
+
+
+ HEAD WILL BE SAVED ON UNIT 1016 AT END OF TIME STEP    5, STRESS PERIOD   32
+
+
+  VOLUME BUDGET FOR ENTIRE MODEL AT END OF TIME STEP    5, STRESS PERIOD  32
+  ---------------------------------------------------------------------------------------------------
+
+     CUMULATIVE VOLUME      L**3       RATES FOR THIS TIME STEP      L**3/T          PACKAGE NAME    
+     ------------------                 ------------------------                     ----------------
+
+           IN:                                      IN:
+           ---                                      ---
+              STO-SS =     1410257.8857                STO-SS =        6180.5229     STORAGE                          
+                 WEL =           0.0000                   WEL =           0.0000     WEL                              
+                 GHB =       19527.8889                   GHB =         138.4304     GHB                              
+
+            TOTAL IN =     1429785.7746              TOTAL IN =        6318.9533
+
+          OUT:                                     OUT:
+          ----                                     ----
+              STO-SS =     1403257.8857                STO-SS =        6180.5229     STORAGE                          
+                 WEL =        7000.0000                   WEL =           0.0000     WEL                              
+                 GHB =       19527.8889                   GHB =         138.4304     GHB                              
+
+           TOTAL OUT =     1429785.7746             TOTAL OUT =        6318.9533
+
+            IN - OUT =       1.5232E-05              IN - OUT =       1.2037E-07
+
+ PERCENT DISCREPANCY =           0.00     PERCENT DISCREPANCY =           0.00
+
+
+
+
+         TIME SUMMARY AT END OF TIME STEP    5 IN STRESS PERIOD   32
+                    SECONDS     MINUTES      HOURS       DAYS        YEARS
+                    -----------------------------------------------------------
+   TIME STEP LENGTH 1.20960E+05  2016.0      33.600      1.4000     3.83299E-03
+ STRESS PERIOD TIME 6.04800E+05  10080.      168.00      7.0000     1.91650E-02
+         TOTAL TIME 1.93536E+07 3.22560E+05  5376.0      224.00     0.61328    
+
+
+end timestep
+
+
+start timestep kper="33" kstp="1" mode="normal"
+
+
+ OUTPUT CONTROL FOR STRESS PERIOD 33 IS REPEATED USING SETTINGS FROM A PREVIOUS STRESS PERIOD.
+
+end timestep
+
+
+start timestep kper="33" kstp="2" mode="normal"
+
+
+end timestep
+
+
+start timestep kper="33" kstp="3" mode="normal"
+
+
+end timestep
+
+
+start timestep kper="33" kstp="4" mode="normal"
+
+
+end timestep
+
+
+start timestep kper="33" kstp="5" mode="normal"
+
+
+ HEAD WILL BE SAVED ON UNIT 1016 AT END OF TIME STEP    5, STRESS PERIOD   33
+
+
+  VOLUME BUDGET FOR ENTIRE MODEL AT END OF TIME STEP    5, STRESS PERIOD  33
+  ---------------------------------------------------------------------------------------------------
+
+     CUMULATIVE VOLUME      L**3       RATES FOR THIS TIME STEP      L**3/T          PACKAGE NAME    
+     ------------------                 ------------------------                     ----------------
+
+           IN:                                      IN:
+           ---                                      ---
+              STO-SS =     1453509.8928                STO-SS =        6177.7548     STORAGE                          
+                 WEL =           0.0000                   WEL =           0.0000     WEL                              
+                 GHB =       20507.0266                   GHB =         140.8360     GHB                              
+
+            TOTAL IN =     1474016.9193              TOTAL IN =        6318.5908
+
+          OUT:                                     OUT:
+          ----                                     ----
+              STO-SS =     1446509.8928                STO-SS =        6177.7548     STORAGE                          
+                 WEL =        7000.0000                   WEL =           0.0000     WEL                              
+                 GHB =       20507.0266                   GHB =         140.8360     GHB                              
+
+           TOTAL OUT =     1474016.9193             TOTAL OUT =        6318.5908
+
+            IN - OUT =       1.5618E-05              IN - OUT =       7.4965E-08
+
+ PERCENT DISCREPANCY =           0.00     PERCENT DISCREPANCY =           0.00
+
+
+
+
+         TIME SUMMARY AT END OF TIME STEP    5 IN STRESS PERIOD   33
+                    SECONDS     MINUTES      HOURS       DAYS        YEARS
+                    -----------------------------------------------------------
+   TIME STEP LENGTH 1.20960E+05  2016.0      33.600      1.4000     3.83299E-03
+ STRESS PERIOD TIME 6.04800E+05  10080.      168.00      7.0000     1.91650E-02
+         TOTAL TIME 1.99584E+07 3.32640E+05  5544.0      231.00     0.63244    
+
+
+end timestep
+
+
+start timestep kper="34" kstp="1" mode="normal"
+
+
+ OUTPUT CONTROL FOR STRESS PERIOD 34 IS REPEATED USING SETTINGS FROM A PREVIOUS STRESS PERIOD.
+
+end timestep
+
+
+start timestep kper="34" kstp="2" mode="normal"
+
+
+end timestep
+
+
+start timestep kper="34" kstp="3" mode="normal"
+
+
+end timestep
+
+
+start timestep kper="34" kstp="4" mode="normal"
+
+
+end timestep
+
+
+start timestep kper="34" kstp="5" mode="normal"
+
+
+ HEAD WILL BE SAVED ON UNIT 1016 AT END OF TIME STEP    5, STRESS PERIOD   34
+
+
+  VOLUME BUDGET FOR ENTIRE MODEL AT END OF TIME STEP    5, STRESS PERIOD  34
+  ---------------------------------------------------------------------------------------------------
+
+     CUMULATIVE VOLUME      L**3       RATES FOR THIS TIME STEP      L**3/T          PACKAGE NAME    
+     ------------------                 ------------------------                     ----------------
+
+           IN:                                      IN:
+           ---                                      ---
+              STO-SS =     1496742.7451                STO-SS =        6175.0430     STORAGE                          
+                 WEL =           0.0000                   WEL =           0.0000     WEL                              
+                 GHB =       21502.8459                   GHB =         143.2043     GHB                              
+
+            TOTAL IN =     1518245.5910              TOTAL IN =        6318.2474
+
+          OUT:                                     OUT:
+          ----                                     ----
+              STO-SS =     1489742.7451                STO-SS =        6175.0430     STORAGE                          
+                 WEL =        7000.0000                   WEL =           0.0000     WEL                              
+                 GHB =       21502.8459                   GHB =         143.2043     GHB                              
+
+           TOTAL OUT =     1518245.5910             TOTAL OUT =        6318.2474
+
+            IN - OUT =       1.6073E-05              IN - OUT =       8.9464E-08
+
+ PERCENT DISCREPANCY =           0.00     PERCENT DISCREPANCY =           0.00
+
+
+
+
+         TIME SUMMARY AT END OF TIME STEP    5 IN STRESS PERIOD   34
+                    SECONDS     MINUTES      HOURS       DAYS        YEARS
+                    -----------------------------------------------------------
+   TIME STEP LENGTH 1.20960E+05  2016.0      33.600      1.4000     3.83299E-03
+ STRESS PERIOD TIME 6.04800E+05  10080.      168.00      7.0000     1.91650E-02
+         TOTAL TIME 2.05632E+07 3.42720E+05  5712.0      238.00     0.65161    
+
+
+end timestep
+
+
+start timestep kper="35" kstp="1" mode="normal"
+
+
+ OUTPUT CONTROL FOR STRESS PERIOD 35 IS REPEATED USING SETTINGS FROM A PREVIOUS STRESS PERIOD.
+
+end timestep
+
+
+start timestep kper="35" kstp="2" mode="normal"
+
+
+end timestep
+
+
+start timestep kper="35" kstp="3" mode="normal"
+
+
+end timestep
+
+
+start timestep kper="35" kstp="4" mode="normal"
+
+
+end timestep
+
+
+start timestep kper="35" kstp="5" mode="normal"
+
+
+ HEAD WILL BE SAVED ON UNIT 1016 AT END OF TIME STEP    5, STRESS PERIOD   35
+
+
+  VOLUME BUDGET FOR ENTIRE MODEL AT END OF TIME STEP    5, STRESS PERIOD  35
+  ---------------------------------------------------------------------------------------------------
+
+     CUMULATIVE VOLUME      L**3       RATES FOR THIS TIME STEP      L**3/T          PACKAGE NAME    
+     ------------------                 ------------------------                     ----------------
+
+           IN:                                      IN:
+           ---                                      ---
+              STO-SS =     1539956.8626                STO-SS =        6172.3860     STORAGE                          
+                 WEL =           0.0000                   WEL =           0.0000     WEL                              
+                 GHB =       22515.0930                   GHB =         145.5370     GHB                              
+
+            TOTAL IN =     1562471.9556              TOTAL IN =        6317.9230
+
+          OUT:                                     OUT:
+          ----                                     ----
+              STO-SS =     1532956.8626                STO-SS =        6172.3860     STORAGE                          
+                 WEL =        7000.0000                   WEL =           0.0000     WEL                              
+                 GHB =       22515.0930                   GHB =         145.5370     GHB                              
+
+           TOTAL OUT =     1562471.9556             TOTAL OUT =        6317.9230
+
+            IN - OUT =       1.6617E-05              IN - OUT =       8.3099E-08
+
+ PERCENT DISCREPANCY =           0.00     PERCENT DISCREPANCY =           0.00
+
+
+
+
+         TIME SUMMARY AT END OF TIME STEP    5 IN STRESS PERIOD   35
+                    SECONDS     MINUTES      HOURS       DAYS        YEARS
+                    -----------------------------------------------------------
+   TIME STEP LENGTH 1.20960E+05  2016.0      33.600      1.4000     3.83299E-03
+ STRESS PERIOD TIME 6.04800E+05  10080.      168.00      7.0000     1.91650E-02
+         TOTAL TIME 2.11680E+07 3.52800E+05  5880.0      245.00     0.67077    
+
+
+end timestep
+
+
+start timestep kper="36" kstp="1" mode="normal"
+
+
+ OUTPUT CONTROL FOR STRESS PERIOD 36 IS REPEATED USING SETTINGS FROM A PREVIOUS STRESS PERIOD.
+
+end timestep
+
+
+start timestep kper="36" kstp="2" mode="normal"
+
+
+end timestep
+
+
+start timestep kper="36" kstp="3" mode="normal"
+
+
+end timestep
+
+
+start timestep kper="36" kstp="4" mode="normal"
+
+
+end timestep
+
+
+start timestep kper="36" kstp="5" mode="normal"
+
+
+ HEAD WILL BE SAVED ON UNIT 1016 AT END OF TIME STEP    5, STRESS PERIOD   36
+
+
+  VOLUME BUDGET FOR ENTIRE MODEL AT END OF TIME STEP    5, STRESS PERIOD  36
+  ---------------------------------------------------------------------------------------------------
+
+     CUMULATIVE VOLUME      L**3       RATES FOR THIS TIME STEP      L**3/T          PACKAGE NAME    
+     ------------------                 ------------------------                     ----------------
+
+           IN:                                      IN:
+           ---                                      ---
+              STO-SS =     1583152.5615                STO-SS =        6169.7718     STORAGE                          
+                 WEL =           0.0000                   WEL =           0.0000     WEL                              
+                 GHB =       23543.5244                   GHB =         147.8355     GHB                              
+
+            TOTAL IN =     1606696.0859              TOTAL IN =        6317.6073
+
+          OUT:                                     OUT:
+          ----                                     ----
+              STO-SS =     1576152.5615                STO-SS =        6169.7718     STORAGE                          
+                 WEL =        7000.0000                   WEL =           0.0000     WEL                              
+                 GHB =       23543.5244                   GHB =         147.8355     GHB                              
+
+           TOTAL OUT =     1606696.0859             TOTAL OUT =        6317.6073
+
+            IN - OUT =       1.7064E-05              IN - OUT =       5.8186E-08
+
+ PERCENT DISCREPANCY =           0.00     PERCENT DISCREPANCY =           0.00
+
+
+
+
+         TIME SUMMARY AT END OF TIME STEP    5 IN STRESS PERIOD   36
+                    SECONDS     MINUTES      HOURS       DAYS        YEARS
+                    -----------------------------------------------------------
+   TIME STEP LENGTH 1.20960E+05  2016.0      33.600      1.4000     3.83299E-03
+ STRESS PERIOD TIME 6.04800E+05  10080.      168.00      7.0000     1.91650E-02
+         TOTAL TIME 2.17728E+07 3.62880E+05  6048.0      252.00     0.68994    
+
+
+end timestep
+
+
+start timestep kper="37" kstp="1" mode="normal"
+
+
+ OUTPUT CONTROL FOR STRESS PERIOD 37 IS REPEATED USING SETTINGS FROM A PREVIOUS STRESS PERIOD.
+
+end timestep
+
+
+start timestep kper="37" kstp="2" mode="normal"
+
+
+end timestep
+
+
+start timestep kper="37" kstp="3" mode="normal"
+
+
+end timestep
+
+
+start timestep kper="37" kstp="4" mode="normal"
+
+
+end timestep
+
+
+start timestep kper="37" kstp="5" mode="normal"
+
+
+ HEAD WILL BE SAVED ON UNIT 1016 AT END OF TIME STEP    5, STRESS PERIOD   37
+
+
+  VOLUME BUDGET FOR ENTIRE MODEL AT END OF TIME STEP    5, STRESS PERIOD  37
+  ---------------------------------------------------------------------------------------------------
+
+     CUMULATIVE VOLUME      L**3       RATES FOR THIS TIME STEP      L**3/T          PACKAGE NAME    
+     ------------------                 ------------------------                     ----------------
+
+           IN:                                      IN:
+           ---                                      ---
+              STO-SS =     1626330.1608                STO-SS =        6167.2067     STORAGE                          
+                 WEL =           0.0000                   WEL =           0.0000     WEL                              
+                 GHB =       24587.9071                   GHB =         150.1013     GHB                              
+
+            TOTAL IN =     1650918.0679              TOTAL IN =        6317.3079
+
+          OUT:                                     OUT:
+          ----                                     ----
+              STO-SS =     1619330.1608                STO-SS =        6167.2067     STORAGE                          
+                 WEL =        7000.0000                   WEL =           0.0000     WEL                              
+                 GHB =       24587.9071                   GHB =         150.1013     GHB                              
+
+           TOTAL OUT =     1650918.0679             TOTAL OUT =        6317.3079
+
+            IN - OUT =       1.7175E-05              IN - OUT =      -2.5648E-07
+
+ PERCENT DISCREPANCY =           0.00     PERCENT DISCREPANCY =          -0.00
+
+
+
+
+         TIME SUMMARY AT END OF TIME STEP    5 IN STRESS PERIOD   37
+                    SECONDS     MINUTES      HOURS       DAYS        YEARS
+                    -----------------------------------------------------------
+   TIME STEP LENGTH 1.20960E+05  2016.0      33.600      1.4000     3.83299E-03
+ STRESS PERIOD TIME 6.04800E+05  10080.      168.00      7.0000     1.91650E-02
+         TOTAL TIME 2.23776E+07 3.72960E+05  6216.0      259.00     0.70910    
+
+
+end timestep
+
+
+start timestep kper="38" kstp="1" mode="normal"
+
+
+ OUTPUT CONTROL FOR STRESS PERIOD 38 IS REPEATED USING SETTINGS FROM A PREVIOUS STRESS PERIOD.
+
+end timestep
+
+
+start timestep kper="38" kstp="2" mode="normal"
+
+
+end timestep
+
+
+start timestep kper="38" kstp="3" mode="normal"
+
+
+end timestep
+
+
+start timestep kper="38" kstp="4" mode="normal"
+
+
+end timestep
+
+
+start timestep kper="38" kstp="5" mode="normal"
+
+
+ HEAD WILL BE SAVED ON UNIT 1016 AT END OF TIME STEP    5, STRESS PERIOD   38
+
+
+  VOLUME BUDGET FOR ENTIRE MODEL AT END OF TIME STEP    5, STRESS PERIOD  38
+  ---------------------------------------------------------------------------------------------------
+
+     CUMULATIVE VOLUME      L**3       RATES FOR THIS TIME STEP      L**3/T          PACKAGE NAME    
+     ------------------                 ------------------------                     ----------------
+
+           IN:                                      IN:
+           ---                                      ---
+              STO-SS =     1669490.0497                STO-SS =        6164.6989     STORAGE                          
+                 WEL =           0.0000                   WEL =           0.0000     WEL                              
+                 GHB =       25648.0173                   GHB =         152.3356     GHB                              
+
+            TOTAL IN =     1695138.0670              TOTAL IN =        6317.0344
+
+          OUT:                                     OUT:
+          ----                                     ----
+              STO-SS =     1662490.0497                STO-SS =        6164.6989     STORAGE                          
+                 WEL =        7000.0000                   WEL =           0.0000     WEL                              
+                 GHB =       25648.0173                   GHB =         152.3356     GHB                              
+
+           TOTAL OUT =     1695138.0670             TOTAL OUT =        6317.0344
+
+            IN - OUT =       1.7622E-05              IN - OUT =       6.5378E-08
+
+ PERCENT DISCREPANCY =           0.00     PERCENT DISCREPANCY =           0.00
+
+
+
+
+         TIME SUMMARY AT END OF TIME STEP    5 IN STRESS PERIOD   38
+                    SECONDS     MINUTES      HOURS       DAYS        YEARS
+                    -----------------------------------------------------------
+   TIME STEP LENGTH 1.20960E+05  2016.0      33.600      1.4000     3.83299E-03
+ STRESS PERIOD TIME 6.04800E+05  10080.      168.00      7.0000     1.91650E-02
+         TOTAL TIME 2.29824E+07 3.83040E+05  6384.0      266.00     0.72827    
+
+
+end timestep
+
+
+start timestep kper="39" kstp="1" mode="normal"
+
+
+ OUTPUT CONTROL FOR STRESS PERIOD 39 IS REPEATED USING SETTINGS FROM A PREVIOUS STRESS PERIOD.
+
+end timestep
+
+
+start timestep kper="39" kstp="2" mode="normal"
+
+
+end timestep
+
+
+start timestep kper="39" kstp="3" mode="normal"
+
+
+end timestep
+
+
+start timestep kper="39" kstp="4" mode="normal"
+
+
+end timestep
+
+
+start timestep kper="39" kstp="5" mode="normal"
+
+
+ HEAD WILL BE SAVED ON UNIT 1016 AT END OF TIME STEP    5, STRESS PERIOD   39
+
+
+  VOLUME BUDGET FOR ENTIRE MODEL AT END OF TIME STEP    5, STRESS PERIOD  39
+  ---------------------------------------------------------------------------------------------------
+
+     CUMULATIVE VOLUME      L**3       RATES FOR THIS TIME STEP      L**3/T          PACKAGE NAME    
+     ------------------                 ------------------------                     ----------------
+
+           IN:                                      IN:
+           ---                                      ---
+              STO-SS =     1712632.5576                STO-SS =        6162.2336     STORAGE                          
+                 WEL =           0.0000                   WEL =           0.0000     WEL                              
+                 GHB =       26723.6401                   GHB =         154.5397     GHB                              
+
+            TOTAL IN =     1739356.1977              TOTAL IN =        6316.7732
+
+          OUT:                                     OUT:
+          ----                                     ----
+              STO-SS =     1705632.5576                STO-SS =        6162.2336     STORAGE                          
+                 WEL =        7000.0000                   WEL =           0.0000     WEL                              
+                 GHB =       26723.6401                   GHB =         154.5397     GHB                              
+
+           TOTAL OUT =     1739356.1977             TOTAL OUT =        6316.7732
+
+            IN - OUT =       1.8041E-05              IN - OUT =       7.2419E-08
+
+ PERCENT DISCREPANCY =           0.00     PERCENT DISCREPANCY =           0.00
+
+
+
+
+         TIME SUMMARY AT END OF TIME STEP    5 IN STRESS PERIOD   39
+                    SECONDS     MINUTES      HOURS       DAYS        YEARS
+                    -----------------------------------------------------------
+   TIME STEP LENGTH 1.20960E+05  2016.0      33.600      1.4000     3.83299E-03
+ STRESS PERIOD TIME 6.04800E+05  10080.      168.00      7.0000     1.91650E-02
+         TOTAL TIME 2.35872E+07 3.93120E+05  6552.0      273.00     0.74743    
+
+
+end timestep
+
+
+start timestep kper="40" kstp="1" mode="normal"
+
+
+ OUTPUT CONTROL FOR STRESS PERIOD 40 IS REPEATED USING SETTINGS FROM A PREVIOUS STRESS PERIOD.
+
+end timestep
+
+
+start timestep kper="40" kstp="2" mode="normal"
+
+
+end timestep
+
+
+start timestep kper="40" kstp="3" mode="normal"
+
+
+end timestep
+
+
+start timestep kper="40" kstp="4" mode="normal"
+
+
+end timestep
+
+
+start timestep kper="40" kstp="5" mode="normal"
+
+
+ HEAD WILL BE SAVED ON UNIT 1016 AT END OF TIME STEP    5, STRESS PERIOD   40
+
+
+  VOLUME BUDGET FOR ENTIRE MODEL AT END OF TIME STEP    5, STRESS PERIOD  40
+  ---------------------------------------------------------------------------------------------------
+
+     CUMULATIVE VOLUME      L**3       RATES FOR THIS TIME STEP      L**3/T          PACKAGE NAME    
+     ------------------                 ------------------------                     ----------------
+
+           IN:                                      IN:
+           ---                                      ---
+              STO-SS =     1755758.0341                STO-SS =        6159.8200     STORAGE                          
+                 WEL =           0.0000                   WEL =           0.0000     WEL                              
+                 GHB =       27814.5688                   GHB =         156.7147     GHB                              
+
+            TOTAL IN =     1783572.6029              TOTAL IN =        6316.5347
+
+          OUT:                                     OUT:
+          ----                                     ----
+              STO-SS =     1748758.0341                STO-SS =        6159.8200     STORAGE                          
+                 WEL =        7000.0000                   WEL =           0.0000     WEL                              
+                 GHB =       27814.5688                   GHB =         156.7147     GHB                              
+
+           TOTAL OUT =     1783572.6029             TOTAL OUT =        6316.5347
+
+            IN - OUT =       1.8590E-05              IN - OUT =       5.5743E-08
+
+ PERCENT DISCREPANCY =           0.00     PERCENT DISCREPANCY =           0.00
+
+
+
+
+         TIME SUMMARY AT END OF TIME STEP    5 IN STRESS PERIOD   40
+                    SECONDS     MINUTES      HOURS       DAYS        YEARS
+                    -----------------------------------------------------------
+   TIME STEP LENGTH 1.20960E+05  2016.0      33.600      1.4000     3.83299E-03
+ STRESS PERIOD TIME 6.04800E+05  10080.      168.00      7.0000     1.91650E-02
+         TOTAL TIME 2.41920E+07 4.03200E+05  6720.0      280.00     0.76660    
+
+
+end timestep
+
+
+start timestep kper="41" kstp="1" mode="normal"
+
+
+ OUTPUT CONTROL FOR STRESS PERIOD 41 IS REPEATED USING SETTINGS FROM A PREVIOUS STRESS PERIOD.
+
+end timestep
+
+
+start timestep kper="41" kstp="2" mode="normal"
+
+
+end timestep
+
+
+start timestep kper="41" kstp="3" mode="normal"
+
+
+end timestep
+
+
+start timestep kper="41" kstp="4" mode="normal"
+
+
+end timestep
+
+
+start timestep kper="41" kstp="5" mode="normal"
+
+
+ HEAD WILL BE SAVED ON UNIT 1016 AT END OF TIME STEP    5, STRESS PERIOD   41
+
+
+  VOLUME BUDGET FOR ENTIRE MODEL AT END OF TIME STEP    5, STRESS PERIOD  41
+  ---------------------------------------------------------------------------------------------------
+
+     CUMULATIVE VOLUME      L**3       RATES FOR THIS TIME STEP      L**3/T          PACKAGE NAME    
+     ------------------                 ------------------------                     ----------------
+
+           IN:                                      IN:
+           ---                                      ---
+              STO-SS =     1798866.7593                STO-SS =        6157.4397     STORAGE                          
+                 WEL =           0.0000                   WEL =           0.0000     WEL                              
+                 GHB =       28920.6045                   GHB =         158.8617     GHB                              
+
+            TOTAL IN =     1827787.3638              TOTAL IN =        6316.3014
+
+          OUT:                                     OUT:
+          ----                                     ----
+              STO-SS =     1791866.7593                STO-SS =        6157.4397     STORAGE                          
+                 WEL =        7000.0000                   WEL =           0.0000     WEL                              
+                 GHB =       28920.6045                   GHB =         158.8617     GHB                              
+
+           TOTAL OUT =     1827787.3638             TOTAL OUT =        6316.3014
+
+            IN - OUT =       1.9021E-05              IN - OUT =       3.0863E-08
+
+ PERCENT DISCREPANCY =           0.00     PERCENT DISCREPANCY =           0.00
+
+
+
+
+         TIME SUMMARY AT END OF TIME STEP    5 IN STRESS PERIOD   41
+                    SECONDS     MINUTES      HOURS       DAYS        YEARS
+                    -----------------------------------------------------------
+   TIME STEP LENGTH 1.20960E+05  2016.0      33.600      1.4000     3.83299E-03
+ STRESS PERIOD TIME 6.04800E+05  10080.      168.00      7.0000     1.91650E-02
+         TOTAL TIME 2.47968E+07 4.13280E+05  6888.0      287.00     0.78576    
+
+
+end timestep
+
+
+start timestep kper="42" kstp="1" mode="normal"
+
+
+ OUTPUT CONTROL FOR STRESS PERIOD 42 IS REPEATED USING SETTINGS FROM A PREVIOUS STRESS PERIOD.
+
+end timestep
+
+
+start timestep kper="42" kstp="2" mode="normal"
+
+
+end timestep
+
+
+start timestep kper="42" kstp="3" mode="normal"
+
+
+end timestep
+
+
+start timestep kper="42" kstp="4" mode="normal"
+
+
+end timestep
+
+
+start timestep kper="42" kstp="5" mode="normal"
+
+
+ HEAD WILL BE SAVED ON UNIT 1016 AT END OF TIME STEP    5, STRESS PERIOD   42
+
+
+  VOLUME BUDGET FOR ENTIRE MODEL AT END OF TIME STEP    5, STRESS PERIOD  42
+  ---------------------------------------------------------------------------------------------------
+
+     CUMULATIVE VOLUME      L**3       RATES FOR THIS TIME STEP      L**3/T          PACKAGE NAME    
+     ------------------                 ------------------------                     ----------------
+
+           IN:                                      IN:
+           ---                                      ---
+              STO-SS =     1841958.9517                STO-SS =        6155.0901     STORAGE                          
+                 WEL =           0.0000                   WEL =           0.0000     WEL                              
+                 GHB =       30041.5554                   GHB =         160.9817     GHB                              
+
+            TOTAL IN =     1872000.5072              TOTAL IN =        6316.0719
+
+          OUT:                                     OUT:
+          ----                                     ----
+              STO-SS =     1834958.9517                STO-SS =        6155.0901     STORAGE                          
+                 WEL =        7000.0000                   WEL =           0.0000     WEL                              
+                 GHB =       30041.5554                   GHB =         160.9817     GHB                              
+
+           TOTAL OUT =     1872000.5072             TOTAL OUT =        6316.0719
+
+            IN - OUT =       1.9583E-05              IN - OUT =       9.1229E-08
+
+ PERCENT DISCREPANCY =           0.00     PERCENT DISCREPANCY =           0.00
+
+
+
+
+         TIME SUMMARY AT END OF TIME STEP    5 IN STRESS PERIOD   42
+                    SECONDS     MINUTES      HOURS       DAYS        YEARS
+                    -----------------------------------------------------------
+   TIME STEP LENGTH 1.20960E+05  2016.0      33.600      1.4000     3.83299E-03
+ STRESS PERIOD TIME 6.04800E+05  10080.      168.00      7.0000     1.91650E-02
+         TOTAL TIME 2.54016E+07 4.23360E+05  7056.0      294.00     0.80493    
+
+
+end timestep
+
+
+start timestep kper="43" kstp="1" mode="normal"
+
+
+ OUTPUT CONTROL FOR STRESS PERIOD 43 IS REPEATED USING SETTINGS FROM A PREVIOUS STRESS PERIOD.
+
+end timestep
+
+
+start timestep kper="43" kstp="2" mode="normal"
+
+
+end timestep
+
+
+start timestep kper="43" kstp="3" mode="normal"
+
+
+end timestep
+
+
+start timestep kper="43" kstp="4" mode="normal"
+
+
+end timestep
+
+
+start timestep kper="43" kstp="5" mode="normal"
+
+
+ HEAD WILL BE SAVED ON UNIT 1016 AT END OF TIME STEP    5, STRESS PERIOD   43
+
+
+  VOLUME BUDGET FOR ENTIRE MODEL AT END OF TIME STEP    5, STRESS PERIOD  43
+  ---------------------------------------------------------------------------------------------------
+
+     CUMULATIVE VOLUME      L**3       RATES FOR THIS TIME STEP      L**3/T          PACKAGE NAME    
+     ------------------                 ------------------------                     ----------------
+
+           IN:                                      IN:
+           ---                                      ---
+              STO-SS =     1885034.8271                STO-SS =        6152.7726     STORAGE                          
+                 WEL =           0.0000                   WEL =           0.0000     WEL                              
+                 GHB =       31177.2367                   GHB =         163.0757     GHB                              
+
+            TOTAL IN =     1916212.0639              TOTAL IN =        6315.8484
+
+          OUT:                                     OUT:
+          ----                                     ----
+              STO-SS =     1878034.8271                STO-SS =        6152.7726     STORAGE                          
+                 WEL =        7000.0000                   WEL =           0.0000     WEL                              
+                 GHB =       31177.2367                   GHB =         163.0757     GHB                              
+
+           TOTAL OUT =     1916212.0638             TOTAL OUT =        6315.8484
+
+            IN - OUT =       2.0040E-05              IN - OUT =       9.3124E-08
+
+ PERCENT DISCREPANCY =           0.00     PERCENT DISCREPANCY =           0.00
+
+
+
+
+         TIME SUMMARY AT END OF TIME STEP    5 IN STRESS PERIOD   43
+                    SECONDS     MINUTES      HOURS       DAYS        YEARS
+                    -----------------------------------------------------------
+   TIME STEP LENGTH 1.20960E+05  2016.0      33.600      1.4000     3.83299E-03
+ STRESS PERIOD TIME 6.04800E+05  10080.      168.00      7.0000     1.91650E-02
+         TOTAL TIME 2.60064E+07 4.33440E+05  7224.0      301.00     0.82409    
+
+
+end timestep
+
+
+start timestep kper="44" kstp="1" mode="normal"
+
+
+ OUTPUT CONTROL FOR STRESS PERIOD 44 IS REPEATED USING SETTINGS FROM A PREVIOUS STRESS PERIOD.
+
+end timestep
+
+
+start timestep kper="44" kstp="2" mode="normal"
+
+
+end timestep
+
+
+start timestep kper="44" kstp="3" mode="normal"
+
+
+end timestep
+
+
+start timestep kper="44" kstp="4" mode="normal"
+
+
+end timestep
+
+
+start timestep kper="44" kstp="5" mode="normal"
+
+
+ HEAD WILL BE SAVED ON UNIT 1016 AT END OF TIME STEP    5, STRESS PERIOD   44
+
+
+  VOLUME BUDGET FOR ENTIRE MODEL AT END OF TIME STEP    5, STRESS PERIOD  44
+  ---------------------------------------------------------------------------------------------------
+
+     CUMULATIVE VOLUME      L**3       RATES FOR THIS TIME STEP      L**3/T          PACKAGE NAME    
+     ------------------                 ------------------------                     ----------------
+
+           IN:                                      IN:
+           ---                                      ---
+              STO-SS =     1928094.6369                STO-SS =        6150.4910     STORAGE                          
+                 WEL =           0.0000                   WEL =           0.0000     WEL                              
+                 GHB =       32327.4699                   GHB =         165.1446     GHB                              
+
+            TOTAL IN =     1960422.1068              TOTAL IN =        6315.6356
+
+          OUT:                                     OUT:
+          ----                                     ----
+              STO-SS =     1921094.6369                STO-SS =        6150.4910     STORAGE                          
+                 WEL =        7000.0000                   WEL =           0.0000     WEL                              
+                 GHB =       32327.4699                   GHB =         165.1446     GHB                              
+
+           TOTAL OUT =     1960422.1067             TOTAL OUT =        6315.6356
+
+            IN - OUT =       2.0543E-05              IN - OUT =       9.1847E-08
+
+ PERCENT DISCREPANCY =           0.00     PERCENT DISCREPANCY =           0.00
+
+
+
+
+         TIME SUMMARY AT END OF TIME STEP    5 IN STRESS PERIOD   44
+                    SECONDS     MINUTES      HOURS       DAYS        YEARS
+                    -----------------------------------------------------------
+   TIME STEP LENGTH 1.20960E+05  2016.0      33.600      1.4000     3.83299E-03
+ STRESS PERIOD TIME 6.04800E+05  10080.      168.00      7.0000     1.91650E-02
+         TOTAL TIME 2.66112E+07 4.43520E+05  7392.0      308.00     0.84326    
+
+
+end timestep
+
+
+start timestep kper="45" kstp="1" mode="normal"
+
+
+ OUTPUT CONTROL FOR STRESS PERIOD 45 IS REPEATED USING SETTINGS FROM A PREVIOUS STRESS PERIOD.
+
+end timestep
+
+
+start timestep kper="45" kstp="2" mode="normal"
+
+
+end timestep
+
+
+start timestep kper="45" kstp="3" mode="normal"
+
+
+end timestep
+
+
+start timestep kper="45" kstp="4" mode="normal"
+
+
+end timestep
+
+
+start timestep kper="45" kstp="5" mode="normal"
+
+
+ HEAD WILL BE SAVED ON UNIT 1016 AT END OF TIME STEP    5, STRESS PERIOD   45
+
+
+  VOLUME BUDGET FOR ENTIRE MODEL AT END OF TIME STEP    5, STRESS PERIOD  45
+  ---------------------------------------------------------------------------------------------------
+
+     CUMULATIVE VOLUME      L**3       RATES FOR THIS TIME STEP      L**3/T          PACKAGE NAME    
+     ------------------                 ------------------------                     ----------------
+
+           IN:                                      IN:
+           ---                                      ---
+              STO-SS =     1971138.5936                STO-SS =        6148.2375     STORAGE                          
+                 WEL =           0.0000                   WEL =           0.0000     WEL                              
+                 GHB =       33492.0826                   GHB =         167.1892     GHB                              
+
+            TOTAL IN =     2004630.6762              TOTAL IN =        6315.4267
+
+          OUT:                                     OUT:
+          ----                                     ----
+              STO-SS =     1964138.5936                STO-SS =        6148.2375     STORAGE                          
+                 WEL =        7000.0000                   WEL =           0.0000     WEL                              
+                 GHB =       33492.0826                   GHB =         167.1892     GHB                              
+
+           TOTAL OUT =     2004630.6761             TOTAL OUT =        6315.4267
+
+            IN - OUT =       2.1069E-05              IN - OUT =       7.4157E-08
+
+ PERCENT DISCREPANCY =           0.00     PERCENT DISCREPANCY =           0.00
+
+
+
+
+         TIME SUMMARY AT END OF TIME STEP    5 IN STRESS PERIOD   45
+                    SECONDS     MINUTES      HOURS       DAYS        YEARS
+                    -----------------------------------------------------------
+   TIME STEP LENGTH 1.20960E+05  2016.0      33.600      1.4000     3.83299E-03
+ STRESS PERIOD TIME 6.04800E+05  10080.      168.00      7.0000     1.91650E-02
+         TOTAL TIME 2.72160E+07 4.53600E+05  7560.0      315.00     0.86242    
+
+
+end timestep
+
+
+start timestep kper="46" kstp="1" mode="normal"
+
+
+ OUTPUT CONTROL FOR STRESS PERIOD 46 IS REPEATED USING SETTINGS FROM A PREVIOUS STRESS PERIOD.
+
+end timestep
+
+
+start timestep kper="46" kstp="2" mode="normal"
+
+
+end timestep
+
+
+start timestep kper="46" kstp="3" mode="normal"
+
+
+end timestep
+
+
+start timestep kper="46" kstp="4" mode="normal"
+
+
+end timestep
+
+
+start timestep kper="46" kstp="5" mode="normal"
+
+
+ HEAD WILL BE SAVED ON UNIT 1016 AT END OF TIME STEP    5, STRESS PERIOD   46
+
+
+  VOLUME BUDGET FOR ENTIRE MODEL AT END OF TIME STEP    5, STRESS PERIOD  46
+  ---------------------------------------------------------------------------------------------------
+
+     CUMULATIVE VOLUME      L**3       RATES FOR THIS TIME STEP      L**3/T          PACKAGE NAME    
+     ------------------                 ------------------------                     ----------------
+
+           IN:                                      IN:
+           ---                                      ---
+              STO-SS =     2014166.9179                STO-SS =        6146.0180     STORAGE                          
+                 WEL =           0.0000                   WEL =           0.0000     WEL                              
+                 GHB =       34670.9081                   GHB =         169.2102     GHB                              
+
+            TOTAL IN =     2048837.8261              TOTAL IN =        6315.2283
+
+          OUT:                                     OUT:
+          ----                                     ----
+              STO-SS =     2007166.9179                STO-SS =        6146.0180     STORAGE                          
+                 WEL =        7000.0000                   WEL =           0.0000     WEL                              
+                 GHB =       34670.9081                   GHB =         169.2102     GHB                              
+
+           TOTAL OUT =     2048837.8261             TOTAL OUT =        6315.2283
+
+            IN - OUT =       2.1628E-05              IN - OUT =       1.1505E-07
+
+ PERCENT DISCREPANCY =           0.00     PERCENT DISCREPANCY =           0.00
+
+
+
+
+         TIME SUMMARY AT END OF TIME STEP    5 IN STRESS PERIOD   46
+                    SECONDS     MINUTES      HOURS       DAYS        YEARS
+                    -----------------------------------------------------------
+   TIME STEP LENGTH 1.20960E+05  2016.0      33.600      1.4000     3.83299E-03
+ STRESS PERIOD TIME 6.04800E+05  10080.      168.00      7.0000     1.91650E-02
+         TOTAL TIME 2.78208E+07 4.63680E+05  7728.0      322.00     0.88159    
+
+
+end timestep
+
+
+start timestep kper="47" kstp="1" mode="normal"
+
+
+ OUTPUT CONTROL FOR STRESS PERIOD 47 IS REPEATED USING SETTINGS FROM A PREVIOUS STRESS PERIOD.
+
+end timestep
+
+
+start timestep kper="47" kstp="2" mode="normal"
+
+
+end timestep
+
+
+start timestep kper="47" kstp="3" mode="normal"
+
+
+end timestep
+
+
+start timestep kper="47" kstp="4" mode="normal"
+
+
+end timestep
+
+
+start timestep kper="47" kstp="5" mode="normal"
+
+
+ HEAD WILL BE SAVED ON UNIT 1016 AT END OF TIME STEP    5, STRESS PERIOD   47
+
+
+  VOLUME BUDGET FOR ENTIRE MODEL AT END OF TIME STEP    5, STRESS PERIOD  47
+  ---------------------------------------------------------------------------------------------------
+
+     CUMULATIVE VOLUME      L**3       RATES FOR THIS TIME STEP      L**3/T          PACKAGE NAME    
+     ------------------                 ------------------------                     ----------------
+
+           IN:                                      IN:
+           ---                                      ---
+              STO-SS =     2057179.8192                STO-SS =        6143.8253     STORAGE                          
+                 WEL =           0.0000                   WEL =           0.0000     WEL                              
+                 GHB =       35863.7853                   GHB =         171.2086     GHB                              
+
+            TOTAL IN =     2093043.6045              TOTAL IN =        6315.0338
+
+          OUT:                                     OUT:
+          ----                                     ----
+              STO-SS =     2050179.8192                STO-SS =        6143.8253     STORAGE                          
+                 WEL =        7000.0000                   WEL =           0.0000     WEL                              
+                 GHB =       35863.7853                   GHB =         171.2086     GHB                              
+
+           TOTAL OUT =     2093043.6045             TOTAL OUT =        6315.0338
+
+            IN - OUT =       2.2151E-05              IN - OUT =       1.3342E-07
+
+ PERCENT DISCREPANCY =           0.00     PERCENT DISCREPANCY =           0.00
+
+
+
+
+         TIME SUMMARY AT END OF TIME STEP    5 IN STRESS PERIOD   47
+                    SECONDS     MINUTES      HOURS       DAYS        YEARS
+                    -----------------------------------------------------------
+   TIME STEP LENGTH 1.20960E+05  2016.0      33.600      1.4000     3.83299E-03
+ STRESS PERIOD TIME 6.04800E+05  10080.      168.00      7.0000     1.91650E-02
+         TOTAL TIME 2.84256E+07 4.73760E+05  7896.0      329.00     0.90075    
+
+
+end timestep
+
+
+start timestep kper="48" kstp="1" mode="normal"
+
+
+ OUTPUT CONTROL FOR STRESS PERIOD 48 IS REPEATED USING SETTINGS FROM A PREVIOUS STRESS PERIOD.
+
+end timestep
+
+
+start timestep kper="48" kstp="2" mode="normal"
+
+
+end timestep
+
+
+start timestep kper="48" kstp="3" mode="normal"
+
+
+end timestep
+
+
+start timestep kper="48" kstp="4" mode="normal"
+
+
+end timestep
+
+
+start timestep kper="48" kstp="5" mode="normal"
+
+
+ HEAD WILL BE SAVED ON UNIT 1016 AT END OF TIME STEP    5, STRESS PERIOD   48
+
+
+  VOLUME BUDGET FOR ENTIRE MODEL AT END OF TIME STEP    5, STRESS PERIOD  48
+  ---------------------------------------------------------------------------------------------------
+
+     CUMULATIVE VOLUME      L**3       RATES FOR THIS TIME STEP      L**3/T          PACKAGE NAME    
+     ------------------                 ------------------------                     ----------------
+
+           IN:                                      IN:
+           ---                                      ---
+              STO-SS =     2100177.4945                STO-SS =        6141.6633     STORAGE                          
+                 WEL =           0.0000                   WEL =           0.0000     WEL                              
+                 GHB =       37070.5580                   GHB =         173.1849     GHB                              
+
+            TOTAL IN =     2137248.0525              TOTAL IN =        6314.8482
+
+          OUT:                                     OUT:
+          ----                                     ----
+              STO-SS =     2093177.4945                STO-SS =        6141.6633     STORAGE                          
+                 WEL =        7000.0000                   WEL =           0.0000     WEL                              
+                 GHB =       37070.5580                   GHB =         173.1849     GHB                              
+
+           TOTAL OUT =     2137248.0525             TOTAL OUT =        6314.8482
+
+            IN - OUT =       2.2536E-05              IN - OUT =       4.8383E-08
+
+ PERCENT DISCREPANCY =           0.00     PERCENT DISCREPANCY =           0.00
+
+
+
+
+         TIME SUMMARY AT END OF TIME STEP    5 IN STRESS PERIOD   48
+                    SECONDS     MINUTES      HOURS       DAYS        YEARS
+                    -----------------------------------------------------------
+   TIME STEP LENGTH 1.20960E+05  2016.0      33.600      1.4000     3.83299E-03
+ STRESS PERIOD TIME 6.04800E+05  10080.      168.00      7.0000     1.91650E-02
+         TOTAL TIME 2.90304E+07 4.83840E+05  8064.0      336.00     0.91992    
+
+
+end timestep
+
+
+start timestep kper="49" kstp="1" mode="normal"
+
+
+ OUTPUT CONTROL FOR STRESS PERIOD 49 IS REPEATED USING SETTINGS FROM A PREVIOUS STRESS PERIOD.
+
+end timestep
+
+
+start timestep kper="49" kstp="2" mode="normal"
+
+
+end timestep
+
+
+start timestep kper="49" kstp="3" mode="normal"
+
+
+end timestep
+
+
+start timestep kper="49" kstp="4" mode="normal"
+
+
+end timestep
+
+
+start timestep kper="49" kstp="5" mode="normal"
+
+
+ HEAD WILL BE SAVED ON UNIT 1016 AT END OF TIME STEP    5, STRESS PERIOD   49
+
+
+  VOLUME BUDGET FOR ENTIRE MODEL AT END OF TIME STEP    5, STRESS PERIOD  49
+  ---------------------------------------------------------------------------------------------------
+
+     CUMULATIVE VOLUME      L**3       RATES FOR THIS TIME STEP      L**3/T          PACKAGE NAME    
+     ------------------                 ------------------------                     ----------------
+
+           IN:                                      IN:
+           ---                                      ---
+              STO-SS =     2143160.1815                STO-SS =        6139.5339     STORAGE                          
+                 WEL =           0.0000                   WEL =           0.0000     WEL                              
+                 GHB =       38291.0750                   GHB =         175.1399     GHB                              
+
+            TOTAL IN =     2181451.2565              TOTAL IN =        6314.6737
+
+          OUT:                                     OUT:
+          ----                                     ----
+              STO-SS =     2136160.1815                STO-SS =        6139.5339     STORAGE                          
+                 WEL =        7000.0000                   WEL =           0.0000     WEL                              
+                 GHB =       38291.0750                   GHB =         175.1399     GHB                              
+
+           TOTAL OUT =     2181451.2565             TOTAL OUT =        6314.6737
+
+            IN - OUT =       2.3088E-05              IN - OUT =       7.7788E-08
+
+ PERCENT DISCREPANCY =           0.00     PERCENT DISCREPANCY =           0.00
+
+
+
+
+         TIME SUMMARY AT END OF TIME STEP    5 IN STRESS PERIOD   49
+                    SECONDS     MINUTES      HOURS       DAYS        YEARS
+                    -----------------------------------------------------------
+   TIME STEP LENGTH 1.20960E+05  2016.0      33.600      1.4000     3.83299E-03
+ STRESS PERIOD TIME 6.04800E+05  10080.      168.00      7.0000     1.91650E-02
+         TOTAL TIME 2.96352E+07 4.93920E+05  8232.0      343.00     0.93908    
+
+
+end timestep
+
+
+start timestep kper="50" kstp="1" mode="normal"
+
+
+ OUTPUT CONTROL FOR STRESS PERIOD 50 IS REPEATED USING SETTINGS FROM A PREVIOUS STRESS PERIOD.
+
+end timestep
+
+
+start timestep kper="50" kstp="2" mode="normal"
+
+
+end timestep
+
+
+start timestep kper="50" kstp="3" mode="normal"
+
+
+end timestep
+
+
+start timestep kper="50" kstp="4" mode="normal"
+
+
+end timestep
+
+
+start timestep kper="50" kstp="5" mode="normal"
+
+
+ HEAD WILL BE SAVED ON UNIT 1016 AT END OF TIME STEP    5, STRESS PERIOD   50
+
+
+  VOLUME BUDGET FOR ENTIRE MODEL AT END OF TIME STEP    5, STRESS PERIOD  50
+  ---------------------------------------------------------------------------------------------------
+
+     CUMULATIVE VOLUME      L**3       RATES FOR THIS TIME STEP      L**3/T          PACKAGE NAME    
+     ------------------                 ------------------------                     ----------------
+
+           IN:                                      IN:
+           ---                                      ---
+              STO-SS =     2186128.0567                STO-SS =        6137.4276     STORAGE                          
+                 WEL =           0.0000                   WEL =           0.0000     WEL                              
+                 GHB =       39525.1896                   GHB =         177.0742     GHB                              
+
+            TOTAL IN =     2225653.2463              TOTAL IN =        6314.5018
+
+          OUT:                                     OUT:
+          ----                                     ----
+              STO-SS =     2179128.0567                STO-SS =        6137.4276     STORAGE                          
+                 WEL =        7000.0000                   WEL =           0.0000     WEL                              
+                 GHB =       39525.1896                   GHB =         177.0742     GHB                              
+
+           TOTAL OUT =     2225653.2463             TOTAL OUT =        6314.5018
+
+            IN - OUT =       2.3623E-05              IN - OUT =       4.7210E-08
+
+ PERCENT DISCREPANCY =           0.00     PERCENT DISCREPANCY =           0.00
+
+
+
+
+         TIME SUMMARY AT END OF TIME STEP    5 IN STRESS PERIOD   50
+                    SECONDS     MINUTES      HOURS       DAYS        YEARS
+                    -----------------------------------------------------------
+   TIME STEP LENGTH 1.20960E+05  2016.0      33.600      1.4000     3.83299E-03
+ STRESS PERIOD TIME 6.04800E+05  10080.      168.00      7.0000     1.91650E-02
+         TOTAL TIME 3.02400E+07 5.04000E+05  8400.0      350.00     0.95825    
+
+
+end timestep
+
+
+start timestep kper="51" kstp="1" mode="normal"
+
+
+ OUTPUT CONTROL FOR STRESS PERIOD 51 IS REPEATED USING SETTINGS FROM A PREVIOUS STRESS PERIOD.
+
+end timestep
+
+
+start timestep kper="51" kstp="2" mode="normal"
+
+
+end timestep
+
+
+start timestep kper="51" kstp="3" mode="normal"
+
+
+end timestep
+
+
+start timestep kper="51" kstp="4" mode="normal"
+
+
+end timestep
+
+
+start timestep kper="51" kstp="5" mode="normal"
+
+
+ HEAD WILL BE SAVED ON UNIT 1016 AT END OF TIME STEP    5, STRESS PERIOD   51
+
+
+  VOLUME BUDGET FOR ENTIRE MODEL AT END OF TIME STEP    5, STRESS PERIOD  51
+  ---------------------------------------------------------------------------------------------------
+
+     CUMULATIVE VOLUME      L**3       RATES FOR THIS TIME STEP      L**3/T          PACKAGE NAME    
+     ------------------                 ------------------------                     ----------------
+
+           IN:                                      IN:
+           ---                                      ---
+              STO-SS =     2229081.3010                STO-SS =        6135.3473     STORAGE                          
+                 WEL =           0.0000                   WEL =           0.0000     WEL                              
+                 GHB =       40772.7596                   GHB =         178.9884     GHB                              
+
+            TOTAL IN =     2269854.0607              TOTAL IN =        6314.3357
+
+          OUT:                                     OUT:
+          ----                                     ----
+              STO-SS =     2222081.3010                STO-SS =        6135.3473     STORAGE                          
+                 WEL =        7000.0000                   WEL =           0.0000     WEL                              
+                 GHB =       40772.7596                   GHB =         178.9884     GHB                              
+
+           TOTAL OUT =     2269854.0606             TOTAL OUT =        6314.3357
+
+            IN - OUT =       2.4208E-05              IN - OUT =       8.4070E-08
+
+ PERCENT DISCREPANCY =           0.00     PERCENT DISCREPANCY =           0.00
+
+
+
+
+         TIME SUMMARY AT END OF TIME STEP    5 IN STRESS PERIOD   51
+                    SECONDS     MINUTES      HOURS       DAYS        YEARS
+                    -----------------------------------------------------------
+   TIME STEP LENGTH 1.20960E+05  2016.0      33.600      1.4000     3.83299E-03
+ STRESS PERIOD TIME 6.04800E+05  10080.      168.00      7.0000     1.91650E-02
+         TOTAL TIME 3.08448E+07 5.14080E+05  8568.0      357.00     0.97741    
+
+
+end timestep
+
+
+start timestep kper="52" kstp="1" mode="normal"
+
+
+ OUTPUT CONTROL FOR STRESS PERIOD 52 IS REPEATED USING SETTINGS FROM A PREVIOUS STRESS PERIOD.
+
+end timestep
+
+
+start timestep kper="52" kstp="2" mode="normal"
+
+
+end timestep
+
+
+start timestep kper="52" kstp="3" mode="normal"
+
+
+end timestep
+
+
+start timestep kper="52" kstp="4" mode="normal"
+
+
+end timestep
+
+
+start timestep kper="52" kstp="5" mode="normal"
+
+
+ HEAD WILL BE SAVED ON UNIT 1016 AT END OF TIME STEP    5, STRESS PERIOD   52
+
+
+  VOLUME BUDGET FOR ENTIRE MODEL AT END OF TIME STEP    5, STRESS PERIOD  52
+  ---------------------------------------------------------------------------------------------------
+
+     CUMULATIVE VOLUME      L**3       RATES FOR THIS TIME STEP      L**3/T          PACKAGE NAME    
+     ------------------                 ------------------------                     ----------------
+
+           IN:                                      IN:
+           ---                                      ---
+              STO-SS =     2272020.0702                STO-SS =        6133.2877     STORAGE                          
+                 WEL =           0.0000                   WEL =           0.0000     WEL                              
+                 GHB =       42033.6471                   GHB =         180.8831     GHB                              
+
+            TOTAL IN =     2314053.7173              TOTAL IN =        6314.1708
+
+          OUT:                                     OUT:
+          ----                                     ----
+              STO-SS =     2265020.0702                STO-SS =        6133.2877     STORAGE                          
+                 WEL =        7000.0000                   WEL =           0.0000     WEL                              
+                 GHB =       42033.6471                   GHB =         180.8831     GHB                              
+
+           TOTAL OUT =     2314053.7172             TOTAL OUT =        6314.1708
+
+            IN - OUT =       2.4736E-05              IN - OUT =       7.5336E-08
+
+ PERCENT DISCREPANCY =           0.00     PERCENT DISCREPANCY =           0.00
+
+
+
+
+         TIME SUMMARY AT END OF TIME STEP    5 IN STRESS PERIOD   52
+                    SECONDS     MINUTES      HOURS       DAYS        YEARS
+                    -----------------------------------------------------------
+   TIME STEP LENGTH 1.20960E+05  2016.0      33.600      1.4000     3.83299E-03
+ STRESS PERIOD TIME 6.04800E+05  10080.      168.00      7.0000     1.91650E-02
+         TOTAL TIME 3.14496E+07 5.24160E+05  8736.0      364.00     0.99658    
+
+
+end timestep
+
