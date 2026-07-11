@@ -1,27 +1,27 @@
-2026-06-26 13:17:55.478344 starting: opening PstFrom.log for logging
-2026-06-26 13:17:55.478344 starting PstFrom process
-2026-06-26 13:17:55.478344 starting: setting up dirs
-2026-06-26 13:17:55.478344 starting: removing existing new_d 'C:\Python\Personal\kfm-ms\codes\pest'
-2026-06-26 13:17:55.565372 finished: removing existing new_d 'C:\Python\Personal\kfm-ms\codes\pest' took: 0:00:00.087028
-2026-06-26 13:17:55.566520 starting: copying original_d 'C:\Python\Personal\kfm-ms\codes\sims\numbasis\real' to new_d 'C:\Python\Personal\kfm-ms\codes\pest'
-2026-06-26 13:17:55.614628 finished: copying original_d 'C:\Python\Personal\kfm-ms\codes\sims\numbasis\real' to new_d 'C:\Python\Personal\kfm-ms\codes\pest' took: 0:00:00.048108
-2026-06-26 13:17:55.615634 finished: setting up dirs took: 0:00:00.137290
-2026-06-26 13:17:55.667797 starting: adding grid type m style parameters for file(s) ['master_truth.csv']
-2026-06-26 13:17:55.668798 starting: loading list-style C:\Python\Personal\kfm-ms\codes\pest\master_truth.csv
-2026-06-26 13:17:55.668798 starting: reading list-style file: C:\Python\Personal\kfm-ms\codes\pest\master_truth.csv
-2026-06-26 13:17:55.691831 finished: reading list-style file: C:\Python\Personal\kfm-ms\codes\pest\master_truth.csv took: 0:00:00.023033
-2026-06-26 13:17:55.691831 loaded list-style 'C:\Python\Personal\kfm-ms\codes\pest\master_truth.csv' of shape (1040, 5)
-2026-06-26 13:17:55.696932 finished: loading list-style C:\Python\Personal\kfm-ms\codes\pest\master_truth.csv took: 0:00:00.028134
-2026-06-26 13:17:55.696932 starting: writing list-style template file 'C:\Python\Personal\kfm-ms\codes\pest\p_inst0_grid.csv.tpl'
-2026-06-26 13:17:55.768100 finished: writing list-style template file 'C:\Python\Personal\kfm-ms\codes\pest\p_inst0_grid.csv.tpl' took: 0:00:00.071168
-2026-06-26 13:17:55.772101 finished: adding grid type m style parameters for file(s) ['master_truth.csv'] took: 0:00:00.104304
-2026-06-26 13:17:55.775100 starting: adding observations from output file obs.csv
-2026-06-26 13:17:55.776100 starting: adding observations from tabular output file '['obs.csv']'
-2026-06-26 13:17:55.776100 starting: reading list-style file: C:\Python\Personal\kfm-ms\codes\pest\obs.csv
-2026-06-26 13:17:55.791613 finished: reading list-style file: C:\Python\Personal\kfm-ms\codes\pest\obs.csv took: 0:00:00.015513
-2026-06-26 13:17:55.866986 starting: building insfile for tabular output file obs.csv
-2026-06-26 13:17:55.994553 finished: building insfile for tabular output file obs.csv took: 0:00:00.127567
-2026-06-26 13:17:55.994553 starting: adding observation from instruction file 'C:\Python\Personal\kfm-ms\codes\pest\obs.csv.ins'
-2026-06-26 13:17:56.150332 finished: adding observation from instruction file 'C:\Python\Personal\kfm-ms\codes\pest\obs.csv.ins' took: 0:00:00.155779
-2026-06-26 13:17:56.153840 finished: adding observations from tabular output file '['obs.csv']' took: 0:00:00.377740
-2026-06-26 13:17:56.153840 finished: adding observations from output file obs.csv took: 0:00:00.378740
+2026-07-10 15:42:48.095789 starting: opening PstFrom.log for logging
+2026-07-10 15:42:48.097236 starting PstFrom process
+2026-07-10 15:42:48.097236 starting: setting up dirs
+2026-07-10 15:42:48.097236 starting: removing existing new_d 'C:\Python\Personal\kfm-ms\codes\pest_level_2'
+2026-07-10 15:42:48.099365 finished: removing existing new_d 'C:\Python\Personal\kfm-ms\codes\pest_level_2' took: 0:00:00.002129
+2026-07-10 15:42:48.099365 starting: copying original_d 'C:\Python\Personal\kfm-ms\codes\sims\coloc2\real' to new_d 'C:\Python\Personal\kfm-ms\codes\pest_level_2'
+2026-07-10 15:42:48.204434 finished: copying original_d 'C:\Python\Personal\kfm-ms\codes\sims\coloc2\real' to new_d 'C:\Python\Personal\kfm-ms\codes\pest_level_2' took: 0:00:00.105069
+2026-07-10 15:42:48.206540 finished: setting up dirs took: 0:00:00.109304
+2026-07-10 15:42:48.313539 starting: adding grid type m style parameters for file(s) ['grid_candidates.csv']
+2026-07-10 15:42:48.313539 starting: loading list-style C:\Python\Personal\kfm-ms\codes\pest_level_2\grid_candidates.csv
+2026-07-10 15:42:48.314621 starting: reading list-style file: C:\Python\Personal\kfm-ms\codes\pest_level_2\grid_candidates.csv
+2026-07-10 15:42:48.343635 finished: reading list-style file: C:\Python\Personal\kfm-ms\codes\pest_level_2\grid_candidates.csv took: 0:00:00.029014
+2026-07-10 15:42:48.343635 loaded list-style 'C:\Python\Personal\kfm-ms\codes\pest_level_2\grid_candidates.csv' of shape (1040, 5)
+2026-07-10 15:42:48.347862 finished: loading list-style C:\Python\Personal\kfm-ms\codes\pest_level_2\grid_candidates.csv took: 0:00:00.034323
+2026-07-10 15:42:48.347862 starting: writing list-style template file 'C:\Python\Personal\kfm-ms\codes\pest_level_2\p_inst0_grid.csv.tpl'
+2026-07-10 15:42:48.443727 finished: writing list-style template file 'C:\Python\Personal\kfm-ms\codes\pest_level_2\p_inst0_grid.csv.tpl' took: 0:00:00.095865
+2026-07-10 15:42:48.447726 finished: adding grid type m style parameters for file(s) ['grid_candidates.csv'] took: 0:00:00.134187
+2026-07-10 15:42:48.447726 starting: adding observations from output file obs.csv
+2026-07-10 15:42:48.447726 starting: adding observations from tabular output file '['obs.csv']'
+2026-07-10 15:42:48.448728 starting: reading list-style file: C:\Python\Personal\kfm-ms\codes\pest_level_2\obs.csv
+2026-07-10 15:42:48.466816 finished: reading list-style file: C:\Python\Personal\kfm-ms\codes\pest_level_2\obs.csv took: 0:00:00.018088
+2026-07-10 15:42:48.639414 starting: building insfile for tabular output file obs.csv
+2026-07-10 15:42:48.794852 finished: building insfile for tabular output file obs.csv took: 0:00:00.155438
+2026-07-10 15:42:48.794852 starting: adding observation from instruction file 'C:\Python\Personal\kfm-ms\codes\pest_level_2\obs.csv.ins'
+2026-07-10 15:42:48.961416 finished: adding observation from instruction file 'C:\Python\Personal\kfm-ms\codes\pest_level_2\obs.csv.ins' took: 0:00:00.166564
+2026-07-10 15:42:48.965641 finished: adding observations from tabular output file '['obs.csv']' took: 0:00:00.517915
+2026-07-10 15:42:48.965641 finished: adding observations from output file obs.csv took: 0:00:00.517915
