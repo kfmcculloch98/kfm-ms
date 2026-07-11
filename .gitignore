@@ -1,27 +1,37 @@
-# python cores
+# --- Python cache / bytecode ---
 __pycache__/
 *.py[cod]
 *$py.class
+
+# --- Virtual environments / env files ---
 .venv/
 venv/
 .env
 
-# ides and os
+# --- IDEs / OS files ---
 .vscode/
 .idea/
 .DS_Store
 Thumbs.db
 
-# simulations
-sims/**/*
-
-# binaries
-*.exe
-
-# results
-results/**/*
-
-# misc
+# --- Jupyter ---
 .ipynb_checkpoints/
-codes/pest_workers/
-codes/pest/
+
+# --- Simulation outputs ---
+sims/**/*
+codes/sims/**/*
+results/**/*
+codes/results/**/*
+codes/figures/**/*
+codes/pest_workers/**/*
+codes/pest/**/*
+codes/master_run/**/*
+codes/master_run_level_1/**/*
+codes/master_run_level_2/**/*
+codes/old_pest_runs/**/*
+
+# --- Binaries / data artifacts ---
+*.exe
+*.npy
+
+# --- Misc ---
