@@ -5,7 +5,7 @@ import pandas as pd
 
 
 BASE_DIR = Path(r"C:\Python\Personal\kfm-ms\codes")
-PEST_DIR = BASE_DIR / "pest_level_1"
+PEST_DIR = BASE_DIR / "pest_level_2"
 ORG_DIR = PEST_DIR / "org"
 
 GRID_FILE = ORG_DIR / "grid_candidates.csv"
@@ -20,46 +20,53 @@ def backup_file(path: Path):
         raise FileNotFoundError(f"File not found: {path}")
 
 
+def preview_file(path: Path, label: str, n: int = 10):
+    if not path.exists():
+        raise FileNotFoundError(f"Missing file: {path}")
+
+    df = pd.read_csv(path)
+    print(f"[INFO] Preview of {label}: {path}")
+    print(f"[INFO] Columns: {list(df.columns)}")
+    print(df.head(n))
+    return df
+
+
 def edit_org_grid(level: str):
     level = str(level).strip()
 
     if not GRID_FILE.exists():
         raise FileNotFoundError(f"Missing org file: {GRID_FILE}")
 
+    # Preview before edit
+    df = preview_file(GRID_FILE, "org grid before edit")
+
+    # Backup
     backup_file(GRID_FILE)
 
-    df = pd.read_csv(GRID_FILE)
+    required_cols = {"r", "c", "sp", "qref", "a"}
+    missing = required_cols - set(df.columns)
+    if missing:
+        raise KeyError(f"grid_candidates.csv must contain columns: {sorted(required_cols)}")
 
-    print(f"[INFO] Loaded {GRID_FILE}")
-    print(f"[INFO] Columns: {list(df.columns)}")
-    print("[INFO] Preview before edit:")
-    print(df.head(10))
-
-    if "a" not in df.columns:
-        raise KeyError("grid_candidates.csv must contain an 'a' column")
-
-    if "qref" not in df.columns:
-        raise KeyError("grid_candidates.csv must contain a 'qref' column")
+    active = df["qref"] > 0
 
     if level == "1":
-        # Include zeros in the mean
+        # Mean including zeros
         mean_qref = df["qref"].mean()
 
-        # Preserve original pumping activity before overwriting qref
-        active = df["qref"] > 0
+        # Active rows get the mean, inactive rows get 0
+        df["qref"] = 0.0
+        df.loc[active, "qref"] = mean_qref
 
-        df["qref"] = mean_qref
         df["a"] = 0.0
         df.loc[active, "a"] = 1.0
 
         print("[INFO] Applied Level 1 template:")
-        print("       all rows -> qref = mean including zeros")
-        print("       active rows -> a = 1.0, zero-pumping rows -> a = 0.0")
+        print("       active rows -> qref = mean including zeros, a = 1.0")
+        print("       inactive rows -> qref = 0.0, a = 0.0")
 
     elif level == "2":
-        # Exclude zeros from the mean
-        active = df["qref"] > 0
-
+        # Mean excluding zeros
         if active.any():
             mean_active_qref = df.loc[active, "qref"].mean()
         else:
@@ -69,12 +76,11 @@ def edit_org_grid(level: str):
         df["a"] = 1.0
 
         print("[INFO] Applied Level 2 template:")
-        print("       all rows -> qref = mean of active values only, a = 1.0")
+        print("       all rows -> qref = mean of active values only")
+        print("       all rows -> a = 1.0")
 
     elif level == "3":
         # Same as Level 2 for now
-        active = df["qref"] > 0
-
         if active.any():
             mean_active_qref = df.loc[active, "qref"].mean()
         else:
@@ -84,7 +90,8 @@ def edit_org_grid(level: str):
         df["a"] = 1.0
 
         print("[INFO] Applied Level 3 template:")
-        print("       all rows -> qref = mean of active values only, a = 1.0")
+        print("       all rows -> qref = mean of active values only")
+        print("       all rows -> a = 1.0")
 
     else:
         raise ValueError("level must be '1', '2', or '3'")

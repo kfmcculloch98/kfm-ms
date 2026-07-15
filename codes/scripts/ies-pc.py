@@ -12,7 +12,7 @@ print(f"[SCRIPT] Python: {sys.executable}")
 print(f"[SCRIPT] CWD at start: {os.getcwd()}")
 
 BASE_DIR = Path(r"C:\Python\Personal\kfm-ms\codes")
-PEST_DIR = BASE_DIR / "pest_level_1"
+PEST_DIR = BASE_DIR / "pest_level_2"
 IES_EXE = BASE_DIR / "binaries" / "PESTPP" / "windows" / "pestpp-ies.exe"
 WORKER_ROOT = BASE_DIR / "pest_workers"
 MASTER_DIR = BASE_DIR / "master_run"

@@ -33,5 +33,6 @@ codes/old_pest_runs/**/*
 # --- Binaries / data artifacts ---
 *.exe
 *.npy
+*.cbc
 
 # --- Misc ---
