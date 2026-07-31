@@ -1,0 +1,15 @@
+2026-07-20 20:38:33.800280 starting: opening PstFrom.log for logging
+2026-07-20 20:38:33.800280 starting PstFrom process
+2026-07-20 20:38:33.800280 starting: setting up dirs
+2026-07-20 20:38:33.800280 starting: removing existing new_d 'demo'
+2026-07-20 20:38:33.800280 finished: removing existing new_d 'demo' took: 0:00:00
+2026-07-20 20:38:33.800280 starting: copying original_d 'model_base' to new_d 'demo'
+2026-07-20 20:38:33.825936 finished: copying original_d 'model_base' to new_d 'demo' took: 0:00:00.025656
+2026-07-20 20:38:33.827935 finished: setting up dirs took: 0:00:00.027655
+2026-07-20 20:38:33.828934 starting: adding constant type m style parameters for file(s) ['params.csv']
+2026-07-20 20:38:33.828934 starting: loading list-style demo\params.csv
+2026-07-20 20:38:33.828934 starting: reading list-style file: demo\params.csv
+2026-07-20 20:38:33.833932 finished: reading list-style file: demo\params.csv took: 0:00:00.004998
+2026-07-20 20:38:33.833932 loaded list-style 'demo\params.csv' of shape (2, 2)
+2026-07-20 20:38:33.837621 finished: loading list-style demo\params.csv took: 0:00:00.008687
+2026-07-20 20:38:33.837621 starting: writing list-style template file 'demo\p_inst0_constant.csv.tpl'

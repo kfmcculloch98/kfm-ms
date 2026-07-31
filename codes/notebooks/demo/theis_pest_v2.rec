@@ -1,0 +1,514 @@
+             pestpp-ies - a GLM iterative Ensemble Smoother
+                      for PEST(++) datasets 
+
+                 by the PEST++ development team
+
+
+
+
+
+version: 5.2.25
+binary compiled on Jan  6 2026 at 12:34:59
+using control file: "theis_pest_v2.pst"
+in directory: "c:\Python\Personal\kfm-ms\codes\notebooks\demo"
+on host: "TTL-HBJ6674"
+on a(n) windows operating system
+with release configuration
+started at 07/24/26 07:36:24
+
+...reading external file 'theis_pest_v2.pargp_data.csv'
+...header line: PARGPNME,INCTYP,DERINC,DERINCLB,FORCEN,DERINCMUL,DERMTHD,SPLITTHRESH,SPLITRELDIFF,SPLITACTION
+...read 2 lines from external file
+...reading external file 'theis_pest_v2.par_data.csv'
+...header line: PARNME,PARTRANS,PARCHGLIM,PARVAL1,PARLBND,PARUBND,PARGP,SCALE,OFFSET,DERCOM
+...read 53 lines from external file
+...reading external file 'theis_pest_v2.obs_data.csv'
+...header line: OBSNME,OBSVAL,WEIGHT,OBGNME
+...read 53 lines from external file
+...reading external file 'theis_pest_v2.tplfile_data.csv'
+...header line: PEST_FILE,MODEL_FILE
+...read 2 lines from external file
+...reading external file 'theis_pest_v2.insfile_data.csv'
+...header line: PEST_FILE,MODEL_FILE
+...read 2 lines from external file
+
+Note 'NOPTMAX' == 0, switching to forgiveness mode when checking inputs
+
+noptmax = 0, resetting max_run_fail = 1
+parameter warning: 52 parameters are at upper bound
+
+    This software has been approved for release by the
+    U.S.Geological Survey(USGS).Although the software has 
+    been subjected to rigorous review, the USGS reserves the
+    right to update the software as needed pursuant to further
+    analysisand review.No warranty, expressed or implied, is 
+    made by the USGS or the U.S.Government as to the
+    functionality of the softwareand related material nor shall
+    the fact of release constitute any such warranty.
+    Furthermore, the software is released on condition that
+    neither the USGS nor the U.S.Government shall be held
+    liable for any damages resulting from its authorized 
+    or unauthorized use.
+
+
+Case dimensions:- 
+    Number of parameters = 52
+    Number of adjustable parameters = 52
+    Number of observations = 52
+    Number of non-zero weighted observations = 52
+    Number of prior estimates = 0
+
+PEST Control Information
+    relparmax = 1
+    facparmax = 1.1
+    facorig = 0.001
+    phiredswh = 0.1
+    noptmax = 0
+    phiredstp = 0.01
+    nphistp = 3
+    nphinored = 3
+    relparstp = 0.01
+    nrelpar = 3
+
+
+    PEST++ OPTIONS: 
+
+...general options (used in multiple tools): 
+svd_pack: redsvd
+lambda_scale_fac: 0.75,1,1.1,
+forgive_unknown_args: 0
+max_run_fail: 1
+panther_poll_interval: 1
+parameter_covariance: 
+observation_covariance: 
+hotstart_resfile: 
+overdue_resched_fac: 1.15
+overdue_giveup_fac: 100
+overdue_giveup_minutes: 1e+30
+condor_submit_file: 
+tie_by_group: 0
+par_sigma_range: 4
+enforce_tied_bounds: 0
+debug_parse_only: 0
+check_tplins: 1
+fill_tpl_zeros: 0
+tpl_force_decimal: 0
+additional_ins_delimiters: 
+random_seed: 358183147
+num_tpl_ins_threads: 1
+save_binary: 0
+save_dense: 0
+ensemble_output_precision: 20
+panther_echo: 1
+panther_agent_restart_on_error: 0
+panther_agent_no_ping_timeout_secs: -1
+panther_debug_loop: 0
+debug_check_par_en_consistency: 0
+panther_agent_freeze_on_fail: 0
+panther_transfer_on_finish: 
+panther_transfer_on_fail: 
+panther_timeout_milliseconds: -999
+panther_echo_interval_milliseconds: 1000
+panther_persistent_workers: 1
+
+...pestpp-glm specific options:
+max_n_super: 1000000
+super_eigthresh: 1e-06
+n_iter_base: 1000000
+n_iter_super: 0
+super_relparmax: 0.1
+max_super_frz_iter: 20
+max_reg_iter: 20
+lambdas: 0.1,1,10,100,1000,
+iteration_summary: 0
+der_forgive: 1
+uncertainty: 1
+forecasts: 
+base_jacobian: 
+glm_num_reals: 0
+jac_scale: 1
+glm_normal_form: DIAG
+glm_debug_der_fail: 0
+glm_debug_lamb_fail: 0
+glm_debug_real_fail: 0
+glm_accept_mc_phi: 0
+glm_rebase_super: 0
+glm_iter_mc: 0
+glm_high_2nd_iter_phi: 0
+
+...pestpp-swp options:
+sweep_parameter_csv_file: 
+sweep_output_csv_file: sweep_out.csv
+sweep_chunk: 500
+sweep_forgive: 0
+sweep_base_run: 0
+sweep_include_regul_phi: 0
+
+...pestpp-opt options:
+opt_objective_function: 
+opt_coin_log: 1
+opt_skip_final: 0
+opt_std_weights: 0
+opt_stack_size: 0
+opt_par_stack: 
+opt_obs_stack: 
+opt_decision_variable_groups: 
+opt_external_variable_groups: 
+opt_constraint_groups: 
+opt_risk: 0.5
+opt_iter_derinc_fac: 1
+opt_direction: 1
+opt_iter_tol: 0.001
+opt_recalc_fosm_every: 1
+opt_chance_points: SINGLE
+opt_chance_schedule: 
+
+...pestpp-sqp options:
+sqp_dv_en: 
+sqp_obs_restart_en: 
+sqp_search_method: LINE
+sqp_num_reals: -1
+sqp_subset_size: -10
+sqp_update_hessian: 1
+sqp_hessian_update_method: BFGS
+sqp_solve_partial_step: 1
+sqp_alpha_mults:
+  0.001
+  0.005
+  0.01
+  0.1
+  0.5
+  1
+sqp_filter_tol: 0.001
+sqp_working_set_tol: 0.1
+sqp_cma_c1: -1
+sqp_cma_cmu: -1
+sqp_cma_cc: -1
+sqp_cma_parent_num: -1
+sqp_cma_stepsize_control: 0
+sqp_cma_reinflation_factor: -1
+sqp_max_consec_infeas_ies: 3
+sqp_max_reinflation_cond_num: 500
+sqp_scale_up_factor: 1
+sqp_scale_down_factor: 1
+sqp_hess_max_cond_num: 100000
+sqp_save_cov_every: -1
+sqp_enforce_bounds: 0
+sqp_viol_pad: 0.0001
+sqp_reset_hessian_every: -1
+sqp_wset_level: 1
+sqp_rescale_search_dir: 1
+sqp_seek_feas_max_iter: 3
+sqp_risk: 0.5
+
+...pestpp-mou options:
+mou_generator: PSO
+mou_population_size: 100
+mou_dv_population_file: 
+mou_obs_population_restart_file: 
+mou_objectives: 
+mou_max_archive_size: 500
+mou_risk_objective: 0
+mou_verbose_level: 1
+mou_env_selector: NSGA
+mou_mating_selector: TOURNAMENT
+mou_crossover_prob: 0.75
+mou_mutation_prob: -999
+mou_de_f: 0.8
+mou_save_population_every: -1
+mou_pso_omega: 0.7
+mou_pso_inertia (IINER, FINERT, INITER): 
+ 0.7  0.4  0 
+mou_pso_social_const: 
+ 2
+mou_pso_cognitive: 
+ 2
+mou_pso_alpha: 1
+mou_pso_rramp: -500
+mou_pso_rfit: 2
+mou_pso_vmax_factor: 0.8
+mou_pso_dv_bound_handling: CLAMP
+mou_ppd_beta: 0.5
+mou_fit_gamma: 0.25
+mou_fit_epsilon: 0.05
+mou_population_schedule: 
+mou_simplex_reflections:10
+mou_simplex_factors: 
+ 0.5
+ 0.6
+ 0.7
+ 0.8
+mou_simplex_mutation: 0
+mou_use_multigen:0
+mou_shuffle_fixed_pars: 0
+mou_debug_dv_handling: 0
+
+...shared pestpp-ies/pestpp-da options:
+(note: 'da' args override 'ies' args when using pestpp-da)
+ies_parameter_ensemble: 
+ies_observation_ensemble: 
+ies_weights_ensemble: 
+ies_restart_parameter_ensemble: 
+ies_restart_observation_ensemble: 
+ies_use_approximate_solution: 1
+ies_lambda_mults: 0.1,1,10,
+ies_initial_lambda: 0
+ies_use_approx: 1
+ies_subset_size: -10
+ies_reg_factor: 0
+ies_verbose_level: 1
+ies_use_prior_scaling: 0
+ies_num_reals: 50
+ies_bad_phi: 1.79769e+308
+ies_bad_phi_sigma: 1.79769e+308
+ies_include_base: 1
+ies_use_empirical_prior: 0
+ies_group_draws: 1
+ies_enforce_bounds: 1
+ies_localizer: 
+ies_accept_phi_fac: 1.05
+ies_lambda_inc_fac: 10
+ies_lambda_dec_fac: 0.75
+ies_save_lambda_ensembles: 0
+ies_subset_how: RANDOM
+ies_localize_how: PARAMETERS
+ies_num_threads: -1
+ies_debug_fail_subset: 0
+ies_debug_fail_remainder: 0
+ies_debug_bad_phi: 0
+ies_debug_upgrade_only: 0
+ies_debug_high_subset_phi: 0
+ies_debug_high_upgrade_phi: 0
+ies_csv_by_reals: 1
+ies_autoadaloc: 0
+ies_autoadaloc_sigma_dist: 1
+ies_enforce_chglim: 0
+ies_center_on: 
+ies_no_noise: 0
+ies_drop_conflicts: 0
+ies_save_rescov:0
+ies_pdc_sigma_distance: -1
+ies_use_mda: 0
+ies_mda_init_fac: 10
+ies_mda_dec_fac: 0.5
+ies_localization_type: LOCAL
+ies_upgrades_in_memory: 1
+ies_ordered_binary: 1
+ies_multimodal_alpha: 0
+ies_localizer_forgive_extra: 0
+ies_phi_factors_file: 
+ies_phi_factors_by_real: 0
+ies_n_iter_reinflate: 
+0,
+ies_reinflate_factor: 
+1,
+ies_updatebyreals: 0
+ies_autoadaloc_indicator_pars: 
+
+ies_run_realname: ies_reinflate_num_reals: 
+0,
+
+pestpp-sen options: 
+gsa_method: MORRIS
+gsa_morris_pooled_obs: 0
+gsa_morris_obs_sen: 1
+gsa_morris_p: 4
+gsa_morris_r: 4
+gsa_morris_delta: 0.6666
+gsa_sobol_samples: 4
+gsa_sobol_par_dist: norm
+
+pestpp-da options (those not shared with pestpp-ies):
+da_parameter_cycle_table: 
+da_observation_cycle_table: 
+da_hotstart_cycle: 0
+da_stop_cycle: 1000000000
+da_use_simulated_states: 1
+da_noptmax_schedule: 
+
+
+
+Model command line(s):- 
+    python theis_forward.py
+
+Model interface files:-
+    template files:
+      schedule.csv.tpl
+    model input files:
+      schedule.csv
+
+    instruction files:
+      drawdown.csv.ins
+    model output files:
+      drawdown.csv
+
+
+Parameter group information
+NAME          INCREMENT TYPE     DERIVATIVE INCREMENT    INCREMENT LOWER BOUND  FORCE CENTRAL     INCREMENT MULTIPLIER
+schedule            RELATIVE                     0.01                        0         SWITCH                        2
+
+
+
+Parameter information
+NAME         TRANSFORMATION        CHANGE LIMIT  INITIAL VALUE    LOWER BOUND    UPPER BOUND        GROUP          SCALE         OFFSET  DERIVATIVE COMMAND
+sch01        none                  RELATIVE              1              0              1     schedule              1              0                   1
+sch02        none                  RELATIVE              1              0              1     schedule              1              0                   1
+sch03        none                  RELATIVE              1              0              1     schedule              1              0                   1
+sch04        none                  RELATIVE              1              0              1     schedule              1              0                   1
+sch05        none                  RELATIVE              1              0              1     schedule              1              0                   1
+sch06        none                  RELATIVE              1              0              1     schedule              1              0                   1
+sch07        none                  RELATIVE              1              0              1     schedule              1              0                   1
+sch08        none                  RELATIVE              1              0              1     schedule              1              0                   1
+sch09        none                  RELATIVE              1              0              1     schedule              1              0                   1
+sch10        none                  RELATIVE              1              0              1     schedule              1              0                   1
+sch11        none                  RELATIVE              1              0              1     schedule              1              0                   1
+sch12        none                  RELATIVE              1              0              1     schedule              1              0                   1
+sch13        none                  RELATIVE              1              0              1     schedule              1              0                   1
+sch14        none                  RELATIVE              1              0              1     schedule              1              0                   1
+sch15        none                  RELATIVE              1              0              1     schedule              1              0                   1
+sch16        none                  RELATIVE              1              0              1     schedule              1              0                   1
+sch17        none                  RELATIVE              1              0              1     schedule              1              0                   1
+sch18        none                  RELATIVE              1              0              1     schedule              1              0                   1
+sch19        none                  RELATIVE              1              0              1     schedule              1              0                   1
+sch20        none                  RELATIVE              1              0              1     schedule              1              0                   1
+sch21        none                  RELATIVE              1              0              1     schedule              1              0                   1
+sch22        none                  RELATIVE              1              0              1     schedule              1              0                   1
+sch23        none                  RELATIVE              1              0              1     schedule              1              0                   1
+sch24        none                  RELATIVE              1              0              1     schedule              1              0                   1
+sch25        none                  RELATIVE              1              0              1     schedule              1              0                   1
+sch26        none                  RELATIVE              1              0              1     schedule              1              0                   1
+sch27        none                  RELATIVE              1              0              1     schedule              1              0                   1
+sch28        none                  RELATIVE              1              0              1     schedule              1              0                   1
+sch29        none                  RELATIVE              1              0              1     schedule              1              0                   1
+sch30        none                  RELATIVE              1              0              1     schedule              1              0                   1
+sch31        none                  RELATIVE              1              0              1     schedule              1              0                   1
+sch32        none                  RELATIVE              1              0              1     schedule              1              0                   1
+sch33        none                  RELATIVE              1              0              1     schedule              1              0                   1
+sch34        none                  RELATIVE              1              0              1     schedule              1              0                   1
+sch35        none                  RELATIVE              1              0              1     schedule              1              0                   1
+sch36        none                  RELATIVE              1              0              1     schedule              1              0                   1
+sch37        none                  RELATIVE              1              0              1     schedule              1              0                   1
+sch38        none                  RELATIVE              1              0              1     schedule              1              0                   1
+sch39        none                  RELATIVE              1              0              1     schedule              1              0                   1
+sch40        none                  RELATIVE              1              0              1     schedule              1              0                   1
+sch41        none                  RELATIVE              1              0              1     schedule              1              0                   1
+sch42        none                  RELATIVE              1              0              1     schedule              1              0                   1
+sch43        none                  RELATIVE              1              0              1     schedule              1              0                   1
+sch44        none                  RELATIVE              1              0              1     schedule              1              0                   1
+sch45        none                  RELATIVE              1              0              1     schedule              1              0                   1
+sch46        none                  RELATIVE              1              0              1     schedule              1              0                   1
+sch47        none                  RELATIVE              1              0              1     schedule              1              0                   1
+sch48        none                  RELATIVE              1              0              1     schedule              1              0                   1
+sch49        none                  RELATIVE              1              0              1     schedule              1              0                   1
+sch50        none                  RELATIVE              1              0              1     schedule              1              0                   1
+sch51        none                  RELATIVE              1              0              1     schedule              1              0                   1
+sch52        none                  RELATIVE              1              0              1     schedule              1              0                   1
+
+
+
+Observation information
+NAME                                VALUE                GROUP              WEIGHT
+s_00                            0.0304717             drawdown                   1
+s_01                                    0             drawdown                   1
+s_02                            0.0750452             drawdown                   1
+s_03                            0.0941778             drawdown                   1
+s_04                                    0             drawdown                   1
+s_05                                    0             drawdown                   1
+s_06                            0.0423433             drawdown                   1
+s_07                            0.0276464             drawdown                   1
+s_08                             0.095629             drawdown                   1
+s_09                            0.0526135             drawdown                   1
+s_10                             0.266032             drawdown                   1
+s_11                             0.295453             drawdown                   1
+s_12                             0.261371             drawdown                   1
+s_13                             0.400214             drawdown                   1
+s_14                             0.363834             drawdown                   1
+s_15                             0.260078             drawdown                   1
+s_16                             0.412495             drawdown                   1
+s_17                             0.310407             drawdown                   1
+s_18                             0.523556             drawdown                   1
+s_19                             0.456828             drawdown                   1
+s_20                              0.46745             drawdown                   1
+s_21                             0.441729             drawdown                   1
+s_22                             0.654867             drawdown                   1
+s_23                             0.540022             drawdown                   1
+s_24                              0.53896             drawdown                   1
+s_25                             0.576159             drawdown                   1
+s_26                              0.69417             drawdown                   1
+s_27                             0.706997             drawdown                   1
+s_28                             0.743874             drawdown                   1
+s_29                             0.779756             drawdown                   1
+s_30                             0.983076             drawdown                   1
+s_31                             0.755789             drawdown                   1
+s_32                             0.766898             drawdown                   1
+s_33                             0.752676             drawdown                   1
+s_34                             0.907086             drawdown                   1
+s_35                             0.968885             drawdown                   1
+s_36                             0.855839             drawdown                   1
+s_37                             0.794517             drawdown                   1
+s_38                             0.808701             drawdown                   1
+s_39                             0.970185             drawdown                   1
+s_40                             0.993408             drawdown                   1
+s_41                             0.988406             drawdown                   1
+s_42                             0.884305             drawdown                   1
+s_43                             0.993251             drawdown                   1
+s_44                              1.00295             drawdown                   1
+s_45                              1.03648             drawdown                   1
+s_46                              1.12657             drawdown                   1
+s_47                              1.08912             drawdown                   1
+s_48                              1.16684             drawdown                   1
+s_49                              1.14397             drawdown                   1
+s_50                              1.20925             drawdown                   1
+s_51                              1.28672             drawdown                   1
+
+
+
+Prior information
+
+   no prior information provided
+
+
+
+PEST SVD Information
+    maxsing = 10000000
+    eigthresh = 1e-06
+
+
+
+
+
+...resetting max_run_fail to 1
+...resetting overdue_giveup_fac to 2.0
+...resetting overdue_resched_fac to 1.15
+
+  ---  initializing  ---  
+
+  ---  'noptmax'=0, running control file parameter values and quitting  ---  
+...saving control file parameter ensemble to  theis_pest_v2.base.par.csv
+...initializing prior parameter covariance matrix
+...parcov loaded  from parameter bounds, using par_sigma_range 4
+...running control file parameter values
+...saving results from control file parameter value run to  theis_pest_v2.base.obs.csv
+
+  ---  control file parameter phi report:  ---  
+       phi type           mean            std            min            max
+       measured        55.5753              0        55.5753        55.5753
+         actual        55.5753              0        55.5753        55.5753
+     note: 'measured' phi reported above includes 
+           realizations of measurement noise, 
+           'actual' phi does not.
+  ---  observation group phi summary ---  
+       (computed using 'actual' phi)
+           (sorted by mean phi)
+group      count  nconflict      mean       std       min       max   percent       std
+drawdown      52         52      55.6         0      55.6      55.6       100         0
+    Note: 'percent' is the percentage of the actual phi for each realization.
+
+
+
+
+
+pestpp-ies analysis complete...
+started at 07/24/26 07:36:24
+finished at 07/24/26 07:36:26
+took 0.0166667 minutes

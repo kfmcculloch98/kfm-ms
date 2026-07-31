@@ -1,0 +1,3 @@
+parnme parval
+Q 200.0
+t_start 15.0
